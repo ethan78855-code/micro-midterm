@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>個體經濟學期中考衝刺講義｜Ch7–Ch10、作業 HW6–HW9</title>
+<meta name="description" content="個體經濟學期中考複習：顯示性偏好、Slutsky 方程式、買與賣、跨期選擇，含作業 HW6–HW9 共 12 題逐步解答與互動圖表。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body data-page="index">
+<main class="page">
+
+<div class="hero">
+<p class="kicker">個體經濟學（一）期中考 · 115 年 11 月 18 日（三）上午 10:10</p>
+<h1>四章考的是同一張圖：<em>預算線</em>怎麼動</h1>
+<p class="lead">Ch7 看預算線反推偏好，Ch8 轉動它拆出替代效果和所得效果，Ch9 讓它繞著稟賦點轉，Ch10 把兩個軸換成今天和明天。先拖一下這張圖，感受「價格一變，預算線和最適選擇跟著動」。</p>
+</div>
+
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "預算線隨價格轉動，最適消費組合跟著移動",
+  "x": [0, 56], "y": [0, 50], "h": 370,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "商品 1 的價格 p₁", "min": 0.6, "max": 3, "step": 0.02, "value": 2, "digits": 2, "play": true,
+    "presets": [ { "label": "p₁ = 2（作業 HW7 降價前）", "value": 2 }, { "label": "p₁ = 1（降價後）", "value": 1 }, { "label": "p₁ = 3", "value": 3 } ] } ],
+  "fns": [
+    { "f": "45-a*x", "color": "f", "label": "預算線 p₁x₁ + x₂ = 45" },
+    { "f": "13500/(a^2*x^2)", "color": "d2", "w": 2, "domain": [4, 56], "label": "碰到預算線的那條無異曲線", "toggle": true }
+  ],
+  "shapes": [
+    { "type": "poly", "pts": [[0, 0], ["45/a", 0], [0, 45]], "color": "f", "fill": true, "close": true, "w": 0 }
+  ],
+  "hlines": [ { "y": 15, "color": "mute" } ],
+  "points": [
+    { "x": "30/a", "y": 15, "color": "ink", "label": "最適選擇 ({{30/a|1}}, 15)", "pos": "tr" }
+  ],
+  "readouts": [
+    { "label": "x₁* = 2m / 3p₁", "expr": "30/a", "digits": 2, "color": "f" },
+    { "label": "x₂* = m / 3p₂", "expr": "15", "digits": 0 },
+    { "label": "預算線斜率 −p₁/p₂", "expr": "-a", "digits": 2 },
+    { "label": "花在商品 1 的錢", "expr": "30", "digits": 0, "unit": " 元（永遠是所得的 2/3）" }
+  ]
+}
+</script>
+<figcaption>效用函數是作業 HW7 第 1 題的 U = x₁²x₂，所得 45、p₂ = 1。藍色區域是買得起的範圍；p₁ 越低，預算線越平，買得起的範圍越大，最適點沿著灰色虛線往右走。按「播放」可以看整個過程。</figcaption>
+</figure>
+
+<ul class="facts">
+<li><b>考試時間</b>115 年 11 月 18 日（星期三）上午 10:10，右上角有倒數</li>
+<li><b>範圍</b>作業 HW6–HW9，對應簡報 Ch7、Ch8、Ch9、Ch10</li>
+<li><b>題量</b>4 份作業 × 3 大題，共 12 題、48 個小題，全部有逐步解答</li>
+<li><b>基礎</b>Ch2–Ch5 的預算線、無異曲線、三種需求函數，放在暖身頁</li>
+</ul>
+
+<h2 id="how">這份講義怎麼用</h2>
+<div class="how" data-title="每一章都照這個順序">
+<ol>
+<li><strong>看觀念</strong>：先用白話講這一章在做什麼，再給定義和公式。專有名詞都附英文，因為考卷是英文的。</li>
+<li><strong>玩圖</strong>：圖都可以動。有的是拉滑桿，有的是按「① ② ③」一步一步看，圖例上寫「點一下顯示」的可以開關。</li>
+<li><strong>做小測驗</strong>：點選項會立刻告訴你對不對、為什麼。</li>
+<li><strong>做作業題</strong>：先自己算，卡住再按「看第 1 步」，一次只開一步。</li>
+<li><strong>標記</strong>：會了就按「這題我會了」。進度存在這台裝置的瀏覽器裡，下次打開還在。</li>
+</ol>
+</div>
+
+<h2 id="plan">今晚的讀書順序</h2>
+<p>照章節順序讀最順，因為後面會用到前面的東西。全部走完大約 3 到 4 小時。<strong>時間不夠的話</strong>：每一章直接跳到最下面的作業題，跟著解答一步一步走，看不懂再回頭看上面的觀念。</p>
+<ol class="plan">
+<li>
+<div class="when">第 1 站<small>約 20 分鐘</small></div>
+<div>
+<p><a href="basics.html">暖身：預算線、無異曲線與最適選擇</a></p>
+<p>目標：Cobb-Douglas、完全替代、完全互補三種需求函數寫得出來。作業 HW7、HW8 每一題都從這裡開始。</p>
+</div>
+</li>
+<li>
+<div class="when">第 2 站<small>約 45 分鐘</small></div>
+<div>
+<p><a href="ch7.html">Ch7 顯示性偏好與指數</a>（作業 HW6）</p>
+<p>目標：會列 3 × 3 花費表、分得清 WARP 和 SARP；會算 Laspeyres、Paasche 和 M，並知道什麼時候「無法判斷」。</p>
+</div>
+</li>
+<li>
+<div class="when">第 3 站<small>約 50 分鐘</small></div>
+<div>
+<p><a href="ch8.html">Ch8 Slutsky 方程式</a>（作業 HW7）</p>
+<p>目標：五個步驟背起來，補償所得 $m'$ 不會算錯。三種效用函數各做一次。這一章計算最多。</p>
+</div>
+</li>
+<li>
+<div class="when">第 4 站<small>約 40 分鐘</small></div>
+<div>
+<p><a href="ch9.html">Ch9 買與賣</a>（作業 HW8）</p>
+<p>目標：預算線右邊換成稟賦的價值；會算淨需求、判斷買方賣方；勞動供給的預算式寫得出來。</p>
+</div>
+</li>
+<li>
+<div class="when">第 5 站<small>約 35 分鐘</small></div>
+<div>
+<p><a href="ch10.html">Ch10 跨期選擇</a>（作業 HW9）</p>
+<p>目標：現值式和終值式都會寫；分得清名目利率和實質利率；會把每一筆未來的錢折現。</p>
+</div>
+</li>
+<li>
+<div class="when">明天早上<small>出門前 10 分鐘</small></div>
+<div>
+<p><a href="formulas.html">公式總表與考前檢查</a></p>
+<p>把公式掃一遍，看「最常被扣分的地方」，還沒標記「會了」的題目再看一次答案。</p>
+</div>
+</li>
+</ol>
+
+<h2 id="sections">全部章節</h2>
+<p id="homeProg" class="mono"></p>
+<div class="sec-grid" id="secGrid"></div>
+
+<h2 id="assigned">作業題總覽</h2>
+<p>考試範圍的 12 題都在這裡，點題號直接跳到那一題的逐步解答。綠色代表你已經標記「會了」。</p>
+<div class="prob-groups" id="probGrid"></div>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>作業</th><th>第 1 題</th><th>第 2 題</th><th>第 3 題</th></tr></thead>
+<tbody>
+<tr><th scope="row">HW6（Ch7）</th><td>三期花費表、WARP 與 SARP</td><td>Laspeyres、Paasche 與 M</td><td>補貼到買得起基期組合</td></tr>
+<tr><th scope="row">HW7（Ch8）</th><td>Slutsky：Cobb-Douglas</td><td>Slutsky：完全互補</td><td>Slutsky：完全替代</td></tr>
+<tr><th scope="row">HW8（Ch9）</th><td>稟賦、淨需求</td><td>稟賦下的降價與福利</td><td>勞動供給</td></tr>
+<tr><th scope="row">HW9（Ch10）</th><td>跨期預算線</td><td>實質利率與通膨</td><td>證券的現值</td></tr>
+</tbody>
+</table>
+</div>
+<p class="reset-row"><button type="button" class="btn" id="resetProgress">清除所有進度標記</button></p>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=2"></script>
+</body>
+</html>

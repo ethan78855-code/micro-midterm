@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch7 顯示性偏好與指數｜個體經濟學期中考衝刺</title>
+<meta name="description" content="直接與間接顯示性偏好、WARP、SARP、花費表的做法、Laspeyres 與 Paasche 指數、完全指數化，含作業 HW6 三題逐步解答與互動檢查器。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body data-page="ch7">
+<main class="page">
+
+<p class="kicker">Chapter 7 · 對應作業 HW6</p>
+<h1>顯示性偏好與指數</h1>
+<p class="lead">前面幾章是「知道偏好，推出選擇」。這一章反過來：只看得到一個人在不同價格下買了什麼，要<strong>反推他喜歡什麼</strong>，並檢查他的選擇前後有沒有矛盾。整章只用一個判斷：買得起卻沒選。</p>
+<div data-toc></div>
+
+<h2 id="idea">核心想法：買得起卻沒選</h2>
+<div class="say">
+<p>你有 10 元，便當和麵都買得起，結果你買了便當。雖然我看不到你腦袋裡的效用函數，但我知道：<mark>對你來說便當比麵好</mark>。因為如果麵比較好，你早就買麵了。</p>
+</div>
+<div class="key" data-title="直接顯示性偏好（directly revealed preferred）">
+<p>在某一組價格下選了 $x$，而當時 $y$ 也<strong>買得起</strong>（$y$ 的花費 $\le$ $x$ 的花費），就說 $x$ 被直接顯示偏好於 $y$，寫成</p>
+$$x \succ_D y$$
+<p>如果 $y$ 當時<strong>買不起</strong>，這次選擇就沒有透露 $x$ 和 $y$ 誰比較好。</p>
+</div>
+<p>簡報的前提是偏好在觀察期間不變，而且是行為良好的（單調、嚴格凸），所以每條預算線上最喜歡的組合只有一個。</p>
+<p>下圖的價格是 $(1, 1)$、所得 10，這個人選了 $x^* = (5, 5)$。移動橘色的 $y$，看它什麼時候「輸給」$x^*$：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "預算線與選擇 x*，可移動的比較組合 y",
+  "x": [0, 12], "y": [0, 12], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [
+    { "label": "y 的 x₁", "min": 0, "max": 11, "step": 0.5, "value": 3, "digits": 1 },
+    { "label": "y 的 x₂", "min": 0, "max": 11, "step": 0.5, "value": 4, "digits": 1 }
+  ],
+  "presets": [
+    { "label": "y 在預算線裡面", "set": { "a": 3, "b": 4 } },
+    { "label": "y 剛好在線上", "set": { "a": 2, "b": 8 } },
+    { "label": "y 在預算線外面", "set": { "a": 8, "b": 6 } }
+  ],
+  "fns": [ { "f": "10-x", "color": "f", "label": "預算線 x₁ + x₂ = 10" } ],
+  "shapes": [
+    { "type": "poly", "pts": [[0, 0], [10, 0], [0, 10]], "color": "f", "fill": true, "close": true, "w": 0 },
+    { "type": "text", "x": 2.4, "y": 1.2, "t": "買得起的範圍", "color": "f", "size": 12 }
+  ],
+  "points": [
+    { "x": 5, "y": 5, "color": "ink", "label": "x*（實際選的）", "pos": "tr" },
+    { "x": "a", "y": "b", "color": "d1", "label": "y ({{a|1}}, {{b|1}})", "pos": "br" }
+  ],
+  "readouts": [
+    { "label": "買 y 要花", "expr": "a+b", "digits": 1, "color": "d1" },
+    { "label": "買 x* 花了", "expr": "10", "digits": 0 },
+    { "label": "結論", "expr": "10-a-b", "pos": "y 買得起卻沒選 → x* ≻ y（直接顯示偏好）", "zero": "y 剛好買得起卻沒選 → x* ≻ y（直接顯示偏好）", "neg": "y 買不起 → 這次選擇沒有透露誰比較好", "eps": 0.001 }
+  ]
+}
+</script>
+<figcaption>藍色三角形（含邊線）裡的每一點，都被 x* 直接顯示偏好。跑到三角形外面的點當時根本買不起，沒辦法比較。</figcaption>
+</figure>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">價格是 $(2, 1)$ 時，某人選了 $x = (3, 4)$。下面哪一個組合被直接顯示「比 $x$ 差」？</p>
+<button>$(4, 1)$</button>
+<button>$(5, 2)$</button>
+<button>$(2, 7)$</button>
+<p class="quiz-why">$x$ 花了 $2\times 3 + 1\times 4 = 10$。三個選項分別要花 9、12、11。只有 $(4, 1)$ 買得起卻沒選，所以 $x \succ_D (4, 1)$。另外兩個買不起，無法判斷。</p>
+</div>
+
+<h2 id="indirect">間接顯示性偏好：靠遞移性串起來</h2>
+<div class="key" data-title="間接顯示性偏好（indirectly revealed preferred）">
+<p>如果 $x \succ_D y$ 而且 $y \succ_D z$，由遞移性知道 $x$ 也比 $z$ 好，寫成</p>
+$$x \succ_I z$$
+<p>即使 $x$ 和 $z$ 從來沒有在同一條預算線下直接比過。</p>
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "兩條預算線：x* 直接顯示偏好於 y*，y* 直接顯示偏好於 z，所以 x* 間接顯示偏好於 z",
+  "x": [0, 11], "y": [0, 13], "h": 350,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "步驟", "steps": ["① 第一次選擇", "② 第二次選擇", "③ 串起來"] } ],
+  "fns": [
+    { "f": "12-2*x", "color": "f", "label": "第一條預算線（選了 x*）" },
+    { "f": "(10-x)/2", "color": "pos", "label": "第二條預算線（選了 y*）", "if": "a-1.5" }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 2.25, "y1": 7.35, "x2": 3.75, "y2": 3.65, "color": "f", "label": "直接", "lo": [22, 0] },
+    { "type": "arrow", "x1": 4.45, "y1": 2.7, "x2": 6.55, "y2": 1.3, "color": "pos", "label": "直接", "lo": [10, -12], "if": "a-1.5" },
+    { "type": "arrow", "x1": 2.5, "y1": 7.9, "x2": 6.85, "y2": 1.55, "color": "d2", "dash": true, "label": "間接", "lo": [26, -8], "if": "a-2.5" }
+  ],
+  "points": [
+    { "x": 2, "y": 8, "color": "f", "label": "x* (2, 8)", "pos": "tr" },
+    { "x": 4, "y": 3, "color": "pos", "label": "y* (4, 3)", "pos": "bl" },
+    { "x": 7, "y": 1, "color": "ink", "label": "z (7, 1)", "pos": "tr", "if": "a-1.5" }
+  ],
+  "readouts": [
+    { "label": "看到什麼", "expr": "a-2", "neg": "價格 (2, 1)：選 x* 花 12，y* 只要 11，買得起卻沒選 → x* ≻ y*（直接）", "zero": "價格 (1, 2)：選 y* 花 10，z 只要 9 → y* ≻ z（直接）。但 z 在第一條線外面，x* 和 z 沒有直接比過", "pos": "x* ≻ y* 且 y* ≻ z，所以 x* ≻ z（間接）", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>z 在藍線外面（第一次買不起），x* 在綠線外面（第二次買不起），兩個從來沒有同時買得起。但透過中間的 y*，還是能推出 x* 比 z 好。</figcaption>
+</figure>
+
+<h2 id="warp">WARP：兩個組合不能互相打敗對方</h2>
+<div class="key" data-title="弱顯示性偏好公理 Weak Axiom of Revealed Preference">
+$$x \succ_D y \;\Longrightarrow\; \text{不可以有 } y \succ_D x \qquad (x \ne y)$$
+<p>白話：既然你曾經在兩個都買得起時選了 $x$，就不該在另一次兩個都買得起時改選 $y$。違反 WARP 的資料不可能來自一個理性的消費者；WARP 是<strong>必要條件</strong>。</p>
+</div>
+<p>簡報的例子：價格 $(2, 2)$ 時選 $x = (10, 1)$；價格 $(1, 2)$ 時選 $y$。拖曳圖面或滑桿，讓 $y$ 沿著自己的預算線移動：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "兩條交叉的預算線，檢查 x 與 y 是否互相買得起",
+  "x": [0, 14], "y": [0, 12], "h": 350,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "y 的 x₁", "min": 1, "max": 12, "step": 0.5, "value": 5, "digits": 1, "drag": true,
+    "presets": [ { "label": "簡報例題 y = (5, 4)", "value": 5 }, { "label": "y = (9, 2)", "value": 9 }, { "label": "y = (11, 1)", "value": 11 } ] } ],
+  "fns": [
+    { "f": "11-x", "color": "f", "label": "第 1 期預算線 2x₁ + 2x₂ = 22（選了 x）" },
+    { "f": "(13-x)/2", "color": "pos", "label": "第 2 期預算線 x₁ + 2x₂ = 13（選了 y）" }
+  ],
+  "shapes": [
+    { "type": "poly", "pts": [[0, 0], [11, 0], [0, 11]], "color": "f", "fill": true, "close": true, "w": 0 },
+    { "type": "poly", "pts": [[0, 0], [13, 0], [0, 6.5]], "color": "pos", "fill": true, "close": true, "w": 0 }
+  ],
+  "points": [
+    { "x": 10, "y": 1, "color": "f", "label": "x (10, 1)", "pos": "bl" },
+    { "x": "a", "y": "(13-a)/2", "color": "pos", "label": "y ({{a|1}}, {{(13-a)/2|2}})", "pos": "t" }
+  ],
+  "readouts": [
+    { "label": "第 2 期買 x 要花（當時花 13 選 y）", "expr": "12", "digits": 0 },
+    { "label": "第 1 期買 y 要花（當時花 22 選 x）", "expr": "13+a", "digits": 1, "color": "f" },
+    { "label": "判斷", "expr": "9-a", "pos": "x 在綠色區、y 在藍色區：x ≻ y 且 y ≻ x，違反 WARP", "zero": "y 剛好在藍線上，還是買得起：x ≻ y 且 y ≻ x，違反 WARP", "neg": "y 跑到藍色區外面：只剩 y ≻ x，不違反 WARP", "eps": 0.001 }
+  ]
+}
+</script>
+<figcaption>x 永遠落在綠色三角形裡（第 2 期買得起），所以 y ≻ x 一直成立。只要 y 同時也落在藍色三角形裡，就變成互相打敗，違反 WARP。圖形上的特徵：兩個選擇點各自落在對方的預算集合裡。</figcaption>
+</figure>
+
+<h2 id="table">花費表：考試的標準做法</h2>
+<p>三期、三種商品的資料畫不出圖，要用表格。簡報和作業都要求列一張 3 × 3 的表。</p>
+<div class="how" data-title="花費表五步驟">
+<ol>
+<li><strong>列</strong>放各期的價格，<strong>欄</strong>放各期選的組合。每一格算「用這一列的價格買這一欄的組合要多少錢」。</li>
+<li><strong>對角線</strong>是每一期實際花的錢（簡報用紅字）。</li>
+<li>一列一列看：同一列裡<mark>不超過對角線</mark>的其他格子圈起來，代表「買得起卻沒選」。那一列選的組合 $\succ_D$ 被圈起來的那一欄。</li>
+<li>檢查 WARP：有沒有一對組合互相 $\succ_D$。</li>
+<li>把直接關係用遞移性串出間接關係，再檢查 SARP。</li>
+</ol>
+</div>
+<p>簡報例題：價格 $(2, 2)$ 選 $(10, 1)$；價格 $(2, 1)$ 選 $(5, 5)$；價格 $(1, 2)$ 選 $(5, 4)$。</p>
+<div class="tbl-wrap">
+<table class="tbl rp-tbl">
+<thead><tr><th>價格＼組合</th><th class="n">(10, 1)</th><th class="n">(5, 5)</th><th class="n">(5, 4)</th><th>這一列告訴我們</th></tr></thead>
+<tbody>
+<tr><th scope="row">(2, 2)</th><td class="n chosen">22</td><td class="n"><span class="circ">20</span></td><td class="n"><span class="circ">18</span></td><td>$(10,1) \succ_D (5,5)$、$(10,1) \succ_D (5,4)$</td></tr>
+<tr><th scope="row">(2, 1)</th><td class="n no">21</td><td class="n chosen">15</td><td class="n"><span class="circ">14</span></td><td>$(5,5) \succ_D (5,4)$</td></tr>
+<tr><th scope="row">(1, 2)</th><td class="n"><span class="circ">12</span></td><td class="n no">15</td><td class="n chosen">13</td><td>$(5,4) \succ_D (10,1)$</td></tr>
+</tbody>
+</table>
+</div>
+<p>第一列說 $(10,1) \succ_D (5,4)$，第三列說 $(5,4) \succ_D (10,1)$，互相打敗，所以<strong class="c-neg">違反 WARP</strong>。</p>
+<div class="trap">
+<p>比較的對象是<strong>同一列的對角線</strong>，不是同一欄。第 $i$ 列只能得到「第 $i$ 期選的組合 $\succ_D$ 誰」，不能得到別的。另外等號也算買得起：花費剛好等於對角線，一樣要圈。</p>
+</div>
+<p>下面這個工具會自動做完五個步驟。可以載入作業題和簡報例題，也可以自己改數字看結果怎麼變：</p>
+<div class="rptool">
+<script type="application/json">
+{
+  "presets": [
+    { "label": "作業 HW6 第 1 題", "obs": [ { "p": [2, 1, 3], "x": [4, 2, 1] }, { "p": [3, 2, 1], "x": [2, 4, 1] }, { "p": [1, 3, 2], "x": [1, 2, 4] } ] },
+    { "label": "簡報：違反 WARP", "obs": [ { "p": [2, 2], "x": [10, 1] }, { "p": [2, 1], "x": [5, 5] }, { "p": [1, 2], "x": [5, 4] } ] },
+    { "label": "簡報：過 WARP、不過 SARP", "obs": [ { "p": [1, 3, 10], "x": [3, 1, 4] }, { "p": [4, 3, 6], "x": [2, 5, 3] }, { "p": [1, 1, 5], "x": [4, 4, 3] } ] },
+    { "label": "完全沒矛盾的例子", "obs": [ { "p": [1, 1], "x": [15, 15] }, { "p": [2, 1], "x": [10, 20] }, { "p": [1, 2], "x": [20, 10] } ] }
+  ]
+}
+</script>
+</div>
+
+<h2 id="sarp">SARP：連間接的也不能矛盾</h2>
+<div class="key" data-title="強顯示性偏好公理 Strong Axiom of Revealed Preference">
+<p>如果 $x$ 被（直接<strong>或間接</strong>）顯示偏好於 $y$，而且 $x \ne y$，那 $y$ 就不可以被（直接或間接）顯示偏好於 $x$。</p>
+<p>白話：偏好不可以繞成一圈。SARP 是資料能被一個行為良好的偏好解釋的<strong>充分且必要條件</strong>。</p>
+</div>
+<p>WARP 只檢查「兩兩之間」，SARP 連「繞一圈」都檢查。簡報例題（就是上面工具的第三個按鈕）：三個組合 A、B、C 的直接關係是</p>
+$$A \succ_D C,\qquad B \succ_D A,\qquad C \succ_D B$$
+<p>兩兩之間沒有互相打敗，<strong class="c-pos">不違反 WARP</strong>。但是串起來：</p>
+<ul>
+<li>$A \succ_D C$ 且 $C \succ_D B$ $\Rightarrow$ $A \succ_I B$，可是又有 $B \succ_D A$。矛盾。</li>
+<li>$B \succ_D A$ 且 $A \succ_D C$ $\Rightarrow$ $B \succ_I C$，可是又有 $C \succ_D B$。矛盾。</li>
+<li>$C \succ_D B$ 且 $B \succ_D A$ $\Rightarrow$ $C \succ_I A$，可是又有 $A \succ_D C$。矛盾。</li>
+</ul>
+<p>所以有 3 處<strong class="c-neg">違反 SARP</strong>，這組資料沒有任何行為良好的偏好可以解釋。</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th></th><th>WARP</th><th>SARP</th></tr></thead>
+<tbody>
+<tr><td>檢查什麼</td><td>只看直接關係，兩兩比</td><td>直接加間接，全部一起看</td></tr>
+<tr><td>違反的樣子</td><td>$x \succ_D y$ 且 $y \succ_D x$</td><td>偏好繞成一圈，例如 $A \succ B \succ C \succ A$</td></tr>
+<tr><td>條件強度</td><td>理性的必要條件</td><td>理性（行為良好的偏好）的充分必要條件</td></tr>
+<tr><td>兩者關係</td><td colspan="2">違反 WARP 一定違反 SARP；滿足 WARP 不一定滿足 SARP；滿足 SARP 一定滿足 WARP</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">三筆資料整理後只有這些直接關係：$A \succ_D B$、$B \succ_D C$、$C \succ_D A$。哪個說法正確？</p>
+<button>違反 WARP，也違反 SARP</button>
+<button>不違反 WARP，但違反 SARP</button>
+<button>兩個都沒有違反</button>
+<p class="quiz-why">沒有任何一對組合是互相直接打敗的，所以 WARP 沒問題。但 $A \succ_D B$、$B \succ_D C$ 推出 $A \succ_I C$，和 $C \succ_D A$ 衝突，偏好繞了一圈，違反 SARP。這正是作業第 1 題的情況。</p>
+</div>
+
+<h2 id="recover">用資料把無異曲線夾出來</h2>
+<p>如果資料滿足 SARP，就可以大致找出無異曲線的位置。簡報的例子有五筆資料，問通過 $A = (15, 15)$ 的無異曲線在哪裡：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "用顯示性偏好找出 A 的無異曲線所在的範圍",
+  "x": [0, 46], "y": [0, 46], "h": 370,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [ { "f": "225/x", "color": "d2", "dash": true, "domain": [5, 46], "label": "通過 A 的無異曲線只能走中間的白色通道（示意）" } ],
+  "shapes": [
+    { "type": "poly", "pts": [[0, 0], [20, 0], [0, 40]], "color": "f", "fill": true, "close": true, "w": 1 },
+    { "type": "poly", "pts": [[0, 0], [40, 0], [0, 20]], "color": "f", "fill": true, "close": true, "w": 1 },
+    { "type": "poly", "pts": [[0, 0], [30, 0], [0, 30]], "color": "f", "fill": true, "close": true, "w": 1 },
+    { "type": "poly", "pts": [[12, 46], [12, 30], [15, 15], [30, 12], [46, 12], [46, 46]], "color": "pos", "fill": true, "close": true, "w": 1 },
+    { "type": "text", "x": 8.5, "y": 6, "t": "被顯示比 A 差", "color": "f" },
+    { "type": "text", "x": 32, "y": 33, "t": "被顯示比 A 好", "color": "pos" }
+  ],
+  "points": [
+    { "x": 15, "y": 15, "color": "ink", "label": "A (15, 15)", "pos": "tr" },
+    { "x": 10, "y": 20, "color": "f", "label": "B", "pos": "l" },
+    { "x": 20, "y": 10, "color": "f", "label": "C", "pos": "b" },
+    { "x": 30, "y": 12, "color": "pos", "label": "D", "pos": "t" },
+    { "x": 12, "y": 30, "color": "pos", "label": "E", "pos": "r" }
+  ]
+}
+</script>
+<figcaption>藍色：A 的預算集合，加上 B、C 的預算集合（A ≻ B、A ≻ C，B 和 C 又各自打敗自己預算集合裡的點），這些都比 A 差。綠色：D、E 比 A 好；偏好是凸的，所以 A–D、A–E 連線上的點也比 A 好；偏好是單調的，所以更右上方的也比 A 好。無異曲線只能從兩塊之間穿過。</figcaption>
+</figure>
+<p>資料：A 價格 $(1,1)$ 選 $(15,15)$；B 價格 $(2,1)$ 選 $(10,20)$；C 價格 $(1,2)$ 選 $(20,10)$；D 價格 $(2,5)$ 選 $(30,12)$；E 價格 $(5,2)$ 選 $(12,30)$。這一段作業沒有出，知道「下界用被打敗的預算集合、上界用凸性和單調性」就夠了。</p>
+
+<h2 id="index">指數：用兩期的支出判斷變好還是變差</h2>
+<p>很多價格同時在變，消費者整體是變好還是變差？指數（index numbers）給一個近似的答案。記號：$b$ 是基期（base period），$t$ 是當期（current period）。先算四個數字：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th></th><th>買基期組合 $x^b$</th><th>買當期組合 $x^t$</th></tr></thead>
+<tbody>
+<tr><th scope="row">用基期價格 $p^b$</th><td>$p^b\!\cdot x^b$（基期實際支出）</td><td>$p^b\!\cdot x^t$</td></tr>
+<tr><th scope="row">用當期價格 $p^t$</th><td>$p^t\!\cdot x^b$</td><td>$p^t\!\cdot x^t$（當期實際支出）</td></tr>
+</tbody>
+</table>
+</div>
+<p>這其實就是一張 2 × 2 的花費表，$p\cdot x$ 的意思是 $p_1x_1 + p_2x_2$。所有指數都是這四個數字相除：</p>
+<div class="key" data-title="價格指數與支出比">
+$$L_p = \frac{p^t\!\cdot x^b}{p^b\!\cdot x^b}\qquad P_p = \frac{p^t\!\cdot x^t}{p^b\!\cdot x^t}\qquad M = \frac{p^t\!\cdot x^t}{p^b\!\cdot x^b}$$
+<p><strong>Laspeyres</strong> 用<strong>基期</strong>的數量當權數；<strong>Paasche</strong> 用<strong>當期</strong>的數量當權數；$M$ 是支出比（expenditure ratio）。</p>
+</div>
+<div class="key" data-title="數量指數">
+$$L_q = \frac{p^b\!\cdot x^t}{p^b\!\cdot x^b}\qquad P_q = \frac{p^t\!\cdot x^t}{p^t\!\cdot x^b}$$
+<p>數量指數是把價格固定住比數量：Laspeyres 固定在基期價格，Paasche 固定在當期價格。</p>
+</div>
+<h3>怎麼從指數下結論</h3>
+<p>結論全部來自顯示性偏好，不用背，把分母乘過去看就知道：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>看到</th><th>乘開以後</th><th>意思</th><th>結論</th></tr></thead>
+<tbody>
+<tr><td>$L_p \lt M$</td><td>$p^t\!\cdot x^b \lt p^t\!\cdot x^t$</td><td>當期買得起 $x^b$ 卻選了 $x^t$</td><td class="c-pos"><strong>當期比較好</strong></td></tr>
+<tr><td>$P_q \gt 1$</td><td>$p^t\!\cdot x^t \gt p^t\!\cdot x^b$</td><td>同上（同一件事的另一種寫法）</td><td class="c-pos"><strong>當期比較好</strong></td></tr>
+<tr><td>$P_p \gt M$</td><td>$p^b\!\cdot x^t \lt p^b\!\cdot x^b$</td><td>基期買得起 $x^t$ 卻選了 $x^b$</td><td class="c-neg"><strong>基期比較好</strong></td></tr>
+<tr><td>$L_q \lt 1$</td><td>$p^b\!\cdot x^t \lt p^b\!\cdot x^b$</td><td>同上</td><td class="c-neg"><strong>基期比較好</strong></td></tr>
+<tr><td>$L_p \gt M$ 或 $P_p \lt M$</td><td colspan="2">另一個組合當時買不起，選擇沒有透露資訊</td><td><strong>單看這個指數沒有結論</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div class="trap">
+<p>$L_p \gt M$ <strong>不代表</strong>基期比較好，$P_p \lt M$ 也<strong>不代表</strong>當期比較好。這兩種情況只是「買不起所以沒比到」，要寫「無法判斷」並說明原因。作業第 2 題 (C) 就在考這個。</p>
+</div>
+<p>下圖的基期固定是作業第 2 題的數字：價格 $(1, 1)$、選 $x^b = (4, 6)$；當期價格 $(2, 1)$。移動當期的選擇 $x^t$，看三個數字和結論怎麼變：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "基期與當期的預算線與選擇，對應 Laspeyres、Paasche 價格指數與支出比",
+  "x": [0, 12], "y": [0, 16], "h": 360,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [
+    { "label": "當期選擇的 x₁", "min": 0.5, "max": 10, "step": 0.5, "value": 6, "digits": 1 },
+    { "label": "當期選擇的 x₂", "min": 0.5, "max": 12, "step": 0.5, "value": 6, "digits": 1 }
+  ],
+  "presets": [
+    { "label": "作業第 2 題 xᵗ = (6, 6)", "set": { "a": 6, "b": 6 } },
+    { "label": "基期比較好的例子 (2, 7)", "set": { "a": 2, "b": 7 } },
+    { "label": "兩個指數都沒結論 (2, 9)", "set": { "a": 2, "b": 9 } }
+  ],
+  "fns": [
+    { "f": "10-x", "color": "f", "label": "基期預算線（價格 1, 1）" },
+    { "f": "2*a+b-2*x", "color": "pos", "label": "當期預算線（價格 2, 1）" }
+  ],
+  "points": [
+    { "x": 4, "y": 6, "color": "f", "label": "xᵇ (4, 6)", "pos": "bl" },
+    { "x": "a", "y": "b", "color": "pos", "label": "xᵗ ({{a|1}}, {{b|1}})", "pos": "tr" }
+  ],
+  "readouts": [
+    { "label": "Laspeyres Lp", "expr": "1.4", "digits": 2, "color": "f" },
+    { "label": "Paasche Pp", "expr": "(2*a+b)/(a+b)", "digits": 2 },
+    { "label": "支出比 M", "expr": "(2*a+b)/10", "digits": 2 },
+    { "label": "Lp 和 M", "expr": "(2*a+b)/10-1.4", "pos": "Lp 小於 M：xᵇ 在綠線下方，當期買得起卻沒選 → 當期比較好", "zero": "Lp = M：xᵇ 剛好在綠線上，當期還是買得起 → 當期至少一樣好", "neg": "Lp 大於 M：xᵇ 在綠線外面，單看 Laspeyres 沒有結論", "eps": 0.001 },
+    { "label": "Pp 和 M", "expr": "10-a-b", "pos": "Pp 大於 M：xᵗ 在藍線下方，基期買得起卻沒選 → 基期比較好", "zero": "Pp = M：xᵗ 剛好在藍線上", "neg": "Pp 小於 M：xᵗ 在藍線外面，單看 Paasche 沒有結論", "eps": 0.001 }
+  ]
+}
+</script>
+<figcaption>把指數翻成圖形就很直覺：Lp 小於 M 等於「藍點落在綠線下方」，Pp 大於 M 等於「綠點落在藍線下方」。如果兩個同時成立，代表兩個選擇互相打敗，這組資料違反 WARP。</figcaption>
+</figure>
+
+<div class="quiz" data-answer="3">
+<p class="quiz-q">算出來 $L_p = 1.2$、$M = 1.1$。可以下什麼結論？</p>
+<button>當期比較好</button>
+<button>基期比較好</button>
+<button>單憑這兩個數字無法判斷</button>
+<p class="quiz-why">$L_p \gt M$ 乘開是 $p^t\!\cdot x^b \gt p^t\!\cdot x^t$，表示當期<strong>買不起</strong>基期的組合。買不起就沒有「買得起卻沒選」這回事，顯示性偏好什麼都沒說。要再看 Paasche 才可能有結論。</p>
+</div>
+
+<h2 id="indexation">完全指數化：為什麼會補過頭</h2>
+<p>物價上漲時，政府常把薪水或年金跟著物價指數調整，叫做指數化（indexation）。<strong>完全指數化</strong>（full indexation）是指所得的調幅和物價指數一樣。如果用的是 Laspeyres 價格指數，效果等於：</p>
+<div class="say">
+<p>「不管物價怎麼變，我補到讓你<mark>剛好買得起以前那一籃</mark>。」</p>
+</div>
+<p>聽起來只是讓他「跟以前一樣好」，但其實會讓他<strong>變得更好</strong>。下圖是作業第 3 題的數字：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "完全指數化：補貼後的預算線通過基期組合但斜率不同",
+  "x": [0, 13], "y": [0, 21], "h": 370,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "步驟", "steps": ["① 基期", "② 物價上漲（補貼前）", "③ 補貼 9 元之後"] } ],
+  "fns": [
+    { "f": "20-2*x", "color": "f", "label": "基期預算線 2x₁ + x₂ = 20" },
+    { "f": "(26-3*x)/2", "color": "d1", "dash": true, "label": "補貼前 3x₁ + 2x₂ = 26", "if": "a-1.5" },
+    { "f": "(35-3*x)/2", "color": "pos", "label": "補貼後 3x₁ + 2x₂ = 35", "if": "a-2.5" },
+    { "f": "50/x", "color": "d2", "w": 1.8, "domain": [2, 13], "label": "通過基期組合的無異曲線（示意）" }
+  ],
+  "shapes": [
+    { "type": "text", "x": 9.3, "y": 6.2, "t": "這一小段在無異曲線上方", "color": "pos", "size": 12, "if": "a-2.5" },
+    { "type": "arrow", "x1": 8.4, "y1": 7.2, "x2": 6.9, "y2": 7.6, "color": "pos", "w": 1.6, "if": "a-2.5" }
+  ],
+  "points": [
+    { "x": 5, "y": 10, "color": "f", "label": "基期組合 (5, 10)", "pos": "tr" },
+    { "x": 5.833, "y": 8.75, "color": "pos", "label": "補貼後的新選擇", "pos": "bl", "if": "a-2.5" }
+  ],
+  "readouts": [
+    { "label": "現在的畫面", "expr": "a-2", "neg": "基期：價格 (2, 1)、所得 20，選 (5, 10)", "zero": "價格漲成 (3, 2)，所得 26：基期組合要 35 元，買不起了", "pos": "補貼 9 元，所得 35：綠線剛好通過基期組合，但比藍線平", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>綠線通過基期組合，所以他至少可以過得跟以前一樣。但相對價格變了（2 : 1 變成 3 : 2），綠線比藍線平，會切進無異曲線上方，於是他能挑到更喜歡的組合。紫線假設偏好是 U = x₁x₂，只是幫助想像。</figcaption>
+</figure>
+<div class="key" data-title="結論">
+<p>補貼後基期組合 $x^b$ 還買得起，如果他改選別的組合 $x^t$，那就是 $x^t \succ_D x^b$：<strong>完全指數化讓受補貼的人嚴格變好</strong>（只要相對價格有變）。這就是「用 Laspeyres 指數算的 CPI 會高估生活成本」的原因。</p>
+</div>
+<p>簡報的數字：美國 CPI 的偏誤估計大約每年 1% 左右。如果年金每年多補 1%，連續 20 年：</p>
+$$(1 + 0.01)^{20} = 1.01^{20} \approx 1.22$$
+<p>20 年後年金大約「多了 22%」。</p>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">某國把老人年金按 Laspeyres 物價指數完全指數化。這一年各種商品的漲幅不一樣（相對價格有變）。領年金的人會？</p>
+<button>變得比基期好</button>
+<button>跟基期一樣好</button>
+<button>變得比基期差</button>
+<p class="quiz-why">新的預算線通過基期組合，所以基期組合還買得起；但斜率變了，他可以換成更喜歡的組合。新選擇被顯示偏好於基期組合，所以變好。只有在所有價格同比例上漲（相對價格不變）時才會剛好一樣好。</p>
+</div>
+
+<h2 id="problems">作業 HW6</h2>
+<p>先自己算，卡住再一步一步打開解答。</p>
+
+<article class="prob" data-prob="HW6-1">
+<h3>三種商品、三期的顯示性偏好</h3>
+<div class="prob-q">
+<p>一個消費者在三個時期從三種商品中做選擇，價格和選的組合如下：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>時期</th><th>價格 $(p_1, p_2, p_3)$</th><th>選的組合</th></tr></thead>
+<tbody>
+<tr><td>第 1 期</td><td>$(2, 1, 3)$</td><td>$A = (4, 2, 1)$</td></tr>
+<tr><td>第 2 期</td><td>$(3, 2, 1)$</td><td>$B = (2, 4, 1)$</td></tr>
+<tr><td>第 3 期</td><td>$(1, 3, 2)$</td><td>$C = (1, 2, 4)$</td></tr>
+</tbody>
+</table>
+</div>
+<p>(A) 算出在每一期的價格下，買 A、B、C 各要花多少錢，列成 3 × 3 的表（像簡報那樣）。<br>(B) 列出 A、B、C 之間所有直接與間接的顯示性偏好關係。<br>(C) 這個消費者的行為有沒有違反 WARP 或 SARP？請說明。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>每一格是價格和數量對應相乘再相加。例如第 1 期價格買 B：$2\times 2 + 1\times 4 + 3\times 1$。算完後每一列跟自己的對角線比。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 先算第一列</h4>
+<p>用第 1 期的價格 $(2, 1, 3)$：</p>
+$$\begin{aligned}\text{買 A}&: 2\times 4 + 1\times 2 + 3\times 1 = 13\\ \text{買 B}&: 2\times 2 + 1\times 4 + 3\times 1 = 11\\ \text{買 C}&: 2\times 1 + 1\times 2 + 3\times 4 = 16\end{aligned}$$
+</div>
+<div class="step">
+<h4>(A) 另外兩列</h4>
+<p>用第 2 期的價格 $(3, 2, 1)$：</p>
+$$\text{A}: 12 + 4 + 1 = 17\qquad \text{B}: 6 + 8 + 1 = 15\qquad \text{C}: 3 + 4 + 4 = 11$$
+<p>用第 3 期的價格 $(1, 3, 2)$：</p>
+$$\text{A}: 4 + 6 + 2 = 12\qquad \text{B}: 2 + 12 + 2 = 16\qquad \text{C}: 1 + 6 + 8 = 15$$
+</div>
+<div class="step">
+<h4>(A) 完整的花費表</h4>
+<div class="tbl-wrap">
+<table class="tbl rp-tbl">
+<thead><tr><th>價格＼組合</th><th class="n">A (4, 2, 1)</th><th class="n">B (2, 4, 1)</th><th class="n">C (1, 2, 4)</th></tr></thead>
+<tbody>
+<tr><th scope="row">第 1 期 (2, 1, 3)</th><td class="n chosen">13</td><td class="n"><span class="circ">11</span></td><td class="n no">16</td></tr>
+<tr><th scope="row">第 2 期 (3, 2, 1)</th><td class="n no">17</td><td class="n chosen">15</td><td class="n"><span class="circ">11</span></td></tr>
+<tr><th scope="row">第 3 期 (1, 3, 2)</th><td class="n"><span class="circ">12</span></td><td class="n no">16</td><td class="n chosen">15</td></tr>
+</tbody>
+</table>
+</div>
+<p class="rp-key"><span class="chosen">紅字</span>＝那一期實際選的（實際花費）　<span class="circ">圈起來</span>＝買得起卻沒選　<span class="no">灰字</span>＝買不起</p>
+</div>
+<div class="step">
+<h4>(B) 直接顯示性偏好</h4>
+<p>一列一列和對角線比：</p>
+<ul>
+<li>第 1 期花 13 選 A。B 只要 11，買得起；C 要 16，買不起。所以 $A \succ_D B$。</li>
+<li>第 2 期花 15 選 B。C 只要 11，買得起；A 要 17，買不起。所以 $B \succ_D C$。</li>
+<li>第 3 期花 15 選 C。A 只要 12，買得起；B 要 16，買不起。所以 $C \succ_D A$。</li>
+</ul>
+</div>
+<div class="step">
+<h4>(B) 間接顯示性偏好</h4>
+<p>把直接關係兩兩接起來：</p>
+<ul>
+<li>$A \succ_D B$ 且 $B \succ_D C$ $\Rightarrow$ $A \succ_I C$</li>
+<li>$B \succ_D C$ 且 $C \succ_D A$ $\Rightarrow$ $B \succ_I A$</li>
+<li>$C \succ_D A$ 且 $A \succ_D B$ $\Rightarrow$ $C \succ_I B$</li>
+</ul>
+</div>
+<div class="step">
+<h4>(C) 檢查 WARP</h4>
+<p>WARP 只看直接關係。三對組合逐一檢查：</p>
+<ul>
+<li>A 和 B：有 $A \succ_D B$；第 2 期 A 要 17 買不起，沒有 $B \succ_D A$。</li>
+<li>B 和 C：有 $B \succ_D C$；第 3 期 B 要 16 買不起，沒有 $C \succ_D B$。</li>
+<li>C 和 A：有 $C \succ_D A$；第 1 期 C 要 16 買不起，沒有 $A \succ_D C$。</li>
+</ul>
+<p>沒有任何一對互相直接打敗，<strong>不違反 WARP</strong>。</p>
+</div>
+<div class="step">
+<h4>(C) 檢查 SARP</h4>
+<p>把間接關係加進來就出現矛盾：</p>
+<ul>
+<li>$A \succ_D B$，但 $B \succ_I A$</li>
+<li>$B \succ_D C$，但 $C \succ_I B$</li>
+<li>$C \succ_D A$，但 $A \succ_I C$</li>
+</ul>
+<p>偏好繞成一圈 $A \succ B \succ C \succ A$，<strong>違反 SARP</strong>（3 處）。沒有任何行為良好的偏好能解釋這三次選擇。把數字丟進上面的檢查器（第一個按鈕）可以對答案。</p>
+<p class="answer"><span>花費表三列是 13、11、16／17、15、11／12、16、15。直接：$A \succ_D B$、$B \succ_D C$、$C \succ_D A$；間接：$A \succ_I C$、$B \succ_I A$、$C \succ_I B$。不違反 WARP，但違反 SARP。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW6-2">
+<h3>Laspeyres、Paasche 價格指數與支出比</h3>
+<div class="prob-q">
+<p>基期的價格是 $(1, 1)$，選的組合是 $(4, 6)$。當期的價格是 $(2, 1)$，選的組合是 $(6, 6)$。</p>
+<p>(A) 計算當期相對於基期的 Laspeyres 價格指數與 Paasche 價格指數。<br>(B) 計算當期相對於基期的支出比 $M$。<br>(C) 比較 Laspeyres 價格指數、Paasche 價格指數與 $M$。根據結果，對消費者兩期的福利可以下什麼結論？如果某個指數本身無法得出結論，說明原因。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>先把四個「價格 × 組合」算出來：$p^b\!\cdot x^b$、$p^b\!\cdot x^t$、$p^t\!\cdot x^b$、$p^t\!\cdot x^t$。三個答案都只是這四個數字相除。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>先算四個數字</h4>
+<div class="tbl-wrap">
+<table class="tbl rp-tbl">
+<thead><tr><th>價格＼組合</th><th class="n">$x^b = (4, 6)$</th><th class="n">$x^t = (6, 6)$</th></tr></thead>
+<tbody>
+<tr><th scope="row">基期價格 (1, 1)</th><td class="n chosen">$4 + 6 = 10$</td><td class="n no">$6 + 6 = 12$</td></tr>
+<tr><th scope="row">當期價格 (2, 1)</th><td class="n"><span class="circ">$8 + 6 = 14$</span></td><td class="n chosen">$12 + 6 = 18$</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="step">
+<h4>(A) 兩個價格指數</h4>
+$$L_p = \frac{p^t\!\cdot x^b}{p^b\!\cdot x^b} = \frac{14}{10} = 1.4 \qquad\quad P_p = \frac{p^t\!\cdot x^t}{p^b\!\cdot x^t} = \frac{18}{12} = 1.5$$
+<p>Laspeyres 用基期組合 $(4, 6)$ 當權數，Paasche 用當期組合 $(6, 6)$ 當權數。</p>
+</div>
+<div class="step">
+<h4>(B) 支出比</h4>
+$$M = \frac{p^t\!\cdot x^t}{p^b\!\cdot x^b} = \frac{18}{10} = 1.8$$
+</div>
+<div class="step">
+<h4>(C) Laspeyres 和 M 比</h4>
+$$L_p = 1.4 \lt M = 1.8 \;\Longleftrightarrow\; p^t\!\cdot x^b = 14 \lt p^t\!\cdot x^t = 18$$
+<p>當期他花了 18，而基期組合只要 14，<strong>買得起卻沒選</strong>。所以 $x^t \succ_D x^b$，消費者在<strong>當期比較好</strong>。</p>
+</div>
+<div class="step">
+<h4>(C) Paasche 和 M 比</h4>
+$$P_p = 1.5 \lt M = 1.8 \;\Longleftrightarrow\; p^b\!\cdot x^t = 12 \gt p^b\!\cdot x^b = 10$$
+<p>基期他只花了 10，當期組合要 12，<strong>當時買不起</strong>。他在基期選 $x^b$ 並不代表 $x^b$ 比 $x^t$ 好，所以 <strong>Paasche 指數本身沒有結論</strong>。（要 $P_p \gt M$ 才能說基期比較好。）</p>
+</div>
+<div class="step">
+<h4>(C) 總結</h4>
+<p>大小順序是 $L_p = 1.4 \lt P_p = 1.5 \lt M = 1.8$。支出成長得比兩個價格指數都快。由 Laspeyres 可以確定當期的福利比基期高；Paasche 單獨看無法判斷，但也沒有和這個結論衝突。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業 HW6 第 2 題：兩期的預算線與選擇",
+  "x": [0, 12], "y": [0, 20], "h": 290,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "10-x", "color": "f", "label": "基期預算線 x₁ + x₂ = 10" },
+    { "f": "18-2*x", "color": "pos", "label": "當期預算線 2x₁ + x₂ = 18" }
+  ],
+  "points": [
+    { "x": 4, "y": 6, "color": "f", "label": "xᵇ (4, 6)", "pos": "bl" },
+    { "x": 6, "y": 6, "color": "pos", "label": "xᵗ (6, 6)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>藍點在綠線下方：當期買得起 xᵇ 卻沒選，所以當期比較好。綠點在藍線外面：基期買不起 xᵗ，所以從基期的選擇看不出什麼。</figcaption>
+</figure>
+<p class="answer"><span>(A) $L_p = 1.4$、$P_p = 1.5$　(B) $M = 1.8$　(C) $L_p \lt M$：當期買得起基期組合卻選了別的，當期比較好；$P_p \lt M$：基期買不起當期組合，Paasche 本身無法下結論。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW6-3">
+<h3>補貼到買得起基期組合</h3>
+<div class="prob-q">
+<p>基期的價格是 $(2, 1)$，選的組合是 $(5, 10)$。當期的價格是 $(3, 2)$，政府介入之前消費者的所得是 26。</p>
+<p>(A) 計算消費者在基期的所得。<br>(B) 在當期價格下，要多少所得才買得起基期組合？<br>(C) 政府想讓消費者在當期價格下買得起基期組合，應該補貼多少？<br>(D) 拿到補貼後，假設消費者選了另一個不同的組合。用顯示性偏好比較他的福利和基期的福利。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>(A)(B) 都是「價格 × 組合」，只是用的價格不同。(D) 問自己：補貼後基期組合買不買得起？買得起卻改選別的，代表什麼？</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 基期所得</h4>
+<p>基期把所得花完買了 $(5, 10)$：</p>
+$$m^b = 2\times 5 + 1\times 10 = 20$$
+</div>
+<div class="step">
+<h4>(B) 當期價格下買基期組合</h4>
+$$3\times 5 + 2\times 10 = 15 + 20 = 35$$
+</div>
+<div class="step">
+<h4>(C) 補貼金額</h4>
+<p>他現在只有 26，還差：</p>
+$$35 - 26 = 9$$
+<p>順帶一提，Laspeyres 價格指數是 $\dfrac{35}{20} = 1.75$。所得從 20 補到 35 剛好也是 1.75 倍，這就是完全指數化。</p>
+</div>
+<div class="step">
+<h4>(D) 用顯示性偏好比較</h4>
+<p>補貼後的預算線是 $3x_1 + 2x_2 = 35$，基期組合 $(5, 10)$ 剛好在線上，<strong>買得起</strong>。</p>
+<p>他明明買得起 $(5, 10)$，卻選了另一個組合 $x^t$，所以</p>
+$$x^t \succ_D (5, 10)$$
+<p>新的選擇被直接顯示偏好於基期組合：他在補貼後的福利<strong>比基期高</strong>（至少不會比較差）。原因是相對價格從 $2 : 1$ 變成 $3 : 2$，預算線繞著基期組合轉了一個角度，讓他有機會換到更喜歡的組合。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業 HW6 第 3 題：基期預算線、補貼前與補貼後的預算線",
+  "x": [0, 13], "y": [0, 21], "h": 300,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "20-2*x", "color": "f", "label": "基期 2x₁ + x₂ = 20" },
+    { "f": "(26-3*x)/2", "color": "d1", "dash": true, "label": "補貼前 3x₁ + 2x₂ = 26" },
+    { "f": "(35-3*x)/2", "color": "pos", "label": "補貼後 3x₁ + 2x₂ = 35" }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 2.2, "y1": 9.9, "x2": 2.2, "y2": 14, "color": "pos", "label": "補貼 9 元", "lo": [8, 4], "anchor": "start" }
+  ],
+  "points": [
+    { "x": 5, "y": 10, "color": "f", "label": "基期組合 (5, 10)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>橘色虛線（所得 26）在基期組合下方，買不起。補貼 9 元後平行外移成綠線，剛好通過基期組合。</figcaption>
+</figure>
+<p class="answer"><span>(A) 20　(B) 35　(C) 補貼 9　(D) 補貼後基期組合仍買得起，卻改選別的組合，新組合被直接顯示偏好於基期組合，所以福利比基期高。</span></p>
+</div>
+</div>
+</article>
+
+<div class="exam">
+<p>花費表一定要標出對角線，並寫清楚「哪一列得到哪個關係」。WARP 和 SARP 要分開下結論，各寫一句理由。指數題最後要用文字寫出結論；遇到無法判斷的情況，要寫出「因為當時買不起，所以沒有透露偏好」這個原因，只寫「無法判斷」不夠。</p>
+</div>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=2"></script>
+</body>
+</html>

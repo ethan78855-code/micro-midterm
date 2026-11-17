@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch9 買與賣｜個體經濟學期中考衝刺</title>
+<meta name="description" content="稟賦與預算線、淨需求、買方與賣方、價格變動的福利效果、勞動供給、含稟賦的 Slutsky 分解，附作業 HW8 三題逐步解答與互動圖表。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body data-page="ch9">
+<main class="page">
+
+<p class="kicker">Chapter 9 · 對應作業 HW8</p>
+<h1>買與賣：所得不是天上掉下來的</h1>
+<p class="lead">前面幾章的所得 $m$ 都是題目直接給的。這一章只改一個設定：你手上本來就有一袋東西（稟賦），賣掉才有錢。就這麼一改，預算線變成<strong>繞著稟賦點轉</strong>，而且價格一變，你的「所得」也跟著變。</p>
+<div data-toc></div>
+
+<h2 id="endow">稟賦與預算線</h2>
+<div class="say">
+<p>你不是帶著一筆現金進市場，而是帶著一袋東西。這袋東西叫<mark>稟賦（endowment）</mark>，記成 $\omega = (\omega_1, \omega_2)$。把整袋東西照市價賣掉能換到多少錢，那就是你的所得。</p>
+</div>
+<p>簡報的例子：稟賦 $\omega = (10, 2)$，價格 $p_1 = 2$、$p_2 = 3$。稟賦的價值是</p>
+$$p_1\omega_1 + p_2\omega_2 = 2\times 10 + 3\times 2 = 26$$
+<p>只要花費不超過 26 元的組合，都可以用這袋稟賦換到。所以預算限制式只是把以前的 $m$ 換掉：</p>
+<div class="key" data-title="有稟賦時的預算限制式">
+$$p_1x_1 + p_2x_2 = p_1\omega_1 + p_2\omega_2$$
+<p>左邊：想要的組合要花多少錢。右邊：稟賦值多少錢。</p>
+</div>
+<p>這條線有兩個一定要記住的性質：</p>
+<ul>
+<li><strong>稟賦點一定在預算線上。</strong>把 $x = \omega$ 代進去，兩邊一模一樣。意思是「什麼都不交易」永遠做得到。</li>
+<li><strong>價格改變時，預算線繞著稟賦點旋轉。</strong>斜率還是 $-p_1/p_2$，但不管價格是多少，線都要通過 $\omega$。</li>
+</ul>
+<p>拖曳 $p_1$ 看看。這張圖的稟賦是 $(12, 4)$、$p_2 = 1$，就是作業第 1 題的那個人：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "稟賦 (12, 4) 的預算線，隨商品 1 的價格繞著稟賦點旋轉",
+  "x": [0, 28], "y": [0, 42], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "shapes": [
+    { "type": "poly", "pts": [[0, 0], ["12+4/a", 0], [0, "12*a+4"]], "close": true, "fill": true, "color": "f", "w": 0.01 }
+  ],
+  "fns": [
+    { "f": "16-x", "color": "mute", "dash": true, "label": "p₁ = 1 時的預算線（對照用）" },
+    { "f": "12*a+4-a*x", "color": "f", "label": "現在的預算線 p₁x₁ + x₂ = 12p₁ + 4" }
+  ],
+  "points": [
+    { "x": "12+4/a", "y": 0, "color": "f", "label": "{{12+4/a|1}}", "pos": "tr" },
+    { "x": 0, "y": "12*a+4", "color": "f", "label": "{{12*a+4|1}}", "pos": "r" },
+    { "x": 12, "y": 4, "color": "ink", "label": "稟賦 ω = (12, 4)", "pos": "tr" }
+  ],
+  "slider": { "label": "商品 1 的價格 p₁", "min": 0.3, "max": 3, "step": 0.05, "value": 1, "digits": 2, "play": true,
+    "presets": [ { "label": "p₁ = 0.5", "value": 0.5 }, { "label": "p₁ = 1（作業第 1 題）", "value": 1 }, { "label": "p₁ = 2", "value": 2 } ] },
+  "readouts": [
+    { "label": "稟賦價值 p₁ω₁ + p₂ω₂", "expr": "12*a+4", "digits": 1, "color": "f" },
+    { "label": "斜率 −p₁/p₂", "expr": "-a", "digits": 2 },
+    { "label": "橫軸截距", "expr": "12+4/a", "digits": 2 },
+    { "label": "縱軸截距", "expr": "12*a+4", "digits": 1 }
+  ]
+}
+</script>
+<figcaption>不管 p₁ 是多少，藍線都穿過黑色的稟賦點，像蹺蹺板一樣繞著它轉。p₁ 上漲時稟賦價值也上升（因為手上有 12 單位的商品 1），所以縱軸截距會往上跑。</figcaption>
+</figure>
+<div class="trap">
+<p>以前所得固定是 $m$ 的時候，$p_1$ 改變，預算線是繞著<strong>縱軸截距</strong> $m/p_2$ 轉。現在不是。畫圖時請<mark>先點出稟賦點，再用斜率 $-p_1/p_2$ 畫線</mark>，兩個截距最後再算。價格變了，右邊的稟賦價值也要重算。</p>
+</div>
+
+<h3>如果價格不變，是稟賦變了呢？</h3>
+<p>簡報第 15 頁的問題：$p_1 = 2$、$p_2 = 1$，稟賦原本是 $(10, 10)$。稟賦改成 $(5, 15)$ 或 $(15, 5)$，預算線怎麼動？價格沒變，斜率就不變，只要看稟賦價值變大還是變小：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "價格固定為 (2, 1)，稟賦改變時預算線平行移動",
+  "x": [0, 20], "y": [0, 38], "h": 320,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "30-2*x", "color": "f", "label": "稟賦 (10, 10)：2x₁ + x₂ = 30" },
+    { "f": "25-2*x", "color": "neg", "label": "稟賦 (5, 15)：2x₁ + x₂ = 25", "if": "0.5-abs(a-2)" },
+    { "f": "35-2*x", "color": "pos", "label": "稟賦 (15, 5)：2x₁ + x₂ = 35", "if": "0.5-abs(a-3)" }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 10, "y1": 10, "x2": 5.5, "y2": 14.5, "color": "neg", "if": "0.5-abs(a-2)" },
+    { "type": "arrow", "x1": 10, "y1": 10, "x2": 14.5, "y2": 5.5, "color": "pos", "if": "0.5-abs(a-3)" }
+  ],
+  "points": [
+    { "x": 10, "y": 10, "color": "f", "label": "(10, 10)", "pos": "tr" },
+    { "x": 5, "y": 15, "color": "neg", "label": "(5, 15)", "pos": "l", "if": "0.5-abs(a-2)" },
+    { "x": 15, "y": 5, "color": "pos", "label": "(15, 5)", "pos": "tr", "if": "0.5-abs(a-3)" }
+  ],
+  "slider": { "label": "稟賦", "steps": ["① 原本 (10, 10)", "② 改成 (5, 15)", "③ 改成 (15, 5)"] },
+  "readouts": [
+    { "label": "稟賦價值 2ω₁ + ω₂", "expr": "30-5*max(0,1-abs(a-2))+5*max(0,1-abs(a-3))", "digits": 0, "color": "f" },
+    { "label": "預算線", "expr": "5*max(0,1-abs(a-3))-5*max(0,1-abs(a-2))", "pos": "平行外移：稟賦變值錢了", "neg": "平行內移：稟賦變不值錢了", "zero": "原本的位置", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>(5, 15) 值 2×5 + 15 = 25，比 30 少，預算線平行往內。(15, 5) 值 2×15 + 5 = 35，預算線平行往外。商品 1 比較貴，所以多拿商品 1 的稟賦比較值錢。</figcaption>
+</figure>
+<div class="quiz" data-answer="2">
+<p class="quiz-q">某人的稟賦是 $(6, 3)$。價格從 $(p_1, p_2) = (1, 2)$ 變成 $(2, 2)$，他的預算線會怎麼動？</p>
+<button>繞著縱軸截距往內轉，縱軸截距不變</button>
+<button>繞著稟賦點 (6, 3) 轉，變得比較陡，稟賦價值從 12 變成 18</button>
+<button>平行往外移動</button>
+<p class="quiz-why">有稟賦時，預算線永遠通過稟賦點。斜率從 $-\tfrac12$ 變成 $-1$（變陡）。稟賦價值原本是 $1\times6 + 2\times3 = 12$，後來是 $2\times6+2\times3 = 18$，縱軸截距也從 6 變成 9。</p>
+</div>
+
+<h2 id="net">淨需求：誰是買方，誰是賣方</h2>
+<div class="say">
+<p>最後想要的數量 $x_i$ 叫<strong>總需求</strong>（gross demand）。它減掉你本來就有的 $\omega_i$，才是你真的要去市場<mark>買進或賣出</mark>的數量，這個差叫<strong>淨需求</strong>（net demand）。</p>
+</div>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>淨需求 $x_i - \omega_i$</th><th>意思</th><th>身分</th></tr></thead>
+<tbody>
+<tr><td class="c-pos">大於 0</td><td>想要的比手上的多，要去買</td><td>買方（net demander／buyer）</td></tr>
+<tr><td class="c-neg">小於 0</td><td>想要的比手上的少，多的拿去賣</td><td>賣方（net supplier／seller）</td></tr>
+<tr><td>等於 0</td><td>剛好消費自己的稟賦</td><td>不交易</td></tr>
+</tbody>
+</table>
+</div>
+<p>把預算限制式右邊移到左邊，就得到這一章最常被考的檢查式：</p>
+<div class="key" data-title="淨需求的總價值是 0">
+$$p_1(x_1 - \omega_1) + p_2(x_2 - \omega_2) = 0$$
+<p>白話：<strong>買東西花的錢 ＝ 賣東西收的錢</strong>。所以兩個淨需求一定一正一負（或都是 0），不可能兩種都買。</p>
+</div>
+<p>簡報的例子：$\omega = (10, 2)$、$p = (2, 3)$，他選了 $x^* = (7, 4)$。</p>
+$$x_1^* - \omega_1 = 7 - 10 = -3 \qquad x_2^* - \omega_2 = 4 - 2 = +2 \qquad 2\times(-3) + 3\times(+2) = 0$$
+<p>他賣掉 3 單位的商品 1（收 6 元），拿去買 2 單位的商品 2（花 6 元）。</p>
+
+<p>下面是作業第 1 題的消費者（$U = x_1x_2$，稟賦 $(12, 4)$，$p_2 = 1$）。拖曳 $p_1$，看他在不同價格下買什麼、賣什麼：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "U = x₁x₂、稟賦 (12, 4) 的消費者在不同 p₁ 下的最適選擇與淨需求",
+  "x": [0, 24], "y": [0, 26], "h": 370,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "12*a+4-a*x", "color": "f", "label": "預算線（一定過稟賦點）" },
+    { "f": "(6+2/a)*(6*a+2)/x", "color": "d2", "label": "過最適點的無異曲線", "domain": [0.8, 24] },
+    { "f": "12/(x-6)+2", "color": "d1", "dash": true, "label": "價格提供曲線 price-offer curve", "toggle": true, "show": false, "domain": [6.4, 24] }
+  ],
+  "shapes": [
+    { "type": "line", "x1": 12, "y1": 4, "x2": "6+2/a", "y2": 4, "color": "neg", "dash": true, "label": "x₁ 淨需求 {{6+2/a-12|2}}", "lo": [0, 17] },
+    { "type": "line", "x1": "6+2/a", "y1": 4, "x2": "6+2/a", "y2": "6*a+2", "color": "pos", "dash": true, "label": "x₂ 淨需求 {{6*a+2-4|2}}", "lo": [-8, 4], "anchor": "end" },
+    { "type": "arrow", "x1": 12, "y1": 4, "x2": "6+2/a", "y2": "6*a+2", "color": "ink" }
+  ],
+  "points": [
+    { "x": 12, "y": 4, "color": "ink", "label": "稟賦 ω", "pos": "tr" },
+    { "x": "6+2/a", "y": "6*a+2", "color": "f", "label": "最適 x* = ({{6+2/a|2}}, {{6*a+2|2}})", "pos": "tr" }
+  ],
+  "slider": { "label": "商品 1 的價格 p₁", "min": 0.2, "max": 2.5, "step": 0.01, "value": 1, "digits": 2, "play": true,
+    "presets": [ { "label": "p₁ = 1（作業第 1 題）", "value": 1 }, { "label": "p₁ = 2", "value": 2 }, { "label": "p₁ = 1/3（不交易）", "value": 0.3333 }, { "label": "p₁ = 0.25（變成買方）", "value": 0.25 } ] },
+  "readouts": [
+    { "label": "商品 1 淨需求 x₁* − ω₁", "expr": "6+2/a-12", "digits": 2, "color": "f" },
+    { "label": "商品 2 淨需求 x₂* − ω₂", "expr": "6*a+2-4", "digits": 2, "color": "f" },
+    { "label": "身分", "expr": "6+2/a-12", "pos": "買進商品 1、賣出商品 2", "neg": "賣出商品 1、買進商品 2", "zero": "剛好不交易，留在稟賦點", "eps": 0.02 },
+    { "label": "淨需求總價值", "expr": "a*(6+2/a-12)+(6*a+2-4)", "digits": 2 }
+  ]
+}
+</script>
+<figcaption>黑色箭頭是「從稟賦走到最適點」的交易。紅色虛線是商品 1 的淨需求，綠色虛線是商品 2 的淨需求。p₁ 越高他賣越多商品 1；p₁ 掉到 1/3 時他剛好不交易，再低他就反過來變成商品 1 的買方。不管怎麼拖，淨需求總價值都是 0。打開橘色虛線可以看到所有最適點連成的價格提供曲線。</figcaption>
+</figure>
+<p>同一個人是買方還是賣方，<strong>不是固定的，要看價格</strong>。把每一個價格下的最適點連起來，就是簡報裡的<strong>價格提供曲線</strong>（price-offer curve）：它一定通過稟賦點，稟賦點的一側是「賣商品 1、買商品 2」，另一側是「買商品 1、賣商品 2」。</p>
+<div class="quiz" data-answer="1">
+<p class="quiz-q">稟賦 $\omega = (10, 2)$，價格 $(p_1, p_2) = (2, 3)$，他選了 $(7, 4)$。下面哪一句是對的？</p>
+<button>他是商品 1 的賣方、商品 2 的買方</button>
+<button>他是商品 1 的買方、商品 2 的賣方</button>
+<button>他兩種商品都買，因為 7 和 4 都是正的</button>
+<p class="quiz-why">看的是淨需求不是總需求：$7 - 10 = -3 \lt 0$（賣方），$4 - 2 = +2 \gt 0$（買方）。而且 $2\times(-3) + 3\times 2 = 0$，賣的錢剛好等於買的錢。</p>
+</div>
+
+<h2 id="welfare">價格變了，他變好還是變差</h2>
+<div class="say">
+<p>降價是好事還是壞事？<mark>要看你是買的人還是賣的人。</mark>你在買的東西變便宜，當然開心。你在賣的東西變便宜，你的稟賦就縮水了。</p>
+</div>
+<div class="key" data-title="用顯示性偏好就能判斷">
+<p><strong>買方遇到降價</strong>：商品 1 的買方（$x_1 \gt \omega_1$），$p_1$ 下降 → <strong>一定變好</strong>。</p>
+<p><strong>賣方遇到降價</strong>：商品 1 的賣方（$x_1 \lt \omega_1$），$p_1$ 下降 → 如果他還是繼續當賣方，<strong>一定變差</strong>。</p>
+</div>
+<details class="peek"><summary>為什麼買方遇到降價一定變好？（三行證明）</summary>
+<p>舊組合 $x$ 在舊價格下剛好花光：$p_1x_1 + p_2x_2 = p_1\omega_1 + p_2\omega_2$。</p>
+<p>價格變成 $p_1'$ 之後，「舊組合的花費」減掉「新的稟賦價值」是</p>
+$$\left(p_1'x_1 + p_2x_2\right) - \left(p_1'\omega_1 + p_2\omega_2\right) = (p_1' - p_1)(x_1 - \omega_1)$$
+<p>降價所以 $p_1' - p_1 \lt 0$，買方所以 $x_1 - \omega_1 \gt 0$，相乘是負的。也就是<strong>舊組合現在還買得起，而且有剩</strong>。他既然可以照舊過日子還有剩，重新選一次只會更好。這就是第 7 章的顯示性偏好。</p>
+</details>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>他是商品 1 的…</th><th>$p_1$ 下降</th><th>$p_1$ 上漲</th></tr></thead>
+<tbody>
+<tr><td>買方</td><td class="c-pos">一定變好</td><td class="c-neg">若繼續當買方，一定變差</td></tr>
+<tr><td>賣方</td><td class="c-neg">若繼續當賣方，一定變差</td><td class="c-pos">一定變好</td></tr>
+</tbody>
+</table>
+</div>
+<p>作業第 2 題就是「買方遇到降價」。按步驟看預算線怎麼轉：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "稟賦 (8, 9)、U = min{x₁, 2x₂}：p₁ 從 2 降到 1 時預算線繞稟賦點旋轉，最適點沿折點連線往外移",
+  "x": [0, 20], "y": [0, 27], "h": 370,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "x/2", "color": "mute", "dash": true, "label": "折點連線 x₁ = 2x₂" },
+    { "f": "25-2*x", "color": "f", "label": "p₁ = 2：2x₁ + x₂ = 25" },
+    { "f": "17-x", "color": "pos", "label": "p₁ = 1：x₁ + x₂ = 17", "if": "a-1.5" }
+  ],
+  "shapes": [
+    { "type": "poly", "pts": [[10, 27], [10, 5], [20, 5]], "color": "d2" },
+    { "type": "text", "x": 18.3, "y": 3.5, "t": "U = 10", "color": "d2" },
+    { "type": "poly", "pts": [[11.333, 27], [11.333, 5.667], [20, 5.667]], "color": "d2", "if": "a-1.5" },
+    { "type": "text", "x": 18, "y": 6.7, "t": "U = 11.33", "color": "d2", "if": "a-1.5" }
+  ],
+  "points": [
+    { "x": 8, "y": 9, "color": "ink", "label": "稟賦 ω = (8, 9)", "pos": "tr" },
+    { "x": 10, "y": 5, "color": "f", "label": "原本 (10, 5)", "pos": "bl" },
+    { "x": 11.333, "y": 5.667, "color": "pos", "label": "新的 (11.33, 5.67)", "pos": "tr", "if": "a-1.5" }
+  ],
+  "slider": { "label": "商品 1 的價格", "steps": ["① 原本 p₁ = 2", "② p₁ 降到 1"] },
+  "readouts": [
+    { "label": "p₁", "expr": "3-a", "digits": 0 },
+    { "label": "稟賦價值 8p₁ + 9", "expr": "33-8*a", "digits": 0, "color": "f" },
+    { "label": "最適組合的效用", "expr": "10+(a-1)*(34/3-10)", "digits": 2, "color": "d2" }
+  ]
+}
+</script>
+<figcaption>他原本買進 2 單位的商品 1（10 − 8）。降價後綠線繞著稟賦點轉，舊的選擇 (10, 5) 落在綠線裡面（只要 15 元，新的稟賦值 17 元），所以他可以沿著折點連線走到更外面的 L 型無異曲線，效用從 10 變成 11.33。</figcaption>
+</figure>
+<div class="quiz" data-answer="3">
+<p class="quiz-q">阿明種稻，是米的<strong>賣方</strong>。今年米價上漲，其他價格不變。阿明的福利會？</p>
+<button>一定變差，因為他自己也要吃米</button>
+<button>不一定，要看他的效用函數</button>
+<button>一定變好，舊的消費組合現在還買得起而且有剩</button>
+<p class="quiz-why">用同一條式子：$(p_1' - p_1)(x_1 - \omega_1)$。漲價所以第一個括號是正的，賣方所以第二個括號是負的，相乘小於 0，舊組合仍然買得起。賣方遇到自己賣的東西漲價，一定變好。</p>
+</div>
+
+<h2 id="labor">勞動供給</h2>
+<div class="say">
+<p>把「稟賦」換成<mark>時間</mark>，同一套工具就能分析要工作幾小時。你每天有固定的時數，不工作的時間就是休閒。多休息 1 小時就少賺 1 小時的工資，所以<strong>休閒的價格就是工資 $w$</strong>。</p>
+</div>
+<p>記號（照簡報）：$\bar R$ 是全部的時間，$R$ 是休閒時數，所以工作時數是 $L = \bar R - R$。$C$ 是消費、$p_c$ 是消費品價格、$w$ 是時薪、$m$ 是非勞動所得（不用工作就有的錢，例如租金收入）。稟賦是 $(\bar R, m)$。</p>
+<div class="key" data-title="勞動供給的預算限制式">
+$$p_cC = m + w(\bar R - R) \quad\Longleftrightarrow\quad p_cC + wR = m + w\bar R$$
+<p>左式：消費支出 ＝ 非勞動所得 ＋ 工資收入。<br>
+右式把它改寫成「買與賣」的樣子：消費支出 ＋「買休閒」的支出 ＝ 稟賦價值（把全部時間都賣掉可以拿到的錢，加上 $m$）。</p>
+$$C = -\frac{w}{p_c}\,R + \frac{m + w\bar R}{p_c}$$
+<p>斜率 $-\dfrac{w}{p_c}$ 的大小叫<strong>實質工資</strong>（real wage）：多工作 1 小時可以多換到幾單位的消費品。</p>
+</div>
+<p>圖上橫軸是休閒 $R$、縱軸是消費 $C$。稟賦點在最右邊 $(\bar R,\ m/p_c)$，代表「完全不工作」。從稟賦點往左走就是開始工作。下面用 $U = CR$、$\bar R = 24$、$p_c = 1$（作業第 3 題的設定）：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "勞動供給：橫軸休閒 R、縱軸消費 C，預算線從稟賦點 (24, m) 往左上延伸",
+  "x": [0, 28], "y": [0, 640], "h": 370,
+  "xlabel": "休閒 R（小時）", "ylabel": "消費 C",
+  "fns": [
+    { "f": "b+a*(24-x)", "color": "f", "label": "預算線 C = m + w(24 − R)", "domain": [0, 24] },
+    { "f": "min(24,12+b/(2*a))*(a*(24-min(24,12+b/(2*a)))+b)/x", "color": "d2", "label": "過最適點的無異曲線 CR = U*", "domain": [1, 28] }
+  ],
+  "vlines": [ { "x": "min(24,12+b/(2*a))", "color": "mute" } ],
+  "shapes": [
+    { "type": "line", "x1": 24, "y1": 0, "x2": 24, "y2": "b", "color": "f" },
+    { "type": "line", "x1": 0, "y1": 18, "x2": "min(24,12+b/(2*a))", "y2": 18, "color": "d2", "w": 5, "label": "休閒 {{min(24,12+b/(2*a))|1}} 小時", "lo": [0, -10] },
+    { "type": "line", "x1": "min(24,12+b/(2*a))", "y1": 18, "x2": 24, "y2": 18, "color": "d1", "w": 5, "label": "工作 {{24-min(24,12+b/(2*a))|1}} 小時", "lo": [0, -10] }
+  ],
+  "points": [
+    { "x": 24, "y": "b", "color": "ink", "label": "稟賦 (24, m)", "pos": "t" },
+    { "x": "min(24,12+b/(2*a))", "y": "a*(24-min(24,12+b/(2*a)))+b", "color": "f", "label": "最適 (R*, C*)", "pos": "tr" }
+  ],
+  "sliders": [
+    { "label": "時薪 w", "min": 2, "max": 30, "step": 0.5, "value": 10, "digits": 1, "unit": " 元", "play": true },
+    { "label": "非勞動所得 m", "min": 0, "max": 200, "step": 5, "value": 40, "digits": 0, "unit": " 元" }
+  ],
+  "presets": [
+    { "label": "w = 10、m = 0", "set": { "a": 10, "b": 0 } },
+    { "label": "w = 10、m = 120", "set": { "a": 10, "b": 120 } },
+    { "label": "w = 20、m = 120", "set": { "a": 20, "b": 120 } },
+    { "label": "m 太多：乾脆不工作", "set": { "a": 4, "b": 200 } }
+  ],
+  "readouts": [
+    { "label": "休閒 R*", "expr": "min(24,12+b/(2*a))", "digits": 2, "unit": " 小時", "color": "d2" },
+    { "label": "勞動供給 L* = 24 − R*", "expr": "24-min(24,12+b/(2*a))", "digits": 2, "unit": " 小時", "color": "d1" },
+    { "label": "消費 C*", "expr": "a*(24-min(24,12+b/(2*a)))+b", "digits": 1 },
+    { "label": "解的型態", "expr": "12+b/(2*a)-24", "pos": "角解：m ≥ 24w，完全不工作", "neg": "內部解：R* = 12 + m/(2w)", "zero": "剛好不工作", "eps": 0.001 }
+  ]
+}
+</script>
+<figcaption>底下紫色那段是休閒、橘色那段是工作，加起來永遠是 24 小時。把 m 往右拖（工資不動）：預算線平行往上，休閒變多、工作變少。把 w 往右拖：預算線繞著稟賦點變陡。在 U = CR 之下，m = 0 時不管工資多少都剛好工作 12 小時。</figcaption>
+</figure>
+<div class="how" data-title="勞動供給題的固定步驟">
+<ol>
+<li>寫預算式：$p_cC + wR = m + w\bar R$（題目說一天 24 小時，$\bar R$ 就是 24）。</li>
+<li>寫相切條件：$\text{MRS} = -\dfrac{MU_R}{MU_C} = -\dfrac{w}{p_c}$（橫軸是 $R$，所以 $R$ 的邊際效用放分子）。</li>
+<li>兩式聯立，解出休閒需求 $R^*$。</li>
+<li>最後別忘了：勞動供給是 $L^* = \bar R - R^*$。</li>
+</ol>
+</div>
+<div class="trap">
+<p>題目問的是<strong>勞動供給</strong> $L^*$，但解出來的是<strong>休閒</strong> $R^*$。很多人算到 $R^*$ 就停了，最後一步 $L^* = 24 - R^*$ 一定要寫。</p>
+</div>
+<div class="quiz" data-answer="2">
+<p class="quiz-q">$U = CR$、一天 24 小時、時薪 $w = 10$、非勞動所得 $m = 40$。用 $R^* = 12 + \dfrac{m}{2w}$，他每天工作幾小時？</p>
+<button>14 小時</button>
+<button>10 小時</button>
+<button>12 小時</button>
+<p class="quiz-why">$R^* = 12 + \dfrac{40}{20} = 14$ 是<strong>休閒</strong>。勞動供給 $L^* = 24 - 14 = 10$ 小時。選 14 的話就是踩到上面那個陷阱了。</p>
+</div>
+
+<h2 id="slutsky">Slutsky 方程式再訪：三種效果</h2>
+<p>第 8 章的 Slutsky 分解假設所得 $m$ 是固定的。現在所得是 $p_1\omega_1 + p_2\omega_2$，<strong>價格一變，所得自己也會變</strong>。所以要多算一項：</p>
+<div class="key" data-title="有稟賦時，價格變動的總效果有三塊">
+<p><span class="tag t-d1">1</span> <strong>替代效果</strong>（pure substitution effect）：相對價格變了，購買力補償到剛好買得起原來的組合。<br>
+<span class="tag t-neg">2</span> <strong>一般所得效果</strong>（ordinary income effect）：假裝貨幣所得沒變，東西變便宜帶來的購買力變化。這就是第 8 章的所得效果。<br>
+<span class="tag t-pos">3</span> <strong>稟賦所得效果</strong>（endowment income effect）：價格變了，稟賦的市價跟著變，貨幣所得其實也變了。</p>
+<p>總效果 ＝ 替代效果 ＋ 一般所得效果 ＋ 稟賦所得效果</p>
+</div>
+<p>用作業第 2 題的數字走一遍（$U = \min\{x_1, 2x_2\}$，稟賦 $(8, 9)$，$p_1$ 從 2 降到 1，看 $x_1$ 的變化）。完全互補的需求是 $x_1 = \dfrac{2m}{2p_1 + p_2}$，新價格下分母是 3：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "有稟賦的 Slutsky 分解：替代效果、一般所得效果、稟賦所得效果四個步驟",
+  "x": [0, 26], "y": [0, 27], "h": 380,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "x/2", "color": "mute", "dash": true, "label": "折點連線 x₁ = 2x₂" },
+    { "f": "25-2*x", "color": "f", "label": "原本：2x₁ + x₂ = 25" },
+    { "f": "15-x", "color": "d1", "dash": true, "label": "補償預算線：x₁ + x₂ = 15", "if": "a-1.5" },
+    { "f": "25-x", "color": "neg", "dash": true, "label": "假裝所得還是 25：x₁ + x₂ = 25", "if": "a-2.5" },
+    { "f": "17-x", "color": "pos", "label": "真正的新預算線：x₁ + x₂ = 17", "if": "a-3.5" }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 10, "y1": 1.4, "x2": 16.667, "y2": 1.4, "color": "neg", "label": "一般所得效果 +6.67", "lo": [0, -9], "if": "a-2.5" },
+    { "type": "arrow", "x1": 16.667, "y1": 3.4, "x2": 11.333, "y2": 3.4, "color": "pos", "label": "稟賦所得效果 −5.33", "lo": [0, -9], "if": "a-3.5" }
+  ],
+  "points": [
+    { "x": 8, "y": 9, "color": "ink", "label": "稟賦 ω", "pos": "tr" },
+    { "x": 16.667, "y": 8.333, "color": "neg", "label": "(16.67, 8.33)", "pos": "tr", "if": "a-2.5" },
+    { "x": 11.333, "y": 5.667, "color": "pos", "label": "最後 (11.33, 5.67)", "pos": "tr", "if": "a-3.5" },
+    { "x": 10, "y": 5, "color": "f", "label": "A (10, 5)", "pos": "bl" }
+  ],
+  "slider": { "label": "步驟", "steps": ["① 原本", "② 替代效果", "③ 一般所得效果", "④ 稟賦所得效果"] },
+  "readouts": [
+    { "label": "這一步的預算", "expr": "25-10*max(0,1-abs(a-2))-8*max(0,1-abs(a-4))", "digits": 0 },
+    { "label": "這一步的 x₁", "expr": "10+6.6667*max(0,1-abs(a-3))+1.3333*max(0,1-abs(a-4))", "digits": 2, "color": "f" },
+    { "label": "x₁ 累計變化", "expr": "6.6667*max(0,1-abs(a-3))+1.3333*max(0,1-abs(a-4))", "digits": 2 }
+  ]
+}
+</script>
+<figcaption>② 橘色補償線通過 A，但完全互補的最適點只會在折點連線上，所以還是 A，替代效果是 0。③ 假裝所得還是 25，會衝到 (16.67, 8.33)。④ 可是稟賦裡的 8 單位商品 1 變便宜了，稟賦只值 17，被拉回 (11.33, 5.67)。</figcaption>
+</figure>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>步驟</th><th>價格</th><th>用多少所得</th><th>選擇 $(x_1, x_2)$</th><th class="n">$x_1$ 的變化</th></tr></thead>
+<tbody>
+<tr><td>原本</td><td>$(2, 1)$</td><td>稟賦價值 $2\times8+9 = 25$</td><td>$(10, 5)$</td><td class="n">—</td></tr>
+<tr><td><span class="tag t-d1">替代效果</span></td><td>$(1, 1)$</td><td>補償所得 $1\times10+1\times5 = 15$</td><td>$(10, 5)$</td><td class="n">$0$</td></tr>
+<tr><td><span class="tag t-neg">一般所得效果</span></td><td>$(1, 1)$</td><td>貨幣所得維持 $25$</td><td>$(16.67,\ 8.33)$</td><td class="n">$+6.67$</td></tr>
+<tr><td><span class="tag t-pos">稟賦所得效果</span></td><td>$(1, 1)$</td><td>稟賦價值其實是 $8+9 = 17$</td><td>$(11.33,\ 5.67)$</td><td class="n">$-5.33$</td></tr>
+<tr><td><strong>合計</strong></td><td></td><td></td><td>$(10,5)\to(11.33,\ 5.67)$</td><td class="n"><strong>$+1.33$</strong></td></tr>
+</tbody>
+</table>
+</div>
+<details class="peek"><summary>為什麼兩個所得效果會互相抵銷一部分？</summary>
+<p>$p_1$ 下降 1 元。站在「買的人」的角度，你原本買 10 單位，省下 $10\times1 = 10$ 元，這是一般所得效果的來源（所得 15 → 25）。</p>
+<p>站在「擁有的人」的角度，你的稟賦裡有 8 單位商品 1，稟賦價值少了 $8\times1 = 8$ 元，這是稟賦所得效果的來源（所得 25 → 17）。</p>
+<p>兩個合起來，購買力淨變化是 $(x_1 - \omega_1)\times 1 = (10 - 8) = +2$ 元（15 → 17）。所以<strong>淨所得效果的方向看淨需求</strong>：買方遇到降價，淨所得效果是正的；賣方遇到降價，淨所得效果是負的。</p>
+</details>
+
+<h2 id="problems">作業 HW8</h2>
+<p>先自己算，卡住再一步一步打開。三題剛好對應上面三個主題：淨需求、價格變動、勞動供給。</p>
+
+<article class="prob" data-prob="HW8-1">
+<h3>有稟賦的 Cobb-Douglas 消費者</h3>
+<div class="prob-q">
+<p>一位消費者的效用函數是 $U = x_1x_2$，稟賦是 $(\omega_1, \omega_2) = (12, 4)$，兩種商品的價格都是 1（$p_1 = p_2 = 1$）。</p>
+<p>(A) 寫出他的預算限制式，並畫在圖上（橫軸 $x_1$、縱軸 $x_2$）。<br>
+(B) 求最適消費組合 $(x_1^*, x_2^*)$。<br>
+(C) 算出兩種商品的淨需求。他是哪一種商品的買方、哪一種的賣方？<br>
+(D) 驗證淨需求的總價值等於 0。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>所得不是題目給的，要自己算：$p_1\omega_1 + p_2\omega_2$。算出所得之後，(B) 就是普通的 Cobb-Douglas 最適選擇。淨需求是「最適量 − 稟賦」。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 預算限制式</h4>
+<p>右邊是稟賦的價值：</p>
+$$p_1x_1 + p_2x_2 = p_1\omega_1 + p_2\omega_2 \;\Rightarrow\; 1\cdot x_1 + 1\cdot x_2 = 1\times12 + 1\times4 \;\Rightarrow\; x_1 + x_2 = 16$$
+</div>
+<div class="step">
+<h4>(A) 畫圖</h4>
+<p>橫軸截距 $(16, 0)$、縱軸截距 $(0, 16)$，斜率 $-p_1/p_2 = -1$，而且一定通過稟賦點 $(12, 4)$（$12 + 4 = 16$ ✓）。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "預算線 x₁ + x₂ = 16，通過稟賦點 (12, 4)",
+  "x": [0, 20], "y": [0, 20], "h": 320,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "shapes": [
+    { "type": "poly", "pts": [[0, 0], [16, 0], [0, 16]], "close": true, "fill": true, "color": "f", "w": 0.01 },
+    { "type": "text", "x": 5, "y": 4.5, "t": "預算集合", "color": "f" }
+  ],
+  "fns": [ { "f": "16-x", "color": "f", "label": "預算線 x₁ + x₂ = 16（斜率 −1）" } ],
+  "points": [
+    { "x": 16, "y": 0, "color": "f", "label": "(16, 0)", "pos": "tr" },
+    { "x": 0, "y": 16, "color": "f", "label": "(0, 16)", "pos": "r" },
+    { "x": 12, "y": 4, "color": "ink", "label": "稟賦 ω = (12, 4)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>考試畫圖要標出：兩個截距、斜率、稟賦點。</figcaption>
+</figure>
+</div>
+<div class="step">
+<h4>(B) 相切條件</h4>
+<p>$MU_1 = x_2$、$MU_2 = x_1$，所以</p>
+$$\text{MRS} = -\frac{MU_1}{MU_2} = -\frac{x_2}{x_1} = -\frac{p_1}{p_2} = -1 \;\Rightarrow\; x_2 = x_1$$
+</div>
+<div class="step">
+<h4>(B) 代回預算式</h4>
+$$x_1 + x_1 = 16 \;\Rightarrow\; x_1^* = 8,\quad x_2^* = 8$$
+<p>檢查：$U = x_1x_2$ 是兩個指數相同的 Cobb-Douglas，所得會平分給兩種商品，各花 $16/2 = 8$ 元，價格是 1，所以各買 8 單位 ✓。</p>
+</div>
+<div class="step">
+<h4>(C) 淨需求</h4>
+$$x_1^* - \omega_1 = 8 - 12 = -4 \qquad x_2^* - \omega_2 = 8 - 4 = +4$$
+<p>商品 1 的淨需求是負的：他是商品 1 的<strong>賣方</strong>（賣出 4 單位）。商品 2 的淨需求是正的：他是商品 2 的<strong>買方</strong>（買進 4 單位）。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "從稟賦點 (12, 4) 交易到最適點 (8, 8)：賣出 4 單位商品 1，買進 4 單位商品 2",
+  "x": [0, 20], "y": [0, 20], "h": 330,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "16-x", "color": "f", "label": "預算線 x₁ + x₂ = 16" },
+    { "f": "64/x", "color": "d2", "label": "無異曲線 x₁x₂ = 64", "domain": [2, 20] }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 12, "y1": 4, "x2": 8.2, "y2": 4, "color": "neg", "label": "賣出 4 單位 x₁", "lo": [0, 17] },
+    { "type": "arrow", "x1": 8, "y1": 4, "x2": 8, "y2": 7.7, "color": "pos", "label": "買進 4 單位 x₂", "lo": [-8, 4], "anchor": "end" }
+  ],
+  "points": [
+    { "x": 12, "y": 4, "color": "ink", "label": "稟賦 (12, 4)", "pos": "tr" },
+    { "x": 8, "y": 8, "color": "f", "label": "最適 (8, 8)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>他手上商品 1 太多、商品 2 太少，所以賣掉一些商品 1 去換商品 2，走到無異曲線和預算線相切的地方。</figcaption>
+</figure>
+</div>
+<div class="step">
+<h4>(D) 驗證總價值為 0</h4>
+$$p_1(x_1^* - \omega_1) + p_2(x_2^* - \omega_2) = 1\times(-4) + 1\times(+4) = 0\ \checkmark$$
+<p>賣商品 1 收到 4 元，剛好拿去付買商品 2 的 4 元。</p>
+<p class="answer"><span>(A) $x_1 + x_2 = 16$。(B) $(x_1^*, x_2^*) = (8, 8)$。(C) 淨需求：商品 1 是 $-4$（賣方），商品 2 是 $+4$（買方）。(D) $1\times(-4) + 1\times 4 = 0$。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW8-2">
+<h3>完全互補的消費者遇到降價</h3>
+<div class="prob-q">
+<p>一位消費者的效用函數是 $U = \min\{x_1, 2x_2\}$，稟賦是 $(\omega_1, \omega_2) = (8, 9)$。一開始 $p_1 = 2$、$p_2 = 1$。</p>
+<p>(A) 寫出預算限制式，並求最適消費組合。<br>
+(B) 算出 $x_1$、$x_2$ 的淨需求。他各是買方還是賣方？<br>
+(C) 假設 $p_1$ 從 2 降到 1，$p_2$ 不變。求新的預算限制式與最適消費組合。<br>
+(D) 降價之後他變好還是變差？算出效用水準來支持你的答案。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>$\min\{x_1, 2x_2\}$ 的最適點一定在折點上，也就是兩個東西相等：$x_1 = 2x_2$。把它代進預算式就好，不用微分。價格變了之後，右邊的稟賦價值要重算。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 預算限制式</h4>
+$$2x_1 + x_2 = 2\times8 + 1\times9 = 25$$
+</div>
+<div class="step">
+<h4>(A) 最適組合在折點</h4>
+<p>完全互補不會浪費任何一種商品，所以 $x_1 = 2x_2$。代入預算式：</p>
+$$2(2x_2) + x_2 = 25 \;\Rightarrow\; 5x_2 = 25 \;\Rightarrow\; x_2^* = 5,\quad x_1^* = 10$$
+<p>最適組合是 $(10, 5)$，效用 $U = \min\{10,\ 2\times5\} = 10$。</p>
+</div>
+<div class="step">
+<h4>(B) 淨需求</h4>
+$$x_1^* - \omega_1 = 10 - 8 = +2 \qquad x_2^* - \omega_2 = 5 - 9 = -4$$
+<p>他是 $x_1$ 的<strong>買方</strong>（買進 2 單位）、$x_2$ 的<strong>賣方</strong>（賣出 4 單位）。</p>
+<p>檢查：$2\times(+2) + 1\times(-4) = 0$ ✓。</p>
+</div>
+<div class="step">
+<h4>(C) 新的預算限制式</h4>
+<p>$p_1$ 變成 1，右邊的稟賦價值也要重算：</p>
+$$x_1 + x_2 = 1\times8 + 1\times9 = 17$$
+<p>稟賦價值從 25 掉到 17，因為他手上那 8 單位的 $x_1$ 變便宜了。</p>
+</div>
+<div class="step">
+<h4>(C) 新的最適組合</h4>
+<p>折點條件不變，還是 $x_1 = 2x_2$：</p>
+$$2x_2 + x_2 = 17 \;\Rightarrow\; x_2^* = \frac{17}{3} \approx 5.67,\quad x_1^* = \frac{34}{3} \approx 11.33$$
+</div>
+<div class="step">
+<h4>(D) 比較效用</h4>
+$$U_{\text{前}} = \min\{10,\ 2\times5\} = 10 \qquad U_{\text{後}} = \min\left\{\tfrac{34}{3},\ 2\times\tfrac{17}{3}\right\} = \tfrac{34}{3} \approx 11.33$$
+<p>$11.33 \gt 10$，他<strong>變好了</strong>。</p>
+<p>原因：他是 $x_1$ 的買方，而 $x_1$ 變便宜了。雖然稟賦價值少了 8 元，但舊的組合 $(10, 5)$ 在新價格下只要 $10 + 5 = 15$ 元，比新的稟賦價值 17 元還少，舊組合買得起還有剩，所以一定不會變差。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "降價前後的預算線都通過稟賦點 (8, 9)，舊選擇 (10, 5) 落在新預算線內側",
+  "x": [0, 20], "y": [0, 27], "h": 350,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "x/2", "color": "mute", "dash": true, "label": "折點連線 x₁ = 2x₂" },
+    { "f": "25-2*x", "color": "f", "label": "降價前：2x₁ + x₂ = 25" },
+    { "f": "17-x", "color": "pos", "label": "降價後：x₁ + x₂ = 17" }
+  ],
+  "shapes": [
+    { "type": "poly", "pts": [[10, 27], [10, 5], [20, 5]], "color": "d2" },
+    { "type": "text", "x": 18.3, "y": 3.5, "t": "U = 10", "color": "d2" },
+    { "type": "poly", "pts": [[11.333, 27], [11.333, 5.667], [20, 5.667]], "color": "d2" },
+    { "type": "text", "x": 18, "y": 6.7, "t": "U = 11.33", "color": "d2" }
+  ],
+  "points": [
+    { "x": 8, "y": 9, "color": "ink", "label": "稟賦 (8, 9)", "pos": "tr" },
+    { "x": 10, "y": 5, "color": "f", "label": "前 (10, 5)", "pos": "bl" },
+    { "x": 11.333, "y": 5.667, "color": "pos", "label": "後 (11.33, 5.67)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>藍點在綠線的左下方（買得起），所以降價後可以走到更外面的 L 型無異曲線。</figcaption>
+</figure>
+<p class="answer"><span>(A) $2x_1 + x_2 = 25$，最適 $(10, 5)$。(B) 淨需求 $+2$（$x_1$ 的買方）、$-4$（$x_2$ 的賣方）。(C) $x_1 + x_2 = 17$，最適 $\left(\tfrac{34}{3}, \tfrac{17}{3}\right) \approx (11.33,\ 5.67)$。(D) 效用從 $10$ 上升到 $\tfrac{34}{3} \approx 11.33$，變好。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW8-3">
+<h3>勞動供給函數</h3>
+<div class="prob-q">
+<p>一位勞工每天有 24 小時，可以分配給休閒 $R$ 和工作。效用函數是 $U = CR$，其中 $C$ 是消費。時薪是 $w$，非勞動所得是 $m$，消費品的價格是 $p$。假設是內部解。</p>
+<p>(A) 寫出他的預算限制式。<br>
+(B) 把最適休閒需求 $R^*$ 寫成 $m$ 和 $w$ 的函數。<br>
+(C) 把勞動供給函數 $L^* = 24 - R^*$ 寫成 $m$ 和 $w$ 的函數。<br>
+(D) 根據 (C) 的答案，非勞動所得 $m$ 增加會怎麼影響勞動供給？簡單說明。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>工作時數是 $24 - R$，工資收入是 $w(24 - R)$。把休閒當成一種價格是 $w$ 的商品，消費當成價格是 $p$ 的商品，這就是一題普通的 Cobb-Douglas。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 預算限制式</h4>
+<p>消費支出 ＝ 非勞動所得 ＋ 工資收入：</p>
+$$pC = m + w(24 - R)$$
+<p>把 $wR$ 移到左邊，變成「買與賣」的標準形式：</p>
+$$pC + wR = m + 24w$$
+<p>右邊是稟賦 $(24, m)$ 的價值；左邊的 $wR$ 是「買休閒」花的錢。</p>
+</div>
+<div class="step">
+<h4>(B) 相切條件</h4>
+<p>$MU_R = C$、$MU_C = R$。橫軸是 $R$，所以</p>
+$$\text{MRS} = -\frac{MU_R}{MU_C} = -\frac{C}{R} = -\frac{w}{p} \;\Rightarrow\; pC = wR$$
+<p>意思是：花在消費上的錢和花在休閒上的錢一樣多（Cobb-Douglas 兩個指數相同，各花一半）。</p>
+</div>
+<div class="step">
+<h4>(B) 代回預算式，解 R*</h4>
+$$wR + wR = m + 24w \;\Rightarrow\; R^* = \frac{m + 24w}{2w} = 12 + \frac{m}{2w}$$
+<p>$p$ 剛好消掉了，所以 $R^*$ 只跟 $m$、$w$ 有關，符合題目的要求。</p>
+</div>
+<div class="step">
+<h4>(C) 勞動供給</h4>
+$$L^* = 24 - R^* = 24 - \left(12 + \frac{m}{2w}\right) = 12 - \frac{m}{2w}$$
+<p>順便可以算出消費：$C^* = \dfrac{wR^*}{p} = \dfrac{m + 24w}{2p}$。</p>
+</div>
+<div class="step">
+<h4>(D) m 增加的影響</h4>
+$$\frac{\partial L^*}{\partial m} = -\frac{1}{2w} \lt 0$$
+<p>非勞動所得增加，勞動供給<strong>減少</strong>。$m$ 每多 1 元，工作時數少 $\dfrac{1}{2w}$ 小時。</p>
+<p>原因：$m$ 增加時工資 $w$ 沒有變，休閒的價格沒變，所以<strong>沒有替代效果，只有所得效果</strong>。休閒是正常財（$R^* = 12 + \tfrac{m}{2w}$ 隨 $m$ 增加），變有錢就想多休息，工作自然變少。</p>
+<p>補充：內部解需要 $L^* \gt 0$，也就是 $m \lt 24w$。如果 $m$ 大到超過 $24w$，他就乾脆完全不工作。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "勞動供給 L* = 12 − m/(2w) 隨非勞動所得 m 增加而下降",
+  "x": [0, 400], "y": [0, 14], "h": 300,
+  "xlabel": "非勞動所得 m", "ylabel": "勞動供給 L*（小時）",
+  "fns": [ { "f": "max(0,12-x/(2*a))", "color": "f", "label": "L* = 12 − m/(2w)" } ],
+  "vlines": [ { "x": "b", "color": "mute" } ],
+  "points": [ { "x": "b", "y": "max(0,12-b/(2*a))", "color": "d1", "label": "L* = {{max(0,12-b/(2*a))|2}}", "pos": "tr" } ],
+  "sliders": [
+    { "label": "時薪 w", "min": 5, "max": 30, "step": 1, "value": 10, "digits": 0, "unit": " 元" },
+    { "label": "非勞動所得 m", "min": 0, "max": 400, "step": 10, "value": 40, "digits": 0, "unit": " 元" }
+  ],
+  "readouts": [
+    { "label": "休閒 R* = 12 + m/(2w)", "expr": "min(24,12+b/(2*a))", "digits": 2, "color": "d2" },
+    { "label": "勞動 L* = 12 − m/(2w)", "expr": "max(0,12-b/(2*a))", "digits": 2, "color": "f" },
+    { "label": "斜率 ∂L*/∂m = −1/(2w)", "expr": "-1/(2*a)", "digits": 3 }
+  ]
+}
+</script>
+<figcaption>勞動供給對 m 是一條往右下的直線：m = 0 時工作 12 小時，m 到 24w 時降到 0。工資越高，線越平，同樣多的非勞動所得讓他少做的時數越少。</figcaption>
+</figure>
+<p class="answer"><span>(A) $pC + wR = m + 24w$。(B) $R^* = 12 + \dfrac{m}{2w}$。(C) $L^* = 12 - \dfrac{m}{2w}$。(D) $\dfrac{\partial L^*}{\partial m} = -\dfrac{1}{2w} \lt 0$，$m$ 增加使勞動供給減少（休閒是正常財，純所得效果）。</span></p>
+</div>
+</div>
+</article>
+
+<div class="exam">
+<p>這一章的題目有固定的檢查點，寫完對一下：</p>
+<ul>
+<li><strong>所得要自己算。</strong>看到稟賦就先寫 $p_1\omega_1 + p_2\omega_2$；價格一變，這個數字要重算（第 2 題的 25 變 17）。</li>
+<li><strong>畫圖先標稟賦點</strong>，再標兩個截距和斜率。價格改變的圖，新舊兩條線要在稟賦點交叉。</li>
+<li><strong>淨需求要寫正負號和身分</strong>：「$-4$，賣方」「$+4$，買方」。最後用 $p_1(x_1-\omega_1)+p_2(x_2-\omega_2)=0$ 檢查一次。</li>
+<li><strong>問變好變差，要算效用</strong>，把前後兩個數字都寫出來比較，再補一句原因（買方遇到降價）。</li>
+<li><strong>勞動供給題</strong>最後一步是 $L^* = 24 - R^*$，不要停在 $R^*$。</li>
+</ul>
+</div>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=2"></script>
+</body>
+</html>

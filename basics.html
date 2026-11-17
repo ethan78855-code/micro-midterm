@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>暖身：預算線、無異曲線與最適選擇｜個體經濟學期中考衝刺</title>
+<meta name="description" content="Ch2–Ch5 快速複習：預算線、偏好與無異曲線、MRS、四種效用函數，以及 Cobb-Douglas、完全替代、完全互補三種需求函數的求法，含互動圖表。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body data-page="basics">
+<main class="page">
+
+<p class="kicker">暖身 · Ch2–Ch5 快速複習</p>
+<h1>預算線、無異曲線與最適選擇</h1>
+<p class="lead">這一頁不在作業範圍裡，但 HW6 到 HW9 每一題都會用到。只要記住一件事：消費者在<strong>預算線</strong>上，挑一個落在<strong>最高那條無異曲線</strong>上的點。後面四章都是這句話的變形。</p>
+<div data-toc></div>
+
+<h2 id="budget">預算線：買得起的邊界</h2>
+<div class="say">
+<p>手上有 $m$ 元，兩種商品的價格是 $p_1$、$p_2$。<mark>剛好把錢花光</mark>的所有組合連起來，就是預算線（budget line）。線上和線下的組合都買得起，合起來叫預算集合（budget set）。</p>
+</div>
+<div class="key" data-title="預算線">
+$$p_1x_1 + p_2x_2 = m$$
+<p>橫軸截距 $\dfrac{m}{p_1}$（錢全部買商品 1）　縱軸截距 $\dfrac{m}{p_2}$（錢全部買商品 2）　斜率 $-\dfrac{p_1}{p_2}$</p>
+</div>
+<p>斜率 $-p_1/p_2$ 的意思是：<strong>多買 1 單位 $x_1$，就得少買 $p_1/p_2$ 單位 $x_2$</strong>。這是市場上兩種商品的交換比例，也叫相對價格（relative price）。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "可以調整兩個價格與所得的預算線",
+  "x": [0, 64], "y": [0, 64], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "shapes": [
+    { "type": "poly", "pts": [[0, 0], ["c/a", 0], [0, "c/b"]], "close": true, "fill": true, "color": "f" },
+    { "type": "text", "x": "c/a/3.3", "y": "c/b/3.6", "t": "預算集合", "color": "f" }
+  ],
+  "fns": [
+    { "f": "40-2*x", "color": "mute", "dash": true, "label": "原本：p₁ = 2、p₂ = 1、m = 40" },
+    { "f": "(c-a*x)/b", "color": "f", "label": "現在的預算線" }
+  ],
+  "points": [
+    { "x": "c/a", "y": 0, "color": "f", "label": "m/p₁ = {{c/a|1}}", "pos": "tr" },
+    { "x": 0, "y": "c/b", "color": "f", "label": "m/p₂ = {{c/b|1}}", "pos": "tr" }
+  ],
+  "sliders": [
+    { "label": "p₁（商品 1 的價格）", "min": 1, "max": 5, "step": 0.1, "value": 2, "digits": 1 },
+    { "label": "p₂（商品 2 的價格）", "min": 1, "max": 5, "step": 0.1, "value": 1, "digits": 1 },
+    { "label": "m（所得）", "min": 10, "max": 60, "step": 1, "value": 40, "digits": 0 }
+  ],
+  "presets": [
+    { "label": "回到原本", "set": { "a": 2, "b": 1, "c": 40 } },
+    { "label": "所得變少", "set": { "a": 2, "b": 1, "c": 24 } },
+    { "label": "p₁ 變貴", "set": { "a": 4, "b": 1, "c": 40 } },
+    { "label": "p₂ 變貴", "set": { "a": 2, "b": 2, "c": 40 } }
+  ],
+  "readouts": [
+    { "label": "橫軸截距 m/p₁", "expr": "c/a", "digits": 1, "color": "f" },
+    { "label": "縱軸截距 m/p₂", "expr": "c/b", "digits": 1, "color": "f" },
+    { "label": "斜率 −p₁/p₂", "expr": "-a/b", "digits": 2, "color": "d1" }
+  ]
+}
+</script>
+<figcaption>灰色虛線是原本的預算線，方便比較。按「所得變少」會看到整條線平行往內移；按「p₁ 變貴」會看到它繞著縱軸上的點往內轉。</figcaption>
+</figure>
+<div class="how" data-title="預算線怎麼動，只有兩種">
+<ol>
+<li><strong>所得 $m$ 變動</strong>：兩個截距一起變，斜率不變 → <mark>平行移動</mark>。</li>
+<li><strong>一個價格變動</strong>：只有那個商品的截距在變，另一軸的截距不動 → <mark>繞著另一軸的截距旋轉</mark>。$p_1$ 上漲，線變陡；$p_1$ 下跌，線變平。</li>
+</ol>
+</div>
+<p>後面會一直回來用這兩條規則：Ch8 把「旋轉」拆成兩步，Ch9 的預算線改成繞著稟賦點轉，Ch10 把兩個軸換成今天和明天的消費。</p>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">$p_1 = 2$、$p_2 = 1$、$m = 40$。如果 $p_1$ 漲到 4，其他不變，預算線會怎麼動？</p>
+<button>平行往內移，斜率不變</button>
+<button>繞著縱軸截距 $(0, 40)$ 往內轉，變得更陡</button>
+<button>繞著橫軸截距 $(20, 0)$ 往內轉，變得更平</button>
+<p class="quiz-why">$p_2$ 和 $m$ 沒變，所以縱軸截距 $m/p_2 = 40$ 不動。橫軸截距從 $40/2 = 20$ 縮到 $40/4 = 10$，斜率從 $-2$ 變成 $-4$，更陡。</p>
+</div>
+
+<h2 id="pref">偏好與無異曲線</h2>
+<p>預算線說的是「買得起什麼」，偏好（preference）說的是「喜歡什麼」。比較兩個組合 $x$ 和 $y$ 只有三種結果：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>記號</th><th>念法</th><th>意思</th></tr></thead>
+<tbody>
+<tr><td>$x \succ y$</td><td>嚴格偏好（strictly preferred）</td><td>$x$ 比 $y$ 好</td></tr>
+<tr><td>$x \sim y$</td><td>無異（indifferent）</td><td>一樣好</td></tr>
+<tr><td>$x \succsim y$</td><td>弱偏好（weakly preferred）</td><td>$x$ 至少跟 $y$ 一樣好</td></tr>
+</tbody>
+</table>
+</div>
+<p>經濟學假設偏好滿足三件事，這樣才能排出順序：</p>
+<ul>
+<li><strong>完整性（completeness）</strong>：任兩個組合都比得出來。</li>
+<li><strong>反身性（reflexivity）</strong>：任何組合至少跟自己一樣好。</li>
+<li><strong>遞移性（transitivity）</strong>：$x \succsim y$ 且 $y \succsim z$，就有 $x \succsim z$。Ch7 的「間接顯示性偏好」用的就是這一條。</li>
+</ul>
+<div class="key" data-title="行為良好的偏好（well-behaved preferences）">
+<p><strong>單調（monotonic）</strong>：東西越多越好，所以無異曲線斜率是負的。<br>
+<strong>凸（convex）</strong>：喜歡平均勝過極端，所以無異曲線凸向原點。</p>
+<p>兩個加起來，預算線上最喜歡的組合就<mark>只有一個</mark>。Ch7 整章都靠這個假設。</p>
+</div>
+<p>把一樣好的組合連起來就是無異曲線（indifference curve）。越往右上的無異曲線效用越高，而且<strong>兩條無異曲線不能相交</strong>（相交會違反遞移性）。</p>
+<div class="key" data-title="邊際替代率 MRS（marginal rate of substitution）">
+<p>MRS 就是<mark>無異曲線在那一點的斜率</mark>：多拿 1 單位 $x_1$，願意放棄多少 $x_2$，還覺得一樣好。</p>
+$$\text{MRS} = \frac{dx_2}{dx_1} = -\frac{MU_1}{MU_2} \qquad MU_1 = \frac{\partial U}{\partial x_1},\quad MU_2 = \frac{\partial U}{\partial x_2}$$
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "無異曲線與可以移動的切線，切線斜率就是 MRS",
+  "x": [0, 20], "y": [0, 20], "h": 330,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "36/x", "color": "d2", "label": "無異曲線 U = x₁x₂ = 36", "domain": [0.5, 20] },
+    { "f": "16/x", "color": "d2", "dash": true, "label": "效用較低（U = 16）", "domain": [0.5, 20], "toggle": true },
+    { "f": "64/x", "color": "d2", "dash": true, "label": "效用較高（U = 64）", "domain": [0.5, 20], "toggle": true }
+  ],
+  "tangent": { "fn": 0 },
+  "slider": { "label": "沿著無異曲線移動，x₁ =", "min": 2.5, "max": 16, "step": 0.1, "value": 4, "digits": 1, "play": true,
+    "presets": [ { "label": "x₁ = 3（x₁ 很少）", "value": 3 }, { "label": "x₁ = 6", "value": 6 }, { "label": "x₁ = 12（x₁ 很多）", "value": 12 } ] },
+  "readouts": [
+    { "label": "這一點的 x₂", "expr": "36/a", "digits": 2, "color": "d2" },
+    { "label": "MRS = −x₂/x₁（切線斜率）", "expr": "-36/a^2", "digits": 2, "color": "d1" },
+    { "label": "多 1 單位 x₁，願意放棄的 x₂", "expr": "36/a^2", "digits": 2 }
+  ]
+}
+</script>
+<figcaption>橘色切線的斜率就是 MRS。x₁ 很少的時候切線很陡（願意拿很多 x₂ 來換）；x₁ 越多，切線越平。這叫邊際替代率遞減，也就是「凸」的意思。</figcaption>
+</figure>
+<div class="trap">
+<p>老師的簡報把 MRS 定義成<strong>帶負號的斜率</strong>，所以最適條件寫成 $\text{MRS} = -p_1/p_2$。題目要你「比較 MRS 和相對價格」時，比的是大小，請用絕對值 $|\text{MRS}|$ 去和 $p_1/p_2$ 比，不要被負號搞混。</p>
+</div>
+
+<h2 id="util">四種常見的效用函數</h2>
+<p>效用函數（utility function）只是幫每個組合打一個分數，分數高的比較好。考試會出現的就是下面四種，<strong>看到式子要馬上知道無異曲線長什麼樣子、最適解要用哪一招</strong>。</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>類型</th><th>效用函數</th><th>MRS</th><th>無異曲線</th><th>最適解怎麼找</th></tr></thead>
+<tbody>
+<tr><td>Cobb-Douglas</td><td>$x_1^a x_2^b$</td><td>$-\dfrac{a\,x_2}{b\,x_1}$</td><td>平滑、凸向原點</td><td><span class="tag t-f">相切</span> $\text{MRS} = -p_1/p_2$</td></tr>
+<tr><td>完全替代<br>perfect substitutes</td><td>$ax_1 + bx_2$</td><td>$-\dfrac{a}{b}$（固定）</td><td>直線</td><td><span class="tag t-d1">角解</span> 比 $a/b$ 和 $p_1/p_2$</td></tr>
+<tr><td>完全互補<br>perfect complements</td><td>$\min\{ax_1,\,x_2\}$</td><td>折點上沒有定義</td><td>L 型，折點在 $x_2 = ax_1$</td><td><span class="tag t-d2">折點</span> 代入預算式</td></tr>
+<tr><td>準線性<br>quasi-linear</td><td>$f(x_1) + x_2$</td><td>$-f'(x_1)$（只跟 $x_1$ 有關）</td><td>同一條曲線上下平移</td><td><span class="tag t-f">相切</span> $x_1$ 的需求跟所得無關</td></tr>
+</tbody>
+</table>
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "四種效用函數的無異曲線形狀",
+  "panels": [
+    { "title": "Cobb-Douglas：U = x₁x₂", "x": [0, 12], "y": [0, 12], "h": 250, "xlabel": "x₁", "ylabel": "x₂",
+      "fns": [
+        { "f": "9/x", "color": "d2", "domain": [0.3, 12] },
+        { "f": "25/x", "color": "d2", "domain": [0.3, 12] },
+        { "f": "49/x", "color": "d2", "domain": [0.3, 12] }
+      ] },
+    { "title": "完全替代：U = 2x₁ + x₂", "x": [0, 12], "y": [0, 12], "h": 250, "xlabel": "x₁", "ylabel": "x₂",
+      "fns": [
+        { "f": "6-2*x", "color": "d2" },
+        { "f": "12-2*x", "color": "d2" },
+        { "f": "18-2*x", "color": "d2" }
+      ],
+      "shapes": [ { "type": "text", "x": 8.4, "y": 9.4, "t": "每條斜率都是 −2", "color": "d2" } ] },
+    { "title": "完全互補：U = min{x₁, 2x₂}", "x": [0, 12], "y": [0, 12], "h": 250, "xlabel": "x₁", "ylabel": "x₂",
+      "fns": [ { "f": "x/2", "color": "mute", "dash": true } ],
+      "shapes": [
+        { "type": "poly", "pts": [[3, 12], [3, 1.5], [12, 1.5]], "color": "d2", "w": 2.6 },
+        { "type": "poly", "pts": [[6, 12], [6, 3], [12, 3]], "color": "d2", "w": 2.6 },
+        { "type": "poly", "pts": [[9, 12], [9, 4.5], [12, 4.5]], "color": "d2", "w": 2.6 },
+        { "type": "text", "x": 8.2, "y": 7.2, "t": "折點都在 x₁ = 2x₂", "color": "mute" }
+      ] },
+    { "title": "準線性：U = 4√x₁ + x₂", "x": [0, 12], "y": [0, 16], "h": 250, "xlabel": "x₁", "ylabel": "x₂",
+      "fns": [
+        { "f": "8-4*sqrt(x)", "color": "d2" },
+        { "f": "12-4*sqrt(x)", "color": "d2" },
+        { "f": "16-4*sqrt(x)", "color": "d2" }
+      ],
+      "shapes": [ { "type": "text", "x": 8.2, "y": 13.6, "t": "形狀一樣，只是往上搬", "color": "d2" } ] }
+  ]
+}
+</script>
+<figcaption>四種無異曲線。左上的平滑曲線用「相切」解；右上的直線通常解在角落；左下的 L 型一定解在折點；右下每一條都是同一條曲線往上平移。</figcaption>
+</figure>
+<div class="say">
+<p>效用是<strong>序數（ordinal）</strong>的：分數只用來排順序，數字本身大小沒意義。所以把效用函數做單調轉換（monotonic transformation），例如平方、乘以 2、取 $\ln$，偏好完全不變，MRS 也不變。$U = x_1^2x_2$ 和 $U = 2\ln x_1 + \ln x_2$ 是同一種偏好。</p>
+</div>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">$U = \min\{x_1,\, 2x_2\}$。下面哪一個組合跟 $(4, 2)$ 一樣好？</p>
+<button>$(8, 2)$</button>
+<button>$(2, 4)$</button>
+<button>$(6, 3)$</button>
+<p class="quiz-why">$U(4,2) = \min\{4, 4\} = 4$。$U(8,2) = \min\{8, 4\} = 4$，一樣好：多出來的 $x_1$ 沒有 $x_2$ 搭配，完全沒用。$U(2,4) = \min\{2, 8\} = 2$ 比較差；$U(6,3) = \min\{6, 6\} = 6$ 比較好。</p>
+</div>
+
+<h2 id="choice">最適選擇：三種解法</h2>
+<p>消費者要在預算集合裡找最喜歡的組合，叫最適選擇（optimal choice），也就是一般需求（ordinary demand）$x_1^*(p_1, p_2, m)$、$x_2^*(p_1, p_2, m)$。依無異曲線的形狀，有三種找法。</p>
+
+<h3>解法一：相切解（Cobb-Douglas）</h3>
+<div class="key" data-title="內部解的兩個條件">
+<p>(a) <strong>花光預算</strong>：$p_1x_1^* + p_2x_2^* = m$<br>
+(b) <strong>相切</strong>：無異曲線的斜率 = 預算線的斜率，也就是 $\text{MRS} = -\dfrac{p_1}{p_2}$</p>
+</div>
+<p>以 $U = x_1^a x_2^b$ 來說，$\text{MRS} = -\dfrac{a\,x_2}{b\,x_1}$。把兩個條件聯立解出來，會得到一個值得背起來的結果：</p>
+<div class="key" data-title="Cobb-Douglas 的需求函數">
+$$x_1^* = \frac{a}{a+b}\cdot\frac{m}{p_1} \qquad\qquad x_2^* = \frac{b}{a+b}\cdot\frac{m}{p_2}$$
+<p>花在商品 1 的錢永遠是所得的 $\dfrac{a}{a+b}$，花在商品 2 的是 $\dfrac{b}{a+b}$，跟價格無關。</p>
+</div>
+<details class="peek"><summary>看推導：以 U = x₁²x₂ 為例（作業 HW7 第 1 題）</summary>
+<p>$MU_1 = 2x_1x_2$、$MU_2 = x_1^2$，所以 $\text{MRS} = -\dfrac{2x_1x_2}{x_1^2} = -\dfrac{2x_2}{x_1}$。</p>
+<p>相切：$-\dfrac{2x_2}{x_1} = -\dfrac{p_1}{p_2}$，整理成 $p_2x_2 = \dfrac{p_1x_1}{2}$。</p>
+<p>代入預算式：$p_1x_1 + \dfrac{p_1x_1}{2} = m$，所以 $x_1^* = \dfrac{2m}{3p_1}$，再代回去得 $x_2^* = \dfrac{m}{3p_2}$。</p>
+<p>跟公式一樣：$a = 2$、$b = 1$，商品 1 拿走所得的 $\tfrac23$，商品 2 拿走 $\tfrac13$。</p>
+</details>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "U = x₁²x₂ 的最適選擇，可以調整商品 1 的價格",
+  "x": [0, 80], "y": [0, 50], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "45-a*x", "color": "f", "label": "預算線 p₁x₁ + x₂ = 45" },
+    { "f": "15*(30/a)^2/x^2", "color": "d2", "label": "碰得到的最高無異曲線", "domain": [2, 80] }
+  ],
+  "hlines": [ { "y": 15, "color": "mute", "label": "x₂* = 15，不受 p₁ 影響" } ],
+  "points": [
+    { "x": "30/a", "y": 15, "color": "pos", "label": "最適 ({{30/a|1}}, 15)", "pos": "tr" }
+  ],
+  "slider": { "label": "p₁（商品 1 的價格）", "min": 0.6, "max": 3, "step": 0.05, "value": 2, "digits": 2, "play": true,
+    "presets": [ { "label": "p₁ = 2（作業原本的價格）", "value": 2 }, { "label": "p₁ = 1（降價後）", "value": 1 } ] },
+  "readouts": [
+    { "label": "x₁* = 2m/(3p₁)", "expr": "30/a", "digits": 2, "color": "pos" },
+    { "label": "x₂* = m/(3p₂)", "expr": "15", "digits": 0, "color": "pos" },
+    { "label": "花在 x₁ 的錢", "expr": "a*(30/a)", "digits": 0, "unit": " 元（所得的 2/3）" },
+    { "label": "最適點的 MRS = −2x₂/x₁", "expr": "-2*15/(30/a)", "digits": 2, "color": "d2" },
+    { "label": "預算線斜率 −p₁/p₂", "expr": "-a", "digits": 2, "color": "f" }
+  ]
+}
+</script>
+<figcaption>U = x₁²x₂、m = 45、p₂ = 1。不管 p₁ 怎麼變，最適點都在無異曲線和預算線相切的地方，最後兩個讀數永遠相等。花在 x₁ 的錢也永遠是 30 元。</figcaption>
+</figure>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">$U = x_1x_2^3$、$m = 80$、$p_1 = 2$、$p_2 = 5$。最適的 $x_1^*$ 是多少？</p>
+<button>10</button>
+<button>20</button>
+<button>30</button>
+<p class="quiz-why">$a = 1$、$b = 3$，商品 1 拿走所得的 $\tfrac{1}{4}$，也就是 20 元，所以 $x_1^* = 20/2 = 10$。順便算 $x_2^* = \tfrac34\cdot\tfrac{80}{5} = 12$。檢查：$2\times10 + 5\times12 = 80$ ✓。</p>
+</div>
+
+<h3>解法二：角解（完全替代）</h3>
+<p>無異曲線是直線時，斜率固定，通常沒辦法跟預算線「相切」。這時候最適解會跑到預算線的端點，叫角解（corner solution）：<strong>錢全部買比較划算的那一個</strong>。</p>
+<div class="key" data-title="完全替代 U = 2x₁ + x₂ 的需求">
+<p>$|\text{MRS}| = 2$：1 單位 $x_1$ 在他心裡值 2 單位 $x_2$。拿它跟市場的交換比例 $p_1/p_2$ 比：</p>
+<p>$\dfrac{p_1}{p_2} \lt 2$：$x_1$ 比較划算，全買 $x_1$ → $\left(\dfrac{m}{p_1},\ 0\right)$<br>
+$\dfrac{p_1}{p_2} \gt 2$：$x_1$ 太貴，全買 $x_2$ → $\left(0,\ \dfrac{m}{p_2}\right)$<br>
+$\dfrac{p_1}{p_2} = 2$：一樣划算，預算線上<strong>每一點</strong>都是最適解</p>
+</div>
+<p>另一個好記的看法：比「每花 1 元買到多少效用」。$x_1$ 是 $MU_1/p_1 = 2/p_1$，$x_2$ 是 $MU_2/p_2 = 1/p_2$，哪個大就全買哪個。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "完全替代 U = 2x₁ + x₂ 的角解，可以調整商品 1 的價格",
+  "x": [0, 64], "y": [0, 34], "h": 330,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "30-a*x", "color": "f", "label": "預算線 p₁x₁ + x₂ = 30" },
+    { "f": "max(60/a,30)-2*x", "color": "d2", "label": "碰得到的最高無異曲線（斜率 −2）" }
+  ],
+  "points": [
+    { "x": 0, "y": 30, "if": "a-2.001", "color": "pos", "label": "最適：全買 x₂ → (0, 30)", "pos": "tr" },
+    { "x": "30/a", "y": 0, "if": "1.999-a", "color": "pos", "label": "最適：全買 x₁ → ({{30/a|1}}, 0)", "pos": "tl" }
+  ],
+  "shapes": [
+    { "type": "text", "x": 34, "y": 24, "t": "兩條線重疊：預算線上每一點都一樣好", "color": "pos", "if": "0.001-abs(a-2)" }
+  ],
+  "slider": { "label": "p₁（商品 1 的價格）", "min": 0.5, "max": 4, "step": 0.05, "value": 3, "digits": 2, "play": true,
+    "presets": [ { "label": "p₁ = 3（作業原本的價格）", "value": 3 }, { "label": "p₁ = 2（剛好相等）", "value": 2 }, { "label": "p₁ = 1（降價後）", "value": 1 } ] },
+  "readouts": [
+    { "label": "相對價格 p₁/p₂", "expr": "a", "digits": 2, "color": "f" },
+    { "label": "|MRS|", "expr": "2", "digits": 0, "color": "d2" },
+    { "label": "結論", "expr": "2-a", "pos": "p₁/p₂ < 2：x₁ 比較划算，全買 x₁", "neg": "p₁/p₂ > 2：x₁ 太貴，全買 x₂", "zero": "p₁/p₂ = 2：買哪個都一樣", "eps": 0.001 },
+    { "label": "x₁*", "expr": "(1+sign(2-a))/2*30/a", "digits": 1, "color": "pos" },
+    { "label": "x₂*", "expr": "(1-sign(2-a))/2*30", "digits": 1, "color": "pos" }
+  ]
+}
+</script>
+<figcaption>U = 2x₁ + x₂、m = 30、p₂ = 1。把 p₁ 從 3 慢慢往下拉：預算線比無異曲線陡的時候解在左上角；一跨過 p₁ = 2，解就整個跳到右下角。p₁ = 2 時讀數顯示的 (7.5, 15) 只是眾多最適解的其中一個。</figcaption>
+</figure>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">$U = x_1 + 3x_2$、$p_1 = 1$、$p_2 = 2$、$m = 12$。最適組合是？</p>
+<button>$(12, 0)$</button>
+<button>$(0, 6)$</button>
+<button>$(6, 3)$</button>
+<p class="quiz-why">每 1 元買到的效用：$x_1$ 是 $1/1 = 1$，$x_2$ 是 $3/2 = 1.5$，$x_2$ 比較划算，所以全買 $x_2$：$12/2 = 6$。用 MRS 看也一樣：$|\text{MRS}| = \tfrac13 \lt \tfrac{p_1}{p_2} = \tfrac12$，$x_1$ 在市場上比在他心裡貴。</p>
+</div>
+
+<h3>解法三：折點解（完全互補）</h3>
+<p>L 型無異曲線的折點沒有斜率，不能用相切。但最適解<strong>一定在折點</strong>：離開折點多買的那一樣東西沒有搭配，白花錢。所以把「折點的條件」和「花光預算」聯立就好。</p>
+<div class="key" data-title="完全互補 U = min{x₁, 2x₂} 的需求">
+<p>折點：讓括號裡兩個東西相等，$x_1 = 2x_2$。代入 $p_1x_1 + p_2x_2 = m$：</p>
+$$p_1(2x_2) + p_2x_2 = m \quad\Rightarrow\quad x_2^* = \frac{m}{2p_1 + p_2} \qquad x_1^* = \frac{2m}{2p_1 + p_2}$$
+<p>可以想成他買的是「套餐」：一套 = 2 單位 $x_1$ 加 1 單位 $x_2$，一套要 $2p_1 + p_2$ 元，買得起 $\dfrac{m}{2p_1+p_2}$ 套。</p>
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "完全互補 U = min{x₁, 2x₂} 的折點解，可以調整商品 2 的價格",
+  "x": [0, 52], "y": [0, 50], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "(48-x)/a", "color": "f", "label": "預算線 x₁ + p₂x₂ = 48" },
+    { "f": "x/2", "color": "mute", "dash": true, "label": "折點連線 x₁ = 2x₂" }
+  ],
+  "shapes": [
+    { "type": "poly", "pts": [["0.6*96/(2+a)", 52], ["0.6*96/(2+a)", "0.6*48/(2+a)"], [52, "0.6*48/(2+a)"]], "color": "d2", "dash": true },
+    { "type": "poly", "pts": [["96/(2+a)", 52], ["96/(2+a)", "48/(2+a)"], [52, "48/(2+a)"]], "color": "d2", "w": 2.6 },
+    { "type": "text", "x": "96/(2+a)+1", "y": 46, "t": "最高的無異曲線", "color": "d2", "anchor": "start" }
+  ],
+  "points": [
+    { "x": "96/(2+a)", "y": "48/(2+a)", "color": "pos", "label": "最適 ({{96/(2+a)|1}}, {{48/(2+a)|1}})", "pos": "tr" }
+  ],
+  "slider": { "label": "p₂（商品 2 的價格）", "min": 1, "max": 6, "step": 0.1, "value": 2, "digits": 1, "play": true,
+    "presets": [ { "label": "p₂ = 2（作業原本的價格）", "value": 2 }, { "label": "p₂ = 4（漲價後）", "value": 4 } ] },
+  "readouts": [
+    { "label": "x₁* = 2m/(2p₁ + p₂)", "expr": "96/(2+a)", "digits": 2, "color": "pos" },
+    { "label": "x₂* = m/(2p₁ + p₂)", "expr": "48/(2+a)", "digits": 2, "color": "pos" },
+    { "label": "一套的價格 2p₁ + p₂", "expr": "2+a", "digits": 1, "unit": " 元" },
+    { "label": "總花費 x₁* + p₂x₂*", "expr": "96/(2+a)+a*48/(2+a)", "digits": 0, "unit": " 元" }
+  ]
+}
+</script>
+<figcaption>U = min{x₁, 2x₂}、m = 48、p₁ = 1。不管 p₂ 怎麼變，最適點都沿著灰色虛線（x₁ = 2x₂）移動，兩種商品永遠維持 2 比 1。</figcaption>
+</figure>
+<div class="trap">
+<p>$\min\{x_1,\, 2x_2\}$ 的折點是 $x_1 = 2x_2$（<mark>讓括號裡的兩個東西相等</mark>），不是 $x_2 = 2x_1$。係數 2 掛在 $x_2$ 前面，代表 $x_2$ 只需要 $x_1$ 的一半。寫完記得代一組數字檢查，例如 $(4, 2)$：$\min\{4, 4\}$ 兩邊相等 ✓。</p>
+</div>
+
+<div class="quiz" data-answer="3">
+<p class="quiz-q">$U = \min\{x_1,\, 2x_2\}$、$p_1 = 1$、$p_2 = 2$、$m = 48$。最適組合是？</p>
+<button>$(16, 16)$</button>
+<button>$(12, 24)$</button>
+<button>$(24, 12)$</button>
+<p class="quiz-why">折點 $x_1 = 2x_2$，代入 $x_1 + 2x_2 = 48$ 得 $4x_2 = 48$，所以 $x_2 = 12$、$x_1 = 24$。$(12, 24)$ 是把折點寫反的答案，$\min\{12, 48\} = 12$，白白多買了一堆 $x_2$。</p>
+</div>
+
+<div class="exam">
+<p>「Derive the demand functions」這種題目有固定寫法，三步都要寫出來才有完整分數：</p>
+<ol>
+<li><strong>寫條件</strong>：相切解寫 $\text{MRS} = -p_1/p_2$；折點解寫 $x_1 = 2x_2$ 這類折點條件；角解寫 $|\text{MRS}|$ 和 $p_1/p_2$ 的三種大小關係。</li>
+<li><strong>跟預算式聯立</strong>：$p_1x_1 + p_2x_2 = m$，解出 $x_1^*$、$x_2^*$，答案要留著 $p_1$、$p_2$、$m$ 這些符號。</li>
+<li><strong>代數字</strong>：下一小題給了數字再代進去，並用「花費加起來等於 $m$」檢查一次。</li>
+</ol>
+</div>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=2"></script>
+</body>
+</html>

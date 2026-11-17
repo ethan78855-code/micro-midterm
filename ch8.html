@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch8 Slutsky 方程式｜個體經濟學期中考衝刺</title>
+<meta name="description" content="替代效果與所得效果：Slutsky 分解的五個步驟、正常財／劣等財／Giffen 財、三個特例，含作業 HW7 三題逐步解答與互動圖。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body data-page="ch8">
+<main class="page">
+
+<p class="kicker">Chapter 8 · 對應作業 HW7</p>
+<h1>Slutsky 方程式：替代效果與所得效果</h1>
+<p class="lead">價格一變，買的數量就跟著變。Slutsky 把這個變化拆成兩段：因為「相對價格變了」而換著買，和因為「口袋變深或變淺」而多買少買。考題永遠是同一套五個步驟，三種效用函數各練一次就會了。</p>
+<div data-toc></div>
+
+<h2 id="two">降價時同時發生的兩件事</h2>
+<div class="say">
+<p>咖啡從 2 元降到 1 元。第一件事：咖啡<mark>相對</mark>茶變便宜了，你會多喝咖啡、少喝茶。第二件事：原本那一籃東西現在不用花那麼多錢，等於<mark>口袋裡多出一筆錢</mark>，你會拿去多買東西。</p>
+</div>
+<div class="duo">
+<div>
+<h4><span class="tag t-d1">第一段</span> 替代效果</h4>
+<p>英文是 substitution effect。只看「相對價格改變」造成的變化，把購買力多出來的部分先收走。</p>
+</div>
+<div>
+<h4><span class="tag t-pos">第二段</span> 所得效果</h4>
+<p>英文是 income effect。價格不再動，只看「購買力多出來（或少掉）」造成的變化。</p>
+</div>
+</div>
+<div class="key" data-title="Slutsky 的發現">
+$$\underbrace{\Delta x_1}_{\text{需求量的總變化}} \;=\; \underbrace{\Delta x_1^{s}}_{\text{替代效果}} \;+\; \underbrace{\Delta x_1^{n}}_{\text{所得效果}}$$
+<p>任何價格變動造成的需求變化，一定可以拆成這兩段相加。</p>
+</div>
+
+<h2 id="slutsky">Slutsky 的做法：先把多出來的購買力收走</h2>
+<p>問題是兩件事同時發生，怎麼分開？Slutsky 的辦法是問一個假想的問題：</p>
+<div class="say">
+<p>「價格已經變成新的了。如果我把你的所得調整到<mark>剛剛好買得起原來那一籃</mark>，你會怎麼選？」</p>
+</div>
+<p>這條假想的預算線叫<strong>補償預算線</strong>：斜率是新的價格比，而且通過原本的組合 A。在這條線上選出來的點叫 B。</p>
+<ul>
+<li>A → B：購買力沒有變（還是剛好買得起 A），只有相對價格變了，所以是<strong class="c-d1">純替代效果</strong>（pure substitution effect）。</li>
+<li>B → C：把收走的所得還給他，價格不動，所以是<strong class="c-pos">所得效果</strong>。C 就是降價後真正的選擇。</li>
+</ul>
+<div class="key" data-title="補償所得 m′（最重要的一條式子）">
+$$m' \;=\; p_1'\,x_1^{A} + p_2\,x_2^{A} \;=\; m + (p_1' - p_1)\,x_1^{A}$$
+<p>意思是「用<strong>新價格</strong>買<strong>舊組合</strong>要花多少錢」。降價時 $m' \lt m$（收走一些），漲價時 $m' \gt m$（補貼一些）。</p>
+</div>
+<p>下面是作業第 1 題的數字：$U = x_1^2x_2$、$m = 45$、$p_2 = 1$，$p_1$ 從 2 降到 1。按步驟一格一格看：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "Slutsky 分解三步驟：原本的預算線與 A 點、補償預算線與 B 點、新預算線與 C 點",
+  "x": [0, 48], "y": [0, 48], "h": 390,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "步驟", "steps": ["① 原本（p₁ = 2）", "② 降價，但把購買力收走", "③ 把所得還給他"] } ],
+  "fns": [
+    { "f": "45-2*x", "color": "f", "label": "原本的預算線 2x₁ + x₂ = 45" },
+    { "f": "30-x", "color": "d1", "dash": true, "label": "補償預算線 x₁ + x₂ = 30", "if": "a-1.5" },
+    { "f": "45-x", "color": "pos", "label": "新的預算線 x₁ + x₂ = 45", "if": "a-2.5" },
+    { "f": "3375/x^2", "color": "d2", "w": 1.8, "domain": [5, 48], "label": "無異曲線" },
+    { "f": "4000/x^2", "color": "d2", "w": 1.8, "domain": [5, 48], "if": "a-1.5" },
+    { "f": "13500/x^2", "color": "d2", "w": 1.8, "domain": [8, 48], "if": "a-2.5" }
+  ],
+  "shapes": [
+    { "type": "line", "x1": 15, "y1": 0, "x2": 15, "y2": 15, "color": "mute", "dash": true, "w": 1.2 },
+    { "type": "line", "x1": 20, "y1": 0, "x2": 20, "y2": 10, "color": "mute", "dash": true, "w": 1.2, "if": "a-1.5" },
+    { "type": "line", "x1": 30, "y1": 0, "x2": 30, "y2": 15, "color": "mute", "dash": true, "w": 1.2, "if": "a-2.5" },
+    { "type": "arrow", "x1": 15, "y1": 2.4, "x2": 20, "y2": 2.4, "color": "d1", "label": "替代 +5", "lo": [0, -10], "if": "a-1.5" },
+    { "type": "arrow", "x1": 20, "y1": 2.4, "x2": 30, "y2": 2.4, "color": "pos", "label": "所得 +10", "lo": [0, -10], "if": "a-2.5" }
+  ],
+  "points": [
+    { "x": 15, "y": 15, "color": "f", "label": "A (15, 15)", "pos": "tr" },
+    { "x": 20, "y": 10, "color": "d1", "label": "B (20, 10)", "pos": "tr", "if": "a-1.5" },
+    { "x": 30, "y": 15, "color": "pos", "label": "C (30, 15)", "pos": "tr", "if": "a-2.5" }
+  ],
+  "readouts": [
+    { "label": "現在的畫面", "expr": "a-2", "neg": "原本：p₁ = 2、所得 45，選 A (15, 15)", "zero": "補償：p₁ = 1、所得只給 m′ = 30（剛好買得起 A），選 B (20, 10)", "pos": "最終：p₁ = 1、所得回到 45，選 C (30, 15)", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>② 的橘色虛線通過 A，但比藍線平（新的價格比）。在這條線上他改選 B：多買 5 單位 x₁，這就是替代效果。③ 把所得從 30 還到 45，橘線平行外移成綠線，再多買 10 單位，這是所得效果。兩段加起來 +15，就是 A 到 C 的總變化。</figcaption>
+</figure>
+
+<h3>自己調價格看看</h3>
+<p>同一個人，換不同的新價格。注意橘色虛線永遠穿過 A；漲價時（$p_1' \gt 2$）兩個箭頭都往左。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "可調整新價格的 Slutsky 分解圖",
+  "x": [0, 56], "y": [0, 50], "h": 380,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "新的價格 p₁′", "min": 0.6, "max": 3.5, "step": 0.05, "value": 1, "digits": 2, "play": true,
+    "presets": [ { "label": "p₁′ = 1（作業第 1 題）", "value": 1 }, { "label": "p₁′ = 2（沒變）", "value": 2 }, { "label": "p₁′ = 3（漲價）", "value": 3 } ] } ],
+  "fns": [
+    { "f": "45-2*x", "color": "f", "label": "原本的預算線（p₁ = 2）", "toggle": true },
+    { "f": "15+15*a-a*x", "color": "d1", "dash": true, "label": "補償預算線（過 A）", "toggle": true },
+    { "f": "45-a*x", "color": "pos", "label": "新的預算線", "toggle": true }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 15, "y1": 2.4, "x2": "10+10/a", "y2": 2.4, "color": "d1" },
+    { "type": "arrow", "x1": "10+10/a", "y1": 2.4, "x2": "30/a", "y2": 2.4, "color": "pos" }
+  ],
+  "points": [
+    { "x": 15, "y": 15, "color": "f", "label": "A", "pos": "t" },
+    { "x": "10+10/a", "y": "5+5*a", "color": "d1", "label": "B", "pos": "tr" },
+    { "x": "30/a", "y": 15, "color": "pos", "label": "C", "pos": "tr" }
+  ],
+  "readouts": [
+    { "label": "補償所得 m′ = 45 + (p₁′ − 2) × 15", "expr": "15+15*a", "digits": 1, "color": "d1" },
+    { "label": "替代效果 B − A", "expr": "10/a-5", "digits": 2, "color": "d1" },
+    { "label": "所得效果 C − B", "expr": "20/a-10", "digits": 2, "color": "f" },
+    { "label": "總效果 C − A", "expr": "30/a-15", "digits": 2 },
+    { "label": "方向", "expr": "2-a", "pos": "降價：兩個效果都讓 x₁ 增加", "neg": "漲價：兩個效果都讓 x₁ 減少", "zero": "價格沒變，三個點重疊", "eps": 0.02 }
+  ]
+}
+</script>
+<figcaption>橘色箭頭是替代效果，綠色箭頭是所得效果。這個人的 x₁ 是正常財，所以兩個箭頭永遠同方向。圖例可以點，把某一條線藏起來比較好看清楚。</figcaption>
+</figure>
+
+<h2 id="steps">五個步驟（每一題都一樣）</h2>
+<div class="how" data-title="Slutsky 分解的固定流程">
+<ol>
+<li><strong>原本的組合 A</strong>：需求函數代入舊價格和所得 $m$。</li>
+<li><strong>補償所得 $m'$</strong>：用新價格買 A 要花多少錢，$m' = m + \Delta p \times (\text{A 裡那個商品的數量})$。</li>
+<li><strong>中間點 B</strong>：需求函數代入<mark>新價格</mark>和 $m'$。</li>
+<li><strong>最終的組合 C</strong>：需求函數代入新價格和原來的 $m$。</li>
+<li><strong>相減</strong>：替代效果 $= B - A$，所得效果 $= C - B$。檢查兩個加起來等於 $C - A$。</li>
+</ol>
+</div>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>點</th><th>用哪個價格</th><th>用哪個所得</th><th>代表什麼</th></tr></thead>
+<tbody>
+<tr><td><strong class="c-f">A</strong></td><td>舊價格</td><td>$m$</td><td>價格變動前的選擇</td></tr>
+<tr><td><strong class="c-d1">B</strong></td><td>新價格</td><td>$m'$（補償所得）</td><td>假想的中間點，現實中不會真的發生</td></tr>
+<tr><td><strong class="c-pos">C</strong></td><td>新價格</td><td>$m$</td><td>價格變動後的選擇</td></tr>
+</tbody>
+</table>
+</div>
+<div class="trap">
+<p>$m'$ 是用<strong>新價格</strong>乘<strong>舊數量</strong>，不是用舊價格。另外替代效果是 $B - A$、所得效果是 $C - B$，順序寫反整題就錯。變的是哪個商品的價格，$\Delta p$ 就乘哪個商品在 A 裡的數量。</p>
+</div>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">所得 100，$p_1$ 從 4 降到 2，原本買了 $x_1 = 10$。補償所得 $m'$ 是多少？</p>
+<button>80</button>
+<button>120</button>
+<button>100，所得沒有變</button>
+<p class="quiz-why">$m' = m + (p_1' - p_1)\,x_1 = 100 + (2 - 4)\times 10 = 80$。降價讓原來那一籃便宜了 20 元，所以要收走 20 元才是「剛好買得起」。</p>
+</div>
+
+<h2 id="signs">兩個效果的方向：正常財、劣等財、Giffen 財</h2>
+<div class="key" data-title="方向規則（以降價為例）">
+<p><strong class="c-d1">替代效果</strong>：一定讓需求量<strong>增加或不變</strong>，永遠跟價格反方向。降價就多買，漲價就少買，沒有例外。</p>
+<p><strong class="c-pos">所得效果</strong>：降價等於實質所得增加。<strong>正常財</strong>（normal good）所得增加會多買；<strong>劣等財</strong>（income-inferior good）所得增加反而少買。</p>
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "降價時三種財貨的替代效果與所得效果方向示意圖",
+  "axes": false, "x": [-34, 100], "y": [0, 100], "h": 300,
+  "shapes": [
+    { "type": "text", "x": 99, "y": 94, "t": "x₁ 的數量增加 →", "color": "mute", "anchor": "end", "size": 12 },
+
+    { "type": "text", "x": -33, "y": 78, "t": "正常財", "anchor": "start", "size": 14 },
+    { "type": "line", "x1": 6, "y1": 80, "x2": 98, "y2": 80, "color": "mute", "w": 1 },
+    { "type": "arrow", "x1": 20, "y1": 80, "x2": 43.5, "y2": 80, "color": "d1", "label": "替代", "lo": [0, -11] },
+    { "type": "arrow", "x1": 45, "y1": 80, "x2": 76.5, "y2": 80, "color": "pos", "label": "所得（同方向）", "lo": [0, -11] },
+
+    { "type": "text", "x": -33, "y": 48, "t": "劣等財", "anchor": "start", "size": 14 },
+    { "type": "line", "x1": 6, "y1": 50, "x2": 98, "y2": 50, "color": "mute", "w": 1 },
+    { "type": "arrow", "x1": 20, "y1": 50, "x2": 43.5, "y2": 50, "color": "d1", "label": "替代", "lo": [0, -11] },
+    { "type": "line", "x1": 45, "y1": 50, "x2": 45, "y2": 42, "color": "pos", "dash": true, "w": 1.4 },
+    { "type": "arrow", "x1": 45, "y1": 42, "x2": 34.5, "y2": 42, "color": "pos", "label": "所得（反方向，較小）", "lo": [0, 17] },
+
+    { "type": "text", "x": -33, "y": 18, "t": "Giffen 財", "anchor": "start", "size": 14 },
+    { "type": "line", "x1": 6, "y1": 20, "x2": 98, "y2": 20, "color": "mute", "w": 1 },
+    { "type": "arrow", "x1": 20, "y1": 20, "x2": 43.5, "y2": 20, "color": "d1", "label": "替代", "lo": [0, -11] },
+    { "type": "line", "x1": 45, "y1": 20, "x2": 45, "y2": 12, "color": "pos", "dash": true, "w": 1.4 },
+    { "type": "arrow", "x1": 45, "y1": 12, "x2": 9.5, "y2": 12, "color": "pos", "label": "所得（反方向，而且比替代大）", "lo": [0, 17] }
+  ],
+  "points": [
+    { "x": 20, "y": 80, "color": "f", "label": "A", "pos": "b" },
+    { "x": 45, "y": 80, "color": "d1", "label": "B", "pos": "b" },
+    { "x": 78, "y": 80, "color": "pos", "label": "C", "pos": "b" },
+    { "x": 20, "y": 50, "color": "f", "label": "A", "pos": "t" },
+    { "x": 45, "y": 50, "color": "d1", "label": "B", "pos": "tr" },
+    { "x": 33, "y": 42, "color": "pos", "label": "C", "pos": "t" },
+    { "x": 20, "y": 20, "color": "f", "label": "A", "pos": "t" },
+    { "x": 45, "y": 20, "color": "d1", "label": "B", "pos": "tr" },
+    { "x": 8, "y": 12, "color": "pos", "label": "C", "pos": "t" }
+  ]
+}
+</script>
+<figcaption>三種情況的橘色箭頭（替代效果）都往右。差別只在綠色箭頭：正常財繼續往右；劣等財往回走一點，但 C 還在 A 的右邊；Giffen 財往回走太多，C 跑到 A 的左邊，變成「降價反而買更少」。</figcaption>
+</figure>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>財貨類型</th><th>替代效果</th><th>所得效果</th><th>總效果（降價時）</th><th>需求曲線</th></tr></thead>
+<tbody>
+<tr><td>正常財 normal</td><td class="c-pos">＋</td><td class="c-pos">＋（互相加強）</td><td class="c-pos">買更多</td><td>一定負斜率</td></tr>
+<tr><td>劣等財 inferior</td><td class="c-pos">＋</td><td class="c-neg">−（比較小）</td><td class="c-pos">還是買更多</td><td>負斜率</td></tr>
+<tr><td>Giffen 財</td><td class="c-pos">＋</td><td class="c-neg">−（比較大）</td><td class="c-neg">買更少</td><td>正斜率，違反需求法則</td></tr>
+</tbody>
+</table>
+</div>
+<p>所以需求法則（Law of Downward-Sloping Demand）對正常財一定成立。Giffen 財是劣等財裡的極端情況：所得效果大到蓋過替代效果。</p>
+<details class="peek"><summary>為什麼替代效果不可能反方向？</summary>
+<p>用上一章的顯示性偏好想。補償預算線通過 A，所以線上在 A 左上方的那一段，在原本的預算線底下都買得起，當初卻選了 A，表示那些點都不比 A 好。現在他不會跑去選那一段，只會留在 A 或往變便宜的商品那一側移動。</p>
+</details>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">某商品降價後，替代效果讓需求量 +6，所得效果讓需求量 −2。這個商品是？</p>
+<button>正常財</button>
+<button>劣等財，但不是 Giffen 財</button>
+<button>Giffen 財</button>
+<p class="quiz-why">降價時所得效果是負的，表示實質所得增加反而少買，是劣等財。但總效果 $6 - 2 = +4$ 還是正的，降價後買更多，需求曲線仍是負斜率，所以不是 Giffen 財。</p>
+</div>
+
+<h2 id="cases">三個特例（簡報最後的 Examples）</h2>
+<p>簡報列了三種效用函數，各有一個很乾淨的結論。前兩個就是作業第 2、3 題。</p>
+
+<h3>完全互補：替代效果是 0</h3>
+<p>$U = \min\{x_1, 2x_2\}$、$p_1 = 1$、$m = 48$，$p_2$ 從 2 漲到 4（作業第 2 題）。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "完全互補的 Slutsky 分解：補償預算線繞著 L 型折點旋轉，選擇不變",
+  "x": [0, 80], "y": [0, 30], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "步驟", "steps": ["① 原本（p₂ = 2）", "② 漲價，補償到買得起 A", "③ 把補償拿掉"] } ],
+  "fns": [
+    { "f": "(48-x)/2", "color": "f", "label": "原本 x₁ + 2x₂ = 48" },
+    { "f": "(72-x)/4", "color": "d1", "dash": true, "label": "補償 x₁ + 4x₂ = 72", "if": "a-1.5" },
+    { "f": "(48-x)/4", "color": "pos", "label": "新的 x₁ + 4x₂ = 48", "if": "a-2.5" },
+    { "f": "x/2", "color": "mute", "dash": true, "w": 1.4, "label": "折點連線 x₁ = 2x₂" }
+  ],
+  "shapes": [
+    { "type": "poly", "pts": [[24, 30], [24, 12], [80, 12]], "color": "d2", "w": 1.8 },
+    { "type": "poly", "pts": [[16, 30], [16, 8], [80, 8]], "color": "d2", "w": 1.8, "if": "a-2.5" },
+    { "type": "line", "x1": 0, "y1": 12, "x2": 24, "y2": 12, "color": "mute", "dash": true, "w": 1.2 },
+    { "type": "line", "x1": 0, "y1": 8, "x2": 16, "y2": 8, "color": "mute", "dash": true, "w": 1.2, "if": "a-2.5" },
+    { "type": "arrow", "x1": 5, "y1": 12, "x2": 5, "y2": 8.3, "color": "pos", "label": "所得效果 −4", "lo": [10, 4], "anchor": "start", "if": "a-2.5" }
+  ],
+  "points": [
+    { "x": 24, "y": 12, "color": "f", "label": "A (24, 12)", "pos": "tr", "if": "1.5-a" },
+    { "x": 24, "y": 12, "color": "d1", "label": "A = B (24, 12)", "pos": "tr", "if": "a-1.5" },
+    { "x": 16, "y": 8, "color": "pos", "label": "C (16, 8)", "pos": "br", "if": "a-2.5" }
+  ],
+  "readouts": [
+    { "label": "現在的畫面", "expr": "a-2", "neg": "原本：選折點 A (24, 12)", "zero": "補償所得 m′ = 72：預算線繞著 A 轉，但 A 是尖角，還是選 A → 替代效果 0", "pos": "所得回到 48：沿著折點連線往內縮到 C (16, 8) → 全部是所得效果", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>紫色 L 型是無異曲線。完全互補的人只在乎「成套」，相對價格怎麼變都不會改變搭配比例，所以替代效果是 0，需求的變化全部來自所得效果。</figcaption>
+</figure>
+
+<h3>完全替代：換角的時候，所得效果是 0</h3>
+<p>$U = 2x_1 + x_2$、$p_2 = 1$、$m = 30$，$p_1$ 從 3 降到 1（作業第 3 題）。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "完全替代的 Slutsky 分解：從只買 x2 的角落跳到只買 x1 的角落",
+  "x": [0, 36], "y": [0, 36], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "步驟", "steps": ["① 原本（p₁ = 3）", "② 降價，補償到買得起 A", "③ 把所得還給他"] } ],
+  "fns": [
+    { "f": "30-3*x", "color": "f", "label": "原本 3x₁ + x₂ = 30" },
+    { "f": "30-x", "color": "pos", "label": "新的 x₁ + x₂ = 30", "if": "a-2.5" },
+    { "f": "30-x", "color": "d1", "dash": true, "label": "補償 x₁ + x₂ = 30", "if": "a-1.5" },
+    { "f": "30-2*x", "color": "d2", "w": 1.8, "label": "無異曲線（斜率 −2 的直線）" },
+    { "f": "60-2*x", "color": "d2", "w": 1.8, "if": "a-1.5" }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 1, "y1": 2, "x2": 29, "y2": 2, "color": "d1", "label": "替代效果 +30", "lo": [0, -10], "if": "a-1.5" }
+  ],
+  "points": [
+    { "x": 0, "y": 30, "color": "f", "label": "A (0, 30)", "pos": "tr" },
+    { "x": 30, "y": 0, "color": "d1", "label": "B (30, 0)", "pos": "tr", "if": "(a-1.5)*(2.5-a)" },
+    { "x": 30, "y": 0, "color": "pos", "label": "B = C (30, 0)", "pos": "tr", "if": "a-2.5" }
+  ],
+  "readouts": [
+    { "label": "現在的畫面", "expr": "a-2", "neg": "原本：p₁/p₂ = 3 大於 2，x₁ 太貴，全部買 x₂ → A (0, 30)", "zero": "補償所得 m′ = 30 + (1 − 3) × 0 = 30：p₁/p₂ = 1 小於 2，全部改買 x₁ → B (30, 0)", "pos": "m′ 和 m 一樣，補償預算線就是新預算線，B 和 C 是同一點 → 所得效果 0", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>原本一單位 x₁ 都沒買，降價並沒有讓他「口袋變深」（Δp₁ × 0 = 0），所以補償預算線和新預算線重疊。從 A 跳到 C 的 +30 全部是替代效果。</figcaption>
+</figure>
+
+<h3>準線性：所得效果是 0</h3>
+<p>準線性（quasi-linear）的例子：$U = 4\sqrt{x_1} + x_2$、$p_2 = 1$、$m = 20$，$p_1$ 從 1 降到 0.5。相切條件 $\dfrac{2}{\sqrt{x_1}} = \dfrac{p_1}{p_2}$ 解出 $x_1 = \dfrac{4p_2^2}{p_1^2}$，裡面<strong>沒有 $m$</strong>。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "準線性效用的 Slutsky 分解：B 與 C 的 x1 相同",
+  "x": [0, 40], "y": [0, 30], "h": 340,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "sliders": [ { "label": "步驟", "steps": ["① 原本（p₁ = 1）", "② 降價，補償到買得起 A", "③ 把所得還給他"] } ],
+  "fns": [
+    { "f": "20-x", "color": "f", "label": "原本 x₁ + x₂ = 20" },
+    { "f": "18-0.5*x", "color": "d1", "dash": true, "label": "補償 0.5x₁ + x₂ = 18", "if": "a-1.5" },
+    { "f": "20-0.5*x", "color": "pos", "label": "新的 0.5x₁ + x₂ = 20", "if": "a-2.5" },
+    { "f": "24-4*sqrt(x)", "color": "d2", "w": 1.8, "label": "無異曲線" },
+    { "f": "26-4*sqrt(x)", "color": "d2", "w": 1.8, "if": "a-1.5" },
+    { "f": "28-4*sqrt(x)", "color": "d2", "w": 1.8, "if": "a-2.5" }
+  ],
+  "shapes": [
+    { "type": "line", "x1": 4, "y1": 0, "x2": 4, "y2": 16, "color": "mute", "dash": true, "w": 1.2 },
+    { "type": "line", "x1": 16, "y1": 0, "x2": 16, "y2": 12, "color": "mute", "dash": true, "w": 1.2, "if": "a-1.5" },
+    { "type": "arrow", "x1": 4, "y1": 1.6, "x2": 15.7, "y2": 1.6, "color": "d1", "label": "替代效果 +12", "lo": [0, -10], "if": "a-1.5" }
+  ],
+  "points": [
+    { "x": 4, "y": 16, "color": "f", "label": "A (4, 16)", "pos": "tr" },
+    { "x": 16, "y": 10, "color": "d1", "label": "B (16, 10)", "pos": "bl", "if": "a-1.5" },
+    { "x": 16, "y": 12, "color": "pos", "label": "C (16, 12)", "pos": "tr", "if": "a-2.5" }
+  ],
+  "readouts": [
+    { "label": "現在的畫面", "expr": "a-2", "neg": "原本：x₁ = 4 / 1² = 4，選 A (4, 16)", "zero": "補償所得 m′ = 20 + (0.5 − 1) × 4 = 18：x₁ = 4 / 0.5² = 16，選 B (16, 10)", "pos": "所得回到 20：x₁ 還是 16，多出來的 2 元全部拿去買 x₂ → C (16, 12)，x₁ 的所得效果 0", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>準線性的無異曲線是同一條曲線上下平移，所以所得增加時最適點只會垂直往上移。B 和 C 的 x₁ 一樣，x₁ 的需求變化全部是替代效果。</figcaption>
+</figure>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>效用函數</th><th>替代效果</th><th>所得效果</th><th>一句話</th></tr></thead>
+<tbody>
+<tr><td>完全互補 $\min\{\cdot,\cdot\}$</td><td><strong>0</strong></td><td>全部</td><td>折點不會因為預算線轉動而移動</td></tr>
+<tr><td>完全替代 $ax_1 + bx_2$（換角時）</td><td>全部</td><td><strong>0</strong></td><td>原本沒買那個商品，$m' = m$</td></tr>
+<tr><td>準線性 $f(x_1) + x_2$</td><td>全部</td><td><strong>0</strong></td><td>$x_1$ 的需求跟所得無關</td></tr>
+<tr><td>Cobb-Douglas</td><td>有</td><td>有</td><td>兩個效果同方向（正常財）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="quiz" data-answer="3">
+<p class="quiz-q">阿明只吃「一個漢堡配兩包薯條」的套餐，多的漢堡或多的薯條對他都沒用。漢堡漲價後他買的漢堡變少了。減少的部分是？</p>
+<button>全部是替代效果</button>
+<button>替代效果和所得效果各一半</button>
+<button>全部是所得效果</button>
+<p class="quiz-why">這是完全互補。不管相對價格怎麼變，他都維持固定搭配，替代效果是 0。漢堡變少只是因為漲價後買得起的套餐數變少了，全部是所得效果。</p>
+</div>
+
+<h2 id="hicks">補充：Hicks 的替代效果</h2>
+<p>簡報最後一頁問了一句：「在新價格下，要多少所得才能回到<strong>原來的效用水準</strong>？」這是 Hicks 的拆法。和 Slutsky 只差在「補償到哪裡」：</p>
+<div class="duo">
+<div>
+<h4>Slutsky 補償</h4>
+<p>補償到<strong>買得起原來的組合</strong>。補償預算線通過 A。作業指定用這一種。</p>
+</div>
+<div>
+<h4>Hicks 補償</h4>
+<p>補償到<strong>回到原來的無異曲線</strong>。補償預算線和通過 A 的那條無異曲線相切。</p>
+</div>
+</div>
+<details class="peek"><summary>用作業第 1 題的數字比較兩種拆法</summary>
+<p>原本的效用 $U_0 = 15^2 \times 15 = 3375$。新價格 $(1, 1)$ 下，所得 $m$ 的人會選 $x_1 = \tfrac{2m}{3}$、$x_2 = \tfrac{m}{3}$，效用是 $\tfrac{4m^3}{27}$。令它等於 3375：</p>
+$$\frac{4m^3}{27} = 3375 \;\Rightarrow\; m \approx 28.35 \;\Rightarrow\; x_1 \approx 18.90$$
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>拆法</th><th>補償所得</th><th>中間點的 $x_1$</th><th>替代效果</th><th>所得效果</th></tr></thead>
+<tbody>
+<tr><td>Slutsky</td><td class="n">30</td><td class="n">20</td><td class="n">+5</td><td class="n">+10</td></tr>
+<tr><td>Hicks</td><td class="n">28.35</td><td class="n">18.90</td><td class="n">+3.90</td><td class="n">+11.10</td></tr>
+</tbody>
+</table>
+</div>
+<p>總效果都是 +15，只是切的位置不同。題目寫 Slutsky 就用 Slutsky。</p>
+</details>
+
+<h2 id="problems">作業 HW7</h2>
+<p>三題的 (A)(B)(C)(D) 結構完全一樣，只是效用函數不同。先自己算，卡住再一步一步打開。</p>
+
+<article class="prob" data-prob="HW7-1">
+<h3>Cobb-Douglas：$U = x_1^2x_2$</h3>
+<div class="prob-q">
+<p>消費者的效用函數是 $U = x_1^2x_2$，預算限制式是 $p_1x_1 + p_2x_2 = m$。</p>
+<p>(A) 導出 $x_1$ 和 $x_2$ 的需求函數。<br>(B) 令 $p_1 = 2$、$p_2 = 1$、$m = 45$，求最適消費組合。<br>(C) $p_1$ 從 2 降到 1，$p_2$ 和 $m$ 不變，求新的最適消費組合。<br>(D) 用 Slutsky 方程式，求 (C) 的價格變動對 $x_1$ 的純替代效果與所得效果。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>(A) 用兩個條件：相切 $\text{MRS} = -\dfrac{p_1}{p_2}$，加上預算式。$MU_1 = 2x_1x_2$，$MU_2 = x_1^2$。(D) 先算「用新價格買舊組合要多少錢」。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 相切條件</h4>
+$$\text{MRS} = -\frac{MU_1}{MU_2} = -\frac{2x_1x_2}{x_1^2} = -\frac{2x_2}{x_1} = -\frac{p_1}{p_2} \quad\Rightarrow\quad p_1x_1 = 2\,p_2x_2$$
+<p>意思是花在 $x_1$ 的錢是花在 $x_2$ 的兩倍。</p>
+</div>
+<div class="step">
+<h4>(A) 代回預算式</h4>
+$$p_1x_1 + p_2x_2 = m \;\Rightarrow\; 2p_2x_2 + p_2x_2 = m \;\Rightarrow\; x_2^* = \frac{m}{3p_2},\qquad x_1^* = \frac{2m}{3p_1}$$
+<p>所得的 $\tfrac23$ 花在 $x_1$、$\tfrac13$ 花在 $x_2$，跟指數 2 和 1 的比例一樣。</p>
+</div>
+<div class="step">
+<h4>(B) 代入 $p_1 = 2$、$p_2 = 1$、$m = 45$</h4>
+$$x_1^* = \frac{2\times 45}{3\times 2} = 15,\qquad x_2^* = \frac{45}{3\times 1} = 15$$
+<p>原本的組合 $A = (15, 15)$。檢查：$2\times 15 + 1\times 15 = 45$ ✓</p>
+</div>
+<div class="step">
+<h4>(C) $p_1$ 改成 1</h4>
+$$x_1^* = \frac{2\times 45}{3\times 1} = 30,\qquad x_2^* = 15$$
+<p>新的組合 $C = (30, 15)$。$x_1$ 總共增加 $30 - 15 = 15$。</p>
+</div>
+<div class="step">
+<h4>(D) 補償所得</h4>
+<p>用新價格 $(1, 1)$ 買原本的 $A = (15, 15)$：</p>
+$$m' = 1\times 15 + 1\times 15 = 30 \qquad\big(\text{或 } m' = 45 + (1 - 2)\times 15 = 30\big)$$
+</div>
+<div class="step">
+<h4>(D) 中間點 B</h4>
+<p>需求函數代入新價格和 $m' = 30$：</p>
+$$x_1^{B} = \frac{2\times 30}{3\times 1} = 20 \qquad\Big(x_2^{B} = \frac{30}{3} = 10\Big)$$
+</div>
+<div class="step">
+<h4>(D) 相減</h4>
+$$\text{替代效果} = 20 - 15 = +5,\qquad \text{所得效果} = 30 - 20 = +10$$
+<p>檢查：$5 + 10 = 15$，等於總變化 ✓。兩個效果同方向，$x_1$ 是正常財。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業 HW7 第 1 題的 Slutsky 分解圖",
+  "x": [0, 48], "y": [0, 48], "h": 300,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "45-2*x", "color": "f", "label": "原本 2x₁ + x₂ = 45" },
+    { "f": "30-x", "color": "d1", "dash": true, "label": "補償 x₁ + x₂ = 30" },
+    { "f": "45-x", "color": "pos", "label": "新的 x₁ + x₂ = 45" }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 15, "y1": 2.6, "x2": 20, "y2": 2.6, "color": "d1", "label": "+5", "lo": [0, -10] },
+    { "type": "arrow", "x1": 20, "y1": 2.6, "x2": 30, "y2": 2.6, "color": "pos", "label": "+10", "lo": [0, -10] }
+  ],
+  "points": [
+    { "x": 15, "y": 15, "color": "f", "label": "A (15, 15)", "pos": "tr" },
+    { "x": 20, "y": 10, "color": "d1", "label": "B (20, 10)", "pos": "tr" },
+    { "x": 30, "y": 15, "color": "pos", "label": "C (30, 15)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>A → B 是替代效果（+5），B → C 是所得效果（+10）。</figcaption>
+</figure>
+<p class="answer"><span>(A) $x_1 = \dfrac{2m}{3p_1}$、$x_2 = \dfrac{m}{3p_2}$　(B) $(15, 15)$　(C) $(30, 15)$　(D) $m' = 30$，替代效果 $+5$，所得效果 $+10$。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW7-2">
+<h3>完全互補：$U = \min\{x_1, 2x_2\}$</h3>
+<div class="prob-q">
+<p>消費者的效用函數是 $U = \min\{x_1, 2x_2\}$，預算限制式是 $p_1x_1 + p_2x_2 = m$。</p>
+<p>(A) 導出 $x_1$ 和 $x_2$ 的需求函數。<br>(B) 令 $p_1 = 1$、$p_2 = 2$、$m = 48$，求最適消費組合。<br>(C) $p_2$ 從 2 漲到 4，$p_1$ 和 $m$ 不變，求新的最適消費組合。<br>(D) 用 Slutsky 方程式，求 (C) 的價格變動對 $x_2$ 的純替代效果與所得效果。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>完全互補不能用微分。最適點一定在 L 型的折點，也就是括號裡兩個東西相等：$x_1 = 2x_2$。注意這一題變的是 $p_2$、問的是 $x_2$，所以 $m' = m + \Delta p_2 \times x_2^{A}$。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 折點條件</h4>
+<p>多出來的 $x_1$ 或 $x_2$ 都不會增加效用，所以不浪費的買法是讓兩個相等：</p>
+$$x_1 = 2x_2$$
+</div>
+<div class="step">
+<h4>(A) 代回預算式</h4>
+$$p_1(2x_2) + p_2x_2 = m \;\Rightarrow\; x_2^* = \frac{m}{2p_1 + p_2},\qquad x_1^* = \frac{2m}{2p_1 + p_2}$$
+<p>可以想成一套「2 個 $x_1$ 配 1 個 $x_2$」要價 $2p_1 + p_2$，所得能買幾套就買幾套。</p>
+</div>
+<div class="step">
+<h4>(B) 代入 $p_1 = 1$、$p_2 = 2$、$m = 48$</h4>
+$$x_2^* = \frac{48}{2 + 2} = 12,\qquad x_1^* = 24$$
+<p>$A = (24, 12)$。檢查：$1\times 24 + 2\times 12 = 48$ ✓</p>
+</div>
+<div class="step">
+<h4>(C) $p_2$ 改成 4</h4>
+$$x_2^* = \frac{48}{2 + 4} = 8,\qquad x_1^* = 16$$
+<p>$C = (16, 8)$。檢查：$16 + 4\times 8 = 48$ ✓。$x_2$ 總共變化 $8 - 12 = -4$。</p>
+</div>
+<div class="step">
+<h4>(D) 補償所得</h4>
+<p>用新價格 $(1, 4)$ 買原本的 $A = (24, 12)$：</p>
+$$m' = 1\times 24 + 4\times 12 = 72 \qquad\big(\text{或 } m' = 48 + (4 - 2)\times 12 = 72\big)$$
+<p>這次是漲價，所以要<strong>多給</strong>他錢才買得起原來那一籃。</p>
+</div>
+<div class="step">
+<h4>(D) 中間點 B</h4>
+$$x_2^{B} = \frac{72}{2\times 1 + 4} = 12 \qquad\big(x_1^{B} = 24\big)$$
+<p>B 和 A 是同一點。</p>
+</div>
+<div class="step">
+<h4>(D) 相減</h4>
+$$\text{替代效果} = 12 - 12 = 0,\qquad \text{所得效果} = 8 - 12 = -4$$
+<p>完全互補沒有替代效果，$x_2$ 少掉的 4 單位全部是所得效果。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業 HW7 第 2 題的 Slutsky 分解圖",
+  "x": [0, 80], "y": [0, 30], "h": 290,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "(48-x)/2", "color": "f", "label": "原本 x₁ + 2x₂ = 48" },
+    { "f": "(72-x)/4", "color": "d1", "dash": true, "label": "補償 x₁ + 4x₂ = 72" },
+    { "f": "(48-x)/4", "color": "pos", "label": "新的 x₁ + 4x₂ = 48" },
+    { "f": "x/2", "color": "mute", "dash": true, "w": 1.4, "label": "x₁ = 2x₂" }
+  ],
+  "shapes": [
+    { "type": "poly", "pts": [[24, 30], [24, 12], [80, 12]], "color": "d2", "w": 1.8 },
+    { "type": "poly", "pts": [[16, 30], [16, 8], [80, 8]], "color": "d2", "w": 1.8 },
+    { "type": "arrow", "x1": 5, "y1": 12, "x2": 5, "y2": 8.3, "color": "pos", "label": "−4", "lo": [10, 4], "anchor": "start" }
+  ],
+  "points": [
+    { "x": 24, "y": 12, "color": "d1", "label": "A = B (24, 12)", "pos": "tr" },
+    { "x": 16, "y": 8, "color": "pos", "label": "C (16, 8)", "pos": "br" }
+  ]
+}
+</script>
+<figcaption>橘色虛線繞著 A 轉，但折點沒有動。A 到 C 是沿著折點連線往內縮。</figcaption>
+</figure>
+<p class="answer"><span>(A) $x_1 = \dfrac{2m}{2p_1 + p_2}$、$x_2 = \dfrac{m}{2p_1 + p_2}$　(B) $(24, 12)$　(C) $(16, 8)$　(D) $m' = 72$，替代效果 $0$，所得效果 $-4$。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW7-3">
+<h3>完全替代：$U = 2x_1 + x_2$</h3>
+<div class="prob-q">
+<p>消費者的效用函數是 $U = 2x_1 + x_2$，預算限制式是 $p_1x_1 + p_2x_2 = m$。</p>
+<p>(A) 導出 $x_1$ 和 $x_2$ 的需求函數，並依照 MRS 與相對價格的關係分情況討論。<br>(B) 令 $p_1 = 3$、$p_2 = 1$、$m = 30$，求最適消費組合。<br>(C) $p_1$ 從 3 降到 1，$p_2$ 和 $m$ 不變，求新的最適消費組合。<br>(D) 用 Slutsky 方程式，求 (C) 的價格變動對 $x_1$ 的純替代效果與所得效果。</p>
+</div>
+<details class="hint"><summary>提示</summary>
+<p>無異曲線是斜率 $-2$ 的直線，預算線斜率是 $-\dfrac{p_1}{p_2}$。兩條直線通常不會相切，最適點會在角落。比較「無異曲線比較陡」還是「預算線比較陡」。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 算 MRS</h4>
+$$\text{MRS} = -\frac{MU_1}{MU_2} = -\frac{2}{1} = -2$$
+<p>意思是 1 單位 $x_1$ 永遠抵 2 單位 $x_2$。市場上 1 單位 $x_1$ 要用 $\dfrac{p_1}{p_2}$ 單位 $x_2$ 換。拿 $|\text{MRS}| = 2$ 和 $\dfrac{p_1}{p_2}$ 比。</p>
+</div>
+<div class="step">
+<h4>(A) 分三種情況</h4>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>情況</th><th>白話</th><th>$x_1^*$</th><th>$x_2^*$</th></tr></thead>
+<tbody>
+<tr><td>$\dfrac{p_1}{p_2} \lt 2$（即 $p_1 \lt 2p_2$）</td><td>$x_1$ 划算，全部買 $x_1$</td><td>$\dfrac{m}{p_1}$</td><td>$0$</td></tr>
+<tr><td>$\dfrac{p_1}{p_2} \gt 2$（即 $p_1 \gt 2p_2$）</td><td>$x_1$ 太貴，全部買 $x_2$</td><td>$0$</td><td>$\dfrac{m}{p_2}$</td></tr>
+<tr><td>$\dfrac{p_1}{p_2} = 2$</td><td>一樣划算</td><td colspan="2">預算線上任何一點都是最適解</td></tr>
+</tbody>
+</table>
+</div>
+<p>另一種想法：每 1 元花在 $x_1$ 得到 $\dfrac{2}{p_1}$ 的效用，花在 $x_2$ 得到 $\dfrac{1}{p_2}$，哪個大就全部買哪個。</p>
+</div>
+<div class="step">
+<h4>(B) 代入 $p_1 = 3$、$p_2 = 1$、$m = 30$</h4>
+<p>$\dfrac{p_1}{p_2} = 3 \gt 2$，$x_1$ 太貴，全部買 $x_2$：</p>
+$$A = \Big(0,\ \frac{30}{1}\Big) = (0, 30)$$
+</div>
+<div class="step">
+<h4>(C) $p_1$ 改成 1</h4>
+<p>$\dfrac{p_1}{p_2} = 1 \lt 2$，$x_1$ 變划算，全部買 $x_1$：</p>
+$$C = \Big(\frac{30}{1},\ 0\Big) = (30, 0)$$
+<p>$x_1$ 總共增加 30。</p>
+</div>
+<div class="step">
+<h4>(D) 補償所得</h4>
+<p>用新價格 $(1, 1)$ 買原本的 $A = (0, 30)$：</p>
+$$m' = 1\times 0 + 1\times 30 = 30 \qquad\big(\text{或 } m' = 30 + (1 - 3)\times 0 = 30\big)$$
+<p>原本沒買 $x_1$，降價沒有讓原來那一籃變便宜，所以 $m' = m$。</p>
+</div>
+<div class="step">
+<h4>(D) 中間點 B</h4>
+<p>新價格下 $\dfrac{p_1}{p_2} = 1 \lt 2$，所得 30 全部買 $x_1$：$B = (30, 0)$。</p>
+</div>
+<div class="step">
+<h4>(D) 相減</h4>
+$$\text{替代效果} = 30 - 0 = +30,\qquad \text{所得效果} = 30 - 30 = 0$$
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業 HW7 第 3 題的 Slutsky 分解圖",
+  "x": [0, 36], "y": [0, 36], "h": 290,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "30-3*x", "color": "f", "label": "原本 3x₁ + x₂ = 30" },
+    { "f": "30-x", "color": "pos", "label": "新的 = 補償 x₁ + x₂ = 30" },
+    { "f": "30-2*x", "color": "d2", "w": 1.8, "label": "無異曲線" },
+    { "f": "60-2*x", "color": "d2", "w": 1.8 }
+  ],
+  "shapes": [
+    { "type": "arrow", "x1": 1, "y1": 2, "x2": 29, "y2": 2, "color": "d1", "label": "替代效果 +30", "lo": [0, -10] }
+  ],
+  "points": [
+    { "x": 0, "y": 30, "color": "f", "label": "A (0, 30)", "pos": "tr" },
+    { "x": 30, "y": 0, "color": "pos", "label": "B = C (30, 0)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>補償預算線和新預算線重疊，所以 B 和 C 是同一點，所得效果是 0。</figcaption>
+</figure>
+<p class="answer"><span>(A) $p_1 \lt 2p_2$：$\big(\tfrac{m}{p_1}, 0\big)$；$p_1 \gt 2p_2$：$\big(0, \tfrac{m}{p_2}\big)$；$p_1 = 2p_2$：預算線上任一點　(B) $(0, 30)$　(C) $(30, 0)$　(D) $m' = 30$，替代效果 $+30$，所得效果 $0$。</span></p>
+</div>
+</div>
+</article>
+
+<div class="exam">
+<p>(D) 小題一定要把 $m'$ 的算式寫出來，再把 A、B、C 三個點列清楚，最後明確寫「substitution effect = …，income effect = …」。寫完檢查兩個相加等於總變化。變的是 $p_2$ 的時候，記得 $\Delta p$ 要乘 $x_2$ 而不是 $x_1$。</p>
+</div>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=2"></script>
+</body>
+</html>
