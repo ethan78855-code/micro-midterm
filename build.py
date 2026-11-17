@@ -11,6 +11,7 @@ import glob
 import io
 import os
 import re
+import shutil
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, 'src')
@@ -39,6 +40,12 @@ def main():
         out = os.path.join(ROOT, os.path.basename(path))
         io.open(out, 'w', encoding='utf-8', newline='\n').write(html)
         print('%-14s %6.1f KB' % (os.path.basename(path), len(html.encode('utf-8')) / 1024))
+    # 舊版頁面（還留在別人手機快取裡的）會去抓 assets/style.css 和 assets/app.js，
+    # 所以根目錄也放一份，免得那些頁面變成沒有排版
+    out_assets = os.path.join(ROOT, 'assets')
+    os.makedirs(out_assets, exist_ok=True)
+    for name in ('style.css', 'app.js'):
+        shutil.copyfile(os.path.join(SRC, 'assets', name), os.path.join(out_assets, name))
     print('完成：%d 頁' % len(pages))
 
 
