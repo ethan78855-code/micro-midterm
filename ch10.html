@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body data-page="ch10">
 <main class="page">
@@ -456,145 +456,146 @@ $$PV = \frac{x}{1+r} + \frac{x}{(1+r)^2} + \frac{x}{(1+r)^3} + \cdots = \frac{1}
 <p class="quiz-why">$PV = \dfrac{x}{r} = \dfrac{50}{0.05} = 1000$ 元。利率升到 10% 時 $\dfrac{50}{0.10} = 500$ 元。利率上升，現值下降，這是整章最常考的方向判斷。</p>
 </div>
 
-<h2 id="problems">作業 HW9</h2>
-<p>先自己動手算，卡住再一步一步打開解答。三題都是代公式，重點是式子寫對、數字算到底。</p>
+<h2 id="problems">作業 HW9（英文題目與解答）</h2>
+<p>考卷是英文的，所以下面的題目和解答都用英文寫，每一步都是考卷上可以直接寫的句子。先自己算，卡住再一步一步打開。</p>
 
 <article class="prob" data-prob="HW9-1">
-<h3>兩期所得的跨期預算線</h3>
+<h3>The intertemporal budget line with two incomes</h3>
 <div class="prob-q">
-<p>某位消費者第 1 期所得 $m_1 = 100$、第 2 期所得 $m_2 = 110$，利率 $r = 10\%$，兩期物價都是 1（$p_1 = p_2 = 1$）。</p>
-<p>(A) 寫出終值形式（future-value form）的跨期預算限制式。<br>
-(B) 寫出現值形式（present-value form）的跨期預算限制式。<br>
-(C) 第 1 期和第 2 期各自最多可以消費多少？<br>
-(D) 畫出預算線，標出所得稟賦點與斜率。<br>
-(E) 如果消費者選 $c_1 = 80$，他是在存錢還是借錢？$c_2$ 是多少？</p>
+<p>A consumer earns $m_1 = 100$ in period 1 and $m_2 = 110$ in period 2. The interest rate is $r = 10\%$. The price of consumption is 1 in both periods ($p_1 = p_2 = 1$).</p>
+<p>(A) State the intertemporal budget constraint in future-value form.<br>
+(B) State the intertemporal budget constraint in present-value form.<br>
+(C) What is the largest possible consumption in period 1? In period 2?<br>
+(D) Sketch the budget line. Mark the income endowment and the slope.<br>
+(E) Suppose the consumer picks $c_1 = 80$. Is the consumer a saver or a borrower? Compute $c_2$.</p>
 </div>
-<details class="hint"><summary>提示</summary>
+<details class="hint"><summary>提示（中文）</summary>
 <p>終值式是把每一項都換成第 2 期的錢：第 1 期的東西要乘 $(1+r) = 1.1$。現值式是都換成第 1 期的錢：第 2 期的東西要除以 $1.1$。最大消費就是兩個截距。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) 終值形式</h4>
-<p>通式是 $(1+r)c_1 + c_2 = (1+r)m_1 + m_2$。代入 $r = 0.1$、$m_1 = 100$、$m_2 = 110$：</p>
+<h4>(A) Future-value form</h4>
+<p>The general form is $(1+r)c_1 + c_2 = (1+r)m_1 + m_2$. Put in $r = 0.1$, $m_1 = 100$, $m_2 = 110$:</p>
 $$1.1\,c_1 + c_2 = 1.1(100) + 110 = 220$$
-<p>右邊的 220 就是稟賦的終值：把第 1 期的 100 元全部存到第 2 期，連同第 2 期的 110 元。</p>
+<p>All terms are in period-2 values. The number 220 is the future value of the endowment.</p>
 </div>
 <div class="step">
-<h4>(B) 現值形式</h4>
-<p>通式是 $c_1 + \dfrac{c_2}{1+r} = m_1 + \dfrac{m_2}{1+r}$。也可以把 (A) 的兩邊同除以 1.1：</p>
+<h4>(B) Present-value form</h4>
+<p>The general form is $c_1 + \dfrac{c_2}{1+r} = m_1 + \dfrac{m_2}{1+r}$. We can also divide both sides of (A) by 1.1:</p>
 $$c_1 + \frac{c_2}{1.1} = 100 + \frac{110}{1.1} = 200$$
-<p>右邊的 200 是稟賦的現值：第 2 期的 110 元今天值 100 元，加上第 1 期的 100 元。</p>
+<p>All terms are in period-1 values. The number 200 is the present value of the endowment.</p>
 </div>
 <div class="step">
-<h4>(C) 兩期各自的最大消費</h4>
-<p>第 1 期最多：令 $c_2 = 0$，由現值式得 $c_1 = 200$。意思是把第 2 期的所得借到底，可以借 $\dfrac{110}{1.1} = 100$ 元，加上原本的 100 元。</p>
-<p>第 2 期最多：令 $c_1 = 0$，由終值式得 $c_2 = 220$。意思是第 1 期完全不花，$100 \times 1.1 = 110$ 元，加上第 2 期的 110 元。</p>
+<h4>(C) Maximum consumption in each period</h4>
+<p>Period 1: set $c_2 = 0$ in the present-value form. Then $c_1 = 200$. The consumer borrows $\dfrac{110}{1.1} = 100$ against period-2 income and adds it to the 100 of period-1 income.</p>
+<p>Period 2: set $c_1 = 0$ in the future-value form. Then $c_2 = 220$. The consumer saves all 100, which grows to $100 \times 1.1 = 110$, and adds the 110 of period-2 income.</p>
 </div>
 <div class="step">
-<h4>(D) 畫預算線</h4>
-<p>連接兩個截距 $(0, 220)$ 和 $(200, 0)$。斜率 $= -\dfrac{220}{200} = -1.1 = -(1+r)$。稟賦點 $(100, 110)$ 一定在線上：$1.1(100) + 110 = 220$ ✓。</p>
+<h4>(D) Draw the budget line</h4>
+<p>Join the two intercepts $(0, 220)$ and $(200, 0)$. The slope is $-\dfrac{220}{200} = -1.1 = -(1+r)$. The endowment $(100, 110)$ is on the line: $1.1(100) + 110 = 220$ ✓.</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "作業第 1 題的跨期預算線，從 (0, 220) 到 (200, 0)，通過稟賦點 (100, 110)",
+  "alt": "Intertemporal budget line of Problem 1 from (0, 220) to (200, 0), passing through the endowment (100, 110)",
   "x": [0, 260], "y": [-28, 262], "h": 340,
   "xlabel": "c₁", "ylabel": "c₂",
-  "fns": [ { "f": "220-1.1*x", "color": "f", "label": "1.1c₁ + c₂ = 220，斜率 −1.1", "domain": [0, 200] } ],
+  "fns": [ { "f": "220-1.1*x", "color": "f", "label": "1.1c₁ + c₂ = 220, slope −1.1", "domain": [0, 200] } ],
   "shapes": [
     { "type": "line", "x1": 100, "y1": 0, "x2": 100, "y2": 110, "color": "mute", "dash": true },
     { "type": "line", "x1": 0, "y1": 110, "x2": 100, "y2": 110, "color": "mute", "dash": true },
-    { "type": "text", "x": 150, "y": 84, "t": "斜率 = −(1 + r) = −1.1", "color": "f", "anchor": "start" }
+    { "type": "text", "x": 150, "y": 84, "t": "slope = −(1 + r) = −1.1", "color": "f", "anchor": "start" }
   ],
   "points": [
-    { "x": 0, "y": 220, "color": "f", "label": "(0, 220) 全部存起來", "pos": "r" },
-    { "x": 200, "y": 0, "color": "f", "label": "(200, 0) 借到底", "pos": "t" },
-    { "x": 100, "y": 110, "color": "ink", "label": "稟賦 (100, 110)", "pos": "tr" }
+    { "x": 0, "y": 220, "color": "f", "label": "(0, 220) save all", "pos": "r" },
+    { "x": 200, "y": 0, "color": "f", "label": "(200, 0) borrow all", "pos": "t" },
+    { "x": 100, "y": 110, "color": "ink", "label": "ω (100, 110)", "pos": "tr" }
   ]
 }
 </script>
-<figcaption>考試畫圖要有四樣東西：兩個軸的名稱（c₁、c₂）、兩個截距的數字、稟賦點、斜率。</figcaption>
+<figcaption>A good exam graph has four things: the axis names (c₁, c₂), the two intercepts with numbers, the endowment point ω, and the slope.</figcaption>
 </figure>
 </div>
 <div class="step">
-<h4>(E) 選 c₁ = 80</h4>
-<p>$c_1 = 80 \lt m_1 = 100$，第 1 期沒有把所得花完，所以是在<strong>存錢</strong>，存了 $100 - 80 = 20$ 元。</p>
-<p>這 20 元到第 2 期變成 $20 \times 1.1 = 22$ 元：</p>
+<h4>(E) Choosing c₁ = 80</h4>
+<p>$c_1 = 80 \lt m_1 = 100$. The consumer spends less than the period-1 income, so the consumer is a <strong>saver</strong> (lender). Saving $= 100 - 80 = 20$.</p>
+<p>The saving grows to $20 \times 1.1 = 22$ in period 2:</p>
 $$c_2 = m_2 + (1+r)(m_1 - c_1) = 110 + 1.1 \times 20 = 132$$
-<p>檢查：$1.1(80) + 132 = 88 + 132 = 220$ ✓。</p>
+<p>Check: $1.1(80) + 132 = 88 + 132 = 220$ ✓.</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "從稟賦點 (100, 110) 少花 20 元，沿著預算線移到 (80, 132)",
-  "x": [40, 140], "y": [70, 180], "h": 300,
+  "alt": "From the endowment (100, 110), consume 20 less today and move along the budget line to (80, 132)",
+  "x": [40, 160], "y": [70, 180], "h": 300,
   "xlabel": "c₁", "ylabel": "c₂",
-  "fns": [ { "f": "220-1.1*x", "color": "f", "label": "預算線 1.1c₁ + c₂ = 220" } ],
+  "fns": [ { "f": "220-1.1*x", "color": "f", "label": "Budget line 1.1c₁ + c₂ = 220" } ],
   "shapes": [
-    { "type": "arrow", "x1": 100, "y1": 110, "x2": 80, "y2": 110, "color": "d1", "label": "今天少花 20", "lo": [0, 19] },
-    { "type": "arrow", "x1": 80, "y1": 110, "x2": 80, "y2": 132, "color": "pos", "label": "明天多 22", "lo": [-9, 4], "anchor": "end" }
+    { "type": "arrow", "x1": 100, "y1": 110, "x2": 80, "y2": 110, "color": "d1", "label": "−20 today", "lo": [0, 19] },
+    { "type": "arrow", "x1": 80, "y1": 110, "x2": 80, "y2": 132, "color": "pos", "label": "+22", "lo": [-9, 4], "anchor": "end" }
   ],
   "points": [
-    { "x": 100, "y": 110, "color": "ink", "label": "稟賦 (100, 110)", "pos": "tr" },
-    { "x": 80, "y": 132, "color": "pos", "label": "選擇 (80, 132)", "pos": "tr" }
+    { "x": 100, "y": 110, "color": "ink", "label": "ω (100, 110)", "pos": "tr" },
+    { "x": 80, "y": 132, "color": "pos", "label": "choice (80, 132)", "pos": "tr" }
   ]
 }
 </script>
-<figcaption>往左走 20（今天少花），就能往上走 20 × 1.1 = 22（明天多花）。選擇在稟賦點的左上方，就是存錢。</figcaption>
+<figcaption>Move 20 to the left (consume 20 less today) and you move 20 × 1.1 = 22 up (consume 22 more tomorrow). A choice to the upper left of the endowment ω means saving.</figcaption>
 </figure>
-<p class="answer"><span>(A) $1.1c_1 + c_2 = 220$。(B) $c_1 + \dfrac{c_2}{1.1} = 200$。(C) $c_1$ 最多 200，$c_2$ 最多 220。(D) 連接 $(0,220)$ 與 $(200,0)$，通過稟賦 $(100,110)$，斜率 $-1.1$。(E) 存錢，存 20 元，$c_2 = 132$。</span></p>
+<p class="answer"><span>(A) $1.1c_1 + c_2 = 220$. (B) $c_1 + \dfrac{c_2}{1.1} = 200$. (C) Maximum $c_1 = 200$; maximum $c_2 = 220$. (D) The line joins $(0, 220)$ and $(200, 0)$ and passes through the endowment $(100, 110)$; slope $= -1.1$. (E) The consumer is a saver, saves 20, and $c_2 = 132$.</span></p>
 </div>
 </div>
 </article>
 
 <article class="prob" data-prob="HW9-2">
-<h3>名目利率、通膨與實質利率</h3>
+<h3>Nominal rate, inflation, and the real interest rate</h3>
 <div class="prob-q">
-<p>名目利率（nominal interest rate）是 10%，通貨膨脹率（inflation rate）是 5%。</p>
-<p>(A) 算出精確的（exact）實質利率。<br>
-(B) 用近似公式「實質利率 ≈ 名目利率 − 通膨率」算出近似值。<br>
-(C) 如果 $p_1 = 1$，$p_2$ 是多少？<br>
-(D) 跨期預算線的斜率是多少？<br>
-(E) 如果通膨率從 5% 升到 10%，名目利率不變，預算線會變陡還是變平？說明原因。</p>
+<p>The nominal interest rate is 10% and the inflation rate is 5%.</p>
+<p>(A) Compute the exact real interest rate.<br>
+(B) Compute the approximate real interest rate with the rule “real rate ≈ nominal rate − inflation rate”.<br>
+(C) If $p_1 = 1$, find $p_2$.<br>
+(D) Find the slope of the intertemporal budget line.<br>
+(E) Now inflation rises from 5% to 10% and the nominal interest rate stays the same. Does the budget line get steeper or flatter? Give the reason.</p>
 </div>
-<details class="hint"><summary>提示</summary>
+<details class="hint"><summary>提示（中文）</summary>
 <p>關鍵式子只有一條：$1 + \rho = \dfrac{1+r}{1+\pi}$。預算線的斜率就是 $-(1+\rho)$。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) 精確的實質利率</h4>
+<h4>(A) Exact real interest rate</h4>
 $$1+\rho = \frac{1+r}{1+\pi} = \frac{1.10}{1.05} \approx 1.0476 \qquad\Longrightarrow\qquad \rho \approx 0.0476 = 4.76\%$$
-<p>也可以直接用 $\rho = \dfrac{r - \pi}{1+\pi} = \dfrac{0.05}{1.05} \approx 0.0476$，答案一樣。</p>
+<p>We can also use $\rho = \dfrac{r - \pi}{1+\pi} = \dfrac{0.05}{1.05} \approx 0.0476$. The answer is the same.</p>
 </div>
 <div class="step">
-<h4>(B) 近似的實質利率</h4>
+<h4>(B) Approximate real interest rate</h4>
 $$\rho \approx r - \pi = 10\% - 5\% = 5\%$$
-<p>比精確值 4.76% 高了約 0.24 個百分點。通膨不高，所以近似得還不錯。</p>
+<p>The approximation is about 0.24 percentage points above the exact value 4.76%. It is close because inflation is low.</p>
 </div>
 <div class="step">
-<h4>(C) 第 2 期的物價</h4>
+<h4>(C) Price in period 2</h4>
 $$p_2 = (1+\pi)\,p_1 = 1.05 \times 1 = 1.05$$
 </div>
 <div class="step">
-<h4>(D) 預算線的斜率</h4>
-$$\text{斜率} = -(1+r)\,\frac{p_1}{p_2} = -\frac{1+r}{1+\pi} = -\frac{1.10}{1.05} \approx -1.0476$$
-<p>也就是 $-(1+\rho)$。今天少消費 1 單位，明天可以多消費約 1.0476 單位。</p>
+<h4>(D) Slope of the budget line</h4>
+$$\text{slope} = -(1+r)\,\frac{p_1}{p_2} = -\frac{1+r}{1+\pi} = -\frac{1.10}{1.05} \approx -1.0476$$
+<p>This equals $-(1+\rho)$. If the consumer gives up 1 unit of consumption today, the consumer gets about 1.0476 units tomorrow.</p>
 </div>
 <div class="step">
-<h4>(E) 通膨升到 10%</h4>
-<p>新的斜率：</p>
+<h4>(E) Inflation rises to 10%</h4>
+<p>The new slope is</p>
 $$-\frac{1+r}{1+\pi} = -\frac{1.10}{1.10} = -1$$
-<p>斜率的絕對值從 1.0476 降到 1，預算線<strong>變平</strong>。原因：名目利率沒變，但東西漲得更快，實質利率從 4.76% 掉到 0。今天少消費 1 單位，明天能換到的消費從 1.0476 單位變成只有 1 單位。</p>
+<p>The absolute value of the slope falls from 1.0476 to 1, so the budget line becomes <strong>flatter</strong>.</p>
+<p>Reason: the nominal interest rate is the same, but prices rise faster. The real interest rate falls from 4.76% to 0. Giving up 1 unit today now gives only 1 unit tomorrow, not 1.0476 units.</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "通膨率 5% 與 10% 時的跨期預算線，後者比較平",
+  "alt": "Intertemporal budget lines with 5% and 10% inflation; the line with 10% inflation is flatter",
   "x": [0, 250], "y": [-28, 255], "h": 330,
   "xlabel": "c₁", "ylabel": "c₂",
   "fns": [
-    { "f": "(110+1.1*(100-x))/1.05", "color": "f", "label": "π = 5%：斜率 −1.0476", "domain": [0, 200] },
-    { "f": "(110+1.1*(100-x))/1.1", "color": "pos", "label": "π = 10%：斜率 −1（比較平）", "domain": [0, 200] }
+    { "f": "(110+1.1*(100-x))/1.05", "color": "f", "label": "π = 5%: slope −1.0476", "domain": [0, 200] },
+    { "f": "(110+1.1*(100-x))/1.1", "color": "pos", "label": "π = 10%: slope −1 (flatter)", "domain": [0, 200] }
   ],
   "shapes": [
-    { "type": "text", "x": 10, "y": 232, "t": "縱軸截距 209.5 → 200", "color": "ink", "anchor": "start", "size": 12 }
+    { "type": "text", "x": 10, "y": 232, "t": "vertical intercept 209.5 → 200", "color": "ink", "anchor": "start", "size": 12 }
   ],
   "points": [
     { "x": 0, "y": 209.52, "color": "f" },
@@ -603,65 +604,79 @@ $$-\frac{1+r}{1+\pi} = -\frac{1.10}{1.10} = -1$$
   ]
 }
 </script>
-<figcaption>示意圖（沿用第 1 題的名目所得 m₁ = 100、m₂ = 110，p₁ = 1）。通膨越高，同樣的名目所得在第 2 期買到的東西越少，縱軸截距下降，線變平。</figcaption>
+<figcaption>Illustration only: it uses the nominal incomes of Problem 1 (m₁ = 100, m₂ = 110) and p₁ = 1. With higher inflation the same nominal income buys less in period 2, so the vertical intercept falls and the line gets flatter.</figcaption>
 </figure>
-<p class="answer"><span>(A) $\rho = \dfrac{1.10}{1.05} - 1 \approx 4.76\%$。(B) $\rho \approx 5\%$。(C) $p_2 = 1.05$。(D) 斜率 $= -\dfrac{1.10}{1.05} \approx -1.0476$。(E) 斜率變成 $-1$，預算線變平，因為實質利率從 4.76% 降到 0。</span></p>
+<p class="answer"><span>(A) $\rho = \dfrac{1.10}{1.05} - 1 \approx 4.76\%$. (B) $\rho \approx 5\%$. (C) $p_2 = 1.05$. (D) Slope $= -\dfrac{1.10}{1.05} \approx -1.0476$. (E) The slope becomes $-1$, so the budget line is flatter, because the real interest rate falls from 4.76% to 0.</span></p>
 </div>
 </div>
 </article>
 
 <article class="prob" data-prob="HW9-3">
-<h3>三筆付款的證券值多少</h3>
+<h3>The value of a security with three payments</h3>
 <div class="prob-q">
-<p>一張金融證券（financial security）承諾在第 1 年年底付 110 元、第 2 年年底付 121 元、第 3 年年底付 133.10 元。年利率是 10%。</p>
-<p>(A) 算出每一筆付款的現值。<br>
-(B) 算出這張證券的現值。<br>
-(C) 如果這張證券今天賣 320 元，這個價格比承諾付款的現值高還是低？<br>
-(D) 如果利率上升，這張證券的現值會增加還是減少？說明原因。</p>
+<p>A financial security will pay 110 at the end of year 1, 121 at the end of year 2, and 133.10 at the end of year 3. The interest rate is 10% per year.</p>
+<p>(A) Find the present value of each of the three payments.<br>
+(B) Find the present value of the security.<br>
+(C) The security sells for 320 today. Is this price above or below the present value of the promised payments?<br>
+(D) If the interest rate goes up, does the present value of the security rise or fall? Explain.</p>
 </div>
-<details class="hint"><summary>提示</summary>
+<details class="hint"><summary>提示（中文）</summary>
 <p>第 $t$ 年年底的錢除以 $1.1^t$。先把 $1.1^2 = 1.21$、$1.1^3 = 1.331$ 算好，會發現數字是設計過的。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) 每一筆各自折現</h4>
+<h4>(A) Discount each payment</h4>
+<p>A payment $m_t$ at the end of year $t$ has present value $\dfrac{m_t}{(1+r)^t}$.</p>
 <div class="tbl-wrap">
 <table class="tbl">
-<thead><tr><th>付款時間</th><th class="n">金額</th><th class="n">除以</th><th class="n">現值</th></tr></thead>
+<thead><tr><th>Payment date</th><th class="n">Amount</th><th class="n">Divide by</th><th class="n">Present value</th></tr></thead>
 <tbody>
-<tr><td>第 1 年年底</td><td class="n">110</td><td class="n">$1.1$</td><td class="n">100</td></tr>
-<tr><td>第 2 年年底</td><td class="n">121</td><td class="n">$1.1^2 = 1.21$</td><td class="n">100</td></tr>
-<tr><td>第 3 年年底</td><td class="n">133.10</td><td class="n">$1.1^3 = 1.331$</td><td class="n">100</td></tr>
+<tr><td>End of year 1</td><td class="n">110</td><td class="n">$1.1$</td><td class="n">100</td></tr>
+<tr><td>End of year 2</td><td class="n">121</td><td class="n">$1.1^2 = 1.21$</td><td class="n">100</td></tr>
+<tr><td>End of year 3</td><td class="n">133.10</td><td class="n">$1.1^3 = 1.331$</td><td class="n">100</td></tr>
 </tbody>
 </table>
 </div>
 $$\frac{110}{1.1} = 100 \qquad \frac{121}{1.1^2} = \frac{121}{1.21} = 100 \qquad \frac{133.10}{1.1^3} = \frac{133.10}{1.331} = 100$$
 </div>
 <div class="step">
-<h4>(B) 證券的現值</h4>
-$$PV = 100 + 100 + 100 = 300 \text{ 元}$$
+<h4>(B) Present value of the security</h4>
+<p>Add the three present values:</p>
+$$PV = 100 + 100 + 100 = 300$$
 </div>
 <div class="step">
-<h4>(C) 和售價 320 元比</h4>
-<p>$320 \gt 300$，售價<strong>高於</strong>承諾付款的現值，這張證券賣貴了，不值得買。</p>
-<p>理由：只要把 300 元存進利率 10% 的銀行，就能領到一模一樣的三筆錢。</p>
+<h4>(C) Compare with the price 320</h4>
+<p>$320 \gt 300$. The price is <strong>higher</strong> than the present value of the promised payments. The security is overpriced, so it is not worth buying.</p>
+<p>Reason: put 300 in a bank at 10% and you get exactly the same three payments.</p>
 <ul>
-<li>第 1 年底：$300 \times 1.1 = 330$，領走 110，剩 220。</li>
-<li>第 2 年底：$220 \times 1.1 = 242$，領走 121，剩 121。</li>
-<li>第 3 年底：$121 \times 1.1 = 133.1$，領走 133.1，剛好領完。</li>
+<li>End of year 1: $300 \times 1.1 = 330$. Take out 110. The balance is 220.</li>
+<li>End of year 2: $220 \times 1.1 = 242$. Take out 121. The balance is 121.</li>
+<li>End of year 3: $121 \times 1.1 = 133.1$. Take out 133.1. The balance is 0.</li>
 </ul>
-<p>花 300 元就能做到的事，沒有理由付 320 元。</p>
+<p>The same payments cost only 300 at the bank, so nobody should pay 320.</p>
 </div>
 <div class="step">
-<h4>(D) 利率上升</h4>
-<p>現值會<strong>減少</strong>。每一筆現值是 $\dfrac{m_t}{(1+r)^t}$，利率 $r$ 上升，分母變大，每一筆都變小，加起來當然也變小。越晚拿到的錢被折得越兇。</p>
-<p>例如利率升到 20%：</p>
-$$PV = \frac{110}{1.2} + \frac{121}{1.2^2} + \frac{133.10}{1.2^3} = 91.67 + 84.03 + 77.03 = 252.72 \text{ 元}$$
-<p>從 300 元掉到約 253 元。直覺：利率高的時候，把錢放銀行就很好賺，同樣的未來現金流就比較不值錢。</p>
-<p class="answer"><span>(A) 三筆的現值都是 100 元。(B) 現值 300 元。(C) 售價 320 元高於現值 300 元（太貴）。(D) 利率上升，現值減少，因為每一筆的折現分母 $(1+r)^t$ 變大。</span></p>
+<h4>(D) The interest rate rises</h4>
+<p>The present value <strong>falls</strong>. Each payment is worth $\dfrac{m_t}{(1+r)^t}$ today. When $r$ rises, each denominator gets bigger, so each term gets smaller and the sum gets smaller. Later payments are discounted more heavily.</p>
+<p>Example with $r = 20\%$:</p>
+$$PV = \frac{110}{1.2} + \frac{121}{1.2^2} + \frac{133.10}{1.2^3} = 91.67 + 84.03 + 77.03 = 252.72$$
+<p>The present value falls from 300 to about 253. Intuition: when the interest rate is high, money in the bank earns more, so the same future payments are worth less today.</p>
+<p class="answer"><span>(A) Each payment has a present value of 100. (B) $PV = 300$. (C) The price 320 is higher than the present value 300, so the security is overpriced. (D) The present value falls, because the discount factor $(1+r)^t$ in each denominator gets bigger.</span></p>
 </div>
 </div>
 </article>
+
+<div class="how" data-title="考卷上可以直接寫的英文句子">
+<ul>
+<li>The budget line passes through the endowment $(100, 110)$ with slope $-(1+r) = -1.1$.<br><small>預算線通過稟賦點 (100, 110)，斜率是 −(1 + r) = −1.1。</small></li>
+<li>Since $c_1 = 80$ is less than $m_1 = 100$, the consumer is a saver (lender).<br><small>因為 c₁ = 80 小於 m₁ = 100，這位消費者是存錢的人（貸方）。</small></li>
+<li>Since $c_1$ is greater than $m_1$, the consumer is a borrower.<br><small>因為 c₁ 大於 m₁，這位消費者是借錢的人。</small></li>
+<li>The exact real interest rate is $\rho = \dfrac{r - \pi}{1 + \pi}$; the approximation is $\rho \approx r - \pi$.<br><small>精確的實質利率是 ρ = (r − π)/(1 + π)；近似值是 ρ ≈ r − π。</small></li>
+<li>Higher inflation lowers the real interest rate, so the budget line becomes flatter.<br><small>通膨上升使實質利率下降，所以預算線變平。</small></li>
+<li>The price (320) is higher than the present value (300), so the security is overpriced.<br><small>售價（320）高於現值（300），所以這張證券賣貴了。</small></li>
+<li>When the interest rate rises, each payment is discounted more heavily, so the present value falls.<br><small>利率上升時，每一筆付款被折現得更多，所以現值下降。</small></li>
+</ul>
+</div>
 
 <div class="exam">
 <p>這一章的題目幾乎都是代公式，容易掉分的地方是「寫錯形式」和「方向講反」。</p>
@@ -671,12 +686,13 @@ $$PV = \frac{110}{1.2} + \frac{121}{1.2^2} + \frac{133.10}{1.2^3} = 91.67 + 84.0
 <li>判斷存錢或借錢只要比 $c_1$ 和 $m_1$，記得把存或借的金額、$c_2$ 一起算出來。</li>
 <li>exact 用除的，approximate 用減的。</li>
 <li>「利率上升 → 現值下降」「實質利率下降 → 預算線變平」這兩句要能配上一句原因，只寫結論會被扣分。</li>
+<li>結論要用英文寫成完整的一句話，可以直接套用上面「考卷上可以直接寫的英文句子」那幾句。</li>
 </ul>
 </div>
 
 </main>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-<script defer src="assets/app.js?v=2"></script>
+<script defer src="assets/app.js?v=3"></script>
 </body>
 </html>

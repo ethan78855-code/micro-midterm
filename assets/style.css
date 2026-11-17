@@ -658,7 +658,7 @@ details.hint > :last-child, details.peek > :last-child { margin-bottom: 12px; }
   background: var(--mark);
   font-weight: 500;
 }
-.answer::before { content: "答　"; font-family: var(--font-display); font-weight: 700; }
+.answer::before { content: "Answer　"; font-family: var(--font-mono); font-weight: 600; font-size: 0.86em; letter-spacing: 0.04em; }
 .answer > :first-child { display: inline; }
 
 /* ---------- 頁尾導覽 ---------- */
@@ -847,6 +847,9 @@ table.rp-in { border-collapse: separate; border-spacing: 6px; font-size: 0.9rem;
 .tag.t-d2 { background: var(--d2-soft); color: var(--d2); }
 .tag.t-pos { background: var(--pos-soft); color: var(--pos); }
 .tag.t-neg { background: var(--neg-soft); color: var(--neg); }
+/* 英文句型清單：英文句子下面接一行小字的中文意思 */
+.how li small { color: var(--ink-3); font-size: 0.86rem; line-height: 1.5; }
+.how li:has(small) { margin: 10px 0; }
 /* 考前檢查清單 */
 .checklist { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 8px; }
 .checklist li { margin: 0; }

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body data-page="ch8">
 <main class="page">
@@ -376,63 +376,65 @@ $$\frac{4m^3}{27} = 3375 \;\Rightarrow\; m \approx 28.35 \;\Rightarrow\; x_1 \ap
 <p>總效果都是 +15，只是切的位置不同。題目寫 Slutsky 就用 Slutsky。</p>
 </details>
 
-<h2 id="problems">作業 HW7</h2>
-<p>三題的 (A)(B)(C)(D) 結構完全一樣，只是效用函數不同。先自己算，卡住再一步一步打開。</p>
+<h2 id="problems">作業 HW7（英文題目與解答）</h2>
+<p>考卷是英文的，所以下面的題目和解答都用英文寫，每一步都是考卷上可以直接寫的句子。三題的 (A)(B)(C)(D) 結構完全一樣，只是效用函數不同。先自己算，卡住再一步一步打開。</p>
 
 <article class="prob" data-prob="HW7-1">
-<h3>Cobb-Douglas：$U = x_1^2x_2$</h3>
+<h3>Cobb-Douglas utility: $U = x_1^2x_2$</h3>
 <div class="prob-q">
-<p>消費者的效用函數是 $U = x_1^2x_2$，預算限制式是 $p_1x_1 + p_2x_2 = m$。</p>
-<p>(A) 導出 $x_1$ 和 $x_2$ 的需求函數。<br>(B) 令 $p_1 = 2$、$p_2 = 1$、$m = 45$，求最適消費組合。<br>(C) $p_1$ 從 2 降到 1，$p_2$ 和 $m$ 不變，求新的最適消費組合。<br>(D) 用 Slutsky 方程式，求 (C) 的價格變動對 $x_1$ 的純替代效果與所得效果。</p>
+<p>A consumer has the utility function $U = x_1^2x_2$ and faces the budget constraint $p_1x_1 + p_2x_2 = m$.</p>
+<p>(A) Derive the demand functions for $x_1$ and $x_2$.<br>(B) Suppose $p_1 = 2$, $p_2 = 1$ and $m = 45$. Find the optimal consumption bundle.<br>(C) Now $p_1$ falls from 2 to 1, while $p_2$ and $m$ stay the same. Find the new optimal consumption bundle.<br>(D) Using the Slutsky equation, find the pure substitution effect and the income effect on $x_1$ of the price change in part (C).</p>
 </div>
-<details class="hint"><summary>提示</summary>
+<details class="hint"><summary>提示（中文）</summary>
 <p>(A) 用兩個條件：相切 $\text{MRS} = -\dfrac{p_1}{p_2}$，加上預算式。$MU_1 = 2x_1x_2$，$MU_2 = x_1^2$。(D) 先算「用新價格買舊組合要多少錢」。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) 相切條件</h4>
+<h4>(A) Tangency condition</h4>
+<p>At the optimum, the MRS equals the slope of the budget line:</p>
 $$\text{MRS} = -\frac{MU_1}{MU_2} = -\frac{2x_1x_2}{x_1^2} = -\frac{2x_2}{x_1} = -\frac{p_1}{p_2} \quad\Rightarrow\quad p_1x_1 = 2\,p_2x_2$$
-<p>意思是花在 $x_1$ 的錢是花在 $x_2$ 的兩倍。</p>
+<p>Spending on good 1 is twice the spending on good 2.</p>
 </div>
 <div class="step">
-<h4>(A) 代回預算式</h4>
+<h4>(A) Substitute into the budget constraint</h4>
 $$p_1x_1 + p_2x_2 = m \;\Rightarrow\; 2p_2x_2 + p_2x_2 = m \;\Rightarrow\; x_2^* = \frac{m}{3p_2},\qquad x_1^* = \frac{2m}{3p_1}$$
-<p>所得的 $\tfrac23$ 花在 $x_1$、$\tfrac13$ 花在 $x_2$，跟指數 2 和 1 的比例一樣。</p>
+<p>The consumer spends $\tfrac23$ of income on good 1 and $\tfrac13$ on good 2.</p>
 </div>
 <div class="step">
-<h4>(B) 代入 $p_1 = 2$、$p_2 = 1$、$m = 45$</h4>
+<h4>(B) Plug in $p_1 = 2$, $p_2 = 1$, $m = 45$</h4>
 $$x_1^* = \frac{2\times 45}{3\times 2} = 15,\qquad x_2^* = \frac{45}{3\times 1} = 15$$
-<p>原本的組合 $A = (15, 15)$。檢查：$2\times 15 + 1\times 15 = 45$ ✓</p>
+<p>The original bundle is $A = (15, 15)$. Check: $2\times 15 + 1\times 15 = 45$ ✓</p>
 </div>
 <div class="step">
-<h4>(C) $p_1$ 改成 1</h4>
+<h4>(C) New price $p_1 = 1$</h4>
 $$x_1^* = \frac{2\times 45}{3\times 1} = 30,\qquad x_2^* = 15$$
-<p>新的組合 $C = (30, 15)$。$x_1$ 總共增加 $30 - 15 = 15$。</p>
+<p>The new bundle is $C = (30, 15)$. The total change in $x_1$ is $30 - 15 = +15$.</p>
 </div>
 <div class="step">
-<h4>(D) 補償所得</h4>
-<p>用新價格 $(1, 1)$ 買原本的 $A = (15, 15)$：</p>
-$$m' = 1\times 15 + 1\times 15 = 30 \qquad\big(\text{或 } m' = 45 + (1 - 2)\times 15 = 30\big)$$
+<h4>(D) Compensated income</h4>
+<p>Adjust income so that the original bundle $A = (15, 15)$ is just affordable at the new prices $(1, 1)$:</p>
+$$m' = 1\times 15 + 1\times 15 = 30 \qquad\big(\text{or } m' = m + \Delta p_1\cdot x_1^A = 45 + (1 - 2)\times 15 = 30\big)$$
 </div>
 <div class="step">
-<h4>(D) 中間點 B</h4>
-<p>需求函數代入新價格和 $m' = 30$：</p>
+<h4>(D) Intermediate bundle B</h4>
+<p>Demand at the new prices with income $m' = 30$:</p>
 $$x_1^{B} = \frac{2\times 30}{3\times 1} = 20 \qquad\Big(x_2^{B} = \frac{30}{3} = 10\Big)$$
 </div>
 <div class="step">
-<h4>(D) 相減</h4>
-$$\text{替代效果} = 20 - 15 = +5,\qquad \text{所得效果} = 30 - 20 = +10$$
-<p>檢查：$5 + 10 = 15$，等於總變化 ✓。兩個效果同方向，$x_1$ 是正常財。</p>
+<h4>(D) The two effects</h4>
+$$\text{Substitution effect} = x_1^B - x_1^A = 20 - 15 = +5$$
+$$\text{Income effect} = x_1^C - x_1^B = 30 - 20 = +10$$
+<p>Check: $5 + 10 = 15$, which equals the total change ✓. Both effects have the same sign, so good 1 is a normal good.</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "作業 HW7 第 1 題的 Slutsky 分解圖",
+  "alt": "Slutsky decomposition for HW7 Question 1",
   "x": [0, 48], "y": [0, 48], "h": 300,
   "xlabel": "x₁", "ylabel": "x₂",
   "fns": [
-    { "f": "45-2*x", "color": "f", "label": "原本 2x₁ + x₂ = 45" },
-    { "f": "30-x", "color": "d1", "dash": true, "label": "補償 x₁ + x₂ = 30" },
-    { "f": "45-x", "color": "pos", "label": "新的 x₁ + x₂ = 45" }
+    { "f": "45-2*x", "color": "f", "label": "Original: 2x₁ + x₂ = 45" },
+    { "f": "30-x", "color": "d1", "dash": true, "label": "Compensated: x₁ + x₂ = 30" },
+    { "f": "45-x", "color": "pos", "label": "New: x₁ + x₂ = 45" }
   ],
   "shapes": [
     { "type": "arrow", "x1": 15, "y1": 2.6, "x2": 20, "y2": 2.6, "color": "d1", "label": "+5", "lo": [0, -10] },
@@ -445,69 +447,70 @@ $$\text{替代效果} = 20 - 15 = +5,\qquad \text{所得效果} = 30 - 20 = +10$
   ]
 }
 </script>
-<figcaption>A → B 是替代效果（+5），B → C 是所得效果（+10）。</figcaption>
+<figcaption>A → B is the substitution effect (+5). B → C is the income effect (+10).</figcaption>
 </figure>
-<p class="answer"><span>(A) $x_1 = \dfrac{2m}{3p_1}$、$x_2 = \dfrac{m}{3p_2}$　(B) $(15, 15)$　(C) $(30, 15)$　(D) $m' = 30$，替代效果 $+5$，所得效果 $+10$。</span></p>
+<p class="answer"><span>(A) $x_1 = \dfrac{2m}{3p_1}$, $x_2 = \dfrac{m}{3p_2}$. (B) $(15, 15)$. (C) $(30, 15)$. (D) $m' = 30$; substitution effect $= +5$, income effect $= +10$.</span></p>
 </div>
 </div>
 </article>
 
 <article class="prob" data-prob="HW7-2">
-<h3>完全互補：$U = \min\{x_1, 2x_2\}$</h3>
+<h3>Perfect complements: $U = \min\{x_1, 2x_2\}$</h3>
 <div class="prob-q">
-<p>消費者的效用函數是 $U = \min\{x_1, 2x_2\}$，預算限制式是 $p_1x_1 + p_2x_2 = m$。</p>
-<p>(A) 導出 $x_1$ 和 $x_2$ 的需求函數。<br>(B) 令 $p_1 = 1$、$p_2 = 2$、$m = 48$，求最適消費組合。<br>(C) $p_2$ 從 2 漲到 4，$p_1$ 和 $m$ 不變，求新的最適消費組合。<br>(D) 用 Slutsky 方程式，求 (C) 的價格變動對 $x_2$ 的純替代效果與所得效果。</p>
+<p>A consumer has the utility function $U = \min\{x_1, 2x_2\}$ and faces the budget constraint $p_1x_1 + p_2x_2 = m$.</p>
+<p>(A) Derive the demand functions for $x_1$ and $x_2$.<br>(B) Suppose $p_1 = 1$, $p_2 = 2$ and $m = 48$. Find the optimal consumption bundle.<br>(C) Now $p_2$ rises from 2 to 4, while $p_1$ and $m$ stay the same. Find the new optimal consumption bundle.<br>(D) Using the Slutsky equation, find the pure substitution effect and the income effect on $x_2$ of the price change in part (C).</p>
 </div>
-<details class="hint"><summary>提示</summary>
+<details class="hint"><summary>提示（中文）</summary>
 <p>完全互補不能用微分。最適點一定在 L 型的折點，也就是括號裡兩個東西相等：$x_1 = 2x_2$。注意這一題變的是 $p_2$、問的是 $x_2$，所以 $m' = m + \Delta p_2 \times x_2^{A}$。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) 折點條件</h4>
-<p>多出來的 $x_1$ 或 $x_2$ 都不會增加效用，所以不浪費的買法是讓兩個相等：</p>
+<h4>(A) Kink condition</h4>
+<p>With perfect complements, the optimal bundle is at the kink of the L-shaped indifference curve, where the two terms inside the min are equal:</p>
 $$x_1 = 2x_2$$
 </div>
 <div class="step">
-<h4>(A) 代回預算式</h4>
+<h4>(A) Substitute into the budget constraint</h4>
 $$p_1(2x_2) + p_2x_2 = m \;\Rightarrow\; x_2^* = \frac{m}{2p_1 + p_2},\qquad x_1^* = \frac{2m}{2p_1 + p_2}$$
-<p>可以想成一套「2 個 $x_1$ 配 1 個 $x_2$」要價 $2p_1 + p_2$，所得能買幾套就買幾套。</p>
+<p>One “set” (2 units of good 1 with 1 unit of good 2) costs $2p_1 + p_2$. The consumer buys as many sets as income allows.</p>
 </div>
 <div class="step">
-<h4>(B) 代入 $p_1 = 1$、$p_2 = 2$、$m = 48$</h4>
+<h4>(B) Plug in $p_1 = 1$, $p_2 = 2$, $m = 48$</h4>
 $$x_2^* = \frac{48}{2 + 2} = 12,\qquad x_1^* = 24$$
-<p>$A = (24, 12)$。檢查：$1\times 24 + 2\times 12 = 48$ ✓</p>
+<p>The original bundle is $A = (24, 12)$. Check: $1\times 24 + 2\times 12 = 48$ ✓</p>
 </div>
 <div class="step">
-<h4>(C) $p_2$ 改成 4</h4>
+<h4>(C) New price $p_2 = 4$</h4>
 $$x_2^* = \frac{48}{2 + 4} = 8,\qquad x_1^* = 16$$
-<p>$C = (16, 8)$。檢查：$16 + 4\times 8 = 48$ ✓。$x_2$ 總共變化 $8 - 12 = -4$。</p>
+<p>The new bundle is $C = (16, 8)$. Check: $16 + 4\times 8 = 48$ ✓. The total change in $x_2$ is $8 - 12 = -4$.</p>
 </div>
 <div class="step">
-<h4>(D) 補償所得</h4>
-<p>用新價格 $(1, 4)$ 買原本的 $A = (24, 12)$：</p>
-$$m' = 1\times 24 + 4\times 12 = 72 \qquad\big(\text{或 } m' = 48 + (4 - 2)\times 12 = 72\big)$$
-<p>這次是漲價，所以要<strong>多給</strong>他錢才買得起原來那一籃。</p>
+<h4>(D) Compensated income</h4>
+<p>Income needed to buy the original bundle $A = (24, 12)$ at the new prices $(1, 4)$:</p>
+$$m' = 1\times 24 + 4\times 12 = 72 \qquad\big(\text{or } m' = m + \Delta p_2\cdot x_2^A = 48 + (4 - 2)\times 12 = 72\big)$$
+<p>The price went up, so income must be <strong>increased</strong> to keep A affordable.</p>
 </div>
 <div class="step">
-<h4>(D) 中間點 B</h4>
+<h4>(D) Intermediate bundle B</h4>
 $$x_2^{B} = \frac{72}{2\times 1 + 4} = 12 \qquad\big(x_1^{B} = 24\big)$$
-<p>B 和 A 是同一點。</p>
+<p>B is the same bundle as A.</p>
 </div>
 <div class="step">
-<h4>(D) 相減</h4>
-$$\text{替代效果} = 12 - 12 = 0,\qquad \text{所得效果} = 8 - 12 = -4$$
-<p>完全互補沒有替代效果，$x_2$ 少掉的 4 單位全部是所得效果。</p>
+<h4>(D) The two effects</h4>
+$$\text{Substitution effect} = x_2^B - x_2^A = 12 - 12 = 0$$
+$$\text{Income effect} = x_2^C - x_2^B = 8 - 12 = -4$$
+<p>With perfect complements there is no substitution effect. The whole change in $x_2$ is the income effect.</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "作業 HW7 第 2 題的 Slutsky 分解圖",
+  "alt": "Slutsky decomposition for HW7 Question 2",
   "x": [0, 80], "y": [0, 30], "h": 290,
   "xlabel": "x₁", "ylabel": "x₂",
   "fns": [
-    { "f": "(48-x)/2", "color": "f", "label": "原本 x₁ + 2x₂ = 48" },
-    { "f": "(72-x)/4", "color": "d1", "dash": true, "label": "補償 x₁ + 4x₂ = 72" },
-    { "f": "(48-x)/4", "color": "pos", "label": "新的 x₁ + 4x₂ = 48" },
-    { "f": "x/2", "color": "mute", "dash": true, "w": 1.4, "label": "x₁ = 2x₂" }
+    { "f": "(48-x)/2", "color": "f", "label": "Original: x₁ + 2x₂ = 48" },
+    { "f": "(72-x)/4", "color": "d1", "dash": true, "label": "Compensated: x₁ + 4x₂ = 72" },
+    { "f": "(48-x)/4", "color": "pos", "label": "New: x₁ + 4x₂ = 48" },
+    { "f": "x/2", "color": "mute", "dash": true, "w": 1.4, "label": "Kinks: x₁ = 2x₂" }
   ],
   "shapes": [
     { "type": "poly", "pts": [[24, 30], [24, 12], [80, 12]], "color": "d2", "w": 1.8 },
@@ -520,80 +523,82 @@ $$\text{替代效果} = 12 - 12 = 0,\qquad \text{所得效果} = 8 - 12 = -4$$
   ]
 }
 </script>
-<figcaption>橘色虛線繞著 A 轉，但折點沒有動。A 到 C 是沿著折點連線往內縮。</figcaption>
+<figcaption>The compensated budget line pivots around A, but the kink does not move, so B = A. From A to C the consumer moves along the ray x₁ = 2x₂.</figcaption>
 </figure>
-<p class="answer"><span>(A) $x_1 = \dfrac{2m}{2p_1 + p_2}$、$x_2 = \dfrac{m}{2p_1 + p_2}$　(B) $(24, 12)$　(C) $(16, 8)$　(D) $m' = 72$，替代效果 $0$，所得效果 $-4$。</span></p>
+<p class="answer"><span>(A) $x_1 = \dfrac{2m}{2p_1 + p_2}$, $x_2 = \dfrac{m}{2p_1 + p_2}$. (B) $(24, 12)$. (C) $(16, 8)$. (D) $m' = 72$; substitution effect $= 0$, income effect $= -4$.</span></p>
 </div>
 </div>
 </article>
 
 <article class="prob" data-prob="HW7-3">
-<h3>完全替代：$U = 2x_1 + x_2$</h3>
+<h3>Perfect substitutes: $U = 2x_1 + x_2$</h3>
 <div class="prob-q">
-<p>消費者的效用函數是 $U = 2x_1 + x_2$，預算限制式是 $p_1x_1 + p_2x_2 = m$。</p>
-<p>(A) 導出 $x_1$ 和 $x_2$ 的需求函數，並依照 MRS 與相對價格的關係分情況討論。<br>(B) 令 $p_1 = 3$、$p_2 = 1$、$m = 30$，求最適消費組合。<br>(C) $p_1$ 從 3 降到 1，$p_2$ 和 $m$ 不變，求新的最適消費組合。<br>(D) 用 Slutsky 方程式，求 (C) 的價格變動對 $x_1$ 的純替代效果與所得效果。</p>
+<p>A consumer has the utility function $U = 2x_1 + x_2$ and faces the budget constraint $p_1x_1 + p_2x_2 = m$.</p>
+<p>(A) Derive the demand functions for $x_1$ and $x_2$. Discuss the cases according to how the MRS compares with the relative price.<br>(B) Suppose $p_1 = 3$, $p_2 = 1$ and $m = 30$. Find the optimal consumption bundle.<br>(C) Now $p_1$ falls from 3 to 1, while $p_2$ and $m$ stay the same. Find the new optimal consumption bundle.<br>(D) Using the Slutsky equation, find the pure substitution effect and the income effect on $x_1$ of the price change in part (C).</p>
 </div>
-<details class="hint"><summary>提示</summary>
+<details class="hint"><summary>提示（中文）</summary>
 <p>無異曲線是斜率 $-2$ 的直線，預算線斜率是 $-\dfrac{p_1}{p_2}$。兩條直線通常不會相切，最適點會在角落。比較「無異曲線比較陡」還是「預算線比較陡」。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) 算 MRS</h4>
+<h4>(A) The MRS</h4>
 $$\text{MRS} = -\frac{MU_1}{MU_2} = -\frac{2}{1} = -2$$
-<p>意思是 1 單位 $x_1$ 永遠抵 2 單位 $x_2$。市場上 1 單位 $x_1$ 要用 $\dfrac{p_1}{p_2}$ 單位 $x_2$ 換。拿 $|\text{MRS}| = 2$ 和 $\dfrac{p_1}{p_2}$ 比。</p>
+<p>The consumer is always willing to give up 2 units of good 2 for 1 unit of good 1. In the market, 1 unit of good 1 costs $\dfrac{p_1}{p_2}$ units of good 2. So compare $|\text{MRS}| = 2$ with the relative price $\dfrac{p_1}{p_2}$.</p>
 </div>
 <div class="step">
-<h4>(A) 分三種情況</h4>
+<h4>(A) Three cases</h4>
 <div class="tbl-wrap">
 <table class="tbl">
-<thead><tr><th>情況</th><th>白話</th><th>$x_1^*$</th><th>$x_2^*$</th></tr></thead>
+<thead><tr><th>Case</th><th>Meaning</th><th>$x_1^*$</th><th>$x_2^*$</th></tr></thead>
 <tbody>
-<tr><td>$\dfrac{p_1}{p_2} \lt 2$（即 $p_1 \lt 2p_2$）</td><td>$x_1$ 划算，全部買 $x_1$</td><td>$\dfrac{m}{p_1}$</td><td>$0$</td></tr>
-<tr><td>$\dfrac{p_1}{p_2} \gt 2$（即 $p_1 \gt 2p_2$）</td><td>$x_1$ 太貴，全部買 $x_2$</td><td>$0$</td><td>$\dfrac{m}{p_2}$</td></tr>
-<tr><td>$\dfrac{p_1}{p_2} = 2$</td><td>一樣划算</td><td colspan="2">預算線上任何一點都是最適解</td></tr>
+<tr><td>$\dfrac{p_1}{p_2} \lt 2$ (that is, $p_1 \lt 2p_2$)</td><td>Good 1 is relatively cheap: buy only good 1</td><td>$\dfrac{m}{p_1}$</td><td>$0$</td></tr>
+<tr><td>$\dfrac{p_1}{p_2} \gt 2$ (that is, $p_1 \gt 2p_2$)</td><td>Good 1 is too expensive: buy only good 2</td><td>$0$</td><td>$\dfrac{m}{p_2}$</td></tr>
+<tr><td>$\dfrac{p_1}{p_2} = 2$</td><td>The budget line coincides with an indifference curve</td><td colspan="2">Any bundle on the budget line is optimal</td></tr>
 </tbody>
 </table>
 </div>
-<p>另一種想法：每 1 元花在 $x_1$ 得到 $\dfrac{2}{p_1}$ 的效用，花在 $x_2$ 得到 $\dfrac{1}{p_2}$，哪個大就全部買哪個。</p>
+<p>The first two cases are corner solutions. Another way to see it: one unit of money spent on good 1 gives utility $\dfrac{2}{p_1}$, and on good 2 gives $\dfrac{1}{p_2}$. The consumer buys only the good with the larger value.</p>
 </div>
 <div class="step">
-<h4>(B) 代入 $p_1 = 3$、$p_2 = 1$、$m = 30$</h4>
-<p>$\dfrac{p_1}{p_2} = 3 \gt 2$，$x_1$ 太貴，全部買 $x_2$：</p>
+<h4>(B) Plug in $p_1 = 3$, $p_2 = 1$, $m = 30$</h4>
+<p>$\dfrac{p_1}{p_2} = 3 \gt 2$, so good 1 is too expensive and the consumer buys only good 2:</p>
 $$A = \Big(0,\ \frac{30}{1}\Big) = (0, 30)$$
 </div>
 <div class="step">
-<h4>(C) $p_1$ 改成 1</h4>
-<p>$\dfrac{p_1}{p_2} = 1 \lt 2$，$x_1$ 變划算，全部買 $x_1$：</p>
+<h4>(C) New price $p_1 = 1$</h4>
+<p>$\dfrac{p_1}{p_2} = 1 \lt 2$, so now the consumer buys only good 1:</p>
 $$C = \Big(\frac{30}{1},\ 0\Big) = (30, 0)$$
-<p>$x_1$ 總共增加 30。</p>
+<p>The total change in $x_1$ is $30 - 0 = +30$.</p>
 </div>
 <div class="step">
-<h4>(D) 補償所得</h4>
-<p>用新價格 $(1, 1)$ 買原本的 $A = (0, 30)$：</p>
-$$m' = 1\times 0 + 1\times 30 = 30 \qquad\big(\text{或 } m' = 30 + (1 - 3)\times 0 = 30\big)$$
-<p>原本沒買 $x_1$，降價沒有讓原來那一籃變便宜，所以 $m' = m$。</p>
+<h4>(D) Compensated income</h4>
+<p>Income needed to buy the original bundle $A = (0, 30)$ at the new prices $(1, 1)$:</p>
+$$m' = 1\times 0 + 1\times 30 = 30 \qquad\big(\text{or } m' = m + \Delta p_1\cdot x_1^A = 30 + (1 - 3)\times 0 = 30\big)$$
+<p>The consumer bought no good 1 at first, so the price cut does not make the original bundle cheaper. Hence $m' = m$.</p>
 </div>
 <div class="step">
-<h4>(D) 中間點 B</h4>
-<p>新價格下 $\dfrac{p_1}{p_2} = 1 \lt 2$，所得 30 全部買 $x_1$：$B = (30, 0)$。</p>
+<h4>(D) Intermediate bundle B</h4>
+<p>At the new prices $\dfrac{p_1}{p_2} = 1 \lt 2$, so with income 30 the consumer buys only good 1: $B = (30, 0)$.</p>
 </div>
 <div class="step">
-<h4>(D) 相減</h4>
-$$\text{替代效果} = 30 - 0 = +30,\qquad \text{所得效果} = 30 - 30 = 0$$
+<h4>(D) The two effects</h4>
+$$\text{Substitution effect} = x_1^B - x_1^A = 30 - 0 = +30$$
+$$\text{Income effect} = x_1^C - x_1^B = 30 - 30 = 0$$
+<p>The whole change in $x_1$ is the substitution effect.</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "作業 HW7 第 3 題的 Slutsky 分解圖",
+  "alt": "Slutsky decomposition for HW7 Question 3",
   "x": [0, 36], "y": [0, 36], "h": 290,
   "xlabel": "x₁", "ylabel": "x₂",
   "fns": [
-    { "f": "30-3*x", "color": "f", "label": "原本 3x₁ + x₂ = 30" },
-    { "f": "30-x", "color": "pos", "label": "新的 = 補償 x₁ + x₂ = 30" },
-    { "f": "30-2*x", "color": "d2", "w": 1.8, "label": "無異曲線" },
+    { "f": "30-3*x", "color": "f", "label": "Original: 3x₁ + x₂ = 30" },
+    { "f": "30-x", "color": "pos", "label": "New = compensated: x₁ + x₂ = 30" },
+    { "f": "30-2*x", "color": "d2", "w": 1.8, "label": "Indifference curves (slope −2)" },
     { "f": "60-2*x", "color": "d2", "w": 1.8 }
   ],
   "shapes": [
-    { "type": "arrow", "x1": 1, "y1": 2, "x2": 29, "y2": 2, "color": "d1", "label": "替代效果 +30", "lo": [0, -10] }
+    { "type": "arrow", "x1": 1, "y1": 2, "x2": 29, "y2": 2, "color": "d1", "label": "+30", "lo": [0, -10] }
   ],
   "points": [
     { "x": 0, "y": 30, "color": "f", "label": "A (0, 30)", "pos": "tr" },
@@ -601,20 +606,32 @@ $$\text{替代效果} = 30 - 0 = +30,\qquad \text{所得效果} = 30 - 30 = 0$$
   ]
 }
 </script>
-<figcaption>補償預算線和新預算線重疊，所以 B 和 C 是同一點，所得效果是 0。</figcaption>
+<figcaption>The compensated budget line is the same as the new budget line, so B and C are the same point and the income effect is zero.</figcaption>
 </figure>
-<p class="answer"><span>(A) $p_1 \lt 2p_2$：$\big(\tfrac{m}{p_1}, 0\big)$；$p_1 \gt 2p_2$：$\big(0, \tfrac{m}{p_2}\big)$；$p_1 = 2p_2$：預算線上任一點　(B) $(0, 30)$　(C) $(30, 0)$　(D) $m' = 30$，替代效果 $+30$，所得效果 $0$。</span></p>
+<p class="answer"><span>(A) If $p_1 \lt 2p_2$: $\big(\tfrac{m}{p_1}, 0\big)$; if $p_1 \gt 2p_2$: $\big(0, \tfrac{m}{p_2}\big)$; if $p_1 = 2p_2$: any bundle on the budget line. (B) $(0, 30)$. (C) $(30, 0)$. (D) $m' = 30$; substitution effect $= +30$, income effect $= 0$.</span></p>
 </div>
 </div>
 </article>
 
+<div class="how" data-title="考卷上可以直接寫的英文句子">
+<ul class="en-lines">
+<li>At the optimum, the MRS equals the slope of the budget line: $\text{MRS} = -p_1/p_2$.<br><small>最適點的 MRS 等於預算線的斜率。</small></li>
+<li>The compensated income $m'$ is the income that makes the original bundle just affordable at the new prices.<br><small>補償所得是「在新價格下剛好買得起原來組合」的所得。</small></li>
+<li>The substitution effect is the change in demand when relative prices change but purchasing power is held constant.<br><small>替代效果：購買力不變，只有相對價格改變造成的需求變化。</small></li>
+<li>The income effect is the change in demand caused by the change in purchasing power, with prices fixed at the new level.<br><small>所得效果：價格固定在新水準，購買力改變造成的需求變化。</small></li>
+<li>The total effect is the sum of the substitution effect and the income effect.<br><small>總效果 = 替代效果 + 所得效果。</small></li>
+<li>Both effects work in the same direction, so the good is a normal good.<br><small>兩個效果同方向，所以是正常財。</small></li>
+<li>With perfect complements the substitution effect is zero; the whole change is the income effect.<br><small>完全互補的替代效果是 0，變化全部是所得效果。</small></li>
+</ul>
+</div>
+
 <div class="exam">
-<p>(D) 小題一定要把 $m'$ 的算式寫出來，再把 A、B、C 三個點列清楚，最後明確寫「substitution effect = …，income effect = …」。寫完檢查兩個相加等於總變化。變的是 $p_2$ 的時候，記得 $\Delta p$ 要乘 $x_2$ 而不是 $x_1$。</p>
+<p>(D) 小題一定要把 $m'$ 的算式寫出來，再把 A、B、C 三個點列清楚，最後明確寫「substitution effect = …，income effect = …」。考卷是英文的，結論要用英文寫成完整的句子。寫完檢查兩個相加等於總變化。變的是 $p_2$ 的時候，記得 $\Delta p$ 要乘 $x_2$ 而不是 $x_1$。</p>
 </div>
 
 </main>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-<script defer src="assets/app.js?v=2"></script>
+<script defer src="assets/app.js?v=3"></script>
 </body>
 </html>
