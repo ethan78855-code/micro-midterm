@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body data-page="ch7">
 <main class="page">
@@ -377,11 +377,12 @@ $$(1 + 0.01)^{20} = 1.01^{20} \approx 1.22$$
 <p class="quiz-why">新的預算線通過基期組合，所以基期組合還買得起；但斜率變了，他可以換成更喜歡的組合。新選擇被顯示偏好於基期組合，所以變好。只有在所有價格同比例上漲（相對價格不變）時才會剛好一樣好。</p>
 </div>
 
-<h2 id="problems">作業 HW6（英文題目與解答）</h2>
-<p>考卷是英文的，所以下面的題目和解答都用英文寫，每一步都是考卷上可以直接寫的句子。先自己算，卡住再一步一步打開。</p>
+<h2 id="problems">作業 HW6（英文題目）</h2>
+<p>考卷的題目是英文，所以每一題的<strong>題目用英文寫</strong>，跟考卷一樣；看不懂可以點題目下面的「中文翻譯」對照。<strong>解答是中文</strong>。</p>
+<p>先自己算，卡住再一步一步打開解答。</p>
 
 <article class="prob" data-prob="HW6-1">
-<h3>Revealed preference: three goods, three periods</h3>
+<h3>三種商品、三期的顯示性偏好</h3>
 <div class="prob-q">
 <p>A consumer chooses bundles of three goods in three periods. The prices and the chosen bundles are:</p>
 <div class="tbl-wrap">
@@ -396,131 +397,149 @@ $$(1 + 0.01)^{20} = 1.01^{20} \approx 1.22$$
 </div>
 <p>(A) For each period's prices, compute how much it costs to buy bundles A, B and C. Show the results in a 3 × 3 table, as in the lecture slides.<br>(B) List every direct and indirect revealed preference relation among A, B and C.<br>(C) Do these choices violate WARP or SARP? Explain.</p>
 </div>
-<details class="hint"><summary>提示（中文）</summary>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>一個消費者在三個時期從三種商品中做選擇，價格和選的組合如下：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>時期</th><th>價格 $(p_1, p_2, p_3)$</th><th>選的組合</th></tr></thead>
+<tbody>
+<tr><td>第 1 期</td><td>$(2, 1, 3)$</td><td>$A = (4, 2, 1)$</td></tr>
+<tr><td>第 2 期</td><td>$(3, 2, 1)$</td><td>$B = (2, 4, 1)$</td></tr>
+<tr><td>第 3 期</td><td>$(1, 3, 2)$</td><td>$C = (1, 2, 4)$</td></tr>
+</tbody>
+</table>
+</div>
+<p>(A) 算出在每一期的價格下，買 A、B、C 各要花多少錢，列成 3 × 3 的表（像簡報那樣）。<br>(B) 列出 A、B、C 之間所有直接與間接的顯示性偏好關係。<br>(C) 這個消費者的行為有沒有違反 WARP 或 SARP？請說明。</p>
+</details>
+<details class="hint"><summary>提示</summary>
 <p>每一格是價格和數量對應相乘再相加。例如第 1 期價格買 B：$2\times 2 + 1\times 4 + 3\times 1$。算完後每一列跟自己的對角線比。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) First row: period-1 prices</h4>
-<p>At period-1 prices $(2, 1, 3)$:</p>
-$$\begin{aligned}\text{Cost of A}&: 2\times 4 + 1\times 2 + 3\times 1 = 13\\ \text{Cost of B}&: 2\times 2 + 1\times 4 + 3\times 1 = 11\\ \text{Cost of C}&: 2\times 1 + 1\times 2 + 3\times 4 = 16\end{aligned}$$
+<h4>(A) 先算第一列</h4>
+<p>用第 1 期的價格 $(2, 1, 3)$：</p>
+$$\begin{aligned}\text{買 A}&: 2\times 4 + 1\times 2 + 3\times 1 = 13\\ \text{買 B}&: 2\times 2 + 1\times 4 + 3\times 1 = 11\\ \text{買 C}&: 2\times 1 + 1\times 2 + 3\times 4 = 16\end{aligned}$$
 </div>
 <div class="step">
-<h4>(A) The other two rows</h4>
-<p>At period-2 prices $(3, 2, 1)$:</p>
+<h4>(A) 另外兩列</h4>
+<p>用第 2 期的價格 $(3, 2, 1)$：</p>
 $$\text{A}: 12 + 4 + 1 = 17\qquad \text{B}: 6 + 8 + 1 = 15\qquad \text{C}: 3 + 4 + 4 = 11$$
-<p>At period-3 prices $(1, 3, 2)$:</p>
+<p>用第 3 期的價格 $(1, 3, 2)$：</p>
 $$\text{A}: 4 + 6 + 2 = 12\qquad \text{B}: 2 + 12 + 2 = 16\qquad \text{C}: 1 + 6 + 8 = 15$$
 </div>
 <div class="step">
-<h4>(A) The expenditure table</h4>
+<h4>(A) 完整的花費表</h4>
 <div class="tbl-wrap">
 <table class="tbl rp-tbl">
-<thead><tr><th>Prices ＼ Bundle</th><th class="n">A (4, 2, 1)</th><th class="n">B (2, 4, 1)</th><th class="n">C (1, 2, 4)</th></tr></thead>
+<thead><tr><th>價格＼組合</th><th class="n">A (4, 2, 1)</th><th class="n">B (2, 4, 1)</th><th class="n">C (1, 2, 4)</th></tr></thead>
 <tbody>
-<tr><th scope="row">Period 1 (2, 1, 3)</th><td class="n chosen">13</td><td class="n"><span class="circ">11</span></td><td class="n no">16</td></tr>
-<tr><th scope="row">Period 2 (3, 2, 1)</th><td class="n no">17</td><td class="n chosen">15</td><td class="n"><span class="circ">11</span></td></tr>
-<tr><th scope="row">Period 3 (1, 3, 2)</th><td class="n"><span class="circ">12</span></td><td class="n no">16</td><td class="n chosen">15</td></tr>
+<tr><th scope="row">第 1 期 (2, 1, 3)</th><td class="n chosen">13</td><td class="n"><span class="circ">11</span></td><td class="n no">16</td></tr>
+<tr><th scope="row">第 2 期 (3, 2, 1)</th><td class="n no">17</td><td class="n chosen">15</td><td class="n"><span class="circ">11</span></td></tr>
+<tr><th scope="row">第 3 期 (1, 3, 2)</th><td class="n"><span class="circ">12</span></td><td class="n no">16</td><td class="n chosen">15</td></tr>
 </tbody>
 </table>
 </div>
-<p class="rp-key"><span class="chosen">Red</span> = cost of the bundle actually chosen　<span class="circ">circled</span> = affordable but not chosen　<span class="no">grey</span> = not affordable</p>
+<p class="rp-key"><span class="chosen">紅字</span>＝那一期實際選的（實際花費）　<span class="circ">圈起來</span>＝買得起卻沒選　<span class="no">灰字</span>＝買不起</p>
 </div>
 <div class="step">
-<h4>(B) Direct revealed preference</h4>
-<p>Compare each row with its diagonal entry:</p>
+<h4>(B) 直接顯示性偏好</h4>
+<p>一列一列和對角線比：</p>
 <ul>
-<li>Period 1: A is chosen at a cost of 13. B costs 11, so B was affordable but not chosen. C costs 16, not affordable. So $A \succ_D B$.</li>
-<li>Period 2: B is chosen at a cost of 15. C costs 11, so C was affordable but not chosen. A costs 17, not affordable. So $B \succ_D C$.</li>
-<li>Period 3: C is chosen at a cost of 15. A costs 12, so A was affordable but not chosen. B costs 16, not affordable. So $C \succ_D A$.</li>
+<li>第 1 期花 13 選 A。B 只要 11，買得起；C 要 16，買不起。所以 $A \succ_D B$。</li>
+<li>第 2 期花 15 選 B。C 只要 11，買得起；A 要 17，買不起。所以 $B \succ_D C$。</li>
+<li>第 3 期花 15 選 C。A 只要 12，買得起；B 要 16，買不起。所以 $C \succ_D A$。</li>
 </ul>
 </div>
 <div class="step">
-<h4>(B) Indirect revealed preference</h4>
-<p>By transitivity:</p>
+<h4>(B) 間接顯示性偏好</h4>
+<p>把直接關係兩兩接起來：</p>
 <ul>
-<li>$A \succ_D B$ and $B \succ_D C$ $\Rightarrow$ $A \succ_I C$</li>
-<li>$B \succ_D C$ and $C \succ_D A$ $\Rightarrow$ $B \succ_I A$</li>
-<li>$C \succ_D A$ and $A \succ_D B$ $\Rightarrow$ $C \succ_I B$</li>
+<li>$A \succ_D B$ 且 $B \succ_D C$ $\Rightarrow$ $A \succ_I C$</li>
+<li>$B \succ_D C$ 且 $C \succ_D A$ $\Rightarrow$ $B \succ_I A$</li>
+<li>$C \succ_D A$ 且 $A \succ_D B$ $\Rightarrow$ $C \succ_I B$</li>
 </ul>
 </div>
 <div class="step">
-<h4>(C) Check WARP</h4>
-<p>WARP uses only the direct relations. Check each pair:</p>
+<h4>(C) 檢查 WARP</h4>
+<p>WARP 只看直接關係。三對組合逐一檢查：</p>
 <ul>
-<li>A and B: $A \succ_D B$, but B is not directly revealed preferred to A (in period 2, A costs 17, which is more than 15).</li>
-<li>B and C: $B \succ_D C$, but C is not directly revealed preferred to B (in period 3, B costs 16, which is more than 15).</li>
-<li>C and A: $C \succ_D A$, but A is not directly revealed preferred to C (in period 1, C costs 16, which is more than 13).</li>
+<li>A 和 B：有 $A \succ_D B$；第 2 期 A 要 17 買不起，沒有 $B \succ_D A$。</li>
+<li>B 和 C：有 $B \succ_D C$；第 3 期 B 要 16 買不起，沒有 $C \succ_D B$。</li>
+<li>C 和 A：有 $C \succ_D A$；第 1 期 C 要 16 買不起，沒有 $A \succ_D C$。</li>
 </ul>
-<p>No two bundles are directly revealed preferred to each other, so <strong>WARP is not violated</strong>.</p>
+<p>沒有任何一對互相直接打敗，<strong>不違反 WARP</strong>。</p>
 </div>
 <div class="step">
-<h4>(C) Check SARP</h4>
-<p>SARP also uses the indirect relations, and now there are contradictions:</p>
+<h4>(C) 檢查 SARP</h4>
+<p>把間接關係加進來就出現矛盾：</p>
 <ul>
-<li>$A \succ_D B$, but $B \succ_I A$</li>
-<li>$B \succ_D C$, but $C \succ_I B$</li>
-<li>$C \succ_D A$, but $A \succ_I C$</li>
+<li>$A \succ_D B$，但 $B \succ_I A$</li>
+<li>$B \succ_D C$，但 $C \succ_I B$</li>
+<li>$C \succ_D A$，但 $A \succ_I C$</li>
 </ul>
-<p>The revealed preferences form a cycle $A \succ B \succ C \succ A$, so <strong>SARP is violated</strong> (three violations). These choices cannot be rationalized by any well-behaved preference relation. （把數字丟進上面的檢查器第一個按鈕可以對答案。）</p>
-<p class="answer"><span>The rows of the table are 13, 11, 16 / 17, 15, 11 / 12, 16, 15. Direct: $A \succ_D B$, $B \succ_D C$, $C \succ_D A$. Indirect: $A \succ_I C$, $B \succ_I A$, $C \succ_I B$. WARP is not violated, but SARP is violated.</span></p>
+<p>偏好繞成一圈 $A \succ B \succ C \succ A$，<strong>違反 SARP</strong>（3 處）。沒有任何行為良好的偏好能解釋這三次選擇。把數字丟進上面的檢查器（第一個按鈕）可以對答案。</p>
+<p class="answer"><span>花費表三列是 13、11、16／17、15、11／12、16、15。直接：$A \succ_D B$、$B \succ_D C$、$C \succ_D A$；間接：$A \succ_I C$、$B \succ_I A$、$C \succ_I B$。不違反 WARP，但違反 SARP。</span></p>
 </div>
 </div>
 </article>
 
 <article class="prob" data-prob="HW6-2">
-<h3>Laspeyres and Paasche price indices and the expenditure ratio</h3>
+<h3>Laspeyres、Paasche 價格指數與支出比</h3>
 <div class="prob-q">
 <p>In the base period, prices are $(1, 1)$ and the consumer chooses $(4, 6)$. In the current period, prices are $(2, 1)$ and the consumer chooses $(6, 6)$.</p>
 <p>(A) Compute the Laspeyres price index and the Paasche price index of the current period relative to the base period.<br>(B) Compute the expenditure ratio $M$ of the current period relative to the base period.<br>(C) Compare the Laspeyres price index, the Paasche price index and $M$. What can you conclude about the consumer's welfare in the two periods? If an index gives no conclusion by itself, explain why.</p>
 </div>
-<details class="hint"><summary>提示（中文）</summary>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>基期的價格是 $(1, 1)$，選的組合是 $(4, 6)$。當期的價格是 $(2, 1)$，選的組合是 $(6, 6)$。</p>
+<p>(A) 計算當期相對於基期的 Laspeyres 價格指數與 Paasche 價格指數。<br>(B) 計算當期相對於基期的支出比 $M$。<br>(C) 比較 Laspeyres 價格指數、Paasche 價格指數與 $M$。根據結果，對消費者兩期的福利可以下什麼結論？如果某個指數本身無法得出結論，說明原因。</p>
+</details>
+<details class="hint"><summary>提示</summary>
 <p>先把四個「價格 × 組合」算出來：$p^b\!\cdot x^b$、$p^b\!\cdot x^t$、$p^t\!\cdot x^b$、$p^t\!\cdot x^t$。三個答案都只是這四個數字相除。</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>First compute four expenditures</h4>
+<h4>先算四個數字</h4>
 <div class="tbl-wrap">
 <table class="tbl rp-tbl">
-<thead><tr><th>Prices ＼ Bundle</th><th class="n">$x^b = (4, 6)$</th><th class="n">$x^t = (6, 6)$</th></tr></thead>
+<thead><tr><th>價格＼組合</th><th class="n">$x^b = (4, 6)$</th><th class="n">$x^t = (6, 6)$</th></tr></thead>
 <tbody>
-<tr><th scope="row">Base prices (1, 1)</th><td class="n chosen">$4 + 6 = 10$</td><td class="n no">$6 + 6 = 12$</td></tr>
-<tr><th scope="row">Current prices (2, 1)</th><td class="n"><span class="circ">$8 + 6 = 14$</span></td><td class="n chosen">$12 + 6 = 18$</td></tr>
+<tr><th scope="row">基期價格 (1, 1)</th><td class="n chosen">$4 + 6 = 10$</td><td class="n no">$6 + 6 = 12$</td></tr>
+<tr><th scope="row">當期價格 (2, 1)</th><td class="n"><span class="circ">$8 + 6 = 14$</span></td><td class="n chosen">$12 + 6 = 18$</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="step">
-<h4>(A) The two price indices</h4>
+<h4>(A) 兩個價格指數</h4>
 $$L_p = \frac{p^t\!\cdot x^b}{p^b\!\cdot x^b} = \frac{14}{10} = 1.4 \qquad\quad P_p = \frac{p^t\!\cdot x^t}{p^b\!\cdot x^t} = \frac{18}{12} = 1.5$$
-<p>The Laspeyres index uses the base-period bundle as weights. The Paasche index uses the current-period bundle as weights.</p>
+<p>Laspeyres 用基期組合 $(4, 6)$ 當權數，Paasche 用當期組合 $(6, 6)$ 當權數。</p>
 </div>
 <div class="step">
-<h4>(B) The expenditure ratio</h4>
+<h4>(B) 支出比</h4>
 $$M = \frac{p^t\!\cdot x^t}{p^b\!\cdot x^b} = \frac{18}{10} = 1.8$$
 </div>
 <div class="step">
-<h4>(C) Laspeyres index versus M</h4>
+<h4>(C) Laspeyres 和 M 比</h4>
 $$L_p = 1.4 \lt M = 1.8 \;\Longleftrightarrow\; p^t\!\cdot x^b = 14 \lt p^t\!\cdot x^t = 18$$
-<p>In the current period the consumer spent 18, and the base-period bundle cost only 14. It was <strong>affordable but not chosen</strong>. So $x^t$ is directly revealed preferred to $x^b$: the consumer is <strong>better off in the current period</strong>.</p>
+<p>當期他花了 18，而基期組合只要 14，<strong>買得起卻沒選</strong>。所以 $x^t \succ_D x^b$，消費者在<strong>當期比較好</strong>。</p>
 </div>
 <div class="step">
-<h4>(C) Paasche index versus M</h4>
+<h4>(C) Paasche 和 M 比</h4>
 $$P_p = 1.5 \lt M = 1.8 \;\Longleftrightarrow\; p^b\!\cdot x^t = 12 \gt p^b\!\cdot x^b = 10$$
-<p>In the base period the consumer spent only 10, and the current bundle cost 12. It was <strong>not affordable</strong> then. Choosing $x^b$ in the base period reveals nothing about $x^b$ versus $x^t$, so <strong>the Paasche index by itself gives no conclusion</strong>. (We would need $P_p \gt M$ to say that the base period was better.)</p>
+<p>基期他只花了 10，當期組合要 12，<strong>當時買不起</strong>。他在基期選 $x^b$ 並不代表 $x^b$ 比 $x^t$ 好，所以 <strong>Paasche 指數本身沒有結論</strong>。（要 $P_p \gt M$ 才能說基期比較好。）</p>
 </div>
 <div class="step">
-<h4>(C) Conclusion</h4>
-<p>The ranking is $L_p = 1.4 \lt P_p = 1.5 \lt M = 1.8$. From the Laspeyres index, the consumer's welfare is higher in the current period. The Paasche index alone is inconclusive, and it does not contradict this result.</p>
+<h4>(C) 總結</h4>
+<p>大小順序是 $L_p = 1.4 \lt P_p = 1.5 \lt M = 1.8$。支出成長得比兩個價格指數都快。由 Laspeyres 可以確定當期的福利比基期高；Paasche 單獨看無法判斷，但也沒有和這個結論衝突。</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "HW6 Question 2: budget lines and chosen bundles in the two periods",
+  "alt": "作業 HW6 第 2 題：兩期的預算線與選擇",
   "x": [0, 12], "y": [0, 20], "h": 290,
   "xlabel": "x₁", "ylabel": "x₂",
   "fns": [
-    { "f": "10-x", "color": "f", "label": "Base-period budget line: x₁ + x₂ = 10" },
-    { "f": "18-2*x", "color": "pos", "label": "Current budget line: 2x₁ + x₂ = 18" }
+    { "f": "10-x", "color": "f", "label": "基期預算線 x₁ + x₂ = 10" },
+    { "f": "18-2*x", "color": "pos", "label": "當期預算線 2x₁ + x₂ = 18" }
   ],
   "points": [
     { "x": 4, "y": 6, "color": "f", "label": "xᵇ (4, 6)", "pos": "bl" },
@@ -528,89 +547,95 @@ $$P_p = 1.5 \lt M = 1.8 \;\Longleftrightarrow\; p^b\!\cdot x^t = 12 \gt p^b\!\cd
   ]
 }
 </script>
-<figcaption>The blue point is below the green line: xᵇ was affordable in the current period but not chosen, so the current period is better. The green point is outside the blue line: xᵗ was not affordable in the base period, so that choice tells us nothing.</figcaption>
+<figcaption>藍點在綠線下方：當期買得起 xᵇ 卻沒選，所以當期比較好。綠點在藍線外面：基期買不起 xᵗ，所以從基期的選擇看不出什麼。</figcaption>
 </figure>
-<p class="answer"><span>(A) $L_p = 1.4$, $P_p = 1.5$. (B) $M = 1.8$. (C) $L_p \lt M$: the base-period bundle was affordable in the current period but not chosen, so the consumer is better off in the current period. $P_p \lt M$: the current bundle was not affordable in the base period, so the Paasche index alone gives no conclusion.</span></p>
+<p class="answer"><span>(A) $L_p = 1.4$、$P_p = 1.5$　(B) $M = 1.8$　(C) $L_p \lt M$：當期買得起基期組合卻選了別的，當期比較好；$P_p \lt M$：基期買不起當期組合，Paasche 本身無法下結論。</span></p>
 </div>
 </div>
 </article>
 
 <article class="prob" data-prob="HW6-3">
-<h3>A subsidy that keeps the base-period bundle affordable</h3>
+<h3>補貼到買得起基期組合</h3>
 <div class="prob-q">
 <p>In the base period, prices are $(2, 1)$ and the chosen bundle is $(5, 10)$. In the current period, prices are $(3, 2)$, and the consumer's income before any government intervention is 26.</p>
 <p>(A) What was the consumer's income in the base period?<br>(B) How much income is needed to buy the base-period bundle at the current prices?<br>(C) The government wants the consumer to be able to afford the base-period bundle at the current prices. How large a subsidy is needed?<br>(D) After receiving the subsidy, suppose the consumer chooses a different bundle. Use revealed preference to compare the consumer's welfare with that in the base period.</p>
 </div>
-<details class="hint"><summary>提示（中文）</summary>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>基期的價格是 $(2, 1)$，選的組合是 $(5, 10)$。當期的價格是 $(3, 2)$，政府介入之前消費者的所得是 26。</p>
+<p>(A) 計算消費者在基期的所得。<br>(B) 在當期價格下，要多少所得才買得起基期組合？<br>(C) 政府想讓消費者在當期價格下買得起基期組合，應該補貼多少？<br>(D) 拿到補貼後，假設消費者選了另一個不同的組合。用顯示性偏好比較他的福利和基期的福利。</p>
+</details>
+<details class="hint"><summary>提示</summary>
 <p>(A)(B) 都是「價格 × 組合」，只是用的價格不同。(D) 問自己：補貼後基期組合買不買得起？買得起卻改選別的，代表什麼？</p>
 </details>
 <div class="solution">
 <div class="step">
-<h4>(A) Base-period income</h4>
-<p>The consumer spent all income on $(5, 10)$ at prices $(2, 1)$:</p>
+<h4>(A) 基期所得</h4>
+<p>基期把所得花完買了 $(5, 10)$：</p>
 $$m^b = 2\times 5 + 1\times 10 = 20$$
 </div>
 <div class="step">
-<h4>(B) Cost of the base-period bundle at current prices</h4>
+<h4>(B) 當期價格下買基期組合</h4>
 $$3\times 5 + 2\times 10 = 15 + 20 = 35$$
 </div>
 <div class="step">
-<h4>(C) The subsidy</h4>
-<p>The consumer has only 26, so the subsidy must be</p>
+<h4>(C) 補貼金額</h4>
+<p>他現在只有 26，還差：</p>
 $$35 - 26 = 9$$
-<p>Note: the Laspeyres price index is $\dfrac{35}{20} = 1.75$, and income rises from 20 to 35, also by a factor of 1.75. This is full indexation.</p>
+<p>順帶一提，Laspeyres 價格指數是 $\dfrac{35}{20} = 1.75$。所得從 20 補到 35 剛好也是 1.75 倍，這就是完全指數化。</p>
 </div>
 <div class="step">
-<h4>(D) Revealed preference argument</h4>
-<p>After the subsidy the budget line is $3x_1 + 2x_2 = 35$. The base-period bundle $(5, 10)$ lies exactly on this line, so it is <strong>still affordable</strong>.</p>
-<p>The consumer could have chosen $(5, 10)$ but chose a different bundle $x^t$. Therefore</p>
+<h4>(D) 用顯示性偏好比較</h4>
+<p>補貼後的預算線是 $3x_1 + 2x_2 = 35$，基期組合 $(5, 10)$ 剛好在線上，<strong>買得起</strong>。</p>
+<p>他明明買得起 $(5, 10)$，卻選了另一個組合 $x^t$，所以</p>
 $$x^t \succ_D (5, 10)$$
-<p>The new bundle is directly revealed preferred to the base-period bundle, so the consumer is <strong>better off than in the base period</strong>. The reason: relative prices changed (from $2:1$ to $3:2$), so the new budget line passes through the old bundle with a different slope, and a better bundle becomes available.</p>
+<p>新的選擇被直接顯示偏好於基期組合：他在補貼後的福利<strong>比基期高</strong>（至少不會比較差）。原因是相對價格從 $2 : 1$ 變成 $3 : 2$，預算線繞著基期組合轉了一個角度，讓他有機會換到更喜歡的組合。</p>
 <figure class="fig">
 <script type="application/json">
 {
-  "alt": "HW6 Question 3: base-period budget line and the budget lines before and after the subsidy",
+  "alt": "作業 HW6 第 3 題：基期預算線、補貼前與補貼後的預算線",
   "x": [0, 13], "y": [0, 21], "h": 300,
   "xlabel": "x₁", "ylabel": "x₂",
   "fns": [
-    { "f": "20-2*x", "color": "f", "label": "Base period: 2x₁ + x₂ = 20" },
-    { "f": "(26-3*x)/2", "color": "d1", "dash": true, "label": "Before subsidy: 3x₁ + 2x₂ = 26" },
-    { "f": "(35-3*x)/2", "color": "pos", "label": "After subsidy: 3x₁ + 2x₂ = 35" }
+    { "f": "20-2*x", "color": "f", "label": "基期 2x₁ + x₂ = 20" },
+    { "f": "(26-3*x)/2", "color": "d1", "dash": true, "label": "補貼前 3x₁ + 2x₂ = 26" },
+    { "f": "(35-3*x)/2", "color": "pos", "label": "補貼後 3x₁ + 2x₂ = 35" }
   ],
   "shapes": [
-    { "type": "arrow", "x1": 2.2, "y1": 9.9, "x2": 2.2, "y2": 14, "color": "pos", "label": "subsidy = 9", "lo": [8, 4], "anchor": "start" }
+    { "type": "arrow", "x1": 2.2, "y1": 9.9, "x2": 2.2, "y2": 14, "color": "pos", "label": "補貼 9 元", "lo": [8, 4], "anchor": "start" }
   ],
   "points": [
-    { "x": 5, "y": 10, "color": "f", "label": "Base bundle (5, 10)", "pos": "br" }
+    { "x": 5, "y": 10, "color": "f", "label": "基期組合 (5, 10)", "pos": "tr" }
   ]
 }
 </script>
-<figcaption>The orange dashed line (income 26) lies below the base-period bundle, so the bundle is not affordable. The subsidy of 9 shifts it out to the green line, which passes exactly through the base-period bundle.</figcaption>
+<figcaption>橘色虛線（所得 26）在基期組合下方，買不起。補貼 9 元後平行外移成綠線，剛好通過基期組合。</figcaption>
 </figure>
-<p class="answer"><span>(A) 20. (B) 35. (C) Subsidy $= 9$. (D) After the subsidy the base-period bundle is still affordable, but the consumer chooses a different bundle. The new bundle is directly revealed preferred to the base-period bundle, so the consumer is better off than in the base period.</span></p>
+<p class="answer"><span>(A) 20　(B) 35　(C) 補貼 9　(D) 補貼後基期組合仍買得起，卻改選別的組合，新組合被直接顯示偏好於基期組合，所以福利比基期高。</span></p>
 </div>
 </div>
 </article>
 
-<div class="how" data-title="考卷上可以直接寫的英文句子">
-<ul class="en-lines">
-<li>Bundle A is directly revealed preferred to bundle B, because B was affordable when A was chosen.<br><small>A 直接顯示偏好於 B，因為選 A 的時候 B 也買得起。</small></li>
-<li>Bundle C was not affordable in period 1, so that choice reveals nothing about A versus C.<br><small>第 1 期買不起 C，所以那次選擇沒有透露 A 和 C 誰比較好。</small></li>
-<li>By transitivity, A is indirectly revealed preferred to C.<br><small>由遞移性，A 間接顯示偏好於 C。</small></li>
-<li>No two bundles are directly revealed preferred to each other, so WARP is not violated.<br><small>沒有任何一對組合互相直接顯示偏好，所以不違反 WARP。</small></li>
-<li>The revealed preferences form a cycle, so SARP is violated. The data cannot be rationalized by a well-behaved preference relation.<br><small>顯示性偏好繞成一圈，違反 SARP；沒有行為良好的偏好能解釋這些資料。</small></li>
-<li>$L_p \lt M$ means the base-period bundle was affordable in the current period, so the consumer is better off in the current period.<br><small>$L_p \lt M$ 表示當期買得起基期組合，所以當期比較好。</small></li>
-<li>$P_p \lt M$ means the current bundle was not affordable in the base period, so the Paasche index alone is inconclusive.<br><small>$P_p \lt M$ 表示基期買不起當期組合，所以單看 Paasche 沒有結論。</small></li>
+<div class="how" data-title="題目裡常見的英文說法">
+<ul>
+<li>Calculate the expenditure required to purchase each bundle at the prices of each period.<br><small>算出用每一期的價格買每個組合各要花多少錢。</small></li>
+<li>Present the results in a 3 × 3 table.<br><small>把結果列成 3 × 3 的表。</small></li>
+<li>List all direct and indirect revealed preference relations.<br><small>列出所有直接與間接的顯示性偏好關係。</small></li>
+<li>Does the behavior violate the WARP or the SARP?<br><small>這樣的行為有沒有違反 WARP 或 SARP？</small></li>
+<li>… of the current period relative to the base period<br><small>當期相對於基期的…</small></li>
+<li>What can you conclude about the consumer’s welfare?<br><small>對消費者的福利可以下什麼結論？</small></li>
+<li>If an index does not by itself give a conclusion, explain why.<br><small>如果某個指數單靠它自己下不了結論，說明原因。</small></li>
+<li>income before government intervention<br><small>政府介入之前的所得</small></li>
+<li>How much subsidy should it provide?<br><small>政府應該補貼多少？</small></li>
 </ul>
 </div>
 
 <div class="exam">
-<p>花費表一定要標出對角線，並寫清楚「哪一列得到哪個關係」。WARP 和 SARP 要分開下結論，各寫一句理由。指數題最後要用文字寫出結論；遇到無法判斷的情況，要寫出「因為當時買不起，所以沒有透露偏好」這個原因，只寫「無法判斷」不夠。考卷是英文的，結論要用英文寫成完整的句子（例如 “WARP is not violated, but SARP is violated.”）。</p>
+<p>花費表一定要標出對角線，並寫清楚「哪一列得到哪個關係」。WARP 和 SARP 要分開下結論，各寫一句理由。指數題最後要用文字寫出結論；遇到無法判斷的情況，要寫出「因為當時買不起，所以沒有透露偏好」這個原因，只寫「無法判斷」不夠。</p>
 </div>
 
 </main>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-<script defer src="assets/app.js?v=3"></script>
+<script defer src="assets/app.js?v=4"></script>
 </body>
 </html>

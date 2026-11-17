@@ -658,7 +658,7 @@ details.hint > :last-child, details.peek > :last-child { margin-bottom: 12px; }
   background: var(--mark);
   font-weight: 500;
 }
-.answer::before { content: "Answer　"; font-family: var(--font-mono); font-weight: 600; font-size: 0.86em; letter-spacing: 0.04em; }
+.answer::before { content: "答　"; font-family: var(--font-display); font-weight: 700; }
 .answer > :first-child { display: inline; }
 
 /* ---------- 頁尾導覽 ---------- */
