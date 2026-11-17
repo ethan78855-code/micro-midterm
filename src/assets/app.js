@@ -18,6 +18,7 @@
     { id: 'ch8', file: 'ch8.html', num: 'Ch8', title: 'Slutsky 方程式：替代效果與所得效果', study: true, hw: 'HW7', probs: [1, 2, 3] },
     { id: 'ch9', file: 'ch9.html', num: 'Ch9', title: '買與賣：稟賦、淨需求與勞動供給', study: true, hw: 'HW8', probs: [1, 2, 3] },
     { id: 'ch10', file: 'ch10.html', num: 'Ch10', title: '跨期選擇：現值、利率與證券', study: true, hw: 'HW9', probs: [1, 2, 3] },
+    { id: 'exam', file: 'exam.html', num: '考古', title: '去年的第二次期中考（題目與詳解）', group: '考古題', study: true },
     { id: 'formulas', file: 'formulas.html', num: '', title: '公式總表、中英名詞對照與考前檢查', group: '考前' }
   ];
 
@@ -104,6 +105,7 @@
       '<button type="button" class="menu-btn" aria-controls="sidebar" aria-expanded="false"><span class="menu-ico" aria-hidden="true"></span>目錄</button>' +
       '<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">x*</span><span>個體經濟學期中考<small>衝刺講義</small></span></a>' +
       '<span class="top-spacer"></span>' +
+      '<a class="top-link" href="exam.html">考古題</a>' +
       '<a class="top-link" href="formulas.html#glossary">中英名詞對照</a>' +
       '<a class="top-link" href="formulas.html">公式總表</a>' +
       '<span class="countdown" role="timer"><span class="cd-label"></span><span class="cd-short">倒數</span><span class="cd-time"></span></span>';
@@ -151,7 +153,7 @@
       a.classList.toggle('is-done', !!state.pages[a.getAttribute('data-id')]);
     });
     var sp = document.getElementById('sideProg');
-    if (sp) sp.textContent = '讀完 ' + doneP + ' / ' + studyPages.length + ' 章　·　作業題 ' + doneQ + ' / ' + probs.length;
+    if (sp) sp.textContent = '讀完 ' + doneP + ' / ' + studyPages.length + ' 頁　·　作業題 ' + doneQ + ' / ' + probs.length;
     var sb = document.getElementById('sideBar');
     if (sb) sb.style.width = Math.round(((doneP + doneQ) / (studyPages.length + probs.length)) * 100) + '%';
 
@@ -167,7 +169,7 @@
       c.setAttribute('aria-label', '作業 ' + c.getAttribute('data-prob').replace('-', ' 第 ') + ' 題' + (done ? '（已標記會了）' : ''));
     });
     var hp = document.getElementById('homeProg');
-    if (hp) hp.textContent = '目前進度：讀完 ' + doneP + ' / ' + studyPages.length + ' 章，作業題會了 ' + doneQ + ' / ' + probs.length + ' 題。';
+    if (hp) hp.textContent = '目前進度：讀完 ' + doneP + ' / ' + studyPages.length + ' 頁，作業題會了 ' + doneQ + ' / ' + probs.length + ' 題。';
   }
 
   function buildPageEnd() {
@@ -180,7 +182,7 @@
       var paint = function () {
         var done = !!state.pages[cur.id];
         btn.setAttribute('aria-pressed', done ? 'true' : 'false');
-        btn.textContent = done ? '✓ 這一章讀完了（再按一次取消）' : '標記：這一章我讀完了';
+        btn.textContent = done ? '✓ 這一頁讀完了（再按一次取消）' : '標記：這一頁我讀完了';
       };
       btn.addEventListener('click', function () {
         state.pages[cur.id] = !state.pages[cur.id];

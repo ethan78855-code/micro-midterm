@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch10 跨期選擇｜個體經濟學期中考衝刺</title>
+<meta name="description" content="終值與現值、跨期預算線、通膨與實質利率、比較靜態、證券與債券估價，含作業 HW9 三題逐步解答與互動圖表。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=4">
+</head>
+<body data-page="ch10">
+<main class="page">
+
+<p class="kicker">Chapter 10 · 對應作業 HW9</p>
+<h1>跨期選擇：現值、利率與證券</h1>
+<p class="lead">這一章把兩種商品換成「今天的消費 $c_1$」和「明天的消費 $c_2$」，利率就是它們之間的價格。預算線還是同一條預算線，只是斜率變成 $-(1+r)$。只要會把錢在兩期之間搬來搬去（乘或除 $1+r$），這一章就會了一大半。</p>
+<div data-toc></div>
+
+<h2 id="pvfv">終值與現值：把不同時間的錢換成同一種錢</h2>
+<div class="say">
+<p>利率 10% 的時候，今天的 100 元存一期會變成 110 元。所以<mark>今天的 100 元和下一期的 110 元一樣值錢</mark>。把今天的錢換算到未來叫「終值」，把未來的錢換算回今天叫「現值」。不同時間的錢不能直接相加，要先換到同一期。</p>
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "今天的 100 元乘上 1 加 r 變成下一期的 110 元，反過來除以 1 加 r 就換回今天",
+  "axes": false, "x": [0, 10], "y": [0, 4], "h": 170,
+  "shapes": [
+    { "type": "rect", "x": 0.4, "y": 1.1, "width": 2.6, "height": 1.8, "color": "f", "fill": true },
+    { "type": "rect", "x": 7, "y": 1.1, "width": 2.6, "height": 1.8, "color": "pos", "fill": true },
+    { "type": "text", "x": 1.7, "y": 2.3, "t": "今天", "color": "f", "size": 13 },
+    { "type": "text", "x": 1.7, "y": 1.55, "t": "100 元", "color": "ink", "size": 17 },
+    { "type": "text", "x": 8.3, "y": 2.3, "t": "下一期", "color": "pos", "size": 13 },
+    { "type": "text", "x": 8.3, "y": 1.55, "t": "110 元", "color": "ink", "size": 17 },
+    { "type": "arrow", "x1": 3.2, "y1": 2.55, "x2": 6.8, "y2": 2.55, "color": "pos", "label": "終值 FV：× (1 + r)", "lo": [0, -9] },
+    { "type": "arrow", "x1": 6.8, "y1": 1.45, "x2": 3.2, "y2": 1.45, "color": "f", "label": "現值 PV：÷ (1 + r)", "lo": [0, 20] }
+  ]
+}
+</script>
+<figcaption>利率 r = 10% 的例子。往未來搬就乘 (1 + r)，往今天搬就除以 (1 + r)。整章的計算都是這兩個動作。</figcaption>
+</figure>
+<div class="key" data-title="終值與現值（隔一期）">
+$$FV = m\,(1+r) \qquad\qquad PV = \frac{m}{1+r}$$
+<p>終值（future value, FV）：今天的 $m$ 元，下一期值多少。<br>
+現值（present value, PV）：下一期的 $m$ 元，今天值多少。<br>
+$r$ 是每一期的利率（interest rate）。</p>
+</div>
+<p>簡報的例子：下一期才拿得到的 1 元，今天最多該付多少？</p>
+<ul>
+<li>$r = 0.1$：$PV = \dfrac{1}{1.1} \approx 0.91$ 元。</li>
+<li>$r = 0.2$：$PV = \dfrac{1}{1.2} \approx 0.83$ 元。</li>
+</ul>
+<p>今天付 1 元去買「下一期的 1 元」是虧的。把那 1 元自己存起來，下一期就有 $1 + r$ 元，比 1 元多。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "x": [0, 1], "y": [0, 2.1], "h": 320,
+  "xlabel": "利率 r（0.1 就是 10%）", "ylabel": "元",
+  "fns": [
+    { "f": "1/(1+x)", "color": "f", "label": "下一期 1 元的現值：PV = 1 / (1 + r)" },
+    { "f": "1+x", "color": "pos", "label": "今天 1 元的終值：FV = 1 + r" }
+  ],
+  "hlines": [ { "y": 1, "color": "mute", "label": "1 元" } ],
+  "vlines": [ { "x": "a", "color": "mute" } ],
+  "points": [
+    { "x": "a", "on": 0, "color": "f", "label": "PV = {{1/(1+a)|2}}", "pos": "br" },
+    { "x": "a", "on": 1, "color": "pos", "label": "FV = {{1+a|2}}", "pos": "tr" }
+  ],
+  "slider": { "label": "利率 r", "min": 0, "max": 0.8, "step": 0.01, "value": 0.1, "digits": 0, "scale": 100, "unit": "%", "drag": true, "play": true,
+    "presets": [ { "label": "r = 10%", "value": 0.1 }, { "label": "r = 20%", "value": 0.2 }, { "label": "r = 50%", "value": 0.5 } ] },
+  "readouts": [
+    { "label": "下一期的 1 元，今天值", "expr": "1/(1+a)", "digits": 3, "unit": " 元", "color": "f" },
+    { "label": "今天的 1 元，下一期變成", "expr": "1+a", "digits": 2, "unit": " 元", "color": "pos" },
+    { "label": "今天付 1 元買下一期的 1 元", "expr": "a", "pos": "虧了，自己存會拿到更多", "neg": "虧了", "zero": "利率是 0 才不吃虧", "eps": 0.004 }
+  ]
+}
+</script>
+<figcaption>在圖上左右拖曳，或按「播放」。利率越高，藍線越低：未來的錢折回今天就越不值錢。這句話到最後一節算證券時還會再用一次。</figcaption>
+</figure>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">利率是 25%。一年後才拿得到的 500 元，現值是多少？</p>
+<button>375 元</button>
+<button>400 元</button>
+<button>625 元</button>
+<p class="quiz-why">現值是「除以」$1+r$：$\dfrac{500}{1.25} = 400$ 元。625 是把 500 當成今天的錢去算終值；375 是直接扣掉 25%，那是錯的算法。</p>
+</div>
+
+<h2 id="budget">跨期預算線</h2>
+<p>消費者在第 1 期拿到所得 $m_1$、第 2 期拿到 $m_2$，要決定兩期各消費多少（$c_1$、$c_2$）。先假設兩期物價都是 1（$p_1 = p_2 = 1$），這樣「花多少錢」就等於「消費多少」。他可以用利率 $r$ 存錢或借錢。先看三個特別的做法：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>做法</th><th>消費組合 $(c_1, c_2)$</th><th>在圖上是</th></tr></thead>
+<tbody>
+<tr><td>不存也不借</td><td>$(m_1,\ m_2)$</td><td>稟賦點（endowment）</td></tr>
+<tr><td>第 1 期完全不花，全部存起來</td><td>$\big(0,\ m_2 + (1+r)m_1\big)$</td><td>縱軸截距＝稟賦的<strong>終值</strong></td></tr>
+<tr><td>第 1 期借到底，第 2 期所得全部拿去還</td><td>$\Big(m_1 + \dfrac{m_2}{1+r},\ 0\Big)$</td><td>橫軸截距＝稟賦的<strong>現值</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p>「借到底」能借多少？第 2 期只有 $m_2$ 可以還，連本帶利要還 $b_1(1+r)$，所以 $b_1(1+r) = m_2$，最多借 $b_1 = \dfrac{m_2}{1+r}$。</p>
+<p>一般的情況：第 1 期消費 $c_1$，就存下 $m_1 - c_1$（負的代表借錢），第 2 期可以消費</p>
+$$c_2 = m_2 + (1+r)(m_1 - c_1)$$
+<p>把這條式子整理一下，就得到考試會要你寫的兩種形式：</p>
+<div class="key" data-title="跨期預算限制式（p₁ = p₂ = 1）">
+<p><strong>終值形式</strong>（future-value form）：每一項都是第 2 期的錢</p>
+$$(1+r)\,c_1 + c_2 = (1+r)\,m_1 + m_2$$
+<p><strong>現值形式</strong>（present-value form）：每一項都是第 1 期的錢</p>
+$$c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r}$$
+<p>兩條是同一條線，斜率都是 $-(1+r)$，而且一定通過稟賦點 $(m_1, m_2)$。</p>
+</div>
+<div class="say">
+<p>斜率 $-(1+r)$ 的意思：<mark>今天多花 1 元，明天就少 $(1+r)$ 元</mark>。$c_1 \lt m_1$ 的人把錢留到明天，是存錢的人（saver，也叫 lender）；$c_1 \gt m_1$ 的人預支明天的所得，是借錢的人（borrower）。</p>
+</div>
+<p>下面用作業第 1 題的數字（$m_1 = 100$、$m_2 = 110$）。拖動 $c_1$ 看自己是在存錢還是借錢，再拉利率看預算線怎麼繞著稟賦點轉：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "跨期預算線：稟賦 (100, 110)，可以調整第 1 期消費與利率",
+  "x": [0, 250], "y": [-28, 285], "h": 380,
+  "xlabel": "c₁（第 1 期消費）", "ylabel": "c₂（第 2 期消費）",
+  "fns": [ { "f": "110+(1+b)*(100-x)", "color": "f", "label": "預算線：c₂ = m₂ + (1 + r)(m₁ − c₁)", "domain": [0, "100+110/(1+b)"] } ],
+  "vlines": [ { "x": 100, "color": "mute", "label": "m₁ = 100" } ],
+  "shapes": [
+    { "type": "line", "x1": 100, "y1": 110, "x2": "min(a,100+110/(1+b))", "y2": 110, "color": "d1", "dash": true },
+    { "type": "line", "x1": "min(a,100+110/(1+b))", "y1": 110, "x2": "min(a,100+110/(1+b))", "y2": "110+(1+b)*(100-min(a,100+110/(1+b)))", "color": "d1", "dash": true },
+    { "type": "text", "x": 96, "y": -17, "t": "← 存錢", "color": "pos", "anchor": "end" },
+    { "type": "text", "x": 104, "y": -17, "t": "借錢 →", "color": "neg", "anchor": "start" }
+  ],
+  "points": [
+    { "x": 0, "y": "110+(1+b)*100", "color": "f", "label": "終值 {{110+(1+b)*100|0}}", "pos": "r" },
+    { "x": "100+110/(1+b)", "y": 0, "color": "f", "label": "現值 {{100+110/(1+b)|0}}", "pos": "t" },
+    { "x": 100, "y": 110, "color": "ink", "label": "稟賦 (100, 110)", "pos": "tr" },
+    { "x": "min(a,100+110/(1+b))", "y": "110+(1+b)*(100-min(a,100+110/(1+b)))", "color": "pos" }
+  ],
+  "sliders": [
+    { "label": "第 1 期消費 c₁", "min": 0, "max": 200, "step": 1, "value": 80, "digits": 0, "drag": true },
+    { "label": "利率 r", "min": 0, "max": 0.5, "step": 0.01, "value": 0.1, "digits": 0, "scale": 100, "unit": "%" }
+  ],
+  "presets": [
+    { "label": "作業 (E)：c₁ = 80、r = 10%", "set": { "a": 80, "b": 0.1 } },
+    { "label": "全部存起來：c₁ = 0", "set": { "a": 0, "b": 0.1 } },
+    { "label": "借到底：c₁ = 200", "set": { "a": 200, "b": 0.1 } },
+    { "label": "利率升到 30%", "set": { "b": 0.3 } }
+  ],
+  "readouts": [
+    { "label": "第 1 期消費 c₁", "expr": "min(a,100+110/(1+b))", "digits": 0 },
+    { "label": "第 2 期消費 c₂", "expr": "110+(1+b)*(100-min(a,100+110/(1+b)))", "digits": 1, "color": "pos" },
+    { "label": "身分", "expr": "100-min(a,100+110/(1+b))", "pos": "存錢的人（saver）", "neg": "借錢的人（borrower）", "zero": "不存不借，剛好吃掉稟賦", "eps": 0.5 },
+    { "label": "存下的金額（負的是借）", "expr": "100-min(a,100+110/(1+b))", "digits": 0 },
+    { "label": "橫軸截距＝稟賦現值", "expr": "100+110/(1+b)", "digits": 1, "color": "f" },
+    { "label": "縱軸截距＝稟賦終值", "expr": "110+(1+b)*100", "digits": 1, "color": "f" },
+    { "label": "斜率 −(1 + r)", "expr": "-(1+b)", "digits": 2 }
+  ]
+}
+</script>
+<figcaption>綠點是你選的消費組合，黑點是稟賦。橘色虛線是「今天少花多少、明天多拿多少」。利率改變時，預算線繞著稟賦點轉：不存不借的人完全不受利率影響。c₁ 拉到超過借得到的上限時，綠點會停在橫軸截距。</figcaption>
+</figure>
+<div class="trap">
+<p>終值式和現值式只差在兩邊同除以 $(1+r)$，題目指定哪一種就寫哪一種。認法：<mark>終值式裡 $c_2$ 的係數是 1，現值式裡 $c_1$ 的係數是 1</mark>。兩種都要把數字代進去算到底（例如 $1.1c_1 + c_2 = 220$），不要只停在符號。</p>
+</div>
+
+<div class="quiz" data-answer="3">
+<p class="quiz-q">同樣是 $m_1 = 100$、$m_2 = 110$、$r = 10\%$。如果選 $c_1 = 150$，他是存錢還是借錢？$c_2$ 是多少？</p>
+<button>存 50 元，$c_2 = 165$</button>
+<button>借 50 元，$c_2 = 60$</button>
+<button>借 50 元，$c_2 = 55$</button>
+<p class="quiz-why">$c_1 = 150 \gt m_1 = 100$，多花的 50 元是借來的。第 2 期要還 $50 \times 1.1 = 55$ 元，所以 $c_2 = 110 - 55 = 55$。選 60 是忘了算利息。</p>
+</div>
+
+<h2 id="inflation">加入物價：通膨與實質利率</h2>
+<p>現在讓兩期的物價可以不一樣。第 1 期消費 $c_1$ 要花 $p_1c_1$ 元，存下 $m_1 - p_1c_1$；第 2 期能花的錢是 $m_2 + (1+r)(m_1 - p_1c_1)$，要拿來付 $p_2c_2$。整理後：</p>
+<div class="key" data-title="有物價的跨期預算限制式">
+$$(1+r)\,p_1c_1 + p_2c_2 = (1+r)\,m_1 + m_2 \qquad\text{（終值形式）}$$
+$$p_1c_1 + \frac{p_2}{1+r}\,c_2 = m_1 + \frac{m_2}{1+r} \qquad\text{（現值形式）}$$
+<p>斜率 $= -(1+r)\,\dfrac{p_1}{p_2}$。橫軸截距 $\dfrac{m_1 + m_2/(1+r)}{p_1}$，縱軸截距 $\dfrac{(1+r)m_1 + m_2}{p_2}$。</p>
+</div>
+<p>通貨膨脹率（inflation rate）$\pi$ 的定義是 $p_2 = (1+\pi)\,p_1$。例如 $\pi = 0.2$ 是物價漲 20%，$\pi = 1.0$ 是漲一倍。把 $p_1$ 設成 1，那麼 $p_2 = 1 + \pi$，斜率變成</p>
+$$-\frac{1+r}{1+\pi} = -(1+\rho)$$
+<div class="key" data-title="實質利率 ρ（real interest rate）">
+$$1+\rho = \frac{1+r}{1+\pi} \qquad\Longrightarrow\qquad \rho = \frac{r-\pi}{1+\pi} \qquad\text{（精確）}$$
+$$\rho \approx r - \pi \qquad\text{（近似，}\pi\text{ 很小時才準）}$$
+<p>$r$ 是名目利率（nominal interest rate）。</p>
+</div>
+<div class="say">
+<p>名目利率 $r$ 是「錢」變多的速度，通膨率 $\pi$ 是「東西變貴」的速度。實質利率 $\rho$ 是<mark>「買得到的東西」變多的速度</mark>。今天少消費 1 單位，明天可以多消費 $1+\rho$ 單位，所以預算線的斜率是 $-(1+\rho)$。</p>
+</div>
+<p>簡報裡的對照表（$r$ 固定在 0.30）：通膨越高，近似值 $r - \pi$ 離真正的 $\rho$ 越遠。</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>通膨率 $\pi$</th><th class="n">0.0</th><th class="n">0.05</th><th class="n">0.10</th><th class="n">0.20</th><th class="n">1.00</th></tr></thead>
+<tbody>
+<tr><td>近似 $r - \pi$</td><td class="n">0.30</td><td class="n">0.25</td><td class="n">0.20</td><td class="n">0.10</td><td class="n c-neg">−0.70</td></tr>
+<tr><td>精確 $\rho$</td><td class="n">0.30</td><td class="n">0.24</td><td class="n">0.18</td><td class="n">0.08</td><td class="n c-neg">−0.35</td></tr>
+</tbody>
+</table>
+</div>
+<p>下面把名目利率固定在作業的 10%，拉通膨率看兩種算法差多少：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "名目利率 10% 時，精確與近似的實質利率隨通膨率變化",
+  "x": [0, 50], "y": [-50, 22], "h": 330,
+  "xlabel": "通膨率 π（%）", "ylabel": "實質利率（%）",
+  "fns": [
+    { "f": "100*(0.1-x/100)/(1+x/100)", "color": "f", "label": "精確：ρ = (r − π) / (1 + π)" },
+    { "f": "10-x", "color": "d1", "dash": true, "label": "近似：ρ ≈ r − π" }
+  ],
+  "vlines": [ { "x": "a", "color": "mute" } ],
+  "points": [
+    { "x": "a", "on": 0, "color": "f" },
+    { "x": "a", "on": 1, "color": "d1" }
+  ],
+  "slider": { "label": "通膨率 π", "min": 0, "max": 50, "step": 0.5, "value": 5, "digits": 1, "unit": "%", "drag": true,
+    "presets": [ { "label": "π = 5%（作業第 2 題）", "value": 5 }, { "label": "π = 10%", "value": 10 }, { "label": "π = 30%", "value": 30 } ] },
+  "readouts": [
+    { "label": "精確的實質利率 ρ", "expr": "100*(0.1-a/100)/(1+a/100)", "digits": 2, "unit": "%", "color": "f" },
+    { "label": "近似值 r − π", "expr": "10-a", "digits": 2, "unit": "%", "color": "d1" },
+    { "label": "兩者相差", "expr": "abs(10-a-100*(0.1-a/100)/(1+a/100))", "digits": 2, "unit": " 個百分點" },
+    { "label": "實質利率", "expr": "10-a", "pos": "是正的：存錢換得到更多東西", "neg": "是負的：錢存著，買得到的東西反而變少", "zero": "剛好是 0：通膨把利息吃光了", "eps": 0.01 }
+  ]
+}
+</script>
+<figcaption>π = 5% 時兩條線幾乎貼在一起（4.76% 對 5%）。通膨越高，橘色虛線離藍線越遠，近似公式就不能用了。兩條線都在 π = r = 10% 的地方穿過 0。</figcaption>
+</figure>
+<div class="trap">
+<p>題目寫 <strong>exact</strong> 就用「除的」：$\rho = \dfrac{1+r}{1+\pi} - 1$；寫 <strong>approximate</strong> 才用「減的」：$\rho \approx r - \pi$。作業第 2 題兩個答案不一樣（4.76% 和 5%），寫反了兩小題都會錯。</p>
+</div>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">名目利率 8%，通膨率也是 8%，$p_1 = 1$。跨期預算線的斜率是多少？</p>
+<button>$-1$，實質利率是 0</button>
+<button>$-1.08$，因為斜率是 $-(1+r)$</button>
+<button>$-1.16$，利率和通膨要加起來</button>
+<p class="quiz-why">有通膨時斜率是 $-\dfrac{1+r}{1+\pi} = -\dfrac{1.08}{1.08} = -1$。錢多了 8%，但東西也貴了 8%，今天少吃 1 單位，明天剛好只能多吃 1 單位。$-(1+r)$ 是沒有通膨時的斜率。</p>
+</div>
+
+<h2 id="statics">比較靜態：利率或通膨改變時</h2>
+<div class="key" data-title="預算線變陡還是變平，只看實質利率">
+$$\text{斜率} = -(1+\rho) = -\frac{1+r}{1+\pi}$$
+<p>名目利率 $r$ <strong>下降</strong>，或通膨率 $\pi$ <strong>上升</strong> → 實質利率下降 → 預算線<strong>變平</strong>。<br>
+名目利率 $r$ 上升，或通膨率 $\pi$ 下降 → 實質利率上升 → 預算線變陡。</p>
+</div>
+<p>拉下面兩支滑桿驗證。藍線是對照組（$r = 10\%$、沒有通膨），綠線是你調出來的預算線：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "調整通膨率與名目利率，看跨期預算線的斜率怎麼變",
+  "x": [0, 250], "y": [-28, 255], "h": 360,
+  "xlabel": "c₁", "ylabel": "c₂",
+  "fns": [
+    { "f": "110+1.1*(100-x)", "color": "f", "label": "對照：r = 10%、沒有通膨（斜率 −1.10）", "domain": [0, 200] },
+    { "f": "(110+(1+b)*(100-x))/(1+a)", "color": "pos", "label": "現在的預算線", "domain": [0, "100+110/(1+b)"] }
+  ],
+  "points": [
+    { "x": 100, "y": 110, "color": "f", "label": "對照的稟賦 (100, 110)", "pos": "tr" },
+    { "x": 100, "y": "110/(1+a)", "color": "pos", "label": "現在的稟賦 (100, {{110/(1+a)|1}})", "pos": "bl" }
+  ],
+  "sliders": [
+    { "label": "通膨率 π", "min": 0, "max": 0.3, "step": 0.01, "value": 0.05, "digits": 0, "scale": 100, "unit": "%", "play": true },
+    { "label": "名目利率 r", "min": 0, "max": 0.3, "step": 0.01, "value": 0.1, "digits": 0, "scale": 100, "unit": "%" }
+  ],
+  "presets": [
+    { "label": "作業第 2 題：r = 10%、π = 5%", "set": { "a": 0.05, "b": 0.1 } },
+    { "label": "通膨升到 10%", "set": { "a": 0.1, "b": 0.1 } },
+    { "label": "沒有通膨、利率降到 2%", "set": { "a": 0, "b": 0.02 } }
+  ],
+  "readouts": [
+    { "label": "斜率 −(1 + r) / (1 + π)", "expr": "-(1+b)/(1+a)", "digits": 4, "color": "pos" },
+    { "label": "實質利率 ρ", "expr": "100*((1+b)/(1+a)-1)", "digits": 2, "unit": "%" },
+    { "label": "第 2 期物價 p₂ = 1 + π", "expr": "1+a", "digits": 2 },
+    { "label": "和對照的藍線比", "expr": "1.1-(1+b)/(1+a)", "pos": "變平了：實質利率比較低", "neg": "變陡了：實質利率比較高", "zero": "一樣陡", "eps": 0.0005 }
+  ]
+}
+</script>
+<figcaption>只調通膨時，橫軸截距不動（今天的錢沒有變薄），縱軸截距 220 / (1 + π) 往下掉，所以線變平。注意名目所得 m₂ = 110 不變時，稟賦點的高度 m₂ / p₂ 也跟著下降（綠點往下移）。只調利率時，線繞著稟賦點轉。</figcaption>
+</figure>
+
+<h3>存錢的人和借錢的人，誰受益？</h3>
+<p>簡報的結論：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>實質利率下降（$r$ 降或 $\pi$ 升，線變平）</th><th>結果</th></tr></thead>
+<tbody>
+<tr><td>原本<strong>存錢</strong>的人，如果繼續存錢</td><td class="c-neg">存得比較少，福利下降</td></tr>
+<tr><td>原本<strong>借錢</strong>的人</td><td class="c-pos">借得比較多，福利上升</td></tr>
+</tbody>
+</table>
+</div>
+<p>道理和 Ch7 的顯示性偏好一樣，看「原本的選擇現在還買不買得起」。下面為了看得清楚，讓利率從 40% 一口氣降到 0%（沒有通膨）：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "利率從 40% 降到 0%，預算線繞稟賦點變平，存錢者原本的選擇落在新預算線外，借錢者原本的選擇落在新預算線內",
+  "x": [0, 230], "y": [-26, 270], "h": 360,
+  "xlabel": "c₁", "ylabel": "c₂",
+  "fns": [
+    { "f": "110+1.4*(100-x)", "color": "f", "label": "原本：利率 40%", "domain": [0, 178.57] },
+    { "f": "210-x", "color": "pos", "label": "利率降到 0%（變平）", "domain": [0, 210], "if": "a-1.5" }
+  ],
+  "shapes": [
+    { "type": "line", "x1": 50, "y1": 160, "x2": 50, "y2": 180, "color": "neg", "w": 5, "if": "a-1.5" },
+    { "type": "line", "x1": 140, "y1": 54, "x2": 140, "y2": 70, "color": "d1", "w": 5, "if": "a-1.5" }
+  ],
+  "points": [
+    { "x": 100, "y": 110, "color": "ink", "label": "稟賦", "pos": "tr" },
+    { "x": 50, "y": 180, "color": "f", "label": "S（存錢者）", "pos": "tr" },
+    { "x": 140, "y": 54, "color": "f", "label": "B（借錢者）", "pos": "bl" }
+  ],
+  "slider": { "label": "步驟", "steps": ["① 原本（利率 40%）", "② 利率降到 0%"] },
+  "readouts": [
+    { "label": "存錢者 S", "expr": "a-1.5", "pos": "原本的選擇比新預算線高 20（紅色線段），買不起了。繼續存錢一定變差", "neg": "選在稟賦左邊：c₁ = 50，存 50" },
+    { "label": "借錢者 B", "expr": "a-1.5", "pos": "原本的選擇比新預算線低 16（橘色線段），還買得起而且有剩。一定變好", "neg": "選在稟賦右邊：c₁ = 140，借 40" }
+  ]
+}
+</script>
+<figcaption>按「② 利率降到 0%」。綠線在稟賦左邊比藍線低，在稟賦右邊比藍線高。存錢的人如果還留在左邊，新線上的每一點以前都買得起卻沒選，所以一定比較差。借錢的人原本的選擇落在新預算線裡面，至少不會變差。</figcaption>
+</figure>
+<p>反過來想也一樣：實質利率<strong>上升</strong>時，存錢的人原本的選擇還買得起，所以會繼續存錢而且變好；借錢的人如果繼續借錢，就一定變差。</p>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">小安每個月都有存錢。名目利率不變，但通膨率上升了，而他還是繼續存錢。他的福利會？</p>
+<button>上升，因為物價上漲代表所得也會上漲</button>
+<button>下降，因為實質利率下降，預算線變平</button>
+<button>不變，因為名目利率沒有動</button>
+<p class="quiz-why">通膨上升讓 $\rho = \dfrac{1+r}{1+\pi} - 1$ 下降，預算線變平。存錢的人存下的錢到明天買得到的東西變少了，繼續存錢的話福利下降。看的是實質利率，不是名目利率。</p>
+</div>
+
+<h2 id="securities">證券估價：每一筆錢各自折現再加起來</h2>
+<div class="say">
+<p>金融證券（financial security）就是一張「未來會付你幾筆錢」的約定。它今天值多少？<mark>把每一筆錢各自折回今天，再全部加起來</mark>。越晚拿到的錢，要除越多次 $(1+r)$。</p>
+</div>
+<div class="key" data-title="證券的現值">
+<p>第 1、2、3 年年底各付 $m_1$、$m_2$、$m_3$ 的證券：</p>
+$$PV = \frac{m_1}{1+r} + \frac{m_2}{(1+r)^2} + \frac{m_3}{(1+r)^3}$$
+<p>規則：第 $t$ 年年底的錢，除以 $(1+r)^t$。這個 $PV$ 就是今天最多願意付的價格。</p>
+</div>
+<p>下面是作業第 3 題的證券。拉利率，看三筆現值和合計怎麼變，再跟售價 320 元比：</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "三筆付款 110、121、133.1 與各自的現值，以及現值合計和售價 320 的比較",
+  "slider": { "label": "年利率 r", "min": 0.01, "max": 0.25, "step": 0.005, "value": 0.1, "digits": 1, "scale": 100, "unit": "%", "play": true,
+    "presets": [ { "label": "r = 10%（題目）", "value": 0.1 }, { "label": "r = 6.5%（現值 ≈ 320）", "value": 0.065 }, { "label": "r = 20%", "value": 0.2 } ] },
+  "panels": [
+    { "title": "每一筆付款（淺灰）和它的現值（藍）", "x": [0, 4], "y": [0, 168], "h": 300, "ylabel": "元",
+      "shapes": [
+        { "type": "rect", "x": 0.62, "y": 0, "width": 0.36, "height": 110, "color": "mute", "fill": true },
+        { "type": "rect", "x": 1.02, "y": 0, "width": 0.36, "height": "110/(1+a)", "color": "f", "fill": true, "solid": true },
+        { "type": "rect", "x": 1.62, "y": 0, "width": 0.36, "height": 121, "color": "mute", "fill": true },
+        { "type": "rect", "x": 2.02, "y": 0, "width": 0.36, "height": "121/(1+a)^2", "color": "f", "fill": true, "solid": true },
+        { "type": "rect", "x": 2.62, "y": 0, "width": 0.36, "height": 133.1, "color": "mute", "fill": true },
+        { "type": "rect", "x": 3.02, "y": 0, "width": 0.36, "height": "133.1/(1+a)^3", "color": "f", "fill": true, "solid": true },
+        { "type": "text", "x": 0.8, "y": 114, "t": "110", "color": "mute", "size": 11.5 },
+        { "type": "text", "x": 1.2, "y": "110/(1+a)+4", "t": "{{110/(1+a)|1}}", "color": "f", "size": 11.5 },
+        { "type": "text", "x": 1.8, "y": 125, "t": "121", "color": "mute", "size": 11.5 },
+        { "type": "text", "x": 2.2, "y": "121/(1+a)^2+4", "t": "{{121/(1+a)^2|1}}", "color": "f", "size": 11.5 },
+        { "type": "text", "x": 2.8, "y": 137, "t": "133.1", "color": "mute", "size": 11.5 },
+        { "type": "text", "x": 3.2, "y": "133.1/(1+a)^3+4", "t": "{{133.1/(1+a)^3|1}}", "color": "f", "size": 11.5 },
+        { "type": "text", "x": 1, "y": 155, "t": "第 1 年底", "color": "ink", "size": 12 },
+        { "type": "text", "x": 2, "y": 155, "t": "第 2 年底", "color": "ink", "size": 12 },
+        { "type": "text", "x": 3, "y": 155, "t": "第 3 年底", "color": "ink", "size": 12 }
+      ] },
+    { "title": "現值合計 vs 售價", "narrow": true, "axes": false, "x": [0, 3], "y": [-60, 420], "h": 300,
+      "hlines": [ { "y": 320, "color": "neg", "label": "售價 320" } ],
+      "shapes": [
+        { "type": "line", "x1": 0.1, "y1": 0, "x2": 2.9, "y2": 0, "color": "ink" },
+        { "type": "rect", "x": 0.4, "y": 0, "width": 0.9, "height": "110/(1+a)+121/(1+a)^2+133.1/(1+a)^3", "color": "f", "fill": true, "solid": true },
+        { "type": "rect", "x": 1.7, "y": 0, "width": 0.9, "height": 320, "color": "neg", "fill": true },
+        { "type": "text", "x": 0.85, "y": "110/(1+a)+121/(1+a)^2+133.1/(1+a)^3+12", "t": "{{110/(1+a)+121/(1+a)^2+133.1/(1+a)^3|1}}", "color": "f" },
+        { "type": "text", "x": 0.85, "y": -40, "t": "現值合計", "color": "f" },
+        { "type": "text", "x": 2.15, "y": -40, "t": "售價", "color": "neg" }
+      ] }
+  ],
+  "readouts": [
+    { "label": "第 1 年 110 的現值", "expr": "110/(1+a)", "digits": 2 },
+    { "label": "第 2 年 121 的現值", "expr": "121/(1+a)^2", "digits": 2 },
+    { "label": "第 3 年 133.1 的現值", "expr": "133.1/(1+a)^3", "digits": 2 },
+    { "label": "現值合計", "expr": "110/(1+a)+121/(1+a)^2+133.1/(1+a)^3", "digits": 2, "color": "f" },
+    { "label": "和售價 320 比", "expr": "110/(1+a)+121/(1+a)^2+133.1/(1+a)^3-320", "pos": "現值比較高，值得買", "neg": "現值比較低，320 元太貴", "zero": "差不多剛好值 320 元", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>r = 10% 時三筆的現值剛好都是 100，合計 300。利率越高藍色長條越矮，而且越晚的那一筆縮得越多。要等利率降到大約 6.5% 以下，現值才會超過 320。</figcaption>
+</figure>
+<div class="key" data-title="利率和現值反方向走">
+<p>利率上升 → 每一筆的分母 $(1+r)^t$ 變大 → 現值下降 → 證券（和債券）變便宜。利率下降則相反。</p>
+</div>
+
+<h3>債券（bond）</h3>
+<p>債券是一種特別的證券：每年固定付 $x$ 元（利息），到期那一年付面額（face value）$F$。簡報的寫法是第 1 到第 $T-1$ 年年底各付 $x$，第 $T$ 年年底付 $F$：</p>
+$$PV = \frac{x}{1+r} + \frac{x}{(1+r)^2} + \cdots + \frac{x}{(1+r)^{T-1}} + \frac{F}{(1+r)^T}$$
+<p>不用背，做法跟上面一模一樣：題目給什麼現金流，就一筆一筆折現。</p>
+<p><strong>簡報的樂透例子：</strong>頭獎號稱 100 萬元，但分 10 年、每年年底領 10 萬元。利率 10% 時，它真正值</p>
+$$PV = \frac{100{,}000}{1.1} + \frac{100{,}000}{1.1^2} + \cdots + \frac{100{,}000}{1.1^{10}} = 614{,}457 \text{ 元}$$
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "分 10 年領的樂透獎金，每一年 10 萬元折回今天的現值長條圖",
+  "x": [0, 11], "y": [0, 12], "h": 300,
+  "ylabel": "現值（萬元）",
+  "hlines": [ { "y": 10, "color": "mute", "label": "每年實際領到 10 萬" } ],
+  "shapes": [
+    { "type": "rect", "x": 0.65, "y": 0, "width": 0.7, "height": "10/(1+a)^1", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 1.65, "y": 0, "width": 0.7, "height": "10/(1+a)^2", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 2.65, "y": 0, "width": 0.7, "height": "10/(1+a)^3", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 3.65, "y": 0, "width": 0.7, "height": "10/(1+a)^4", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 4.65, "y": 0, "width": 0.7, "height": "10/(1+a)^5", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 5.65, "y": 0, "width": 0.7, "height": "10/(1+a)^6", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 6.65, "y": 0, "width": 0.7, "height": "10/(1+a)^7", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 7.65, "y": 0, "width": 0.7, "height": "10/(1+a)^8", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 8.65, "y": 0, "width": 0.7, "height": "10/(1+a)^9", "color": "f", "fill": true, "solid": true },
+    { "type": "rect", "x": 9.65, "y": 0, "width": 0.7, "height": "10/(1+a)^10", "color": "f", "fill": true, "solid": true },
+    { "type": "text", "x": 1, "y": "10/(1+a)^1+0.25", "t": "{{10/(1+a)^1|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 2, "y": "10/(1+a)^2+0.25", "t": "{{10/(1+a)^2|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 3, "y": "10/(1+a)^3+0.25", "t": "{{10/(1+a)^3|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 4, "y": "10/(1+a)^4+0.25", "t": "{{10/(1+a)^4|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 5, "y": "10/(1+a)^5+0.25", "t": "{{10/(1+a)^5|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 6, "y": "10/(1+a)^6+0.25", "t": "{{10/(1+a)^6|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 7, "y": "10/(1+a)^7+0.25", "t": "{{10/(1+a)^7|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 8, "y": "10/(1+a)^8+0.25", "t": "{{10/(1+a)^8|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 9, "y": "10/(1+a)^9+0.25", "t": "{{10/(1+a)^9|1}}", "color": "f", "size": 10.5 },
+    { "type": "text", "x": 10, "y": "10/(1+a)^10+0.25", "t": "{{10/(1+a)^10|1}}", "color": "f", "size": 10.5 }
+  ],
+  "slider": { "label": "年利率 r", "min": 0.01, "max": 0.2, "step": 0.005, "value": 0.1, "digits": 1, "scale": 100, "unit": "%",
+    "presets": [ { "label": "r = 5%", "value": 0.05 }, { "label": "r = 10%（簡報）", "value": 0.1 }, { "label": "r = 20%", "value": 0.2 } ] },
+  "readouts": [
+    { "label": "10 筆現值合計", "expr": "100000*(1-(1+a)^(-10))/a", "digits": 0, "unit": " 元", "color": "f" },
+    { "label": "表面上的獎金", "expr": "1000000", "digits": 0, "unit": " 元" },
+    { "label": "如果永遠領下去（永續債 x / r）", "expr": "100000/a", "digits": 0, "unit": " 元" }
+  ]
+}
+</script>
+<figcaption>橫軸是第幾年年底，每一根是那一年的 10 萬元折回今天的價值（單位：萬元）。越後面的越矮。r = 10% 時十根加起來只有 614,457 元，不到 100 萬的三分之二。</figcaption>
+</figure>
+
+<h3>永續債（consol）</h3>
+<p>永續債永遠不到期，每一期付 $x$ 元直到永遠。它的現值出奇地簡單：</p>
+<div class="key" data-title="永續債的現值">
+$$PV = \frac{x}{r}$$
+<p>例：$r = 0.1$，每年付 1,000 元的永續債，$PV = \dfrac{1000}{0.1} = 10{,}000$ 元。</p>
+</div>
+<details class="peek"><summary>為什麼是 x / r？（簡報的推導）</summary>
+$$PV = \frac{x}{1+r} + \frac{x}{(1+r)^2} + \frac{x}{(1+r)^3} + \cdots = \frac{1}{1+r}\Big[\,x + \underbrace{\frac{x}{1+r} + \frac{x}{(1+r)^2} + \cdots}_{\text{又是一個 } PV}\Big] = \frac{1}{1+r}\,(x + PV)$$
+<p>解 $PV(1+r) = x + PV$，得到 $PV = \dfrac{x}{r}$。直覺：把 10,000 元存在利率 10% 的銀行，每年剛好生出 1,000 元利息，本金永遠不用動。</p>
+</details>
+
+<div class="quiz" data-answer="3">
+<p class="quiz-q">一張永續債每年付 50 元，利率是 5%。它今天值多少？如果利率升到 10% 呢？</p>
+<button>都是 50 元，因為每年領的錢沒變</button>
+<button>現在 1,000 元；利率升到 10% 變成 2,000 元</button>
+<button>現在 1,000 元；利率升到 10% 變成 500 元</button>
+<p class="quiz-why">$PV = \dfrac{x}{r} = \dfrac{50}{0.05} = 1000$ 元。利率升到 10% 時 $\dfrac{50}{0.10} = 500$ 元。利率上升，現值下降，這是整章最常考的方向判斷。</p>
+</div>
+
+<h2 id="problems">作業 HW9（英文題目）</h2>
+<p>考卷的題目是英文，所以每一題的<strong>題目用英文寫</strong>，跟考卷一樣；看不懂可以點題目下面的「中文翻譯」對照。<strong>解答是中文</strong>。</p>
+<p>先自己動手算，卡住再一步一步打開解答。三題都是代公式，重點是式子寫對、數字算到底。</p>
+
+<article class="prob" data-prob="HW9-1">
+<h3>兩期所得的跨期預算線</h3>
+<div class="prob-q">
+<p>A consumer earns $m_1 = 100$ in period 1 and $m_2 = 110$ in period 2. The interest rate is $r = 10\%$. The price of consumption is 1 in both periods ($p_1 = p_2 = 1$).</p>
+<p>(A) State the intertemporal budget constraint in future-value form.<br>
+(B) State the intertemporal budget constraint in present-value form.<br>
+(C) What is the largest possible consumption in period 1? In period 2?<br>
+(D) Sketch the budget line. Mark the income endowment and the slope.<br>
+(E) Suppose the consumer picks $c_1 = 80$. Is the consumer a saver or a borrower? Compute $c_2$.</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>某位消費者第 1 期所得 $m_1 = 100$、第 2 期所得 $m_2 = 110$，利率 $r = 10\%$，兩期物價都是 1（$p_1 = p_2 = 1$）。</p>
+<p>(A) 寫出終值形式（future-value form）的跨期預算限制式。<br>
+(B) 寫出現值形式（present-value form）的跨期預算限制式。<br>
+(C) 第 1 期和第 2 期各自最多可以消費多少？<br>
+(D) 畫出預算線，標出所得稟賦點與斜率。<br>
+(E) 如果消費者選 $c_1 = 80$，他是在存錢還是借錢？$c_2$ 是多少？</p>
+</details>
+<details class="hint"><summary>提示</summary>
+<p>終值式是把每一項都換成第 2 期的錢：第 1 期的東西要乘 $(1+r) = 1.1$。現值式是都換成第 1 期的錢：第 2 期的東西要除以 $1.1$。最大消費就是兩個截距。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 終值形式</h4>
+<p>通式是 $(1+r)c_1 + c_2 = (1+r)m_1 + m_2$。代入 $r = 0.1$、$m_1 = 100$、$m_2 = 110$：</p>
+$$1.1\,c_1 + c_2 = 1.1(100) + 110 = 220$$
+<p>右邊的 220 就是稟賦的終值：把第 1 期的 100 元全部存到第 2 期，連同第 2 期的 110 元。</p>
+</div>
+<div class="step">
+<h4>(B) 現值形式</h4>
+<p>通式是 $c_1 + \dfrac{c_2}{1+r} = m_1 + \dfrac{m_2}{1+r}$。也可以把 (A) 的兩邊同除以 1.1：</p>
+$$c_1 + \frac{c_2}{1.1} = 100 + \frac{110}{1.1} = 200$$
+<p>右邊的 200 是稟賦的現值：第 2 期的 110 元今天值 100 元，加上第 1 期的 100 元。</p>
+</div>
+<div class="step">
+<h4>(C) 兩期各自的最大消費</h4>
+<p>第 1 期最多：令 $c_2 = 0$，由現值式得 $c_1 = 200$。意思是把第 2 期的所得借到底，可以借 $\dfrac{110}{1.1} = 100$ 元，加上原本的 100 元。</p>
+<p>第 2 期最多：令 $c_1 = 0$，由終值式得 $c_2 = 220$。意思是第 1 期完全不花，$100 \times 1.1 = 110$ 元，加上第 2 期的 110 元。</p>
+</div>
+<div class="step">
+<h4>(D) 畫預算線</h4>
+<p>連接兩個截距 $(0, 220)$ 和 $(200, 0)$。斜率 $= -\dfrac{220}{200} = -1.1 = -(1+r)$。稟賦點 $(100, 110)$ 一定在線上：$1.1(100) + 110 = 220$ ✓。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業第 1 題的跨期預算線，從 (0, 220) 到 (200, 0)，通過稟賦點 (100, 110)",
+  "x": [0, 260], "y": [-28, 262], "h": 340,
+  "xlabel": "c₁", "ylabel": "c₂",
+  "fns": [ { "f": "220-1.1*x", "color": "f", "label": "1.1c₁ + c₂ = 220，斜率 −1.1", "domain": [0, 200] } ],
+  "shapes": [
+    { "type": "line", "x1": 100, "y1": 0, "x2": 100, "y2": 110, "color": "mute", "dash": true },
+    { "type": "line", "x1": 0, "y1": 110, "x2": 100, "y2": 110, "color": "mute", "dash": true },
+    { "type": "text", "x": 150, "y": 84, "t": "斜率 = −(1 + r) = −1.1", "color": "f", "anchor": "start" }
+  ],
+  "points": [
+    { "x": 0, "y": 220, "color": "f", "label": "(0, 220) 全部存起來", "pos": "r" },
+    { "x": 200, "y": 0, "color": "f", "label": "(200, 0) 借到底", "pos": "t" },
+    { "x": 100, "y": 110, "color": "ink", "label": "稟賦 (100, 110)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>考試畫圖要有四樣東西：兩個軸的名稱（c₁、c₂）、兩個截距的數字、稟賦點、斜率。</figcaption>
+</figure>
+</div>
+<div class="step">
+<h4>(E) 選 c₁ = 80</h4>
+<p>$c_1 = 80 \lt m_1 = 100$，第 1 期沒有把所得花完，所以是在<strong>存錢</strong>，存了 $100 - 80 = 20$ 元。</p>
+<p>這 20 元到第 2 期變成 $20 \times 1.1 = 22$ 元：</p>
+$$c_2 = m_2 + (1+r)(m_1 - c_1) = 110 + 1.1 \times 20 = 132$$
+<p>檢查：$1.1(80) + 132 = 88 + 132 = 220$ ✓。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "從稟賦點 (100, 110) 少花 20 元，沿著預算線移到 (80, 132)",
+  "x": [40, 140], "y": [70, 180], "h": 300,
+  "xlabel": "c₁", "ylabel": "c₂",
+  "fns": [ { "f": "220-1.1*x", "color": "f", "label": "預算線 1.1c₁ + c₂ = 220" } ],
+  "shapes": [
+    { "type": "arrow", "x1": 100, "y1": 110, "x2": 80, "y2": 110, "color": "d1", "label": "今天少花 20", "lo": [0, 19] },
+    { "type": "arrow", "x1": 80, "y1": 110, "x2": 80, "y2": 132, "color": "pos", "label": "明天多 22", "lo": [-9, 4], "anchor": "end" }
+  ],
+  "points": [
+    { "x": 100, "y": 110, "color": "ink", "label": "稟賦 (100, 110)", "pos": "tr" },
+    { "x": 80, "y": 132, "color": "pos", "label": "選擇 (80, 132)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>往左走 20（今天少花），就能往上走 20 × 1.1 = 22（明天多花）。選擇在稟賦點的左上方，就是存錢。</figcaption>
+</figure>
+<p class="answer"><span>(A) $1.1c_1 + c_2 = 220$。(B) $c_1 + \dfrac{c_2}{1.1} = 200$。(C) $c_1$ 最多 200，$c_2$ 最多 220。(D) 連接 $(0,220)$ 與 $(200,0)$，通過稟賦 $(100,110)$，斜率 $-1.1$。(E) 存錢，存 20 元，$c_2 = 132$。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW9-2">
+<h3>名目利率、通膨與實質利率</h3>
+<div class="prob-q">
+<p>The nominal interest rate is 10% and the inflation rate is 5%.</p>
+<p>(A) Compute the exact real interest rate.<br>
+(B) Compute the approximate real interest rate with the rule “real rate ≈ nominal rate − inflation rate”.<br>
+(C) If $p_1 = 1$, find $p_2$.<br>
+(D) Find the slope of the intertemporal budget line.<br>
+(E) Now inflation rises from 5% to 10% and the nominal interest rate stays the same. Does the budget line get steeper or flatter? Give the reason.</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>名目利率（nominal interest rate）是 10%，通貨膨脹率（inflation rate）是 5%。</p>
+<p>(A) 算出精確的（exact）實質利率。<br>
+(B) 用近似公式「實質利率 ≈ 名目利率 − 通膨率」算出近似值。<br>
+(C) 如果 $p_1 = 1$，$p_2$ 是多少？<br>
+(D) 跨期預算線的斜率是多少？<br>
+(E) 如果通膨率從 5% 升到 10%，名目利率不變，預算線會變陡還是變平？說明原因。</p>
+</details>
+<details class="hint"><summary>提示</summary>
+<p>關鍵式子只有一條：$1 + \rho = \dfrac{1+r}{1+\pi}$。預算線的斜率就是 $-(1+\rho)$。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 精確的實質利率</h4>
+$$1+\rho = \frac{1+r}{1+\pi} = \frac{1.10}{1.05} \approx 1.0476 \qquad\Longrightarrow\qquad \rho \approx 0.0476 = 4.76\%$$
+<p>也可以直接用 $\rho = \dfrac{r - \pi}{1+\pi} = \dfrac{0.05}{1.05} \approx 0.0476$，答案一樣。</p>
+</div>
+<div class="step">
+<h4>(B) 近似的實質利率</h4>
+$$\rho \approx r - \pi = 10\% - 5\% = 5\%$$
+<p>比精確值 4.76% 高了約 0.24 個百分點。通膨不高，所以近似得還不錯。</p>
+</div>
+<div class="step">
+<h4>(C) 第 2 期的物價</h4>
+$$p_2 = (1+\pi)\,p_1 = 1.05 \times 1 = 1.05$$
+</div>
+<div class="step">
+<h4>(D) 預算線的斜率</h4>
+$$\text{斜率} = -(1+r)\,\frac{p_1}{p_2} = -\frac{1+r}{1+\pi} = -\frac{1.10}{1.05} \approx -1.0476$$
+<p>也就是 $-(1+\rho)$。今天少消費 1 單位，明天可以多消費約 1.0476 單位。</p>
+</div>
+<div class="step">
+<h4>(E) 通膨升到 10%</h4>
+<p>新的斜率：</p>
+$$-\frac{1+r}{1+\pi} = -\frac{1.10}{1.10} = -1$$
+<p>斜率的絕對值從 1.0476 降到 1，預算線<strong>變平</strong>。原因：名目利率沒變，但東西漲得更快，實質利率從 4.76% 掉到 0。今天少消費 1 單位，明天能換到的消費從 1.0476 單位變成只有 1 單位。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "通膨率 5% 與 10% 時的跨期預算線，後者比較平",
+  "x": [0, 250], "y": [-28, 255], "h": 330,
+  "xlabel": "c₁", "ylabel": "c₂",
+  "fns": [
+    { "f": "(110+1.1*(100-x))/1.05", "color": "f", "label": "π = 5%：斜率 −1.0476", "domain": [0, 200] },
+    { "f": "(110+1.1*(100-x))/1.1", "color": "pos", "label": "π = 10%：斜率 −1（比較平）", "domain": [0, 200] }
+  ],
+  "shapes": [
+    { "type": "text", "x": 10, "y": 232, "t": "縱軸截距 209.5 → 200", "color": "ink", "anchor": "start", "size": 12 }
+  ],
+  "points": [
+    { "x": 0, "y": 209.52, "color": "f" },
+    { "x": 0, "y": 200, "color": "pos" },
+    { "x": 200, "y": 0, "color": "ink", "label": "(200, 0)", "pos": "t" }
+  ]
+}
+</script>
+<figcaption>示意圖（沿用第 1 題的名目所得 m₁ = 100、m₂ = 110，p₁ = 1）。通膨越高，同樣的名目所得在第 2 期買到的東西越少，縱軸截距下降，線變平。</figcaption>
+</figure>
+<p class="answer"><span>(A) $\rho = \dfrac{1.10}{1.05} - 1 \approx 4.76\%$。(B) $\rho \approx 5\%$。(C) $p_2 = 1.05$。(D) 斜率 $= -\dfrac{1.10}{1.05} \approx -1.0476$。(E) 斜率變成 $-1$，預算線變平，因為實質利率從 4.76% 降到 0。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob" data-prob="HW9-3">
+<h3>三筆付款的證券值多少</h3>
+<div class="prob-q">
+<p>A financial security will pay 110 at the end of year 1, 121 at the end of year 2, and 133.10 at the end of year 3. The interest rate is 10% per year.</p>
+<p>(A) Find the present value of each of the three payments.<br>
+(B) Find the present value of the security.<br>
+(C) The security sells for 320 today. Is this price above or below the present value of the promised payments?<br>
+(D) If the interest rate goes up, does the present value of the security rise or fall? Explain.</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>一張金融證券（financial security）承諾在第 1 年年底付 110 元、第 2 年年底付 121 元、第 3 年年底付 133.10 元。年利率是 10%。</p>
+<p>(A) 算出每一筆付款的現值。<br>
+(B) 算出這張證券的現值。<br>
+(C) 如果這張證券今天賣 320 元，這個價格比承諾付款的現值高還是低？<br>
+(D) 如果利率上升，這張證券的現值會增加還是減少？說明原因。</p>
+</details>
+<details class="hint"><summary>提示</summary>
+<p>第 $t$ 年年底的錢除以 $1.1^t$。先把 $1.1^2 = 1.21$、$1.1^3 = 1.331$ 算好，會發現數字是設計過的。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 每一筆各自折現</h4>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>付款時間</th><th class="n">金額</th><th class="n">除以</th><th class="n">現值</th></tr></thead>
+<tbody>
+<tr><td>第 1 年年底</td><td class="n">110</td><td class="n">$1.1$</td><td class="n">100</td></tr>
+<tr><td>第 2 年年底</td><td class="n">121</td><td class="n">$1.1^2 = 1.21$</td><td class="n">100</td></tr>
+<tr><td>第 3 年年底</td><td class="n">133.10</td><td class="n">$1.1^3 = 1.331$</td><td class="n">100</td></tr>
+</tbody>
+</table>
+</div>
+$$\frac{110}{1.1} = 100 \qquad \frac{121}{1.1^2} = \frac{121}{1.21} = 100 \qquad \frac{133.10}{1.1^3} = \frac{133.10}{1.331} = 100$$
+</div>
+<div class="step">
+<h4>(B) 證券的現值</h4>
+$$PV = 100 + 100 + 100 = 300 \text{ 元}$$
+</div>
+<div class="step">
+<h4>(C) 和售價 320 元比</h4>
+<p>$320 \gt 300$，售價<strong>高於</strong>承諾付款的現值，這張證券賣貴了，不值得買。</p>
+<p>理由：只要把 300 元存進利率 10% 的銀行，就能領到一模一樣的三筆錢。</p>
+<ul>
+<li>第 1 年底：$300 \times 1.1 = 330$，領走 110，剩 220。</li>
+<li>第 2 年底：$220 \times 1.1 = 242$，領走 121，剩 121。</li>
+<li>第 3 年底：$121 \times 1.1 = 133.1$，領走 133.1，剛好領完。</li>
+</ul>
+<p>花 300 元就能做到的事，沒有理由付 320 元。</p>
+</div>
+<div class="step">
+<h4>(D) 利率上升</h4>
+<p>現值會<strong>減少</strong>。每一筆現值是 $\dfrac{m_t}{(1+r)^t}$，利率 $r$ 上升，分母變大，每一筆都變小，加起來當然也變小。越晚拿到的錢被折得越兇。</p>
+<p>例如利率升到 20%：</p>
+$$PV = \frac{110}{1.2} + \frac{121}{1.2^2} + \frac{133.10}{1.2^3} = 91.67 + 84.03 + 77.03 = 252.72 \text{ 元}$$
+<p>從 300 元掉到約 253 元。直覺：利率高的時候，把錢放銀行就很好賺，同樣的未來現金流就比較不值錢。</p>
+<p class="answer"><span>(A) 三筆的現值都是 100 元。(B) 現值 300 元。(C) 售價 320 元高於現值 300 元（太貴）。(D) 利率上升，現值減少，因為每一筆的折現分母 $(1+r)^t$ 變大。</span></p>
+</div>
+</div>
+</article>
+
+<div class="how" data-title="題目裡常見的英文說法">
+<ul>
+<li>Write down the intertemporal budget constraint in future-value form ／ present-value form.<br><small>寫出終值形式／現值形式的跨期預算限制式。</small></li>
+<li>Find the maximum possible consumption in periods 1 and 2.<br><small>求第 1 期和第 2 期各自最多能消費多少。</small></li>
+<li>Indicate the income endowment and the slope of the budget line.<br><small>在圖上標出所得稟賦點和預算線的斜率。</small></li>
+<li>Is the consumer saving or borrowing?<br><small>消費者是在存錢還是借錢？</small></li>
+<li>the nominal interest rate ／ the inflation rate<br><small>名目利率／通貨膨脹率</small></li>
+<li>the exact real interest rate ／ the approximate real interest rate<br><small>精確的實質利率／近似的實質利率</small></li>
+<li>Does the budget line become steeper or flatter?<br><small>預算線變陡還是變平？</small></li>
+<li>A financial security promises to pay … at the end of year 1.<br><small>一張證券承諾在第 1 年年底支付…</small></li>
+<li>Calculate the present value of each payment.<br><small>算出每一筆付款的現值。</small></li>
+<li>Is its price higher or lower than the present value of its promised payments?<br><small>它的售價比承諾付款的現值高還是低？</small></li>
+</ul>
+</div>
+
+<div class="exam">
+<p>這一章的題目幾乎都是代公式，容易掉分的地方是「寫錯形式」和「方向講反」。</p>
+<ul>
+<li>題目問 future-value form 就寫 $(1+r)c_1 + c_2 = \cdots$，問 present-value form 就寫 $c_1 + \dfrac{c_2}{1+r} = \cdots$，並把數字代完。</li>
+<li>斜率要寫負號：沒有通膨是 $-(1+r)$，有通膨是 $-\dfrac{1+r}{1+\pi}$。</li>
+<li>判斷存錢或借錢只要比 $c_1$ 和 $m_1$，記得把存或借的金額、$c_2$ 一起算出來。</li>
+<li>exact 用除的，approximate 用減的。</li>
+<li>「利率上升 → 現值下降」「實質利率下降 → 預算線變平」這兩句要能配上一句原因，只寫結論會被扣分。</li>
+</ul>
+</div>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=4"></script>
+</body>
+</html>

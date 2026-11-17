@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公式總表與考前檢查｜個體經濟學期中考衝刺</title>
+<meta name="description" content="個體經濟學期中考公式總表：顯示性偏好、WARP、SARP、Laspeyres 與 Paasche 指數、Slutsky 分解、稟賦與淨需求、勞動供給、跨期預算線、現值，以及 HW6–HW9 十二題答案速查與考前檢查清單。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=4">
+</head>
+<body data-page="formulas">
+<main class="page">
+
+<p class="kicker">考前 · 出門前看這一頁</p>
+<h1>公式總表與考前檢查</h1>
+<p class="lead">四章的公式、每種題型的固定步驟、十二題作業的答案，全部收在這一頁。出門前從頭掃一遍，哪一格看不懂，就點連結回那一章補。</p>
+<div data-toc></div>
+
+<h2 id="glossary">中英名詞對照</h2>
+<p>考卷是英文的。題目裡會出現這些字，答題時也要用這些字。先掃一遍，看不懂的那幾個多看兩次。</p>
+<h3>題目常見的問法</h3>
+<p>這些字決定題目要你做什麼，先認得它們，題目就看懂一半了。</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>English</th><th>中文</th></tr></thead>
+<tbody>
+<tr><td>derive</td><td>導出（要寫推導過程）</td></tr>
+<tr><td>compute ／ calculate</td><td>計算</td></tr>
+<tr><td>find</td><td>求出</td></tr>
+<tr><td>verify</td><td>驗證（把數字代進去確認成立）</td></tr>
+<tr><td>draw … on a diagram</td><td>在圖上畫出…</td></tr>
+<tr><td>indicate</td><td>標出</td></tr>
+<tr><td>list</td><td>列出</td></tr>
+<tr><td>compare</td><td>比較</td></tr>
+<tr><td>explain (briefly)</td><td>（簡短）說明</td></tr>
+<tr><td>discuss</td><td>討論、分情況說明</td></tr>
+<tr><td>suppose ／ assume</td><td>假設</td></tr>
+<tr><td>while … do(es) not change ／ remain(s) unchanged</td><td>而…保持不變</td></tr>
+<tr><td>increase(s) from A to B ／ decrease(s) from A to B</td><td>從 A 上升到 B／從 A 下降到 B</td></tr>
+<tr><td>relative to</td><td>相對於</td></tr>
+<tr><td>according to</td><td>依照、根據</td></tr>
+<tr><td>as a function of ／ in terms of</td><td>寫成…的函數、用…表示</td></tr>
+<tr><td>by itself</td><td>單靠它本身</td></tr>
+<tr><td>respectively</td><td>分別、依序</td></tr>
+<tr><td>better off ／ worse off</td><td>變好／變差</td></tr>
+<tr><td>steeper ／ flatter</td><td>（線）變陡／變平</td></tr>
+<tr><td>higher ／ lower than</td><td>比…高／低</td></tr>
+<tr><td>at the end of year 1</td><td>在第 1 年年底</td></tr>
+<tr><td>horizontal axis ／ vertical axis</td><td>橫軸／縱軸</td></tr>
+</tbody>
+</table>
+</div>
+<h3>通用與 Ch2–Ch5</h3>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>中文</th><th>English</th><th>記號或一句話</th></tr></thead>
+<tbody>
+<tr><td>預算限制式</td><td><strong>budget constraint</strong></td><td>$p_1x_1 + p_2x_2 = m$</td></tr>
+<tr><td>預算線</td><td><strong>budget line</strong></td><td>剛好把錢花完的組合</td></tr>
+<tr><td>預算集合</td><td><strong>budget set</strong></td><td>所有買得起的組合</td></tr>
+<tr><td>消費組合</td><td><strong>(consumption) bundle</strong></td><td>$(x_1, x_2)$</td></tr>
+<tr><td>最適消費組合</td><td><strong>optimal consumption bundle</strong></td><td>買得起的組合裡最喜歡的那個，$(x_1^*, x_2^*)$</td></tr>
+<tr><td>需求函數</td><td><strong>demand function</strong></td><td>$x_1^*(p_1, p_2, m)$</td></tr>
+<tr><td>效用函數</td><td><strong>utility function</strong></td><td>$U(x_1, x_2)$</td></tr>
+<tr><td>無異曲線</td><td><strong>indifference curve</strong></td><td>效用一樣的組合連成的線</td></tr>
+<tr><td>邊際替代率</td><td><strong>marginal rate of substitution (MRS)</strong></td><td>$-MU_1/MU_2$</td></tr>
+<tr><td>邊際效用</td><td><strong>marginal utility</strong></td><td>$MU_1 = \partial U/\partial x_1$</td></tr>
+<tr><td>相對價格</td><td><strong>relative price</strong></td><td>$p_1/p_2$</td></tr>
+<tr><td>所得</td><td><strong>income</strong></td><td>$m$</td></tr>
+<tr><td>內部解</td><td><strong>interior solution</strong></td><td>兩種商品都有買</td></tr>
+<tr><td>角解</td><td><strong>corner solution</strong></td><td>其中一種商品買 0</td></tr>
+<tr><td>折點</td><td><strong>kink</strong></td><td>L 型無異曲線的尖角</td></tr>
+<tr><td>完全替代</td><td><strong>perfect substitutes</strong></td><td>$U = ax_1 + bx_2$</td></tr>
+<tr><td>完全互補</td><td><strong>perfect complements</strong></td><td>$U = \min\{ax_1, x_2\}$</td></tr>
+<tr><td>準線性</td><td><strong>quasi-linear</strong></td><td>$U = f(x_1) + x_2$</td></tr>
+<tr><td>行為良好的偏好</td><td><strong>well-behaved preferences</strong></td><td>單調而且凸</td></tr>
+<tr><td>單調</td><td><strong>monotonic</strong></td><td>越多越好</td></tr>
+<tr><td>凸</td><td><strong>convex</strong></td><td>喜歡平均的組合</td></tr>
+<tr><td>買得起</td><td><strong>affordable</strong></td><td>花費不超過所得</td></tr>
+<tr><td>導出</td><td><strong>derive</strong></td><td>題目常寫 Derive the demand functions</td></tr>
+<tr><td>斜率</td><td><strong>slope</strong></td><td>預算線的斜率是 $-p_1/p_2$</td></tr>
+<tr><td>截距</td><td><strong>intercept</strong></td><td>$m/p_1$、$m/p_2$</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Ch7 顯示性偏好與指數</h3>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>中文</th><th>English</th><th>記號或一句話</th></tr></thead>
+<tbody>
+<tr><td>顯示性偏好</td><td><strong>revealed preference</strong></td><td>從選擇反推偏好</td></tr>
+<tr><td>直接顯示偏好</td><td><strong>directly revealed preferred</strong></td><td>$x \succ_D y$：選 $x$ 的時候 $y$ 也買得起</td></tr>
+<tr><td>間接顯示偏好</td><td><strong>indirectly revealed preferred</strong></td><td>$x \succ_I z$：靠遞移性串起來</td></tr>
+<tr><td>遞移性</td><td><strong>transitivity</strong></td><td>$x \succ y$ 且 $y \succ z$，推出 $x \succ z$</td></tr>
+<tr><td>弱公理</td><td><strong>WARP (Weak Axiom of Revealed Preference)</strong></td><td>兩個組合不能互相「直接」打敗</td></tr>
+<tr><td>強公理</td><td><strong>SARP (Strong Axiom of Revealed Preference)</strong></td><td>連間接的也不能矛盾</td></tr>
+<tr><td>違反</td><td><strong>violate</strong></td><td>The data violate the SARP.</td></tr>
+<tr><td>滿足</td><td><strong>satisfy</strong></td><td>The data satisfy the WARP.</td></tr>
+<tr><td>支出</td><td><strong>expenditure</strong></td><td>$p\cdot x = p_1x_1 + p_2x_2$</td></tr>
+<tr><td>基期</td><td><strong>base period</strong></td><td>上標 $b$</td></tr>
+<tr><td>當期</td><td><strong>current period</strong></td><td>上標 $t$</td></tr>
+<tr><td>價格指數</td><td><strong>price index</strong></td><td>用數量當權數比價格</td></tr>
+<tr><td>數量指數</td><td><strong>quantity index</strong></td><td>用價格當權數比數量</td></tr>
+<tr><td>Laspeyres 指數</td><td><strong>Laspeyres index</strong></td><td>用基期當權數</td></tr>
+<tr><td>Paasche 指數</td><td><strong>Paasche index</strong></td><td>用當期當權數</td></tr>
+<tr><td>支出比</td><td><strong>expenditure ratio</strong></td><td>$M = \dfrac{p^t\cdot x^t}{p^b\cdot x^b}$</td></tr>
+<tr><td>福利</td><td><strong>welfare</strong></td><td>過得好不好</td></tr>
+<tr><td>變好</td><td><strong>better off</strong></td><td>The consumer is better off in the current period.</td></tr>
+<tr><td>變差</td><td><strong>worse off</strong></td><td>The consumer is worse off.</td></tr>
+<tr><td>補貼</td><td><strong>subsidy</strong></td><td>政府給的錢</td></tr>
+<tr><td>完全指數化</td><td><strong>full indexation</strong></td><td>所得跟著物價指數同比例調整</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Ch8 Slutsky 方程式</h3>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>中文</th><th>English</th><th>記號或一句話</th></tr></thead>
+<tbody>
+<tr><td>Slutsky 方程式</td><td><strong>Slutsky equation</strong></td><td>總效果 = 替代效果 + 所得效果</td></tr>
+<tr><td>純替代效果</td><td><strong>pure substitution effect</strong></td><td>$B - A$</td></tr>
+<tr><td>所得效果</td><td><strong>income effect</strong></td><td>$C - B$</td></tr>
+<tr><td>總效果</td><td><strong>total effect</strong></td><td>$C - A$</td></tr>
+<tr><td>補償所得</td><td><strong>compensated income</strong></td><td>$m' = m + \Delta p_1\,x_1^A$</td></tr>
+<tr><td>購買力</td><td><strong>purchasing power</strong></td><td>手上的錢能買多少東西</td></tr>
+<tr><td>實質所得</td><td><strong>real income</strong></td><td>降價時實質所得上升</td></tr>
+<tr><td>正常財</td><td><strong>normal good</strong></td><td>所得增加會多買</td></tr>
+<tr><td>劣等財</td><td><strong>(income-)inferior good</strong></td><td>所得增加反而少買</td></tr>
+<tr><td>Giffen 財</td><td><strong>Giffen good</strong></td><td>降價反而買更少</td></tr>
+<tr><td>需求法則</td><td><strong>Law of Downward-Sloping Demand</strong></td><td>價格下跌，需求量增加</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Ch9 買與賣</h3>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>中文</th><th>English</th><th>記號或一句話</th></tr></thead>
+<tbody>
+<tr><td>稟賦</td><td><strong>endowment</strong></td><td>$(\omega_1, \omega_2)$</td></tr>
+<tr><td>淨需求</td><td><strong>net demand</strong></td><td>$x_i - \omega_i$</td></tr>
+<tr><td>買方</td><td><strong>net buyer / net demander</strong></td><td>淨需求大於 0</td></tr>
+<tr><td>賣方</td><td><strong>net seller / net supplier</strong></td><td>淨需求小於 0</td></tr>
+<tr><td>總需求</td><td><strong>gross demand</strong></td><td>最後實際消費的量 $x_i$</td></tr>
+<tr><td>勞動供給</td><td><strong>labor supply</strong></td><td>$L = \bar R - R$</td></tr>
+<tr><td>休閒</td><td><strong>leisure</strong></td><td>$R$</td></tr>
+<tr><td>非勞動所得</td><td><strong>nonlabor income</strong></td><td>$m$</td></tr>
+<tr><td>時薪</td><td><strong>hourly wage</strong></td><td>$w$</td></tr>
+<tr><td>實質工資</td><td><strong>real wage</strong></td><td>$w/p_c$</td></tr>
+<tr><td>稟賦所得效果</td><td><strong>endowment income effect</strong></td><td>價格變動讓稟賦的價值跟著變</td></tr>
+<tr><td>一般所得效果</td><td><strong>ordinary income effect</strong></td><td>貨幣所得不變時的所得效果</td></tr>
+<tr><td>價格提供曲線</td><td><strong>price-offer curve</strong></td><td>各種價格下的最適組合連成的線</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Ch10 跨期選擇</h3>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>中文</th><th>English</th><th>記號或一句話</th></tr></thead>
+<tbody>
+<tr><td>跨期選擇</td><td><strong>intertemporal choice</strong></td><td>今天花還是明天花</td></tr>
+<tr><td>跨期預算限制式</td><td><strong>intertemporal budget constraint</strong></td><td>$(1+r)c_1 + c_2 = (1+r)m_1 + m_2$</td></tr>
+<tr><td>現值</td><td><strong>present value (PV)</strong></td><td>$\dfrac{m}{1+r}$</td></tr>
+<tr><td>終值</td><td><strong>future value (FV)</strong></td><td>$m(1+r)$</td></tr>
+<tr><td>利率</td><td><strong>interest rate</strong></td><td>$r$</td></tr>
+<tr><td>名目利率</td><td><strong>nominal interest rate</strong></td><td>$r$</td></tr>
+<tr><td>實質利率</td><td><strong>real interest rate</strong></td><td>$\rho = \dfrac{r - \pi}{1 + \pi}$</td></tr>
+<tr><td>通貨膨脹率</td><td><strong>inflation rate</strong></td><td>$\pi$</td></tr>
+<tr><td>存錢（的人）</td><td><strong>save / saver (lender)</strong></td><td>$c_1 \lt m_1$</td></tr>
+<tr><td>借錢（的人）</td><td><strong>borrow / borrower</strong></td><td>$c_1 \gt m_1$</td></tr>
+<tr><td>證券</td><td><strong>(financial) security</strong></td><td>承諾未來付一串錢</td></tr>
+<tr><td>債券</td><td><strong>bond</strong></td><td>每年付 $x$，到期付面額 $F$</td></tr>
+<tr><td>永續債</td><td><strong>consol</strong></td><td>$PV = x/r$</td></tr>
+<tr><td>折現</td><td><strong>discount</strong></td><td>把未來的錢換算成現值</td></tr>
+<tr><td>到期</td><td><strong>maturity</strong></td><td>債券付完的那一期</td></tr>
+<tr><td>面額</td><td><strong>face value</strong></td><td>$F$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="f-basics">暖身公式（Ch2–Ch5）</h2>
+<div class="key" data-title="預算線與最適條件">
+$$p_1x_1 + p_2x_2 = m \qquad \text{截距 } \frac{m}{p_1},\ \frac{m}{p_2} \qquad \text{斜率 } -\frac{p_1}{p_2}$$
+$$\text{MRS} = \frac{dx_2}{dx_1} = -\frac{MU_1}{MU_2} \qquad \text{內部解：}\ \text{MRS} = -\frac{p_1}{p_2}\ \text{且花光預算}$$
+</div>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>效用函數</th><th>解法</th><th>需求函數</th></tr></thead>
+<tbody>
+<tr><td>Cobb-Douglas<br>$x_1^a x_2^b$</td><td><span class="tag t-f">相切</span></td><td>$x_1^* = \dfrac{a}{a+b}\cdot\dfrac{m}{p_1}$，$x_2^* = \dfrac{b}{a+b}\cdot\dfrac{m}{p_2}$</td></tr>
+<tr><td>完全替代<br>$ax_1 + bx_2$</td><td><span class="tag t-d1">角解</span></td><td>$\dfrac{p_1}{p_2} \lt \dfrac{a}{b}$：$\left(\dfrac{m}{p_1}, 0\right)$；$\dfrac{p_1}{p_2} \gt \dfrac{a}{b}$：$\left(0, \dfrac{m}{p_2}\right)$；相等：預算線上任一點</td></tr>
+<tr><td>完全互補<br>$\min\{x_1, 2x_2\}$</td><td><span class="tag t-d2">折點</span></td><td>折點 $x_1 = 2x_2$ → $x_1^* = \dfrac{2m}{2p_1+p_2}$，$x_2^* = \dfrac{m}{2p_1+p_2}$</td></tr>
+</tbody>
+</table>
+</div>
+<p>詳細推導在<a href="basics.html#choice">暖身頁的「最適選擇」</a>。</p>
+
+<h2 id="f-ch7">Ch7　顯示性偏好與指數</h2>
+<div class="key" data-title="顯示性偏好（revealed preference）">
+<p><strong>直接</strong> $x \succ_D y$：選了 $x$ 的那一期，$y$ 也買得起（$p\cdot y \le p\cdot x$，且 $y \ne x$）卻沒選。<br>
+<strong>間接</strong> $x \succ_I z$：$x \succ_D y$ 且 $y \succ_D z$，用遞移性串起來。</p>
+<p><strong>WARP</strong>（弱公理）：有 $x \succ_D y$，就不能有 $y \succ_D x$。<br>
+<strong>SARP</strong>（強公理）：$x$ 直接或間接顯示偏好於 $y$（$x \ne y$），$y$ 就不能直接或間接顯示偏好於 $x$。</p>
+<p>WARP 只是必要條件；<mark>SARP 才是充要條件</mark>（滿足 SARP ⟺ 存在行為良好的偏好可以解釋資料）。違反 WARP 一定違反 SARP，反過來不一定。</p>
+</div>
+<div class="how" data-title="花費表的做法（三期三個組合就是 3 × 3）">
+<ol>
+<li><strong>列</strong>放各期的價格，<strong>欄</strong>放各期選的組合，每一格算「用這一列的價格買這一欄的組合要多少錢」。</li>
+<li><strong>對角線</strong>是那一期的實際花費，用紅筆標起來。</li>
+<li>同一列裡，<strong>不超過對角線</strong>的其他格子圈起來：買得起卻沒選 → 這一列選的組合 $\succ_D$ 那一欄的組合。</li>
+<li>查 WARP：有沒有一對組合互相被圈（$X \succ_D Y$ 且 $Y \succ_D X$）。</li>
+<li>查 SARP：把直接關係用遞移性接起來，再看有沒有繞成一圈。</li>
+</ol>
+</div>
+<div class="key" data-title="指數（b = 基期 base，t = 當期 current）">
+$$L_q = \frac{p^b\cdot x^t}{p^b\cdot x^b} \qquad P_q = \frac{p^t\cdot x^t}{p^t\cdot x^b} \qquad\qquad L_p = \frac{p^t\cdot x^b}{p^b\cdot x^b} \qquad P_p = \frac{p^t\cdot x^t}{p^b\cdot x^t} \qquad\qquad M = \frac{p^t\cdot x^t}{p^b\cdot x^b}$$
+<p>記法：<strong>L</strong>aspeyres 用<strong>基期</strong>當權數（固定不動的那個是 b），<strong>P</strong>aasche 用<strong>當期</strong>當權數（固定不動的那個是 t）。數量指數固定價格、比數量；價格指數固定數量、比價格。</p>
+</div>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>看到</th><th>等於在說</th><th>結論</th></tr></thead>
+<tbody>
+<tr><td>$P_q \gt 1$　或　$L_p \lt M$</td><td>$p^t\cdot x^t \gt p^t\cdot x^b$：現在買得起基期組合卻沒選</td><td class="c-pos"><strong>現在比較好</strong></td></tr>
+<tr><td>$L_q \lt 1$　或　$P_p \gt M$</td><td>$p^b\cdot x^b \gt p^b\cdot x^t$：基期買得起當期組合卻沒選</td><td class="c-neg"><strong>基期比較好</strong></td></tr>
+<tr><td>其他情況（例如 $L_p \gt M$、$P_p \lt M$）</td><td>那個組合當時買不起，沒有透露資訊</td><td>單看那個指數<strong>沒有結論</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div class="key" data-title="完全指數化（full indexation）">
+<p>把所得補到「用新價格剛好買得起基期組合」。新預算線通過基期組合，但斜率變了；只要相對價格有變，消費者就能換到更喜歡的組合 → <strong>一定至少一樣好，通常變好</strong>（新組合顯示偏好於基期組合）。所以用 Laspeyres 價格指數調整所得會補過頭。</p>
+</div>
+<p>完整講解與檢查器在 <a href="ch7.html">Ch7 顯示性偏好與指數</a>。</p>
+
+<h2 id="f-ch8">Ch8　Slutsky 方程式</h2>
+<div class="how" data-title="Slutsky 分解五步驟（以 p₁ 變成 p₁′ 為例）">
+<ol>
+<li><strong>原本的組合 A</strong>：用舊價格、原所得 $m$ 算需求。</li>
+<li><strong>補償所得</strong>：$m' = m + \Delta p_1 \times x_1^A$，也就是「用新價格買舊組合 A 的花費」。</li>
+<li><strong>中間點 B</strong>：用<mark>新價格</mark>、補償所得 $m'$ 算需求。</li>
+<li><strong>最終點 C</strong>：用新價格、<mark>原所得</mark> $m$ 算需求。</li>
+<li><strong>替代效果</strong> = B − A，<strong>所得效果</strong> = C − B，總效果 = C − A = 替代效果 + 所得效果。</li>
+</ol>
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業 HW7 第 1 題的 Slutsky 分解：A、B、C 三個點與三條預算線",
+  "x": [0, 48], "y": [0, 48], "h": 330,
+  "xlabel": "x₁", "ylabel": "x₂",
+  "fns": [
+    { "f": "45-2*x", "color": "f", "label": "① 原本：2x₁ + x₂ = 45" },
+    { "f": "30-x", "color": "d1", "dash": true, "label": "② 補償：x₁ + x₂ = 30（剛好通過 A）" },
+    { "f": "45-x", "color": "pos", "label": "③ 最終：x₁ + x₂ = 45" }
+  ],
+  "shapes": [
+    { "type": "line", "x1": 15, "y1": 15, "x2": 15, "y2": 5, "color": "mute", "dash": true, "w": 1.4 },
+    { "type": "line", "x1": 20, "y1": 10, "x2": 20, "y2": 5, "color": "mute", "dash": true, "w": 1.4 },
+    { "type": "line", "x1": 30, "y1": 15, "x2": 30, "y2": 5, "color": "mute", "dash": true, "w": 1.4 },
+    { "type": "arrow", "x1": 15, "y1": 5, "x2": 20, "y2": 5, "color": "d1", "label": "替代 +5", "lo": [0, -9] },
+    { "type": "arrow", "x1": 20, "y1": 5, "x2": 30, "y2": 5, "color": "pos", "label": "所得 +10", "lo": [0, 18] }
+  ],
+  "points": [
+    { "x": 15, "y": 15, "color": "f", "label": "A (15, 15)", "pos": "tr" },
+    { "x": 20, "y": 10, "color": "d1", "label": "B (20, 10)", "pos": "tr" },
+    { "x": 30, "y": 15, "color": "pos", "label": "C (30, 15)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>HW7 第 1 題（U = x₁²x₂，p₁ 從 2 降到 1）。A → B 是預算線繞著 A 轉（只有相對價格變），B → C 是預算線平行外移（只有購買力變）。</figcaption>
+</figure>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>商品類型（自己的價格<strong>下降</strong>時）</th><th>替代效果</th><th>所得效果</th><th>總效果</th></tr></thead>
+<tbody>
+<tr><td>正常財（normal good）</td><td class="c-pos">增加</td><td class="c-pos">增加（同方向）</td><td class="c-pos">增加，需求線一定負斜率</td></tr>
+<tr><td>劣等財（inferior good）</td><td class="c-pos">增加</td><td class="c-neg">減少，但比較小</td><td class="c-pos">增加</td></tr>
+<tr><td>Giffen 財</td><td class="c-pos">增加</td><td class="c-neg">減少，而且比較大</td><td class="c-neg">減少，需求線正斜率</td></tr>
+</tbody>
+</table>
+</div>
+<p>價格<strong>上漲</strong>時整張表反號。不變的規則：<mark>替代效果永遠跟價格反方向</mark>（或等於 0），所得效果的方向才要看是正常財還是劣等財。</p>
+<div class="key" data-title="三個特例">
+<p><strong>完全互補</strong>：替代效果 = 0，總效果全部是所得效果（HW7 第 2 題）。<br>
+<strong>完全替代</strong>：角落換邊的時候，總效果全部是替代效果，所得效果 = 0（HW7 第 3 題）。<br>
+<strong>準線性</strong>：$x_1$ 的需求跟所得無關，所得效果 = 0。</p>
+<p>Hicks 替代效果：補償到「回到原本的效用水準」，而不是「買得起原本的組合」。</p>
+</div>
+<p>完整講解在 <a href="ch8.html">Ch8 Slutsky 方程式</a>。</p>
+
+<h2 id="f-ch9">Ch9　買與賣</h2>
+<div class="key" data-title="稟賦（endowment）與淨需求（net demand）">
+$$p_1x_1 + p_2x_2 = p_1\omega_1 + p_2\omega_2 \qquad\Longleftrightarrow\qquad p_1(x_1 - \omega_1) + p_2(x_2 - \omega_2) = 0$$
+<p>稟賦點 $(\omega_1, \omega_2)$ 永遠在預算線上；價格變動時，預算線<mark>繞著稟賦點旋轉</mark>。</p>
+<p>淨需求 $x_i - \omega_i \gt 0$：買方（net demander）；$\lt 0$：賣方（net supplier）。兩個淨需求的<strong>總值一定是 0</strong>：買東西的錢來自賣東西。</p>
+<p>價格下跌：那個商品的<strong>買方</strong>一定變好；<strong>賣方</strong>如果繼續當賣方，一定變差。</p>
+</div>
+<div class="key" data-title="勞動供給（labor supply）">
+$$p_cC + wR = m + w\bar R \qquad \text{斜率 } -\frac{w}{p_c}\text{（實質工資）} \qquad L = \bar R - R$$
+<p>$C$ 消費、$R$ 休閒、$\bar R$ 總時數、$w$ 工資、$m$ 非勞動所得。休閒的「價格」就是工資 $w$。</p>
+<p>$U = CR$、$\bar R = 24$ 時：$R^* = 12 + \dfrac{m}{2w}$，$L^* = 12 - \dfrac{m}{2w}$，$C^* = \dfrac{m + 24w}{2p_c}$。$m$ 增加 → 休閒增加 → 勞動供給減少。</p>
+</div>
+<div class="key" data-title="Slutsky 再訪：三種效果">
+<p>有稟賦時，價格一變，稟賦的價值也跟著變，所以多一項：</p>
+<p>總效果 = <span class="tag t-d1">替代效果</span> + <span class="tag t-pos">一般所得效果</span> + <span class="tag t-d2">稟賦所得效果</span></p>
+</div>
+<p>完整講解在 <a href="ch9.html">Ch9 買與賣</a>。</p>
+
+<h2 id="f-ch10">Ch10　跨期選擇</h2>
+<div class="key" data-title="現值與終值">
+$$FV = m(1+r) \qquad\qquad PV = \frac{m}{1+r} \qquad\qquad \text{第 } t \text{ 期的 } m_t\text{：}\ PV = \frac{m_t}{(1+r)^t}$$
+</div>
+<div class="key" data-title="跨期預算線（p₁ = p₂ = 1）">
+$$\text{終值式：}\ (1+r)c_1 + c_2 = (1+r)m_1 + m_2 \qquad\qquad \text{現值式：}\ c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r}$$
+<p>橫軸截距 = 稟賦的現值 $m_1 + \dfrac{m_2}{1+r}$　縱軸截距 = 稟賦的終值 $(1+r)m_1 + m_2$　斜率 $-(1+r)$　一定通過 $(m_1, m_2)$</p>
+<p>$c_1 \lt m_1$：存錢（saver），$c_2 = m_2 + (1+r)(m_1 - c_1)$；$c_1 \gt m_1$：借錢（borrower）。</p>
+</div>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "作業 HW9 第 1 題的跨期預算線",
+  "x": [0, 230], "y": [0, 250], "h": 320,
+  "xlabel": "c₁（今天的消費）", "ylabel": "c₂（明天的消費）",
+  "fns": [ { "f": "220-1.1*x", "color": "f", "label": "1.1c₁ + c₂ = 220（斜率 −1.1）" } ],
+  "vlines": [ { "x": 100, "color": "mute" } ],
+  "points": [
+    { "x": 0, "y": 220, "color": "f", "label": "稟賦的終值 220", "pos": "tr" },
+    { "x": 200, "y": 0, "color": "f", "label": "稟賦的現值 200", "pos": "tl" },
+    { "x": 80, "y": 132, "color": "pos", "label": "c₁ = 80 → c₂ = 132", "pos": "tr" },
+    { "x": 100, "y": 110, "color": "ink", "label": "稟賦 (100, 110)", "pos": "tr" }
+  ],
+  "shapes": [
+    { "type": "text", "x": 50, "y": 34, "t": "← 存錢：c₁ < 100", "color": "pos" },
+    { "type": "text", "x": 150, "y": 34, "t": "借錢：c₁ > 100 →", "color": "neg" }
+  ]
+}
+</script>
+<figcaption>HW9 第 1 題（m₁ = 100、m₂ = 110、r = 10%）。稟賦點左邊是存錢，右邊是借錢；利率改變時，這條線繞著稟賦點轉。</figcaption>
+</figure>
+<div class="key" data-title="加入物價與通貨膨脹">
+$$(1+r)p_1c_1 + p_2c_2 = (1+r)m_1 + m_2 \qquad \text{斜率 } -(1+r)\frac{p_1}{p_2}$$
+$$p_2 = (1+\pi)p_1 \quad\Rightarrow\quad \text{斜率 } -\frac{1+r}{1+\pi} = -(1+\rho) \qquad \rho = \frac{r - \pi}{1+\pi} \approx r - \pi$$
+<p>$r$ 名目利率、$\pi$ 通貨膨脹率、$\rho$ 實質利率（real interest rate）。近似式只有 $\pi$ 很小才準。</p>
+<p>$r$ 下降或 $\pi$ 上升 → 實質利率下降 → 預算線<strong>變平</strong>。存錢的人（繼續存錢的話）變差；借錢的人變好。</p>
+</div>
+<div class="key" data-title="證券估價">
+$$\text{三年期證券：}\ PV = \frac{m_1}{1+r} + \frac{m_2}{(1+r)^2} + \frac{m_3}{(1+r)^3}$$
+$$\text{債券（bond）：}\ PV = \frac{x}{1+r} + \frac{x}{(1+r)^2} + \cdots + \frac{x}{(1+r)^{T-1}} + \frac{F}{(1+r)^T} \qquad\qquad \text{永續債（consol）：}\ PV = \frac{x}{r}$$
+<p>現值就是「現在最多願意付多少」。<strong>利率上升，現值下降</strong>（每一項的分母都變大）。價格高於現值就是太貴。</p>
+</div>
+<p>完整講解在 <a href="ch10.html">Ch10 跨期選擇</a>。</p>
+
+<h2 id="answers">12 題作業答案速查</h2>
+<p>點題號會跳到那一題的逐步解答。先遮住右邊自己算一次，再對答案。</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>題號</th><th>答案</th></tr></thead>
+<tbody>
+<tr><td><a href="ch7.html#q-HW6-1">HW6-1</a></td><td>花費表三列依序是 13／11／16、17／15／11、12／16／15。直接：$A \succ_D B$、$B \succ_D C$、$C \succ_D A$；間接：$A \succ_I C$、$B \succ_I A$、$C \succ_I B$。<strong>不違反 WARP，違反 SARP</strong>。</td></tr>
+<tr><td><a href="ch7.html#q-HW6-2">HW6-2</a></td><td>$L_p = 1.4$、$P_p = 1.5$、$M = 1.8$。$L_p \lt M$ → 現在比較好；$P_p \lt M$，單看 Paasche 沒有結論。</td></tr>
+<tr><td><a href="ch7.html#q-HW6-3">HW6-3</a></td><td>基期所得 20；現在買基期組合要 35；補貼 $35 - 26 = 9$；補貼後選了別的組合 → 新組合顯示偏好於基期組合，變好。</td></tr>
+<tr><td><a href="ch8.html#q-HW7-1">HW7-1</a></td><td>$x_1 = \dfrac{2m}{3p_1}$、$x_2 = \dfrac{m}{3p_2}$；原本 $(15, 15)$；降價後 $(30, 15)$；$m' = 30$、中間點 $(20, 10)$；替代效果 $+5$、所得效果 $+10$。</td></tr>
+<tr><td><a href="ch8.html#q-HW7-2">HW7-2</a></td><td>$x_1 = \dfrac{2m}{2p_1+p_2}$、$x_2 = \dfrac{m}{2p_1+p_2}$；原本 $(24, 12)$；漲價後 $(16, 8)$；$m' = 72$、中間點 $(24, 12)$；替代效果 $0$、所得效果 $-4$。</td></tr>
+<tr><td><a href="ch8.html#q-HW7-3">HW7-3</a></td><td>$p_1 \lt 2p_2$ → $\left(\dfrac{m}{p_1}, 0\right)$；$p_1 \gt 2p_2$ → $\left(0, \dfrac{m}{p_2}\right)$；相等時預算線上任一點。原本 $(0, 30)$；降價後 $(30, 0)$；$m' = 30$、中間點 $(30, 0)$；替代效果 $+30$、所得效果 $0$。</td></tr>
+<tr><td><a href="ch9.html#q-HW8-1">HW8-1</a></td><td>預算線 $x_1 + x_2 = 16$；最適 $(8, 8)$；淨需求 $-4$（賣商品 1）、$+4$（買商品 2）；$1\times(-4) + 1\times 4 = 0$。</td></tr>
+<tr><td><a href="ch9.html#q-HW8-2">HW8-2</a></td><td>$2x_1 + x_2 = 25$、最適 $(10, 5)$；淨需求 $+2$（買）、$-4$（賣）；降價後 $x_1 + x_2 = 17$、最適 $\left(\dfrac{34}{3}, \dfrac{17}{3}\right)$；效用 $10 \to 11.33$，變好。</td></tr>
+<tr><td><a href="ch9.html#q-HW8-3">HW8-3</a></td><td>$pC + wR = m + 24w$；$R^* = 12 + \dfrac{m}{2w}$；$L^* = 12 - \dfrac{m}{2w}$；$m$ 增加 → 勞動供給減少。</td></tr>
+<tr><td><a href="ch10.html#q-HW9-1">HW9-1</a></td><td>終值式 $1.1c_1 + c_2 = 220$；現值式 $c_1 + \dfrac{c_2}{1.1} = 200$；$c_1$ 最多 200、$c_2$ 最多 220；斜率 $-1.1$、通過 $(100, 110)$；$c_1 = 80$ 是存錢 20，$c_2 = 132$。</td></tr>
+<tr><td><a href="ch10.html#q-HW9-2">HW9-2</a></td><td>精確實質利率 $4.76\%$；近似 $5\%$；$p_2 = 1.05$；斜率 $-1.0476$；通膨變 $10\%$ 時斜率 $-1$，變平。</td></tr>
+<tr><td><a href="ch10.html#q-HW9-3">HW9-3</a></td><td>三筆的現值各 100；合計 300；售價 320 高於現值；利率上升 → 現值下降。</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="mistakes">最常被扣分的地方</h2>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>容易寫錯的</th><th>正確做法</th></tr></thead>
+<tbody>
+<tr><td class="c-neg">WARP 沒違反，就直接寫 SARP 也沒違反</td><td>SARP 還要把<strong>間接</strong>關係算進來再查一次。HW6-1 就是 WARP 過、SARP 不過。</td></tr>
+<tr><td class="c-neg">花費表的列和欄弄反</td><td>列 = 價格、欄 = 組合。比較大小時是<strong>同一列</strong>（同一期的價格）跟對角線比。</td></tr>
+<tr><td class="c-neg">Laspeyres 和 Paasche 的權數弄反</td><td>L 用基期（b）當權數，P 用當期（t）當權數。價格指數的權數是數量，數量指數的權數是價格。</td></tr>
+<tr><td class="c-neg">指數沒有結論時硬下結論</td><td>$L_p \gt M$ 或 $P_p \lt M$ 只代表「那個組合當時買不起」，要寫「單看這個指數無法判斷」，並說明原因。</td></tr>
+<tr><td class="c-neg">Slutsky 的 $m'$ 用舊價格去算</td><td>$m'$ = <strong>新價格</strong> × 舊組合。算完檢查：舊組合在新價格下剛好花掉 $m'$。</td></tr>
+<tr><td class="c-neg">替代效果和所得效果的順序、正負號寫反</td><td>替代 = B − A（先轉），所得 = C − B（後移）。加起來要等於 C − A；數量減少就寫負號。</td></tr>
+<tr><td class="c-neg">$\min\{x_1, 2x_2\}$ 的折點寫成 $x_2 = 2x_1$</td><td>讓括號裡兩個東西相等：$x_1 = 2x_2$。代 $(4, 2)$ 檢查。</td></tr>
+<tr><td class="c-neg">稟賦題把所得當成固定不變</td><td>所得 = $p_1\omega_1 + p_2\omega_2$，價格一變所得就變，預算線繞稟賦點轉，要重算。</td></tr>
+<tr><td class="c-neg">淨需求的正負號寫反</td><td>淨需求 = 消費 − 稟賦。正的是買方，負的是賣方。最後用「總值 = 0」檢查。</td></tr>
+<tr><td class="c-neg">現值只除以 $(1+r)$ 一次</td><td>第 $t$ 期的錢要除以 $(1+r)^t$：第 2 年除以 $1.1^2 = 1.21$，第 3 年除以 $1.1^3 = 1.331$。</td></tr>
+<tr><td class="c-neg">把 $r - \pi$ 當成精確的實質利率</td><td>精確值是 $\rho = \dfrac{r - \pi}{1 + \pi}$；$r - \pi$ 只是近似。題目問 exact 就要用除的。</td></tr>
+<tr><td class="c-neg">只寫數字，沒有寫結論</td><td>題目問 better off / worse off、buyer / seller、steeper / flatter 時，最後一定要用一句話回答。</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="checklist">考前檢查清單</h2>
+<p>每一項都能不看筆記說出來，就可以去考試了。打勾只是給自己看的，重新整理頁面會清空。</p>
+<ul class="checklist">
+<li><label><input type="checkbox"><span>我會從效用函數的樣子，判斷要用相切、角解還是折點來求需求函數。</span></label></li>
+<li><label><input type="checkbox"><span>我會畫 3 × 3 花費表，標出對角線，圈出「買得起卻沒選」的格子。</span></label></li>
+<li><label><input type="checkbox"><span>我會列出所有直接與間接顯示性偏好，並分別判斷 WARP 和 SARP。</span></label></li>
+<li><label><input type="checkbox"><span>我會算 Laspeyres、Paasche 價格指數和支出比 M，並說出哪一期比較好，或說明為什麼沒有結論。</span></label></li>
+<li><label><input type="checkbox"><span>我會解釋完全指數化之後，消費者為什麼會變好。</span></label></li>
+<li><label><input type="checkbox"><span>我會用五個步驟做 Slutsky 分解，寫出補償所得、中間點、替代效果和所得效果。</span></label></li>
+<li><label><input type="checkbox"><span>我記得完全互補的替代效果是 0，完全替代換角時所得效果是 0。</span></label></li>
+<li><label><input type="checkbox"><span>我會寫有稟賦的預算線，算淨需求，判斷是買方還是賣方，並驗證總值等於 0。</span></label></li>
+<li><label><input type="checkbox"><span>我會推導勞動供給函數，並說明非勞動所得增加時勞動供給怎麼變。</span></label></li>
+<li><label><input type="checkbox"><span>我會寫跨期預算線的終值式和現值式，找出兩個截距、斜率，判斷存錢還是借錢。</span></label></li>
+<li><label><input type="checkbox"><span>我會算精確和近似的實質利率，並說出通膨上升時預算線變陡還是變平。</span></label></li>
+<li><label><input type="checkbox"><span>我會算一串未來付款的現值，並判斷售價是太貴還是划算。</span></label></li>
+</ul>
+
+<div class="exam">
+<p>考卷是英文的。遇到 derive 要留符號、寫過程；遇到 find 或 calculate 代數字；遇到 explain、compare 一定要用一句完整的話下結論。算完多花十秒做檢查：花費加起來等於所得、淨需求總值等於 0、替代效果加所得效果等於總變動。</p>
+</div>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=4"></script>
+</body>
+</html>

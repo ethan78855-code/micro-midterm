@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>考古題：去年的第二次期中考｜個體經濟學期中考衝刺</title>
+<meta name="description" content="去年個體經濟學第二次期中考的題目與詳解：10 題選擇、3 題簡答、4 題計算，含老師的答案與配分。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=4">
+</head>
+<body data-page="exam">
+<main class="page">
+
+<p class="kicker">考古題 · 去年（2025 年 11 月 26 日）的第二次期中考</p>
+<h1>去年的第二次期中考：題目與詳解</h1>
+<p class="lead">這是去年同一門課的第二次期中考，來源是老師檢討考卷時的投影照片。滿分 100 分：選擇題 20%、簡答題 20%、計算題 60%。讀完四章之後，把這一頁當成模擬考做一遍最有效。</p>
+<div data-toc></div>
+
+<div class="how" data-title="這份考古題透露的事">
+<ul>
+<li><strong>題型</strong>：10 題選擇（每題 2 分）、3 題簡答、4 題計算。計算題佔 60 分，跟作業幾乎同一個模子。</li>
+<li><strong>計算題對應的作業</strong>：第 1 題是花費表＋顯示性偏好＋指數（HW6）；第 3 題是勞動供給再加「有稟賦的 Slutsky 三種效果」（HW8 與 Ch9 最後一節）；第 4 題是跨期選擇（HW9）。</li>
+<li><strong>去年有考到 Ch6 的幾個觀念</strong>：同位偏好（homothetic）、Engel 曲線、正常財／劣等財／Giffen 財的定義、準線性效用的最適選擇（含角解）。今年公布的範圍是 HW6–HW9，但這些東西很短，建議看一下本頁最後的「補充」。</li>
+<li><strong>有稟賦的題目，Slutsky 要拆成三個效果</strong>：替代效果、一般所得效果、稟賦所得效果。去年這一小題就佔 10 分。</li>
+</ul>
+</div>
+<div class="say">
+<p>題目用英文寫，跟考卷一樣（句子是重新敘述過的，不是原卷的逐字內容），每一題都可以點開中文翻譯。<mark>答案和配分依照老師投影的解答</mark>，詳細的解說是自己寫的。第 4 題計算題的題目沒有被拍到，是從老師的解答反推回去的。</p>
+</div>
+
+<h2 id="mc">第一部分：選擇題（20%，每題 2 分）</h2>
+<p>先自己選，點下去會馬上知道對不對。</p>
+
+<div class="quiz" data-answer="4">
+<p class="quiz-q">1. Which of the following utility functions does NOT represent homothetic preferences?</p>
+<details class="peek"><summary>中文翻譯</summary><p>下面哪一個效用函數代表的偏好「不是」同位偏好（homothetic）？</p></details>
+<button>$U = x_1^{0.5}x_2^{0.5}$</button>
+<button>$U = x_1 + x_2$</button>
+<button>$U = \min\{x_1, x_2\}$</button>
+<button>$U = x_1 + \ln x_2$</button>
+<p class="quiz-why">同位偏好的特徵是 MRS 只跟比例 $x_2/x_1$ 有關，所以所得變成兩倍時，兩種商品的需求也都變成兩倍。Cobb-Douglas、完全替代、完全互補都是同位偏好。$U = x_1 + \ln x_2$ 是準線性，$|\text{MRS}| = x_2$ 只跟 $x_2$ 有關，所得增加時只會多買 $x_1$，所以不是。</p>
+</div>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">2. Which statement about Giffen goods and inferior goods is true?</p>
+<details class="peek"><summary>中文翻譯</summary><p>關於 Giffen 財和劣等財，哪一個敘述正確？(A) 每個劣等財都是 Giffen 財。(B) 每個 Giffen 財都是劣等財。(C) Giffen 財的 Engel 曲線一定是正斜率。(D) Engel 曲線負斜率的商品一定是 Giffen 財。</p></details>
+<button>Every inferior good is also a Giffen good.</button>
+<button>Every Giffen good is also an inferior good.</button>
+<button>A Giffen good always has an upward-sloping Engel curve.</button>
+<button>Any good with a downward-sloping Engel curve is a Giffen good.</button>
+<p class="quiz-why">Giffen 財是「所得效果和替代效果反方向，而且所得效果比較大」，所以它一定是劣等財；但劣等財的所得效果通常比較小，不一定是 Giffen 財。劣等財的 Engel 曲線是負斜率，所以 (C) 錯；負斜率只代表劣等財，所以 (D) 也錯。</p>
+</div>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">3. Which statement best describes the Weak Axiom of Revealed Preference (WARP)?</p>
+<details class="peek"><summary>中文翻譯</summary><p>哪一個敘述最能描述 WARP？(A) 如果 x 直接顯示偏好於 y，y 就不會直接顯示偏好於 x。(B) …x 也一定間接顯示偏好於 y。(C) …在任何價格和所得下 x 都嚴格比 y 好。(D) …每次選 x 的時候 y 一定買不起。</p></details>
+<button>If x is directly revealed preferred to y, then y is never directly revealed preferred to x.</button>
+<button>If x is directly revealed preferred to y, then x is also indirectly revealed preferred to y.</button>
+<button>If x is directly revealed preferred to y, then x is strictly better than y at all prices and incomes.</button>
+<button>If x is directly revealed preferred to y, then y is unaffordable every time x is chosen.</button>
+<p class="quiz-why">WARP 的定義就是 (A)：兩個組合不能互相「直接」打敗對方。(D) 剛好相反：x 直接顯示偏好於 y 的意思正是「選 x 的時候 y 買得起」。</p>
+</div>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">4. Which statement correctly compares the Laspeyres and Paasche price indices?</p>
+<details class="peek"><summary>中文翻譯</summary><p>哪一個敘述正確比較了 Laspeyres 和 Paasche 價格指數？(A) 價格變、數量不變時兩個都等於 1。(B) Laspeyres 用基期數量當權數，Paasche 用當期數量。(C) 反過來。(D) 兩個都用兩期數量的平均當權數。</p></details>
+<button>Both indices equal 1 whenever prices change but quantities do not.</button>
+<button>The Laspeyres index uses base-period quantities as weights; the Paasche index uses current-period quantities.</button>
+<button>The Paasche index uses base-period quantities as weights; the Laspeyres index uses current-period quantities.</button>
+<button>Both indices use the average of base-period and current-period quantities as weights.</button>
+<p class="quiz-why">記法：<strong>L</strong>aspeyres 用舊的（基期 b）數量，<strong>P</strong>aasche 用現在的（當期 t）數量。$L_p = \dfrac{p^t\cdot x^b}{p^b\cdot x^b}$，$P_p = \dfrac{p^t\cdot x^t}{p^b\cdot x^t}$。</p>
+</div>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">5. In the Hicksian substitution effect, what is held constant when the price of good 1 changes?</p>
+<details class="peek"><summary>中文翻譯</summary><p>在 Hicks 的替代效果裡，商品 1 的價格改變時，什麼東西被固定住？(A) 名目所得 (B) 效用水準 (C) 買得起原來組合的能力（Slutsky 的「實質所得」）(D) 未來的消費</p></details>
+<button>Nominal income</button>
+<button>The utility level</button>
+<button>The ability to buy the original bundle (Slutsky “real income”)</button>
+<button>Future consumption</button>
+<p class="quiz-why">Hicks 補償到「回到原來的效用水準」；Slutsky 補償到「剛好買得起原來的組合」，那是選項 (C)。兩個的差別在 <a href="ch8.html#hicks">Ch8 最後一節</a>。</p>
+</div>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">6. If two goods are perfect complements consumed in fixed proportions, a change in the price of one good leads to</p>
+<details class="peek"><summary>中文翻譯</summary><p>如果兩種商品是完全互補（以固定比例消費），其中一種商品的價格變動會造成：(A) 只有所得效果、沒有純替代效果 (B) 只有純替代效果、沒有所得效果 (C) 大小相等、方向相反的替代效果與所得效果 (D) 兩種商品的需求都不變</p></details>
+<button>an income effect only, with no pure substitution effect</button>
+<button>a pure substitution effect only, with no income effect</button>
+<button>substitution and income effects of equal size but opposite sign</button>
+<button>no change in the demand for either good</button>
+<p class="quiz-why">完全互補的最適點在 L 型的折點，補償預算線繞著原來的組合轉，折點不會動，所以替代效果是 0，變化全部是所得效果。這就是作業 HW7 第 2 題。</p>
+</div>
+
+<div class="quiz" data-answer="1">
+<p class="quiz-q">7. The wage rises and, as a result, a worker chooses to work fewer hours (leisure R increases). If leisure is a normal good, this implies that</p>
+<details class="peek"><summary>中文翻譯</summary><p>工資上升，結果勞工選擇少工作（休閒 R 增加）。假設休閒是正常財，這表示：(A) 所得效果大於替代效果 (B) 替代效果大於所得效果 (C) 兩個效果都是零 (D) 這個勞工沒有在追求效用最大</p></details>
+<button>the income effect dominates the substitution effect</button>
+<button>the substitution effect dominates the income effect</button>
+<button>the substitution and income effects are both zero</button>
+<button>the worker is not maximizing utility</button>
+<p class="quiz-why">工資是休閒的價格。工資上升，替代效果讓人少休閒（多工作）；但時間稟賦變得更值錢，人變有錢，休閒是正常財所以會多休閒。最後休閒增加，表示所得效果壓過了替代效果，這就是後彎的勞動供給曲線。</p>
+</div>
+
+<div class="quiz" data-answer="3">
+<p class="quiz-q">8. In the buying-and-selling model with an endowment ω, how does a change in the price of good 1 affect the budget line (with the endowment fixed)?</p>
+<details class="peek"><summary>中文翻譯</summary><p>在有稟賦 ω 的買賣模型裡，稟賦不變，商品 1 的價格改變會讓預算線怎麼動？(A) 平行外移 (B) 繞著原點轉 (C) 繞著稟賦點轉 (D) 平行內移</p></details>
+<button>It shifts outward in a parallel way.</button>
+<button>It rotates around the origin.</button>
+<button>It rotates around the endowment point.</button>
+<button>It shifts inward in a parallel way.</button>
+<p class="quiz-why">不管價格是多少，稟賦點一定買得起（不交易就好），所以它永遠在預算線上。價格一變，預算線只能繞著它轉。</p>
+</div>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">9. Let r be the nominal interest rate and π the inflation rate, both positive. Holding r fixed, which statement is correct?</p>
+<details class="peek"><summary>中文翻譯</summary><p>名目利率 r、通膨率 π 都是正的。固定 r，哪個敘述正確？(A) 通膨越高，實質利率越高 (B) 通膨越高，實質利率越低 (C) 通膨不影響實質利率 (D) 實質利率跟 r、π 都無關</p></details>
+<button>A higher inflation rate raises the real interest rate.</button>
+<button>A higher inflation rate lowers the real interest rate.</button>
+<button>A higher inflation rate leaves the real interest rate unchanged.</button>
+<button>The real interest rate does not depend on r or π.</button>
+<p class="quiz-why">$1 + \rho = \dfrac{1 + r}{1 + \pi}$。分母變大，實質利率就變小，預算線也跟著變平。</p>
+</div>
+
+<div class="quiz" data-answer="2">
+<p class="quiz-q">10. The nominal interest rate is r = 0.10. What is the present value of 110 received one period from now?</p>
+<details class="peek"><summary>中文翻譯</summary><p>名目利率 r = 0.10。一期之後收到的 110 元，現值是多少？</p></details>
+<button>90</button>
+<button>100</button>
+<button>110</button>
+<button>121</button>
+<p class="quiz-why">$PV = \dfrac{110}{1 + 0.10} = 100$。121 是把 110 再往後滾一期的終值，90 是把「減 10%」和「除以 1.1」搞混。</p>
+</div>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>題號</th><th class="n">1</th><th class="n">2</th><th class="n">3</th><th class="n">4</th><th class="n">5</th><th class="n">6</th><th class="n">7</th><th class="n">8</th><th class="n">9</th><th class="n">10</th></tr></thead>
+<tbody><tr><th scope="row">老師的答案</th><td class="n">D</td><td class="n">B</td><td class="n">A</td><td class="n">B</td><td class="n">B</td><td class="n">A</td><td class="n">A</td><td class="n">C</td><td class="n">B</td><td class="n">B</td></tr></tbody>
+</table>
+</div>
+
+<h2 id="essay">第二部分：簡答題（20%）</h2>
+
+<article class="prob">
+<h3>簡答 1（10%）：三種財貨的定義</h3>
+<div class="prob-q">
+<p>Define normal goods, inferior goods and Giffen goods.</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary><p>定義正常財、劣等財與 Giffen 財。</p></details>
+<div class="solution">
+<div class="step">
+<h4>正常財 normal good</h4>
+<p>所得增加，需求量增加。（老師的寫法：income ↑，$Q_d$ ↑，3 分）</p>
+</div>
+<div class="step">
+<h4>劣等財 inferior good</h4>
+<p>所得增加，需求量反而減少。（income ↑，$Q_d$ ↓，3 分）</p>
+</div>
+<div class="step">
+<h4>Giffen 財</h4>
+<p>價格上升，需求量反而增加。原因是它是劣等財，而且所得效果比替代效果還大：$|\text{SE}| \lt |\text{IE}|$。（P ↑，$Q_d$ ↑，3 分）</p>
+<p>注意前兩個是用「所得」定義，Giffen 財是用「自己的價格」定義，考試時不要混在一起寫。圖在 <a href="ch8.html#signs">Ch8 的「兩個效果的方向」</a>。</p>
+<p class="answer"><span>正常財：所得 ↑ 需求量 ↑。劣等財：所得 ↑ 需求量 ↓。Giffen 財：價格 ↑ 需求量 ↑（所得效果大於替代效果的劣等財）。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob">
+<h3>簡答 2（5%）：同位偏好的 Engel 曲線</h3>
+<div class="prob-q">
+<p>What does an Engel curve look like if preferences are homothetic?</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary><p>如果偏好是同位的（homothetic），Engel 曲線長什麼樣子？</p></details>
+<div class="solution">
+<div class="step">
+<h4>Engel 曲線是什麼</h4>
+<p>價格固定，把「所得 $m$」和「某個商品的需求量」的關係畫出來，就是 Engel 曲線。橫軸是需求量，縱軸是所得。</p>
+</div>
+<div class="step">
+<h4>同位偏好的情況</h4>
+<p>同位偏好下，所得變成 $k$ 倍，每種商品的需求量也剛好變成 $k$ 倍，所以需求量和所得成正比。例如 $U = x_1^2x_2$ 的 $x_1 = \dfrac{2m}{3p_1}$。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "同位偏好與準線性偏好的 Engel 曲線比較",
+  "panels": [
+    { "title": "同位偏好（例：x₁ = 2m / 3p₁，p₁ = 2）", "x": [0, 10], "y": [0, 30], "h": 260, "xlabel": "x₁", "ylabel": "所得 m",
+      "fns": [ { "f": "3*x", "color": "f", "label": "Engel 曲線：過原點的直線" } ],
+      "points": [ { "x": 3, "y": 9, "color": "f", "label": "m = 9 → x₁ = 3", "pos": "br" }, { "x": 6, "y": 18, "color": "f", "label": "m 兩倍 → x₁ 也兩倍", "pos": "br" } ] },
+    { "title": "對照：準線性 U = x₁ + ln x₂（p₁ = 2、p₂ = 1）的 x₂", "x": [0, 4], "y": [0, 6], "h": 260, "xlabel": "x₂", "ylabel": "所得 m",
+      "shapes": [
+        { "type": "line", "x1": 0, "y1": 0, "x2": 2, "y2": 2, "color": "d1", "w": 2.6 },
+        { "type": "line", "x1": 2, "y1": 2, "x2": 2, "y2": 6, "color": "d1", "w": 2.6 },
+        { "type": "text", "x": 2.15, "y": 4.2, "t": "所得再多，x₂ 也停在 2", "color": "d1", "anchor": "start", "size": 12 }
+      ] }
+  ]
+}
+</script>
+<figcaption>左邊是同位偏好：直線、通過原點、正斜率。右邊是準線性的對照：x₂ 到了 p₁/p₂ 就不再增加，Engel 曲線變成垂直線，所以準線性不是同位偏好。</figcaption>
+</figure>
+<p class="answer"><span>一條通過原點、正斜率的直線。（老師的配分：straight line 2 分、passing through (0, 0) 1 分、positive slope 1 分，再加上圖。）</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob">
+<h3>簡答 3（5%）：買不起的組合</h3>
+<div class="prob-q">
+<p>Bundle A is chosen when bundle B is not affordable. According to the revealed preference axioms, which bundle is preferred?</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary><p>選了組合 A，而當時組合 B 買不起。根據顯示性偏好公理，哪一個組合比較受偏好？</p></details>
+<div class="solution">
+<div class="step">
+<h4>關鍵：B 買不起</h4>
+<p>顯示性偏好只有在「買得起卻沒選」的時候才透露資訊。這裡 B 根本買不起，消費者沒選 B 可能只是因為錢不夠，不代表 A 比較好。</p>
+<p class="answer"><span>無法判斷（cannot determine）。B 買不起，這次選擇沒有透露 A 和 B 誰比較好。</span></p>
+</div>
+</div>
+</article>
+
+<h2 id="problems">第三部分：計算題（60%）</h2>
+
+<article class="prob">
+<h3>計算 1（20%）：花費表、顯示性偏好與價格指數</h3>
+<div class="prob-q">
+<p>The table below shows the bundles of three goods $(x_1, x_2, x_3)$ that a consumer chooses at three different sets of prices $(p_1, p_2, p_3)$. Call the chosen bundles A, B and C.</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Period</th><th>Prices $(p_1, p_2, p_3)$</th><th>Chosen bundle $(x_1, x_2, x_3)$</th></tr></thead>
+<tbody>
+<tr><td>$t = 1$</td><td>$(1, 1, 2)$</td><td>$A = (5, 1, 2)$</td></tr>
+<tr><td>$t = 2$</td><td>$(2, 1, 1)$</td><td>$B = (3, 3, 1)$</td></tr>
+<tr><td>$t = 3$</td><td>$(3, 1, 1)$</td><td>$C = (1, 4, 3)$</td></tr>
+</tbody>
+</table>
+</div>
+<p>(A) (6%) Compute the cost of each bundle at each period's prices. Put the results in a 3 × 3 table, as in the lecture slides.<br>(B) (6%) List every direct and indirect revealed preference relation among the three bundles that follows from your table.<br>(C) (8%) Take $t = 1$ as the base period and $t = 2$ as the current period. Compute the Laspeyres and Paasche price indices.</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>下表是一位消費者在三組不同價格下選的三種商品組合，分別叫 A、B、C。</p>
+<p>(A) 算出用每一期的價格買每個組合要花多少錢，像簡報一樣列成 3 × 3 的表。<br>(B) 根據這張表，列出三個組合之間所有直接與間接的顯示性偏好關係。<br>(C) 以 $t = 1$ 為基期、$t = 2$ 為當期，計算 Laspeyres 與 Paasche 價格指數。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>(A) 花費表</h4>
+<p>每一格是「那一列的價格 × 那一欄的組合」。例如第 1 期價格買 B：$1\times 3 + 1\times 3 + 2\times 1 = 8$。</p>
+<div class="tbl-wrap">
+<table class="tbl rp-tbl">
+<thead><tr><th>價格＼組合</th><th class="n">A (5, 1, 2)</th><th class="n">B (3, 3, 1)</th><th class="n">C (1, 4, 3)</th></tr></thead>
+<tbody>
+<tr><th scope="row">$t = 1$：(1, 1, 2)</th><td class="n chosen">10</td><td class="n"><span class="circ">8</span></td><td class="n no">11</td></tr>
+<tr><th scope="row">$t = 2$：(2, 1, 1)</th><td class="n no">13</td><td class="n chosen">10</td><td class="n"><span class="circ">9</span></td></tr>
+<tr><th scope="row">$t = 3$：(3, 1, 1)</th><td class="n no">18</td><td class="n no">13</td><td class="n chosen">10</td></tr>
+</tbody>
+</table>
+</div>
+<p class="rp-key"><span class="chosen">紅字</span>＝那一期實際選的　<span class="circ">圈起來</span>＝買得起卻沒選　<span class="no">灰字</span>＝買不起</p>
+</div>
+<div class="step">
+<h4>(B) 直接顯示性偏好</h4>
+<ul>
+<li>第 1 期花 10 選 A。B 只要 8，買得起；C 要 11，買不起。所以 $A \succ_D B$。</li>
+<li>第 2 期花 10 選 B。C 只要 9，買得起；A 要 13，買不起。所以 $B \succ_D C$。</li>
+<li>第 3 期花 10 選 C。A 要 18、B 要 13，都買不起，沒有任何關係。</li>
+</ul>
+</div>
+<div class="step">
+<h4>(B) 間接顯示性偏好</h4>
+<p>$A \succ_D B$ 且 $B \succ_D C$，由遞移性得到 $A \succ_I C$。</p>
+<p>多想一步：沒有任何反方向的關係，所以這組資料 WARP 和 SARP 都沒有違反。題目沒問，但這是很可能的延伸題。</p>
+</div>
+<div class="step">
+<h4>(C) 兩個價格指數</h4>
+<p>基期是 $t = 1$：$p^b = (1, 1, 2)$、$x^b = A$。當期是 $t = 2$：$p^t = (2, 1, 1)$、$x^t = B$。需要的數字都已經在花費表裡了：</p>
+$$L_p = \frac{p^t\!\cdot x^b}{p^b\!\cdot x^b} = \frac{13}{10} = 1.3 \qquad\qquad P_p = \frac{p^t\!\cdot x^t}{p^b\!\cdot x^t} = \frac{10}{8} = 1.25$$
+<p>$L_p$ 的分子是「第 2 列、A 欄」，分母是「第 1 列、A 欄」；$P_p$ 的分子是「第 2 列、B 欄」，分母是「第 1 列、B 欄」。</p>
+<p>多想一步：支出比 $M = \dfrac{10}{10} = 1$。$P_p = 1.25 \gt M$，表示當期的組合 B 在基期就買得起卻沒選，所以基期比較好，這和 $A \succ_D B$ 是同一件事。</p>
+<p class="answer"><span>(A) 三列依序是 10、8、11／13、10、9／18、13、10。(B) 直接：$A \succ_D B$、$B \succ_D C$；間接：$A \succ_I C$。(C) $L_p = \dfrac{13}{10} = 1.3$，$P_p = \dfrac{10}{8} = 1.25$。</span></p>
+</div>
+</div>
+</article>
+
+<p>可以用檢查器對答案，也可以改數字自己出題練習：</p>
+<div class="rptool">
+<script type="application/json">
+{
+  "presets": [
+    { "label": "去年考古題計算 1", "obs": [ { "p": [1, 1, 2], "x": [5, 1, 2] }, { "p": [2, 1, 1], "x": [3, 3, 1] }, { "p": [3, 1, 1], "x": [1, 4, 3] } ] },
+    { "label": "作業 HW6 第 1 題（對照）", "obs": [ { "p": [2, 1, 3], "x": [4, 2, 1] }, { "p": [3, 2, 1], "x": [2, 4, 1] }, { "p": [1, 3, 2], "x": [1, 2, 4] } ] }
+  ]
+}
+</script>
+</div>
+
+<article class="prob">
+<h3>計算 2（10%）：準線性效用的最適選擇</h3>
+<div class="prob-q">
+<p>A consumer has the utility function $U = x_1 + \ln x_2$.</p>
+<p>(A) (5%) Find the optimal bundle when $p_1 = 1$, $p_2 = 2$ and income $m = 3$.<br>(B) (5%) Find the optimal bundle when $p_1 = 2$, $p_2 = 1$ and income $m = 1$.</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>消費者的效用函數是 $U = x_1 + \ln x_2$。(A) $p_1 = 1$、$p_2 = 2$、所得 $m = 3$ 時，求最適組合。(B) $p_1 = 2$、$p_2 = 1$、所得 $m = 1$ 時，求最適組合。</p>
+</details>
+<details class="hint"><summary>提示</summary>
+<p>先用相切條件解出 $x_2$，再檢查「買這麼多 $x_2$ 的錢夠不夠」。不夠的話就是角解。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>兩個條件</h4>
+<p>$MU_1 = 1$、$MU_2 = \dfrac{1}{x_2}$。相切條件和預算式（老師各給 2 分）：</p>
+$$\frac{MU_1}{MU_2} = x_2 = \frac{p_1}{p_2} \qquad\qquad p_1x_1 + p_2x_2 = m$$
+<p>準線性的特色：$x_2$ 只由價格比決定，跟所得無關。</p>
+</div>
+<div class="step">
+<h4>(A) 內部解</h4>
+$$x_2^* = \frac{p_1}{p_2} = \frac12 \qquad\Rightarrow\qquad x_1^* = \frac{m - p_2x_2^*}{p_1} = \frac{3 - 2\times\tfrac12}{1} = 2$$
+<p>買 $x_2$ 只花 1 元，所得 3 元夠用，所以是內部解 $(2, \tfrac12)$。</p>
+</div>
+<div class="step">
+<h4>(B) 相切的點買不起，變成角解</h4>
+<p>相切條件說 $x_2 = \dfrac{p_1}{p_2} = 2$，但這要花 $p_2x_2 = 2$ 元，所得只有 1 元，<strong>買不起</strong>。</p>
+<p>所以把全部的錢都拿去買 $x_2$，$x_1$ 一個都不買：</p>
+$$x_2^* = \frac{m}{p_2} = 1,\qquad x_1^* = 0$$
+<p>檢查：在 $(0, 1)$ 這一點 $|\text{MRS}| = x_2 = 1$，小於 $\dfrac{p_1}{p_2} = 2$，表示 $x_1$ 太貴、他還想再少買 $x_1$，但 $x_1$ 已經是 0 了。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "準線性效用的內部解與角解",
+  "panels": [
+    { "title": "(A) p₁ = 1、p₂ = 2、m = 3：內部解", "x": [0, 3.6], "y": [0, 2.4], "h": 270, "xlabel": "x₁", "ylabel": "x₂",
+      "fns": [
+        { "f": "(3-x)/2", "color": "f", "label": "預算線 x₁ + 2x₂ = 3" },
+        { "f": "exp(2+ln(0.5)-x)", "color": "d2", "w": 1.8, "label": "無異曲線" }
+      ],
+      "points": [ { "x": 2, "y": 0.5, "color": "f", "label": "(2, 0.5) 相切", "pos": "tr" } ] },
+    { "title": "(B) p₁ = 2、p₂ = 1、m = 1：角解", "x": [0, 1.2], "y": [0, 2.4], "h": 270, "xlabel": "x₁", "ylabel": "x₂",
+      "fns": [
+        { "f": "1-2*x", "color": "pos", "label": "預算線 2x₁ + x₂ = 1" },
+        { "f": "exp(-x)", "color": "d2", "w": 1.8 }
+      ],
+      "hlines": [ { "y": 2, "color": "mute", "label": "相切需要 x₂ = 2，買不起" } ],
+      "points": [ { "x": 0, "y": 1, "color": "pos", "label": "(0, 1) 角解", "pos": "tr" } ] }
+  ]
+}
+</script>
+<figcaption>(A) 預算線夠高，碰得到 x₂ = 0.5 的相切點。(B) 預算線太低，整條都在 x₂ = 2 的下方，最好的點是縱軸上的角落。</figcaption>
+</figure>
+<p class="answer"><span>(A) $(x_1^*, x_2^*) = (2, \tfrac12)$。(B) 相切需要 $x_2 = 2$ 但買不起，角解 $(x_1^*, x_2^*) = (0, 1)$。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob">
+<h3>計算 3（20%）：勞動供給與三種效果</h3>
+<div class="prob-q">
+<p>A worker has the utility function $U = R^{1/4}C^{3/4}$, where $R$ is hours of leisure and $C$ is consumption. His time endowment is $\bar R = 24$ hours, which he can use for leisure or work. He earns a wage of $w = 10$ per hour worked and also has a money endowment of $m = 120$. The price of consumption is $p = 1$.</p>
+<p>(A) (5%) Find the worker's optimal choice $(R^*, C^*)$.<br>(B) (5%) The wage falls from 10 to 5. Find the new optimal choice $(R^*, C^*)$. Does the lower wage make him work more or less?<br>(C) (10%) Use the Slutsky equation to find the pure substitution effect, the ordinary income effect and the endowment income effect on leisure.</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>一位勞工的效用函數是 $U = R^{1/4}C^{3/4}$，$R$ 是休閒時數，$C$ 是消費。他有 $\bar R = 24$ 小時的時間稟賦，可以用來休閒或工作。工作每小時賺 $w = 10$，另外有 $m = 120$ 的貨幣稟賦。消費品價格 $p = 1$。</p>
+<p>(A) 求最適選擇 $(R^*, C^*)$。<br>(B) 工資從 10 降到 5，求新的最適選擇。工資下降讓他工作得更多還是更少？<br>(C) 用 Slutsky 方程式求（休閒的）純替代效果、一般所得效果與稟賦所得效果。（這一小題的題目在照片裡被切掉一半，後半句是依老師的解答補上的。）</p>
+</details>
+<details class="hint"><summary>提示</summary>
+<p>預算式是 $pC + wR = m + 24w$，右邊叫「全部所得」。Cobb-Douglas 的指數是 $\tfrac14$ 和 $\tfrac34$，所以全部所得的 $\tfrac14$ 花在休閒、$\tfrac34$ 花在消費。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>預算式與需求函數</h4>
+$$pC + wR = m + w\bar R \qquad\Rightarrow\qquad C + wR = 120 + 24w$$
+<p>Cobb-Douglas 的支出比例固定：</p>
+$$R^* = \frac14\cdot\frac{120 + 24w}{w} \qquad\qquad C^* = \frac34\cdot\frac{120 + 24w}{1}$$
+</div>
+<div class="step">
+<h4>(A) w = 10</h4>
+<p>全部所得 $= 120 + 240 = 360$。</p>
+$$R^* = \frac14\cdot\frac{360}{10} = 9 \qquad C^* = \frac34\times 360 = 270$$
+<p>最適選擇 $(9, 270)$，每天工作 $24 - 9 = 15$ 小時。（老師配分：兩個數字各 2 分。）</p>
+</div>
+<div class="step">
+<h4>(B) w = 5</h4>
+<p>全部所得 $= 120 + 120 = 240$。</p>
+$$R^* = \frac14\cdot\frac{240}{5} = 12 \qquad C^* = \frac34\times 240 = 180$$
+<p>最適選擇 $(12, 180)$，每天工作 $24 - 12 = 12$ 小時。休閒從 9 增加到 12，所以工資下降讓他<strong>工作得更少</strong>（15 → 12 小時）。</p>
+</div>
+<div class="step">
+<h4>(C) 替代效果</h4>
+<p>工資就是休閒的價格，從 10 降到 5。先算「用新價格買原來的組合 $(9, 270)$」要多少錢：</p>
+$$m' = 5\times 9 + 1\times 270 = 45 + 270 = 315$$
+<p>在新工資、所得 315 之下：</p>
+$$R = \frac14\cdot\frac{315}{5} = 15.75 \qquad\Rightarrow\qquad \text{替代效果} = 15.75 - 9 = +6.75$$
+</div>
+<div class="step">
+<h4>(C) 一般所得效果</h4>
+<p>把所得還給他，但先假裝他的全部所得沒有因為工資下降而縮水，還是原本的 360：</p>
+$$R = \frac14\cdot\frac{360}{5} = 18 \qquad\Rightarrow\qquad \text{一般所得效果} = 18 - 15.75 = +2.25$$
+</div>
+<div class="step">
+<h4>(C) 稟賦所得效果</h4>
+<p>事實上工資下降後，他的 24 小時變得不值錢，全部所得從 360 掉到 240。真正的選擇是 (B) 算出來的 $R = 12$：</p>
+$$\text{稟賦所得效果} = 12 - 18 = -6$$
+<p>檢查：$6.75 + 2.25 - 6 = +3$，等於休閒的總變化 $12 - 9$ ✓。（老師配分：三個效果各 3 分。）</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "勞動供給的 Slutsky 三種效果：替代效果、一般所得效果、稟賦所得效果",
+  "x": [0, 27], "y": [0, 400], "h": 380,
+  "xlabel": "休閒 R（小時）", "ylabel": "消費 C",
+  "sliders": [ { "label": "步驟", "steps": ["① 原本 w = 10", "② 替代效果", "③ 一般所得效果", "④ 稟賦所得效果"] } ],
+  "fns": [
+    { "f": "360-10*x", "color": "f", "label": "原本：C + 10R = 360", "domain": [0, 24] },
+    { "f": "315-5*x", "color": "d1", "dash": true, "label": "補償：C + 5R = 315", "if": "a-1.5", "domain": [0, 24] },
+    { "f": "360-5*x", "color": "mute", "dash": true, "label": "新工資、舊所得：C + 5R = 360", "if": "a-2.5", "domain": [0, 24] },
+    { "f": "240-5*x", "color": "pos", "label": "真正的新預算線：C + 5R = 240", "if": "a-3.5", "domain": [0, 24] }
+  ],
+  "vlines": [ { "x": 24, "color": "mute", "label": "24 小時", "low": true } ],
+  "shapes": [
+    { "type": "arrow", "x1": 9, "y1": 22, "x2": 15.75, "y2": 22, "color": "d1", "label": "替代 +6.75", "lo": [0, -10], "if": "a-1.5" },
+    { "type": "arrow", "x1": 15.75, "y1": 58, "x2": 18, "y2": 58, "color": "f", "label": "一般所得 +2.25", "lo": [0, -10], "if": "a-2.5" },
+    { "type": "arrow", "x1": 18, "y1": 96, "x2": 12, "y2": 96, "color": "neg", "label": "稟賦所得 −6", "lo": [0, -10], "if": "a-3.5" }
+  ],
+  "points": [
+    { "x": 24, "y": 120, "color": "ink", "label": "ω", "pos": "tl" },
+    { "x": 9, "y": 270, "color": "f", "label": "A (9, 270)", "pos": "tr" },
+    { "x": 15.75, "y": 236.25, "color": "d1", "label": "B", "pos": "tr", "if": "a-1.5" },
+    { "x": 18, "y": 270, "color": "mute", "label": "D", "pos": "tr", "if": "a-2.5" },
+    { "x": 12, "y": 180, "color": "pos", "label": "E (12, 180)", "pos": "bl", "if": "a-3.5" }
+  ],
+  "readouts": [
+    { "label": "休閒 R", "expr": "9+max(0,min(1,a-1))*6.75+max(0,min(1,a-2))*2.25-max(0,min(1,a-3))*6", "digits": 2, "color": "f" },
+    { "label": "說明", "expr": "a-3", "neg": "① 是原本的選擇。② 工資降到 5，只給剛好買得起原組合的所得 315：休閒變便宜，多休閒 6.75", "zero": "③ 把所得補回原本的 360：變有錢，再多休閒 2.25", "pos": "④ 時間稟賦貶值，全部所得其實只剩 240：變窮，少休閒 6", "eps": 0.5 }
+  ]
+}
+</script>
+<figcaption>A 是原本的選擇，B (15.75, 236.25) 是補償後的中間點，D (18, 270) 是「新工資、舊所得」的點，E 是最後的選擇，ω 是稟賦點 (24, 120)。藍線和綠線都通過 ω，這是「繞著稟賦點轉」；橘色虛線通過 A。最後一步紅色箭頭往回走：工資下降讓他手上的時間變得不值錢，人變窮了，休閒是正常財所以少休閒。</figcaption>
+</figure>
+<p class="answer"><span>(A) $(R^*, C^*) = (9, 270)$。(B) $(12, 180)$，工作時數從 15 降到 12，工作得更少。(C) 替代效果 $+6.75$，一般所得效果 $+2.25$，稟賦所得效果 $-6$。</span></p>
+</div>
+</div>
+</article>
+
+<article class="prob">
+<h3>計算 4（10%）：跨期選擇</h3>
+<div class="prob-q">
+<p><span class="tag t-neg">題目是反推的</span> The question itself was not photographed. Working backwards from the professor's solution, it was probably close to this:</p>
+<p>A consumer lives for two periods and has the utility function $U = c_1c_2$. Income is $m_1 = 1000$ in period 1 and $m_2 = 600$ in period 2. The interest rate is $r = 50\%$. The price of consumption is $p_1 = 1$ in period 1 and $p_2 = 2$ in period 2. Find the optimal consumption bundle $(c_1^*, c_2^*)$. Is the consumer a saver or a borrower?</p>
+</div>
+<details class="peek"><summary>看不懂題目？點這裡看中文翻譯</summary>
+<p>這一題的題目沒有被拍到。老師的解答寫的是：相切條件 $\dfrac{c_2}{c_1} = \dfrac{1.5}{2}$、預算式 $c_1 + \dfrac{2}{1.5}c_2 = 1000 + \dfrac{600}{1.5}$、答案 $(700, 525)$、Saver。由此反推的題目大概是：</p>
+<p>消費者活兩期，效用函數 $U = c_1c_2$。第 1 期所得 1000、第 2 期所得 600，利率 50%，第 1 期消費的價格是 1、第 2 期是 2。求最適消費組合，並說明他是存錢的人還是借錢的人。</p>
+<p>所得、利率、價格可以從解答的數字確定；效用函數的確切寫法是推測的（只要 $c_1$、$c_2$ 的指數相同，都會得到同樣的相切條件）。</p>
+</details>
+<details class="hint"><summary>提示</summary>
+<p>有價格的跨期預算式（現值形式）：$p_1c_1 + \dfrac{p_2}{1+r}c_2 = m_1 + \dfrac{m_2}{1+r}$。預算線的斜率是 $-\dfrac{(1+r)p_1}{p_2}$。</p>
+</details>
+<div class="solution">
+<div class="step">
+<h4>預算式（現值形式）</h4>
+$$p_1c_1 + \frac{p_2}{1+r}c_2 = m_1 + \frac{m_2}{1+r} \qquad\Rightarrow\qquad c_1 + \frac{2}{1.5}c_2 = 1000 + \frac{600}{1.5} = 1400$$
+<p>（老師配分 2 分。）</p>
+</div>
+<div class="step">
+<h4>相切條件</h4>
+<p>$MU_1 = c_2$、$MU_2 = c_1$，無異曲線的斜率要等於預算線的斜率：</p>
+$$\frac{c_2}{c_1} = \frac{(1+r)\,p_1}{p_2} = \frac{1.5}{2} \qquad\Rightarrow\qquad c_2 = 0.75\,c_1$$
+<p>（老師配分 2 分。）</p>
+</div>
+<div class="step">
+<h4>解聯立</h4>
+$$c_1 + \frac{2}{1.5}\times 0.75\,c_1 = c_1 + c_1 = 1400 \qquad\Rightarrow\qquad c_1^* = 700,\quad c_2^* = 0.75\times 700 = 525$$
+</div>
+<div class="step">
+<h4>存錢還是借錢</h4>
+<p>$c_1^* = 700 \lt m_1 = 1000$，第 1 期沒有把所得花完，所以是<strong>存錢的人（saver）</strong>，存了 300。</p>
+<p>檢查：存 300，到第 2 期變成 $300\times 1.5 = 450$，加上所得 600 共 1050 元，剛好買 $525$ 單位（每單位 2 元）✓。</p>
+<figure class="fig">
+<script type="application/json">
+{
+  "alt": "跨期預算線、稟賦點與最適消費組合",
+  "x": [0, 1500], "y": [0, 1150], "h": 320,
+  "xlabel": "c₁（第 1 期消費）", "ylabel": "c₂（第 2 期消費）",
+  "fns": [
+    { "f": "1050-0.75*x", "color": "f", "label": "預算線 1.5c₁ + 2c₂ = 2100（斜率 −0.75）" },
+    { "f": "367500/x", "color": "d2", "w": 1.8, "domain": [250, 1500], "label": "無異曲線" }
+  ],
+  "vlines": [ { "x": 1000, "color": "mute", "label": "m₁ = 1000" } ],
+  "shapes": [ { "type": "arrow", "x1": 1000, "y1": 60, "x2": 715, "y2": 60, "color": "pos", "label": "存 300", "lo": [0, -10] } ],
+  "points": [
+    { "x": 1000, "y": 300, "color": "ink", "label": "稟賦 (1000, 300)", "pos": "tr" },
+    { "x": 700, "y": 525, "color": "f", "label": "最適 (700, 525)", "pos": "tr" }
+  ]
+}
+</script>
+<figcaption>第 2 期的所得 600 元只能買 300 單位（每單位 2 元），所以稟賦點是 (1000, 300)。最適點在稟賦點的左邊，表示第 1 期少消費、把錢存到第 2 期。</figcaption>
+</figure>
+<p class="answer"><span>$(c_1^*, c_2^*) = (700, 525)$。因為 $700 \lt 1000$，他是存錢的人（saver）。</span></p>
+</div>
+</div>
+</article>
+
+<h2 id="ch6">補充：去年考到、但不在作業範圍的觀念</h2>
+<p>選擇第 1、2 題、簡答第 1、2 題和計算第 2 題用到 Ch6（需求）的內容。今年如果又出現，記住下面這張表就夠應付。</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>名詞</th><th>English</th><th>一句話</th></tr></thead>
+<tbody>
+<tr><td>同位偏好</td><td>homothetic preferences</td><td>MRS 只跟比例 $x_2/x_1$ 有關；所得變 $k$ 倍，需求也變 $k$ 倍。Cobb-Douglas、完全替代、完全互補都是；準線性不是</td></tr>
+<tr><td>Engel 曲線</td><td>Engel curve</td><td>價格固定時，需求量（橫軸）和所得（縱軸）的關係。同位偏好是過原點的直線</td></tr>
+<tr><td>正常財</td><td>normal good</td><td>所得 ↑ 需求量 ↑，Engel 曲線正斜率</td></tr>
+<tr><td>劣等財</td><td>inferior good</td><td>所得 ↑ 需求量 ↓，Engel 曲線負斜率</td></tr>
+<tr><td>Giffen 財</td><td>Giffen good</td><td>自己的價格 ↑ 需求量 ↑；一定是劣等財，而且所得效果大於替代效果</td></tr>
+<tr><td>準線性的最適選擇</td><td>quasi-linear</td><td>$U = x_1 + \ln x_2$：先算 $x_2 = \dfrac{p_1}{p_2}$；買得起（$m \ge p_1$）就是內部解，$x_1 = \dfrac{m - p_1}{p_1}$；買不起就是角解 $x_1 = 0$、$x_2 = \dfrac{m}{p_2}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="exam">
+<p>從配分看，老師給分很細：寫出條件式（相切條件、預算式）就有分，最後的數字反而只佔 0.5 到 2 分。所以就算算不出來，也要把條件式和每一步的中間結果寫上去。簡答題照「關鍵字」給分，例如 Engel 曲線那題的 straight line、through the origin、positive slope 各有分。</p>
+</div>
+
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js?v=4"></script>
+</body>
+</html>
